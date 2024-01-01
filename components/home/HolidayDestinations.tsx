@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import styles from '@components/home/FeaturedGems.module.css';
+import styles from '@components/home/HolidayDestinations.module.css';
 import Properties from './Properties';
 
-export default function FeaturedGems() {
+export default function HolidayDestinations() {
   return (
     <section className={styles.container}>
       <span>Featured Gems</span>

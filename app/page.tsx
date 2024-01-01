@@ -1,13 +1,15 @@
-import FeaturedGems from '@components/home/FeaturedGems';
+import HolidayDestinations from '@components/home/HolidayDestinations';
 import Hero from '@components/home/Hero';
 import Marketing from '@components/home/Marketing';
+import LuxuryGems from '@components/home/LuxuryGems';
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <FeaturedGems />
+      <HolidayDestinations />
       <Marketing />
+      <LuxuryGems />
     </main>
   );
 }
