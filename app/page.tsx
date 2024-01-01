@@ -1,5 +1,9 @@
-import styles from './page.module.css';
+import Hero from '@components/home/Hero';
 
 export default function Home() {
-  return <main className={styles.main}>GemHaus</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }
