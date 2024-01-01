@@ -5,18 +5,26 @@ import styles from '@components/home/Hero.module.css';
 import { FormEvent, useState } from 'react';
 import { MdOutlineSearch } from 'react-icons/md';
 
-export default function Hero() {
-  const initialPropertyTypes = {
-    vacation: 'selected',
-    rent: 'first',
-    buy: 'second',
-  };
+type PropertyState = 'selected' | 'first' | 'second';
 
+type PropertyTypes = {
+  vacation: PropertyState;
+  rent: PropertyState;
+  buy: PropertyState;
+};
+
+const initialPropertyTypes: PropertyTypes = {
+  vacation: 'selected',
+  rent: 'first',
+  buy: 'second',
+};
+
+export default function Hero() {
   const [propertyTypes, setPropertyTypes] = useState(initialPropertyTypes);
   const [searchValue, setSearchValue] = useState('');
   const { vacation, rent, buy } = propertyTypes;
 
-  function changePropertyType(type: 'vacation' | 'rent' | 'buy') {
+  function changePropertyType(type: keyof PropertyTypes) {
     setPropertyTypes((prevState) => {
       switch (type) {
         case 'vacation':
@@ -34,10 +42,11 @@ export default function Hero() {
   function handleSearch(e: FormEvent) {
     e.preventDefault();
 
-    let selectedPropertyType = '';
-    for (const prop in propertyTypes) {
-      if (propertyTypes[prop as keyof object] === 'selected') {
-        selectedPropertyType = prop;
+    let selectedPropertyType: keyof PropertyTypes = 'vacation';
+    for (let prop in propertyTypes) {
+      const property = prop as keyof PropertyTypes;
+      if (propertyTypes[property] === 'selected') {
+        selectedPropertyType = property;
       }
     }
 
