@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation a {
+  padding: 0.5rem 1rem;
+  color: var(--black);
+}
+
+.sign_in {
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  background-color: var(--green);
+}
+
+.navigation svg {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
