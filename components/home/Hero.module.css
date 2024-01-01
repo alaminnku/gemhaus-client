@@ -1,3 +1,73 @@
 .container {
   padding: 2rem;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0rem;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.search_types {
+  display: flex;
+  align-items: center;
+}
+
+.search_types p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 7.5rem;
+}
+
+.vacation {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.rent,
+.buy {
+  border-radius: 0px 4px 0px 0px;
+}
+
+.search_types p.selected {
+  color: var(--white);
+  background-color: var(--green);
+}
+
+.search_types p.first {
+  background-color: #dfdfdf;
+}
+
+.search_types p.second {
+  background-color: #efefef;
+}
+
+.search_field {
+  position: relative;
+}
+
+.search_field input {
+  padding: 1rem;
+  border-radius: 4px;
+  min-width: 35rem;
+  border: 1px solid var(--gray);
+  /* background-color: var(--gray); */
+}
+
+.search_field svg {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.5rem;
+  top: 50%;
+  translate: 0% -50%;
+  cursor: pointer;
+}
