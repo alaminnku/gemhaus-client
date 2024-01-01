@@ -13,6 +13,7 @@ export default function Hero() {
   };
 
   const [propertyTypes, setPropertyTypes] = useState(initialPropertyTypes);
+  const [searchValue, setSearchValue] = useState('');
   const { vacation, rent, buy } = propertyTypes;
 
   function changePropertyType(type: 'vacation' | 'rent' | 'buy') {
@@ -33,14 +34,14 @@ export default function Hero() {
   function handleSearch(e: FormEvent) {
     e.preventDefault();
 
-    let selectedSearchType = '';
+    let selectedPropertyType = '';
     for (const prop in propertyTypes) {
       if (propertyTypes[prop as keyof object] === 'selected') {
-        selectedSearchType = prop;
+        selectedPropertyType = prop;
       }
     }
 
-    console.log(selectedSearchType);
+    console.log(selectedPropertyType, searchValue);
   }
 
   return (
@@ -75,6 +76,7 @@ export default function Hero() {
           <div className={styles.search_field}>
             <input
               type='text'
+              onChange={(e) => setSearchValue(e.target.value)}
               placeholder='Enter address, neighborhood, city or ZIP code'
             />
 
