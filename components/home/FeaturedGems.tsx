@@ -1,8 +1,8 @@
-import FeaturedProperty from './FeaturedProperty';
 import Link from 'next/link';
-import styles from '@components/home/FeaturedProperties.module.css';
+import styles from '@components/home/FeaturedGems.module.css';
+import Properties from './Properties';
 
-export default function FeaturedProperties() {
+export default function FeaturedGems() {
   return (
     <section className={styles.container}>
       <span>Featured Gems</span>
@@ -10,11 +10,7 @@ export default function FeaturedProperties() {
         Trending Holiday <br /> Destinations
       </h2>
 
-      <div className={styles.properties}>
-        <FeaturedProperty />
-        <FeaturedProperty />
-        <FeaturedProperty />
-      </div>
+      <Properties />
 
       <p className={styles.explore_text}>
         Continue Exploring Trending HOliday Destinations

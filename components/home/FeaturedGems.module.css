@@ -15,13 +15,6 @@
   margin-bottom: 1.5rem;
 }
 
-.properties {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  justify-content: space-between;
-}
-
 .explore_text {
   align-self: center;
   margin-bottom: 1rem;

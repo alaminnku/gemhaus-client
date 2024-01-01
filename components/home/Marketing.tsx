@@ -1,8 +1,8 @@
-import styles from '@components/home/Services.module.css';
+import styles from '@components/home/Marketing.module.css';
 import Link from 'next/link';
 import { RiVipDiamondLine } from 'react-icons/ri';
 
-export default function Services() {
+export default function Marketing() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>

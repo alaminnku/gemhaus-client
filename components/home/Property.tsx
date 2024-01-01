@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import property from '@public/property.jpg';
-import styles from '@components/home/FeaturedProperty.module.css';
+import styles from '@components/home/Property.module.css';
 import { FaBath, FaBed, FaHeart, FaStar, FaUser } from 'react-icons/fa6';
 
-export default function FeaturedProperty() {
+export default function Property() {
   return (
     <div className={styles.container}>
       <div className={styles.image_and_icons}>
