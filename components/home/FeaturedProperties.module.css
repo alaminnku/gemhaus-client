@@ -1,0 +1,37 @@
+.container {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container span {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.properties {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+}
+
+.explore_text {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.explore_button {
+  display: block;
+  align-self: center;
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--black);
+}

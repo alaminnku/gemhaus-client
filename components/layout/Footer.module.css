@@ -1,13 +1,13 @@
 .container {
-  padding: 2rem;
+  padding: 4rem;
   color: var(--white);
   background-color: var(--black);
 }
 
 .items {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 2rem;
+  justify-content: space-between;
 }
 
 .logo_and_socials {
