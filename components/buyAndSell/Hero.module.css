@@ -1,0 +1,14 @@
+.container {
+  padding: 3rem 4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/buy-and-sell/hero-bg.jpg');
+}
+
+.container h1 {
+  font-size: 3rem;
+  color: var(--white);
+  padding: 6rem 0rem;
+  text-align: center;
+}

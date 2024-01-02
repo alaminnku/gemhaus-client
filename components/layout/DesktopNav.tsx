@@ -11,7 +11,7 @@ export default function DesktopNav() {
       <div className={styles.navigation}>
         <Link href='/'>Vacation Rental</Link>
         <Link href='/'>Long Term Rental</Link>
-        <Link href='/'>Buy & Sell</Link>
+        <Link href='/buy-and-sell'>Buy & Sell</Link>
         <Link href='/'>Blog</Link>
         <Link href='/'>Contact</Link>
 
