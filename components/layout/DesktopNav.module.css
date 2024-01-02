@@ -9,9 +9,13 @@
 }
 
 .navigation a {
-  padding: 0.5rem 1rem;
+  margin: 0rem 1rem;
   color: var(--white);
   font-size: 14px;
+}
+
+.navigation a.active {
+  border-bottom: 1px solid var(--white);
 }
 
 .sign_in {
