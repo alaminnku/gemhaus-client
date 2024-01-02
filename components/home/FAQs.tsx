@@ -12,9 +12,8 @@ export default function FAQ() {
     setFAQsState((prevState) => {
       const map: FAQsState = {} as FAQsState;
       for (const prop in prevState) {
-        map[prop] = { isOpen: false };
+        map[prop] = { isOpen: prop === id ? !prevState[prop].isOpen : false };
       }
-      map[id].isOpen = !prevState[id].isOpen;
       return map;
     });
   }

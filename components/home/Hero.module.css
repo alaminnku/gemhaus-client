@@ -1,5 +1,6 @@
 .container {
   padding: 4rem;
+  background-image: url('/home/hero-bg.jpg');
 }
 
 .content {
@@ -12,6 +13,7 @@
 .content h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
+  color: var(--white);
 }
 
 .search_types {
@@ -59,8 +61,7 @@
   padding: 1rem;
   border-radius: 4px;
   min-width: 35rem;
-  border: 1px solid var(--gray);
-  /* background-color: var(--gray); */
+  background-color: var(--white);
 }
 
 .search_field svg {
