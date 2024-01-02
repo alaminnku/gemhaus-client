@@ -46,7 +46,7 @@ export default function Footer() {
 
         <div className={styles.navigation}>
           <p>Services</p>
-          <Link href='/'>Short Terms Rentals</Link>
+          <Link href='/vacation-rental'>Short Terms Rentals</Link>
           <Link href='/long-term-rental'>Long Term Rentals</Link>
           <Link href='/buy-and-sell'>Buy & Sell</Link>
         </div>

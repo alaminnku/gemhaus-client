@@ -9,7 +9,7 @@ export default function DesktopNav() {
       <Logo />
 
       <div className={styles.navigation}>
-        <Link href='/'>Vacation Rental</Link>
+        <Link href='/vacation-rental'>Vacation Rental</Link>
         <Link href='/long-term-rental'>Long Term Rental</Link>
         <Link href='/buy-and-sell'>Buy & Sell</Link>
         <Link href='/'>Blog</Link>
