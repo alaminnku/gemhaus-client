@@ -1,8 +1,13 @@
-import styles from '@components/buyAndSell/PropertyEvaluation.module.css';
+import styles from '@components/layout/PropertyEvaluation.module.css';
 import Image from 'next/image';
 import newsletter from '@public/layout/newsletter.png';
+import { ReactNode } from 'react';
 
-export default function PropertyEvaluation() {
+type Props = {
+  children: ReactNode;
+};
+
+export default function PropertyEvaluation({ children }: Props) {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
@@ -18,21 +23,7 @@ export default function PropertyEvaluation() {
         </p>
       </div>
 
-      <form className={styles.evaluation_form}>
-        <h3>It Takes Just Few Minutes!</h3>
-
-        <div className={styles.evaluation_inputs}>
-          <input type='text' placeholder='First Name' />
-          <input type='text' placeholder='Last Name' />
-          <input type='email' placeholder='Email' />
-          <input type='text' placeholder='Phone Number' />
-          <input type='text' placeholder='Address' />
-          <input type='text' placeholder='City' />
-          <input type='text' placeholder='State' />
-          <input type='text' placeholder='Zip' />
-        </div>
-        <input type='submit' value='Submit Form' />
-      </form>
+      {children}
 
       <div className={styles.subscribe}>
         <Image src={newsletter} alt='Newsletter image' />

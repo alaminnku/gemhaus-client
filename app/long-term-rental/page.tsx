@@ -1,7 +1,6 @@
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import Services from '@components/buyAndSell/Services';
-import PropertyEvaluationForm from '@components/buyAndSell/PropertyEvaluationForm';
+import PropertyEvaluationForm from '@components/longTermRental/PropertyEvaluationForm';
 
 export default function page() {
   return (
@@ -9,12 +8,12 @@ export default function page() {
       <GenericHero
         children={
           <h1>
-            Buy & Sell <br /> Property
+            Long Term Rental <br /> Management
           </h1>
         }
-        backgroundImage='/buy-and-sell/hero-bg.jpg'
+        backgroundImage='/home/long-term-rental.jpg'
       />
-      <Services />
+
       <PropertyEvaluation children={<PropertyEvaluationForm />} />
     </main>
   );

@@ -3,7 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/buy-and-sell/hero-bg.jpg');
+  background-image: var(--background_image);
 }
 
 .container h1 {

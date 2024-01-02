@@ -5,8 +5,8 @@ import { AiOutlineYoutube } from 'react-icons/ai';
 import { FiInstagram } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
-import appStoreBadge from '@public/app-store-badge.png';
-import googlePlayBadge from '@public/google-play-badge.png';
+import appStoreBadge from '@public/layout/app-store-badge.png';
+import googlePlayBadge from '@public/layout/google-play-badge.png';
 import { currentYear } from '@utils/index';
 
 export default function Footer() {
@@ -47,7 +47,7 @@ export default function Footer() {
         <div className={styles.navigation}>
           <p>Services</p>
           <Link href='/'>Short Terms Rentals</Link>
-          <Link href='/'>Long Term Rentals</Link>
+          <Link href='/long-term-rental'>Long Term Rentals</Link>
           <Link href='/buy-and-sell'>Buy & Sell</Link>
         </div>
 
