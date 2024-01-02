@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}
+
+.header {
+  text-align: center;
+  align-self: center;
+  max-width: 60%;
+  margin-bottom: 2rem;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+.services {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 3rem;
+}
+
+.service {
+  display: flex;
+  align-items: flex-start;
+}
+
+.service img {
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.journey_button {
+  align-self: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 3rem;
+  color: var(--white);
+  background-color: var(--black);
+}
