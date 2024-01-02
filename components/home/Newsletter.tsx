@@ -1,7 +1,7 @@
 'use client';
 
 import styles from '@components/home/Newsletter.module.css';
-import newsletter from '@public/home/newsletter.png';
+import newsletter from '@public/layout/newsletter.png';
 import Image from 'next/image';
 import { FormEvent } from 'react';
 

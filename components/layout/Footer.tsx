@@ -48,7 +48,7 @@ export default function Footer() {
           <p>Services</p>
           <Link href='/'>Short Terms Rentals</Link>
           <Link href='/'>Long Term Rentals</Link>
-          <Link href='/'>Buy & Sell</Link>
+          <Link href='/buy-and-sell'>Buy & Sell</Link>
         </div>
 
         <div className={styles.apps}>

@@ -10,11 +10,13 @@ export default function FAQ() {
 
   function toggleFAQsState(id: string) {
     setFAQsState((prevState) => {
-      const map: FAQsState = {} as FAQsState;
+      const updatedState: FAQsState = {} as FAQsState;
       for (const prop in prevState) {
-        map[prop] = { isOpen: prop === id ? !prevState[prop].isOpen : false };
+        updatedState[prop] = {
+          isOpen: prop === id ? !prevState[prop].isOpen : false,
+        };
       }
-      return map;
+      return updatedState;
     });
   }
 

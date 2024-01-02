@@ -45,5 +45,6 @@
   border-radius: 0.5rem;
   padding: 0.5rem 3rem;
   color: var(--white);
+  font-weight: 500;
   background-color: var(--black);
 }
