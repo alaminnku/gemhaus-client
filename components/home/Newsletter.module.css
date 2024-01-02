@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+  padding: 4rem;
+  background-color: var(--green);
+}
+
+.container img {
+  position: absolute;
+  width: 35%;
+  height: auto;
+  bottom: 0;
+}
+
+.container form {
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.container form h2 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.inputs {
+  position: relative;
+}
+
+.inputs input {
+  padding: 14px;
+}
+
+.inputs input[type='email'] {
+  width: 65%;
+  color: var(--white);
+  background-color: transparent;
+  border: 2px solid var(--white);
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+.inputs input[type='submit'] {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  translate: 0% -50%;
+  width: 35%;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.inputs input[type='email']::placeholder {
+  color: var(--white);
+}
