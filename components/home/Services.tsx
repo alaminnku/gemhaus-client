@@ -1,7 +1,9 @@
 import styles from '@components/home/Services.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import property from '@public/property.jpg';
+import vacationRental from '@public/home/vacation-rental.jpg';
+import longTermRental from '@public/home/long-term-rental.jpg';
+import salesOrBuy from '@public/home/sales-or-buy.jpg';
 import { RiVipDiamondLine } from 'react-icons/ri';
 
 export default function Services() {
@@ -14,7 +16,7 @@ export default function Services() {
 
       <div className={styles.services}>
         <div className={styles.service}>
-          <Image src={property} alt='Vacation rental service image' />
+          <Image src={vacationRental} alt='Vacation rental service image' />
 
           <div className={styles.content}>
             <h3>Vacation Rental</h3>
@@ -30,7 +32,7 @@ export default function Services() {
         </div>
 
         <div className={styles.service}>
-          <Image src={property} alt='Long term rental service image' />
+          <Image src={longTermRental} alt='Long term rental service image' />
 
           <div className={styles.content}>
             <h3>Long Term Rental</h3>
@@ -46,7 +48,7 @@ export default function Services() {
         </div>
 
         <div className={styles.service}>
-          <Image src={property} alt='Sales or buy rental service image' />
+          <Image src={salesOrBuy} alt='Sales or buy rental service image' />
 
           <div className={styles.content}>
             <h3>Sales Or Buy</h3>
