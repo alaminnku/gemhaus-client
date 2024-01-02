@@ -16,7 +16,9 @@ export default function PropertyEvaluationForm() {
         <input type='text' placeholder='Zip' />
 
         <div className={styles.input_options}>
-          <p>Is your property currently rented? *</p>
+          <p>
+            Is your property currently rented? <span>*</span>
+          </p>
           <div className={styles.options}>
             <div className={styles.option}>
               <input type='radio' name='rented' id='rentedYes' />
@@ -30,7 +32,9 @@ export default function PropertyEvaluationForm() {
         </div>
 
         <div className={styles.input_options}>
-          <p>Is your property in a HOA community? *</p>
+          <p>
+            Is your property in a HOA community? <span>*</span>
+          </p>
           <div className={styles.options}>
             <div className={styles.option}>
               <input type='radio' name='hoa' id='hoaYes' />
