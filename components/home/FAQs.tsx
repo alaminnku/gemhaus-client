@@ -2,27 +2,19 @@
 
 import styles from '@components/home/FAQs.module.css';
 import { useState } from 'react';
-import { faqs } from '@data/faqs';
-import { FAQStatus } from 'types';
-
-const initialFAQStatus: FAQStatus = {
-  question1: false,
-  question2: false,
-  question3: false,
-  question4: false,
-  question5: false,
-};
+import { faqs, initialFAQsState } from '@data/faqs';
+import { FAQsState } from 'types';
 
 export default function FAQ() {
-  const [faqStatus, setFAQStatus] = useState(initialFAQStatus);
+  const [faqsState, setFAQsState] = useState(initialFAQsState);
 
-  function toggleFAQStatus(answer: keyof FAQStatus) {
-    setFAQStatus((prevState) => {
-      const map: FAQStatus = {} as FAQStatus;
+  function toggleFAQsState(id: string) {
+    setFAQsState((prevState) => {
+      const map: FAQsState = {} as FAQsState;
       for (const prop in prevState) {
-        map[prop as keyof FAQStatus] = false;
+        map[prop] = { isOpen: false };
       }
-      map[answer] = !prevState[answer];
+      map[id].isOpen = !prevState[id].isOpen;
       return map;
     });
   }
@@ -39,14 +31,14 @@ export default function FAQ() {
         <div className={styles.question_and_answer} key={id}>
           <div className={styles.question}>
             <p>{question}</p>
-            <span onClick={() => toggleFAQStatus(id)}>
-              {faqStatus[id] ? '-' : '+'}
+            <span onClick={() => toggleFAQsState(id)}>
+              {faqsState[id].isOpen ? '-' : '+'}
             </span>
           </div>
 
           <p
             className={`${styles.answer} ${
-              faqStatus[id] && styles.show_answer
+              faqsState[id].isOpen && styles.show_answer
             }`}
           >
             {answer}

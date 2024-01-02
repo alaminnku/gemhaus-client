@@ -1,7 +1,7 @@
-import { FAQStatus } from 'types';
+import { FAQsState } from 'types';
 
 type FAQ = {
-  id: keyof FAQStatus;
+  id: string;
   question: string;
   answer: string;
 };
@@ -24,7 +24,7 @@ export const faqs: FAQ[] = [
     id: 'question3',
     question: 'How does GemHaus help you?',
     answer:
-      'Q4: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
+      'Q3: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
   },
   {
     id: 'question4',
@@ -39,3 +39,8 @@ export const faqs: FAQ[] = [
       'Q5: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
   },
 ];
+
+export const initialFAQsState = faqs.reduce((acc, curr) => {
+  acc[curr.id] = { isOpen: false };
+  return acc;
+}, {} as FAQsState);
