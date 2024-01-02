@@ -45,7 +45,7 @@ export default function DesktopNav() {
           Contact
         </Link>
 
-        <Link href='/' className={styles.sign_in}>
+        <Link href='/sign-in' className={styles.sign_in}>
           Sign in <FaRegCircleUser />
         </Link>
       </div>
