@@ -6,11 +6,13 @@ import Services from '@components/home/Services';
 import Blog from '@components/home/Blog';
 import FAQs from '@components/home/FAQs';
 import Newsletter from '@components/home/Newsletter';
+import Affiliations from '@components/home/Affiliations';
 
 export default function Home() {
   return (
     <main>
       <Hero />
+      <Affiliations />
       <HolidayDestinations />
       <Marketing />
       <LuxuryGems />
