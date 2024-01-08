@@ -27,9 +27,7 @@ export async function fetchInstance(path: string, options?: FetchOptions) {
 }
 
 // Convert date to text
-export const dateToText = (input: Date | string | number | undefined) => {
-  if (!input) return;
-
+export const dateToText = (input: Date | string | number) => {
   const date = new Date(input);
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',

@@ -1,18 +1,27 @@
 import styles from '@components/blog/ArticleCard.module.css';
+import { dateToText } from '@lib/utils';
 import Image from 'next/image';
-import property from '@public/property.jpg';
+import { Article } from 'types';
 
-export default function ArticleCard() {
+type Props = {
+  article: Article;
+};
+
+export default function ArticleCard({ article }: Props) {
   return (
     <div className={styles.container}>
-      <Image src={property} alt='Blog thumbnail' />
+      <Image
+        src={article.image}
+        width={400}
+        height={300}
+        alt={`${article.title} cover image`}
+      />
 
       <div className={styles.content}>
-        <p className={styles.published}>Posted on: November 8, 2023</p>
-        <p>
-          Making a Splash in the Rental Market: The Value of Pools in Your
-          Property
+        <p className={styles.published}>
+          Posted on: {dateToText(article.createdAt)}
         </p>
+        <p>{article.title}</p>
       </div>
     </div>
   );

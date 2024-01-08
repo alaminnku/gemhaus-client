@@ -1,12 +1,17 @@
 import styles from '@components/blog/ArticleCards.module.css';
 import ArticleCard from './ArticleCard';
+import { Article } from 'types';
 
-export default function ArticleCards() {
+type Props = {
+  articles: Article[];
+};
+
+export default function ArticleCards({ articles }: Props) {
   return (
     <div className={styles.container}>
-      <ArticleCard />
-      <ArticleCard />
-      <ArticleCard />
+      {articles.map((article) => (
+        <ArticleCard key={article._id} article={article} />
+      ))}
     </div>
   );
 }

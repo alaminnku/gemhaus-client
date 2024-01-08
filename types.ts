@@ -12,3 +12,10 @@ export type Property = {
   description: string;
   isFeatured: boolean;
 };
+
+export type Article = {
+  _id: string;
+  title: string;
+  image: string;
+  createdAt: string;
+};
