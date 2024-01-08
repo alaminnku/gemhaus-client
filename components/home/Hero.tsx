@@ -55,7 +55,7 @@ export default function Hero() {
 
   return (
     <section className={styles.container}>
-      <Header />
+      <Header isDarkBackground={true} />
 
       <div className={styles.content}>
         <h1>Find your gem.</h1>

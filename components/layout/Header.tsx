@@ -1,9 +1,14 @@
 import DesktopNav from './DesktopNav';
+import styles from './Header.module.css';
 
-export default function Header() {
+type Props = {
+  isDarkBackground?: boolean;
+};
+
+export default function Header({ isDarkBackground = false }: Props) {
   return (
-    <header>
-      <DesktopNav />
+    <header className={isDarkBackground ? '' : styles.container}>
+      <DesktopNav isDarkBackground={isDarkBackground} />
     </header>
   );
 }

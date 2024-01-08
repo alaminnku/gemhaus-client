@@ -1,4 +1,5 @@
 .container {
+  /* color: var(--black); */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,15 +12,16 @@
 
 .navigation a {
   margin: 0rem 1rem;
-  color: var(--white);
+  color: var(--black);
   font-size: 14px;
 }
 
 .navigation a.active {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--black);
 }
 
-.sign_in {
+.navigation .sign_in {
+  color: var(--white);
   display: flex;
   align-items: center;
   border-radius: 2rem;
@@ -30,4 +32,12 @@
 .navigation svg {
   margin-left: 0.5rem;
   font-size: 1.5rem;
+}
+
+.is_dark_background .navigation a {
+  color: var(--white);
+}
+
+.is_dark_background .navigation a.active {
+  border-bottom: 1px solid var(--white);
 }

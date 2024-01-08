@@ -17,7 +17,7 @@ export default function GenericHero({ children, backgroundImage }: Props) {
         } as CSSProperties
       }
     >
-      <Header />
+      <Header isDarkBackground={true} />
       {children}
     </section>
   );

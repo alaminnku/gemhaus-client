@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className={styles.container}>
       <div className={styles.items}>
         <div className={styles.logo_and_socials}>
-          <Logo />
+          <Logo isDarkBackground={true} />
 
           <div className={styles.socials}>
             <a href='/' target='_blank'>

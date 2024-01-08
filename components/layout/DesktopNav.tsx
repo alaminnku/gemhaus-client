@@ -6,12 +6,20 @@ import Link from 'next/link';
 import { FaRegCircleUser } from 'react-icons/fa6';
 import { usePathname } from 'next/navigation';
 
-export default function DesktopNav() {
+type Props = {
+  isDarkBackground: boolean;
+};
+
+export default function DesktopNav({ isDarkBackground }: Props) {
   const pathname = usePathname();
 
   return (
-    <nav className={styles.container}>
-      <Logo />
+    <nav
+      className={`${styles.container} ${
+        isDarkBackground && styles.is_dark_background
+      }`}
+    >
+      <Logo isDarkBackground={isDarkBackground} />
 
       <div className={styles.navigation}>
         <Link
