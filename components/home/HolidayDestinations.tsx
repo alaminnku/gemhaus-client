@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from '@components/home/HolidayDestinations.module.css';
-import Properties from './PropertyCards';
+import PropertyCards from './PropertyCards';
 import { fetchInstance } from '@lib/utils';
 import Error from '@components/layout/Error';
 
@@ -15,13 +15,17 @@ export default async function HolidayDestinations() {
         Trending Holiday <br /> Destinations
       </h2>
 
-      {error ? <Error error={error} /> : <Properties properties={properties} />}
+      {error ? (
+        <Error error={error} />
+      ) : (
+        <PropertyCards properties={properties} />
+      )}
 
       <p className={styles.explore_text}>
-        Continue Exploring Trending HOliday Destinations
+        Continue Exploring Trending Holiday Destinations
       </p>
 
-      <Link className={styles.explore_button} href='/'>
+      <Link className={styles.explore_button} href='/properties'>
         Explore More
       </Link>
     </section>
