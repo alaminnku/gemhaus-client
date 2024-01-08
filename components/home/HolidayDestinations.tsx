@@ -6,6 +6,7 @@ import Error from '@components/layout/Error';
 
 export default async function HolidayDestinations() {
   const { data, error } = await fetchInstance('/properties');
+  const properties = data.slice(0, 3);
 
   return (
     <section className={styles.container}>
@@ -14,7 +15,7 @@ export default async function HolidayDestinations() {
         Trending Holiday <br /> Destinations
       </h2>
 
-      {error ? <Error error={error} /> : <Properties properties={data} />}
+      {error ? <Error error={error} /> : <Properties properties={properties} />}
 
       <p className={styles.explore_text}>
         Continue Exploring Trending HOliday Destinations

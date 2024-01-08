@@ -3,7 +3,7 @@ import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import PropertyEvaluationForm from '@components/vacationRental/PropertyEvaluationForm';
 import Services from '@components/vacationRental/Services';
 
-export default function page() {
+export default function VacationRentalPage() {
   return (
     <main>
       <GenericHero

@@ -3,7 +3,7 @@ import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import Services from '@components/buyAndSell/Services';
 import PropertyEvaluationForm from '@components/buyAndSell/PropertyEvaluationForm';
 
-export default function page() {
+export default function BuyAndSellPage() {
   return (
     <main>
       <GenericHero

@@ -8,7 +8,7 @@ import FAQs from '@components/home/FAQs';
 import Newsletter from '@components/home/Newsletter';
 import Affiliations from '@components/home/Affiliations';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <Hero />
