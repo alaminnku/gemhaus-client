@@ -1,6 +1,7 @@
 import styles from '@components/blog/ArticleCard.module.css';
 import { dateToText } from '@lib/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Article } from 'types';
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 
 export default function ArticleCard({ article }: Props) {
   return (
-    <div className={styles.container}>
+    <Link href={`/blog/${article._id}`} className={styles.container}>
       <Image
         src={article.image}
         width={400}
@@ -23,6 +24,6 @@ export default function ArticleCard({ article }: Props) {
         </p>
         <p>{article.title}</p>
       </div>
-    </div>
+    </Link>
   );
 }
