@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import styles from '@components/home/HolidayDestinations.module.css';
-import Properties from './Properties';
+import Properties from './PropertyCards';
+import { fetchInstance } from '@lib/utils';
+import Error from '@components/layout/Error';
 
-export default function HolidayDestinations() {
+export default async function HolidayDestinations() {
+  const { data, error } = await fetchInstance('/properties');
+
   return (
     <section className={styles.container}>
       <span>Featured Gems</span>
@@ -10,7 +14,7 @@ export default function HolidayDestinations() {
         Trending Holiday <br /> Destinations
       </h2>
 
-      <Properties />
+      {error ? <Error error={error} /> : <Properties properties={data} />}
 
       <p className={styles.explore_text}>
         Continue Exploring Trending HOliday Destinations

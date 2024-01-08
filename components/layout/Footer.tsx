@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import appStoreBadge from '@public/layout/app-store-badge.png';
 import googlePlayBadge from '@public/layout/google-play-badge.png';
-import { currentYear } from '@utils/index';
+import { currentYear } from '@lib/utils';
 
 export default function Footer() {
   return (

@@ -1,10 +1,7 @@
 :root {
-  --gray: #666666;
   --black: #000000;
   --white: #ffffff;
   --green: #008858;
-  --almost_white: #fafafa;
-  --border_color: #eaeaea;
   --max_viewport_width: 1256px;
   --shadow_medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow_large: 0 30px 60px rgba(0, 0, 0, 0.12);
@@ -51,10 +48,6 @@ blockquote {
 
 a {
   text-decoration: none;
-}
-
-li {
-  list-style: none;
 }
 
 input,

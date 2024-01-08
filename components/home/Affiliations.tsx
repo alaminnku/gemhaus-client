@@ -20,8 +20,8 @@ export default function Affiliations() {
       <h2>We work with:</h2>
 
       <div className={styles.logos}>
-        {logos.map(({ src, alt }) => (
-          <Image src={src} alt={alt} />
+        {logos.map(({ src, alt }, index) => (
+          <Image key={index} src={src} alt={alt} />
         ))}
       </div>
     </section>
