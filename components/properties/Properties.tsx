@@ -1,15 +1,14 @@
 import PropertyCards from '@components/home/PropertyCards';
-import { Property } from 'types';
 import styles from './Properties.module.css';
+import { fetchInstance } from '@lib/utils';
+import Error from '@components/layout/Error';
 
-type Props = {
-  properties: Property[];
-};
+export default async function Properties() {
+  const { data, error } = await fetchInstance('/properties');
 
-export default function Properties({ properties }: Props) {
   return (
     <section className={styles.container}>
-      <PropertyCards properties={properties} />
+      {error ? <Error error={error} /> : <PropertyCards properties={data} />}
     </section>
   );
 }
