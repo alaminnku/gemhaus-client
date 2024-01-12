@@ -1,3 +1,4 @@
+import Header from '@components/layout/Header';
 import Property from '@components/properties/Property';
 
 type Props = {
@@ -9,6 +10,7 @@ export default function PropertyPage({ params }: Props) {
 
   return (
     <main>
+      <Header />
       <Property id={id} />
     </main>
   );
