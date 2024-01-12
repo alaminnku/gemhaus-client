@@ -1,10 +1,12 @@
 import PropertyCards from '@components/home/PropertyCards';
 import styles from './Properties.module.css';
-import { fetchInstance } from '@lib/utils';
+import { getData } from '@lib/utils';
 import Error from '@components/layout/Error';
 
 export default async function Properties() {
-  const { data, error } = await fetchInstance('/properties');
+  const { data, error } = await getData('/properties', {
+    cache: 'no-cache',
+  });
 
   return (
     <section className={styles.container}>

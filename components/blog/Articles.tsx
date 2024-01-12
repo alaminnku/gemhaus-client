@@ -1,10 +1,12 @@
 import ArticleCards from './ArticleCards';
-import { fetchInstance } from '@lib/utils';
+import { getData } from '@lib/utils';
 import Error from '@components/layout/Error';
 import styles from './Articles.module.css';
 
 export default async function Articles() {
-  const { data, error } = await fetchInstance('/articles');
+  const { data, error } = await getData('/articles', {
+    cache: 'no-cache',
+  });
 
   return (
     <section className={styles.container}>

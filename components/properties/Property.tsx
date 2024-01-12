@@ -1,5 +1,5 @@
 import Error from '@components/layout/Error';
-import { fetchInstance } from '@lib/utils';
+import { getData } from '@lib/utils';
 import styles from './Property.module.css';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default async function Property({ id }: Props) {
-  const { data, error } = await fetchInstance(`/properties/${id}`);
+  const { data, error } = await getData(`/properties/${id}`);
 
   return (
     <section className={styles.container}>

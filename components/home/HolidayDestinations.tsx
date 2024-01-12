@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import styles from '@components/home/HolidayDestinations.module.css';
 import PropertyCards from './PropertyCards';
-import { fetchInstance } from '@lib/utils';
+import { getData } from '@lib/utils';
 import Error from '@components/layout/Error';
 
 export default async function HolidayDestinations() {
-  const { data, error } = await fetchInstance('/properties');
+  const { data, error } = await getData('/properties', {
+    cache: 'no-cache',
+  });
   const properties = data.slice(0, 3);
 
   return (

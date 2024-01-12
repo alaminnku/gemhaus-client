@@ -1,14 +1,12 @@
-type FetchOptions = {
+type GetDataOptions = {
   cache?: 'no-cache';
-  body?: string | FormData;
   next?: { tags: [string] };
-  method?: 'POST' | 'PATCH' | 'DELETE';
 };
 
 export const currentYear = new Date().getFullYear();
 
-// Fetch instance
-export async function fetchInstance(path: string, options?: FetchOptions) {
+// Get data
+export async function getData(path: string, options?: GetDataOptions) {
   let data;
   let error;
 
@@ -23,6 +21,7 @@ export async function fetchInstance(path: string, options?: FetchOptions) {
   } else {
     data = result;
   }
+
   return { data, error };
 }
 

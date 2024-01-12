@@ -1,10 +1,12 @@
-import { fetchInstance } from '@lib/utils';
+import { getData } from '@lib/utils';
 import PropertyCards from './PropertyCards';
 import styles from '@components/home/LuxuryGems.module.css';
 import Error from '@components/layout/Error';
 
 export default async function LuxuryGems() {
-  const { data, error } = await fetchInstance('/properties');
+  const { data, error } = await getData('/properties', {
+    cache: 'no-cache',
+  });
   const properties = data.slice(0, 3);
 
   return (
