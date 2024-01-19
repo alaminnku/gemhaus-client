@@ -2,6 +2,7 @@ export type FAQsState = { [key: string]: { isOpen: boolean } };
 
 export type Property = {
   _id: string;
+  hostawayId: string;
   name: string;
   price: string;
   images: string[];
@@ -9,6 +10,11 @@ export type Property = {
   baths: string;
   guests: string;
   rating: string;
+  cleaningFee: number;
+  insuranceFee: number;
+  lodgingTax: number;
+  salesTax: number;
+  serviceFee: number;
   description: string;
   isFeatured: boolean;
 };

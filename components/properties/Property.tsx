@@ -35,7 +35,7 @@ export default async function Property({ id }: Props) {
           {calendarError ? (
             <Error error={calendarError} />
           ) : (
-            <Reservation calendar={calendar} />
+            <Reservation calendar={calendar} property={property} />
           )}
         </>
       )}
