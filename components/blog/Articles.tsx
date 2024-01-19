@@ -5,7 +5,9 @@ import styles from './Articles.module.css';
 
 export default async function Articles() {
   const { data, error } = await getGemhausData('/articles', {
-    cache: 'no-cache',
+    next: {
+      revalidate: 60 * 60 * 24,
+    },
   });
 
   return (
