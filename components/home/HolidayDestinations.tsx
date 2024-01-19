@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import styles from '@components/home/HolidayDestinations.module.css';
 import PropertyCards from './PropertyCards';
-import { getData } from '@lib/utils';
+import { getGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
 
 export default async function HolidayDestinations() {
-  const { data, error } = await getData('/properties', {
+  const { data, error } = await getGemhausData('/properties', {
     cache: 'no-cache',
   });
-  const properties = data.slice(0, 3);
 
   return (
     <section className={styles.container}>
@@ -20,7 +19,7 @@ export default async function HolidayDestinations() {
       {error ? (
         <Error error={error} />
       ) : (
-        <PropertyCards properties={properties} />
+        <PropertyCards properties={data.slice(0, 3)} />
       )}
 
       <p className={styles.explore_text}>

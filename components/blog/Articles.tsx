@@ -1,10 +1,10 @@
 import ArticleCards from './ArticleCards';
-import { getData } from '@lib/utils';
+import { getGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
 import styles from './Articles.module.css';
 
 export default async function Articles() {
-  const { data, error } = await getData('/articles', {
+  const { data, error } = await getGemhausData('/articles', {
     cache: 'no-cache',
   });
 

@@ -1,5 +1,5 @@
 import Error from '@components/layout/Error';
-import { getData } from '@lib/utils';
+import { getGemhausData, getHostawayData } from '@lib/utils';
 import styles from './Property.module.css';
 
 type Props = {
@@ -7,18 +7,28 @@ type Props = {
 };
 
 export default async function Property({ id }: Props) {
-  const { data, error } = await getData(`/properties/${id}`);
+  const { data: property, error: propertyError } = await getGemhausData(
+    `/properties/${id}`,
+    {
+      next: {
+        revalidate: 60 * 60 * 24,
+      },
+    }
+  );
+  const { data: calendar, error: calendarError } = await getHostawayData(
+    `/listings/${property.hostawayId}/calendar`
+  );
 
   return (
     <section className={styles.container}>
-      {error ? (
-        <Error error={error} />
+      {propertyError ? (
+        <Error error={propertyError} />
       ) : (
         <>
-          <h1>{data.name}</h1>
+          <h1>{property.name}</h1>
           <div
             className={styles.content}
-            dangerouslySetInnerHTML={{ __html: data.description }}
+            dangerouslySetInnerHTML={{ __html: property.description }}
           ></div>
         </>
       )}

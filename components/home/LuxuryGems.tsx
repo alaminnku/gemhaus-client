@@ -1,13 +1,14 @@
-import { getData } from '@lib/utils';
+import { getGemhausData } from '@lib/utils';
 import PropertyCards from './PropertyCards';
 import styles from '@components/home/LuxuryGems.module.css';
 import Error from '@components/layout/Error';
 
 export default async function LuxuryGems() {
-  const { data, error } = await getData('/properties', {
+  const { data, error } = await getGemhausData('/properties', {
     cache: 'no-cache',
   });
-  const properties = data.slice(0, 3);
+
+  console.log(data);
 
   return (
     <section className={styles.container}>
@@ -17,7 +18,7 @@ export default async function LuxuryGems() {
       {error ? (
         <Error error={error} />
       ) : (
-        <PropertyCards properties={properties} />
+        <PropertyCards properties={data.slice(0, 3)} />
       )}
     </section>
   );

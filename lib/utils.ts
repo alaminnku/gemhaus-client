@@ -1,12 +1,15 @@
-type GetDataOptions = {
+type GetGemhausDataOptions = {
   cache?: 'no-cache';
-  next?: { tags: [string] };
+  next?: { revalidate: number };
 };
 
 export const currentYear = new Date().getFullYear();
 
-// Get data
-export async function getData(path: string, options?: GetDataOptions) {
+// Get Gemhaus data
+export async function getGemhausData(
+  path: string,
+  options?: GetGemhausDataOptions
+) {
   let data;
   let error;
 
@@ -14,6 +17,31 @@ export async function getData(path: string, options?: GetDataOptions) {
     ...options,
     credentials: 'include',
   });
+  const result = await response.json();
+
+  if (!response.ok) {
+    error = { ...result, status: response.status };
+  } else {
+    data = result;
+  }
+
+  return { data, error };
+}
+
+// Get Hostaway data
+export async function getHostawayData(path: string) {
+  let data;
+  let error;
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTAWAY_API_URL}${path}`,
+    {
+      cache: 'no-cache',
+      headers: {
+        Authorization: `Bearer ${process.env.HOSTAWAY_ACCESS_TOKEN}`,
+      },
+    }
+  );
   const result = await response.json();
 
   if (!response.ok) {

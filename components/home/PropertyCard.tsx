@@ -41,7 +41,7 @@ export default function PropertyCard({ property }: Props) {
       </div>
 
       <div className={styles.content}>
-        <h3>The Donkey House</h3>
+        <h3>{name}</h3>
         <p>
           <span>From ${price}</span> Per Night
         </p>

@@ -1,10 +1,10 @@
 import ArticleCards from '@components/blog/ArticleCards';
 import styles from '@components/home/Blog.module.css';
 import Error from '@components/layout/Error';
-import { getData } from '@lib/utils';
+import { getGemhausData } from '@lib/utils';
 
 export default async function Blog() {
-  const { data, error } = await getData('/articles');
+  const { data, error } = await getGemhausData('/articles');
   const articles = data.slice(0, 3);
 
   return (
