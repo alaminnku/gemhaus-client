@@ -1,6 +1,7 @@
 import Error from '@components/layout/Error';
 import { getGemhausData, getHostawayData } from '@lib/utils';
 import styles from './Property.module.css';
+import Reservation from './Reservation';
 
 type Props = {
   id: string;
@@ -10,9 +11,10 @@ export default async function Property({ id }: Props) {
   const { data: property, error: propertyError } = await getGemhausData(
     `/properties/${id}`,
     {
-      next: {
-        revalidate: 60 * 60 * 24,
-      },
+      cache: 'no-cache',
+      // next: {
+      //   revalidate: 60 * 60 * 24,
+      // },
     }
   );
   const { data: calendar, error: calendarError } = await getHostawayData(
@@ -30,6 +32,8 @@ export default async function Property({ id }: Props) {
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: property.description }}
           ></div>
+
+          <Reservation calendar={calendar} />
         </>
       )}
     </section>

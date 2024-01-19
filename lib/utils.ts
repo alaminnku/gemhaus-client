@@ -63,3 +63,10 @@ export const dateToText = (input: Date | string | number) => {
   };
   return date.toLocaleString('en-US', options);
 };
+
+// Convert date to milliseconds
+export const dateToMS = (input: Date | string) => new Date(input).getTime();
+
+// Get ISO date
+export const getISODate = (input: Date | string) =>
+  new Date(input).toISOString().split('T')[0];
