@@ -5,10 +5,10 @@ import Error from '@components/layout/Error';
 
 export default async function LuxuryGems() {
   const { data, error } = await getGemhausData('/properties', {
-    cache: 'no-cache',
+    next: {
+      revalidate: 60 * 60 * 24,
+    },
   });
-
-  console.log(data);
 
   return (
     <section className={styles.container}>

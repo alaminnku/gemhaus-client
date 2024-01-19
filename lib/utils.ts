@@ -70,3 +70,10 @@ export const dateToMS = (input: Date | string) => new Date(input).getTime();
 // Get ISO date
 export const getISODate = (input: Date | string) =>
   new Date(input).toISOString().split('T')[0];
+
+// Format currency to USD
+export const createUSD = (number: number) =>
+  new Intl.NumberFormat('en-us', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(number);
