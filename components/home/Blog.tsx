@@ -5,7 +5,6 @@ import { getGemhausData } from '@lib/utils';
 
 export default async function Blog() {
   const { data, error } = await getGemhausData('/articles');
-  const articles = data.slice(0, 3);
 
   return (
     <section className={styles.container}>
@@ -14,7 +13,11 @@ export default async function Blog() {
         From Our <br /> Latest Articles
       </h2>
 
-      {error ? <Error error={error} /> : <ArticleCards articles={articles} />}
+      {error ? (
+        <Error error={error} />
+      ) : (
+        <ArticleCards articles={data.slice(0, 3)} />
+      )}
     </section>
   );
 }
