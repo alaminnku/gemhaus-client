@@ -11,10 +11,9 @@ export default async function Property({ id }: Props) {
   const { data: property, error: propertyError } = await getGemhausData(
     `/properties/${id}`,
     {
-      cache: 'no-cache',
-      // next: {
-      //   revalidate: 60 * 60 * 24,
-      // },
+      next: {
+        revalidate: 60 * 60 * 24,
+      },
     }
   );
   const { data: calendar, error: calendarError } = await getHostawayData(
@@ -33,7 +32,11 @@ export default async function Property({ id }: Props) {
             dangerouslySetInnerHTML={{ __html: property.description }}
           ></div>
 
-          <Reservation calendar={calendar} />
+          {calendarError ? (
+            <Error error={calendarError} />
+          ) : (
+            <Reservation calendar={calendar} />
+          )}
         </>
       )}
     </section>

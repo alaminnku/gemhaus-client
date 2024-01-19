@@ -34,14 +34,12 @@ export default function Reservation({ calendar }: Props) {
 
   return (
     <div className={styles.container}>
-      <p>Reservation</p>
-
       <DateRangePicker
         ranges={[]}
         value={dates}
         onChange={setDates}
-        shouldDisableDate={(date: Date) => !availableDatesMap[getISODate(date)]}
         placeholder='Check In -> Check Out'
+        shouldDisableDate={(date: Date) => !availableDatesMap[getISODate(date)]}
       />
 
       <SubmitButton
