@@ -1,3 +1,4 @@
+import PaymentForm from '@components/checkout/PaymentForm';
 import Summary from '@components/checkout/Summary';
 import Header from '@components/layout/Header';
 
@@ -20,7 +21,7 @@ export default function CheckoutPage({ params, searchParams }: Props) {
         guests={guests}
       />
       {/* Customer details form */}
-      {/* Payment details form */}
+      <PaymentForm />
     </main>
   );
 }
