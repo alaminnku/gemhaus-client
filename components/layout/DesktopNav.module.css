@@ -1,8 +1,11 @@
 .container {
-  /* color: var(--black); */
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.container a:hover {
+  text-decoration: none;
 }
 
 .navigation {
@@ -16,22 +19,12 @@
   font-size: 14px;
 }
 
+.navigation a:hover {
+  color: var(--black);
+}
+
 .navigation a.active {
   border-bottom: 1px solid var(--black);
-}
-
-.navigation .sign_in {
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  border-radius: 2rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--green);
-}
-
-.navigation svg {
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
 }
 
 .is_dark_background .navigation a {
@@ -40,4 +33,17 @@
 
 .is_dark_background .navigation a.active {
   border-bottom: 1px solid var(--white);
+}
+
+.sign_in {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--green);
+}
+
+.sign_in:hover {
+  color: var(--white);
 }
