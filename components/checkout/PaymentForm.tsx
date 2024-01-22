@@ -19,37 +19,24 @@ export default function PaymentForm() {
           authorization: clientToken,
         });
 
-        console.log(process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT);
-
-        const fields =
-          process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production'
-            ? {
-                number: {
-                  selector: '#card_number',
-                  placeholder: 'Card',
-                },
-                cvv: {
-                  selector: '#cvv',
-                  placeholder: 'CVV',
-                },
-                expirationDate: {
-                  selector: '#expiration_date',
-                  placeholder: 'Expiration',
-                },
-              }
-            : {
-                number: {
-                  selector: '#card_number',
-                  placeholder: 'Card',
-                },
-                expirationDate: {
-                  selector: '#expiration_date',
-                  placeholder: 'Expiration',
-                },
-              };
-
         hostedFields = await braintree.hostedFields.create({
-          fields,
+          fields: {
+            number: {
+              selector: '#card_number',
+              placeholder: 'Card',
+            },
+            ...(process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT ===
+              'Production' && {
+              cvv: {
+                selector: '#cvv',
+                placeholder: 'CVV',
+              },
+            }),
+            expirationDate: {
+              selector: '#expiration_date',
+              placeholder: 'Expiration',
+            },
+          },
           client: clientInstance,
         });
       } catch (err) {
@@ -65,7 +52,14 @@ export default function PaymentForm() {
     try {
       if (hostedFields) {
         const { nonce } = await hostedFields.tokenize();
-        console.log('Nonce:', nonce);
+        const response = await fetch('http://localhost:5100/reservation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: nonce,
+        });
+        console.log(await response.json());
       }
     } catch (err) {
       console.log(err);
