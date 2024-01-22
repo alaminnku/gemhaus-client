@@ -53,9 +53,12 @@ export default function PaymentForm() {
     try {
       if (hostedFields) {
         const { nonce } = await hostedFields.tokenize();
-        const response = await axios.post('http://localhost:5100/reservation', {
-          nonce,
-        });
+        const response = await axios.post(
+          `${process.env.NEXT_PUBLIC_API_URL}/reservation`,
+          {
+            nonce,
+          }
+        );
         console.log(response);
       }
     } catch (err) {
