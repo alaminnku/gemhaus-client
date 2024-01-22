@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
-import { getGemhausData } from '@lib/utils';
+import { getGemhausData, mutateData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
 import axios from 'axios';
 
@@ -53,12 +53,9 @@ export default function PaymentForm() {
     try {
       if (hostedFields) {
         const { nonce } = await hostedFields.tokenize();
-        const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/reservation`,
-          {
-            nonce,
-          }
-        );
+        const response = await mutateData.post('/reservation', {
+          nonce,
+        });
         console.log(response);
       }
     } catch (err) {
