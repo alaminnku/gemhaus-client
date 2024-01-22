@@ -22,7 +22,6 @@ export default async function FeaturedProperties() {
       )}
 
       <p className={styles.explore_text}>Continue Exploring Properties</p>
-
       <LinkButton
         href='/properties'
         text='Show more'

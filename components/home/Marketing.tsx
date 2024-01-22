@@ -1,26 +1,27 @@
 import styles from '@components/home/Marketing.module.css';
-import Link from 'next/link';
-import { RiVipDiamondLine } from 'react-icons/ri';
+import LinkButton from '@components/layout/LinkButton';
 
 export default function Marketing() {
   return (
     <section className={styles.container}>
-      <div className={styles.content}>
-        <h2>
-          Full Experience <br />
-          Home Ownership
-        </h2>
+      <h2>
+        Your world is <br />
+        worth sharing
+      </h2>
 
-        <p>
-          At GemHaus, we believe that real estate ownership should be more than
-          just a transaction-it should be an enriching journey. Our mission is
-          to empower you to fully embrace the rewards of property ownership.
-        </p>
+      <p>
+        Turn your extra space into your next <br /> opportunity.
+      </p>
 
-        <Link className={styles.services_button} href='/'>
-          Our Services <RiVipDiamondLine />
-        </Link>
-      </div>
+      <LinkButton
+        href='/'
+        text='Become a Host'
+        style={{
+          width: '12rem',
+          color: 'var(--black)',
+          backgroundColor: 'var(--white)',
+        }}
+      />
     </section>
   );
 }
