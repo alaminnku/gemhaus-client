@@ -12,7 +12,6 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <Affiliations />
       <FeaturedProperties />
       <Marketing />
       <LuxuryGems />
