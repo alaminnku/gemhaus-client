@@ -1,0 +1,25 @@
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .container img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .main_image,
+  .other_images {
+    width: 50%;
+  }
+
+  .other_images {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

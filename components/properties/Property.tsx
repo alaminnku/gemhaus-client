@@ -2,6 +2,8 @@ import Error from '@components/layout/Error';
 import { getGemhausData, getHostawayData } from '@lib/utils';
 import styles from './Property.module.css';
 import Reservation from './Reservation';
+import Image from 'next/image';
+import PropertyImages from './PropertyImages';
 
 type Props = {
   id: string;
@@ -20,23 +22,30 @@ export default async function Property({ id }: Props) {
     `/listings/${property.hostawayId}/calendar`
   );
 
+  console.log(property.images);
+
   return (
     <section className={styles.container}>
-      {propertyError ? (
-        <Error error={propertyError} />
+      {propertyError || calendarError ? (
+        <Error error={propertyError || calendar} />
       ) : (
         <>
-          <h1>{property.name}</h1>
-          <div
-            className={styles.content}
-            dangerouslySetInnerHTML={{ __html: property.description }}
-          ></div>
+          <PropertyImages images={property.images} />
 
-          {calendarError ? (
-            <Error error={calendarError} />
-          ) : (
+          <div className={styles.content_and_reservation}>
+            <div>
+              <h1>{property.name}</h1>
+              <div className={styles.offerings}>
+                <h2>What this place offers</h2>
+              </div>
+              <div
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: property.description }}
+              ></div>
+            </div>
+
             <Reservation calendar={calendar} property={property} />
-          )}
+          </div>
         </>
       )}
     </section>

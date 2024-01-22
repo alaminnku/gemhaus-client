@@ -1,26 +1,43 @@
 .container {
+  color: var(--black);
   padding: 2rem 4rem;
 }
 
-.container h1 {
-  font-size: 2.75rem;
-  margin-bottom: 1rem;
+.content_and_reservation {
+  display: flex;
+  gap: 2rem;
 }
 
-.content {
-  margin-bottom: 1rem;
-}
-
-.content h2,
-.content h3,
-.content h4 {
-  margin-bottom: 0.5rem;
-}
-
-.content strong {
+.content_and_reservation h1 {
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
-.content ul {
+.offerings {
+  padding: 1rem 0rem;
+  border-top: 1px solid var(--border_color);
+  border-bottom: 1px solid var(--border_color);
+}
+
+.offerings h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.description {
+  padding: 1rem 0rem;
+}
+
+.description h2,
+.description h3,
+.description h4 {
+  margin-bottom: 0.5rem;
+}
+
+.description strong {
+  font-weight: 600;
+}
+
+.description ul {
   margin-left: 2rem;
 }

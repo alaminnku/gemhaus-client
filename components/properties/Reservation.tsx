@@ -33,31 +33,39 @@ export default function Reservation({ property, calendar }: Props) {
 
   return (
     <div className={styles.container}>
+      <p className={styles.price}>
+        ${property.price} <span>Night</span>
+      </p>
+
       <DateRangePicker
+        block
+        size='lg'
         ranges={[]}
         value={dates}
+        showOneCalendar
         onChange={setDates}
-        placeholder='Check In -> Check Out'
+        placeholder='Check-in -> Check-out'
         shouldDisableDate={(date: Date) => !availableDatesMap[getISODate(date)]}
       />
 
       <div className={styles.guests}>
-        <label htmlFor='guests'>Number of guests</label>
+        <label htmlFor='guests'>Guests</label>
         <input
           id='guests'
           type='text'
           value={guests}
-          placeholder='Number of guests'
+          placeholder='1 guest'
           onChange={(e) => setGuests(e.target.value)}
         />
       </div>
 
       {dates && guests && (
         <LinkButton
-          text='Checkout'
+          text='Reserve'
           href={`/properties/${property._id}/checkout?startDate=${getISODate(
             dates[0]
           )}&endDate=${getISODate(dates[1])}&guests=${guests}`}
+          style={{ width: '100%', marginBottom: '10px' }}
         />
       )}
     </div>

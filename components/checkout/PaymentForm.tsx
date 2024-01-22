@@ -38,8 +38,8 @@ export default function PaymentForm() {
         });
 
         setHostedFields(hostedFields);
-      } catch (error) {
-        console.log('Error initializing Braintree');
+      } catch (err) {
+        console.log(err);
       }
     }
     initializeBraintree();
