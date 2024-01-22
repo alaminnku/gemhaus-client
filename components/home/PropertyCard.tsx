@@ -42,6 +42,7 @@ export default function PropertyCard({ property }: Props) {
 
       <div className={styles.content}>
         <h3>{name}</h3>
+        <p>Professional Host</p>
         <p>
           <span>From ${price}</span> Per Night
         </p>

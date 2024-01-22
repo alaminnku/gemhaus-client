@@ -1,19 +1,18 @@
-import Link from 'next/link';
-import styles from '@components/home/HolidayDestinations.module.css';
+import styles from '@components/home/FeaturedProperties.module.css';
 import PropertyCards from './PropertyCards';
 import { getGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
+import LinkButton from '@components/layout/LinkButton';
 
-export default async function HolidayDestinations() {
+export default async function FeaturedProperties() {
   const { data, error } = await getGemhausData('/properties', {
     next: { revalidate: 60 * 60 * 24 },
   });
 
   return (
     <section className={styles.container}>
-      <span>Featured Gems</span>
       <h2>
-        Trending Holiday <br /> Destinations
+        Featured <br /> Properties
       </h2>
 
       {error ? (
@@ -22,13 +21,13 @@ export default async function HolidayDestinations() {
         <PropertyCards properties={data.slice(0, 3)} />
       )}
 
-      <p className={styles.explore_text}>
-        Continue Exploring Trending Holiday Destinations
-      </p>
+      <p className={styles.explore_text}>Continue Exploring Properties</p>
 
-      <Link className={styles.explore_button} href='/properties'>
-        Explore More
-      </Link>
+      <LinkButton
+        href='/properties'
+        text='Show more'
+        style={{ alignSelf: 'center' }}
+      />
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import HolidayDestinations from '@components/home/HolidayDestinations';
+import FeaturedProperties from '@components/home/FeaturedProperties';
 import Hero from '@components/home/Hero';
 import Marketing from '@components/home/Marketing';
 import LuxuryGems from '@components/home/LuxuryGems';
@@ -13,7 +13,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <Affiliations />
-      <HolidayDestinations />
+      <FeaturedProperties />
       <Marketing />
       <LuxuryGems />
       <Services />
