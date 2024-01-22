@@ -1,14 +1,11 @@
 import { getISODate, createUSD } from '@lib/utils';
-import { Property } from 'types';
+import { Property, HostawayDate } from 'types';
+import styles from './Price.module.css';
 
 type Props = {
-  startDate: string;
-  endDate: string;
-  calendar: {
-    date: string;
-    price: number;
-    status: 'available';
-  }[];
+  startDate: Date;
+  endDate: Date;
+  calendar: HostawayDate[];
   property: Property;
 };
 
@@ -42,31 +39,29 @@ export default function Price({
   const salesTax = (price * property.salesTax) / 100;
 
   return (
-    <div>
+    <div className={styles.container}>
       <p>
-        <span>
-          {createUSD(unitPrice)} X {days} Nights:{' '}
-        </span>{' '}
-        <span>{createUSD(price)}</span>{' '}
+        {createUSD(unitPrice)} x {days} Staying Nights
+        <span>{createUSD(price)}</span>
       </p>
       <p>
-        <span>Cleaning Fee:</span> <span>{createUSD(cleaningFee)}</span>
+        Cleaning Fee <span>{createUSD(cleaningFee)}</span>
       </p>
       <p>
-        <span>Insurance Fee:</span> <span>{createUSD(insuranceFee)}</span>
+        Insurance Fee <span>{createUSD(insuranceFee)}</span>
       </p>
       <p>
-        <span>Service Fee:</span> <span>{createUSD(serviceFee)}</span>
+        Service Fee <span>{createUSD(serviceFee)}</span>
       </p>
       <p>
-        <span>Lodging tax:</span> <span>{createUSD(lodgingTax)}</span>
+        Lodging tax <span>{createUSD(lodgingTax)}</span>
       </p>
       <p>
-        <span>Sales tax:</span> <span>{createUSD(salesTax)}</span>
+        Sales tax <span>{createUSD(salesTax)}</span>
       </p>
 
-      <p>
-        <span>Total:</span>{' '}
+      <p className={styles.total}>
+        Total
         <span>
           {createUSD(
             price +

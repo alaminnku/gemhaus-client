@@ -25,3 +25,9 @@ export type Article = {
   image: string;
   createdAt: string;
 };
+
+export type HostawayDate = {
+  date: string;
+  price: number;
+  status: 'available';
+};

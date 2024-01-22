@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.container p {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container p span {
+  font-weight: 500;
+}
+
+.total {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border_color);
+}

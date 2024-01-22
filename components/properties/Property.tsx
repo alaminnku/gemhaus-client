@@ -33,7 +33,7 @@ export default async function Property({ id }: Props) {
           <PropertyImages images={property.images} />
 
           <div className={styles.content_and_reservation}>
-            <div>
+            <div className={styles.content}>
               <h1>{property.name}</h1>
               <div className={styles.offerings}>
                 <h2>What this place offers</h2>
