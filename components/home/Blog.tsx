@@ -8,9 +8,8 @@ export default async function Blog() {
 
   return (
     <section className={styles.container}>
-      <span>GemHaus Blog</span>
       <h2>
-        From Our <br /> Latest Articles
+        Latest From <br /> Our Blog
       </h2>
 
       {error ? (

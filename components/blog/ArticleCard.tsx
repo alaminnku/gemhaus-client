@@ -19,10 +19,8 @@ export default function ArticleCard({ article }: Props) {
       />
 
       <div className={styles.content}>
-        <p className={styles.published}>
-          Posted on: {dateToText(article.createdAt)}
-        </p>
-        <p>{article.title}</p>
+        <p className={styles.title}>{article.title}</p>
+        <p className={styles.published}>{dateToText(article.createdAt)}</p>
       </div>
     </Link>
   );
