@@ -1,9 +1,10 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
 import { getGemhausData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
+import axios from 'axios';
 
 export default function PaymentForm() {
   let hostedFields: HostedFields | null = null;
@@ -52,14 +53,10 @@ export default function PaymentForm() {
     try {
       if (hostedFields) {
         const { nonce } = await hostedFields.tokenize();
-        const response = await fetch('http://localhost:5100/reservation', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: nonce,
+        const response = await axios.post('http://localhost:5100/reservation', {
+          nonce,
         });
-        console.log(await response.json());
+        console.log(response);
       }
     } catch (err) {
       console.log(err);
