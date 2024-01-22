@@ -4,6 +4,11 @@ import Header from '@components/layout/Header';
 import styles from '@components/home/Hero.module.css';
 import { FormEvent, useState } from 'react';
 import { MdOutlineSearch } from 'react-icons/md';
+import vacationIcon from '@public/home/vacation-icon.png';
+import buyIcon from '@public/home/buy-icon.png';
+import rentIcon from '@public/home/rent-icon.png';
+import heroImage from '@public/home/hero-image.jpg';
+import Image from 'next/image';
 
 type PropertyState = 'selected' | 'first' | 'second';
 
@@ -21,7 +26,6 @@ const initialPropertyTypes: PropertyTypes = {
 
 export default function Hero() {
   const [propertyTypes, setPropertyTypes] = useState(initialPropertyTypes);
-  const [searchValue, setSearchValue] = useState('');
   const { vacation, rent, buy } = propertyTypes;
 
   function changePropertyType(type: keyof PropertyTypes) {
@@ -39,8 +43,8 @@ export default function Hero() {
     });
   }
 
-  function handleSearch(e: FormEvent) {
-    e.preventDefault();
+  function handleSearch(formData: FormData) {
+    const search = formData.get('search');
 
     let selectedPropertyType: keyof PropertyTypes = 'vacation';
     for (let prop in propertyTypes) {
@@ -50,48 +54,61 @@ export default function Hero() {
       }
     }
 
-    console.log(selectedPropertyType, searchValue);
+    console.log(selectedPropertyType, search);
   }
 
   return (
     <section className={styles.container}>
-      <Header isDarkBackground={true} />
+      <Header />
 
-      <div className={styles.content}>
-        <h1>Find your gem.</h1>
-
-        <form className={styles.search} onSubmit={handleSearch}>
+      <div className={styles.search_and_cta}>
+        <form className={styles.search} action={handleSearch}>
           <div className={styles.search_types}>
-            <p
+            <div
               className={`${styles[vacation]} ${styles.vacation}`}
               onClick={() => changePropertyType('vacation')}
             >
-              Vacation
-            </p>
-            <p
+              <Image src={vacationIcon} alt='Vacation icon' />
+              <p>Vacation</p>
+            </div>
+
+            <div
               className={`${styles[rent]} ${styles.rent}`}
               onClick={() => changePropertyType('rent')}
             >
-              Rent
-            </p>
-            <p
+              <Image src={rentIcon} alt='Rent icon' />
+              <p>Rent</p>
+            </div>
+
+            <div
               className={`${styles[buy]} ${styles.buy}`}
               onClick={() => changePropertyType('buy')}
             >
-              Buy
-            </p>
+              <Image src={buyIcon} alt='Vacation icon' />
+              <p>Buy</p>
+            </div>
           </div>
 
           <div className={styles.search_field}>
-            <input
-              type='text'
-              onChange={(e) => setSearchValue(e.target.value)}
-              placeholder='Enter address, neighborhood, city or ZIP code'
-            />
-
             <MdOutlineSearch onClick={handleSearch} />
+            <input type='text' name='search' placeholder='Find your gem' />
+            <input type='submit' className={styles.search_button} />
           </div>
         </form>
+
+        <div className={styles.cta}>
+          <p className={styles.title}>What's next?</p>
+          <p className={styles.description}>
+            Find your place, or hire industry leading management experts
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.hero_image}>
+        <div className={styles.hero_image_container}>
+          <Image src={heroImage} alt='Happy family' />
+          <p>The real estate help you need with the hospitality touch</p>
+        </div>
       </div>
     </section>
   );
