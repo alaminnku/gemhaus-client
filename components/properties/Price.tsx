@@ -34,9 +34,9 @@ export default function Price({
   // Fees
   const cleaningFee = property.cleaningFee;
   const insuranceFee = property.insuranceFee;
-  const serviceFee = (price * property.serviceFee) / 100;
-  const lodgingTax = (price * property.lodgingTax) / 100;
-  const salesTax = (price * property.salesTax) / 100;
+  const serviceFee = (price * property.serviceFeePercent) / 100;
+  const lodgingTax = (price * property.lodgingTaxPercent) / 100;
+  const salesTax = (price * property.salesTaxPercent) / 100;
 
   return (
     <div className={styles.container}>

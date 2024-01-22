@@ -12,9 +12,9 @@ export type Property = {
   rating: string;
   cleaningFee: number;
   insuranceFee: number;
-  lodgingTax: number;
-  salesTax: number;
-  serviceFee: number;
+  lodgingTaxPercent: number;
+  salesTaxPercent: number;
+  serviceFeePercent: number;
   description: string;
   isFeatured: boolean;
 };

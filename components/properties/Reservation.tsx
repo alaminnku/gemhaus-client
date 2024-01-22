@@ -8,7 +8,7 @@ import { DateRange } from 'rsuite/esm/DateRangePicker';
 import { dateToMS, getISODate } from '@lib/utils';
 import { HostawayDate, Property } from 'types';
 import LinkButton from '@components/layout/LinkButton';
-import Price from '@components/checkout/Price';
+import Price from '@components/properties/Price';
 
 type Props = {
   property: Property;
