@@ -6,7 +6,7 @@ import { getGemhausData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
 
 export default function PaymentForm() {
-  const [hostedFields, setHostedFields] = useState<HostedFields | null>(null);
+  let hostedFields: HostedFields | null = null;
 
   useEffect(() => {
     async function initializeBraintree() {
@@ -19,25 +19,39 @@ export default function PaymentForm() {
           authorization: clientToken,
         });
 
-        const hostedFields = await braintree.hostedFields.create({
-          client: clientInstance,
-          fields: {
-            number: {
-              selector: '#card_number',
-              placeholder: 'Card',
-            },
-            cvv: {
-              selector: '#cvv',
-              placeholder: 'CVV',
-            },
-            expirationDate: {
-              selector: '#expiration_date',
-              placeholder: 'Expiration',
-            },
-          },
-        });
+        console.log(process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT);
 
-        setHostedFields(hostedFields);
+        const fields =
+          process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production'
+            ? {
+                number: {
+                  selector: '#card_number',
+                  placeholder: 'Card',
+                },
+                cvv: {
+                  selector: '#cvv',
+                  placeholder: 'CVV',
+                },
+                expirationDate: {
+                  selector: '#expiration_date',
+                  placeholder: 'Expiration',
+                },
+              }
+            : {
+                number: {
+                  selector: '#card_number',
+                  placeholder: 'Card',
+                },
+                expirationDate: {
+                  selector: '#expiration_date',
+                  placeholder: 'Expiration',
+                },
+              };
+
+        hostedFields = await braintree.hostedFields.create({
+          fields,
+          client: clientInstance,
+        });
       } catch (err) {
         console.log(err);
       }
@@ -67,10 +81,12 @@ export default function PaymentForm() {
           <div id='card_number'></div>
         </div>
 
-        <div className={styles.item}>
-          <label htmlFor='cvv'>CVV</label>
-          <div id='cvv'></div>
-        </div>
+        {process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production' && (
+          <div className={styles.item}>
+            <label htmlFor='cvv'>CVV</label>
+            <div id='cvv'></div>
+          </div>
+        )}
 
         <div className={styles.item}>
           <label htmlFor='expiration_date'>Expiration Date</label>
