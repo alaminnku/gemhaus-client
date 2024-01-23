@@ -4,9 +4,12 @@ import { FormEvent, useEffect } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
 import { getGemhausData, mutateData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
-import axios from 'axios';
 
-export default function PaymentForm() {
+type Props = {
+  propertyId: string;
+};
+
+export default function PaymentForm({ propertyId }: Props) {
   let hostedFields: HostedFields | null = null;
 
   useEffect(() => {
@@ -53,9 +56,14 @@ export default function PaymentForm() {
     try {
       if (hostedFields) {
         const { nonce } = await hostedFields.tokenize();
-        const response = await mutateData.post('/reservation', {
+        const data = {
           nonce,
-        });
+          propertyId,
+        };
+        const response = await mutateData.post(
+          `/properties/${propertyId}/reserve`,
+          data
+        );
         console.log(response);
       }
     } catch (err) {

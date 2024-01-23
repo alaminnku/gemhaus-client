@@ -2,7 +2,7 @@
 
 import Header from '@components/layout/Header';
 import styles from '@components/home/Hero.module.css';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 import { MdOutlineSearch } from 'react-icons/md';
 import vacationIcon from '@public/home/vacation-icon.png';
 import buyIcon from '@public/home/buy-icon.png';
