@@ -1,6 +1,5 @@
 import styles from '@components/buyAndSell/Services.module.css';
 import ExploreProperties from '@components/layout/ExploreProperties';
-import Link from 'next/link';
 
 export default function Services() {
   return (

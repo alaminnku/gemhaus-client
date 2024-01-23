@@ -1,6 +1,5 @@
 import ExploreProperties from '@components/layout/ExploreProperties';
 import styles from '@components/longTermRental/Services.module.css';
-import Link from 'next/link';
 
 export default function Services() {
   return (

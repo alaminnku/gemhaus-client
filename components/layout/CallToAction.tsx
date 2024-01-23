@@ -6,6 +6,7 @@ type Props = {
   description?: string;
   buttonText?: string;
   buttonLink?: string;
+  buttonWidth?: string;
 };
 
 export default function CallToAction({
@@ -13,6 +14,7 @@ export default function CallToAction({
   description = 'Turn your extra space into your next <br /> opportunity',
   buttonText = 'Become a Host',
   buttonLink = '/',
+  buttonWidth = '12rem',
 }: Props) {
   return (
     <section className={styles.container}>
@@ -22,7 +24,7 @@ export default function CallToAction({
         href={buttonLink}
         text={buttonText}
         style={{
-          width: '12rem',
+          width: buttonWidth,
           color: 'var(--black)',
           backgroundColor: 'var(--white)',
         }}
