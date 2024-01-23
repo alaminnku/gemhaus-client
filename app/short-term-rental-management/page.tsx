@@ -1,7 +1,7 @@
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import PropertyEvaluationForm from '@components/vacationRental/PropertyEvaluationForm';
-import Services from '@components/vacationRental/Services';
+import PropertyEvaluationForm from '@components/shortTermRentalManagement/PropertyEvaluationForm';
+import Services from '@components/shortTermRentalManagement/Services';
 
 export default function VacationRentalPage() {
   return (
@@ -13,7 +13,7 @@ export default function VacationRentalPage() {
             Management
           </h1>
         }
-        backgroundImage='/home/vacation-rental.jpg'
+        backgroundImage='/short-term-rental-management/hero-bg.png'
       />
       <Services />
       <PropertyEvaluation children={<PropertyEvaluationForm />} />

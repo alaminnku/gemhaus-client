@@ -1,31 +1,22 @@
-import styles from '@components/longTermRental/Services.module.css';
+import ExploreProperties from '@components/layout/ExploreProperties';
+import LinkButton from '@components/layout/LinkButton';
+import styles from '@components/shortTermRentalManagement/Services.module.css';
 import Link from 'next/link';
 
 export default function Services() {
   return (
     <section className={styles.container}>
-      <div className={styles.header}>
-        <p>Unlock the Power of Flexibility.</p>
-        <p>
-          We specialize in turning your property into a lucrative short-term
-          rental, optimizing your returns without the long-term commitment. We
-          specialize in delivering seamless and profitable short-term rental
-          experiences for property owners and guests alike. As superhosts, our
-          comprehensive suite of services includes:
-        </p>
-      </div>
-
       <div className={styles.services}>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/listing-and-marketing.png'
-            alt='Listing and marketing icon'
+            src='/short-term-rental-management/listing-optimization-icon.png'
+            alt='Listing optimization icon'
           />
           <div className={styles.content}>
-            <p className={styles.title}>Listing and Marketing</p>
-            <p className={styles.description}>
+            <p className={styles.title}>Listing optimization</p>
+            <p>
               We create eye-catching, high-converting listings on popular
-              platforms like Airbnb and VRBO to attract more guests.
+              platforms like Airbnib and VRBO to attract more guests.
             </p>
             <p></p>
           </div>
@@ -33,12 +24,12 @@ export default function Services() {
 
         <div className={styles.service}>
           <img
-            src='/vacation-rental/property-management.png'
+            src='/short-term-rental-management/property-management-icon.png'
             alt='Property management icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Property Management</p>
-            <p className={styles.description}>
+            <p>
               Our dedicated team takes care of maintenance, and restocking to
               keep your property in top condition.
             </p>
@@ -47,13 +38,13 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/dynamic-pricing.png'
+            src='/short-term-rental-management/dynamic-pricing-icon.png'
             alt='Dynamic pricing icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Dynamic Pricing</p>
-            <p className={styles.description}>
-              wOur data-driven pricing strategies maximize your rental income by
+            <p>
+              Our data-driven pricing strategies maximize your rental income by
               adjusting rates based on demand, seasons, and local events.
             </p>
             <p></p>
@@ -61,12 +52,12 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/marketing-and-promotion.png'
+            src='/short-term-rental-management/marketing-and-promotion-icon.png'
             alt='Marketing and promotion icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Marketing and Promotion</p>
-            <p className={styles.description}>
+            <p>
               We employ effective marketing strategies to increase your
               property's visibility and bookings.
             </p>
@@ -74,27 +65,27 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/guest-services.png'
+            src='/short-term-rental-management/guest-service-icon.png'
             alt='Guest services icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Guest Services</p>
-            <p className={styles.description}>
-              We handle all guest inquiries, booking, and communication,
+            <p>
+              We handle all guest inquiries, bookings, and communication,
               ensuring a smooth and stress-free experience for both hosts and
-              guests. 24/7 guest support services.
+              guests. 24/7 guest support Services.
             </p>
           </div>
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/revenue-reporting.png'
+            src='/short-term-rental-management/revenue-reporting-icon.png'
             alt='Revenue reporting icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Revenue Reporting</p>
-            <p className={styles.description}>
-              Transparent financial reporting allows your to track your
+            <p>
+              Transparent financial reporting allows you to track your
               property's performance and revenue.
             </p>
             <p></p>
@@ -102,25 +93,23 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/house-keeping.png'
+            src='/short-term-rental-management/house-keeping-icon.png'
             alt='House keeping icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>House Keeping</p>
-            <p className={styles.description}>
-              WE handle all cleans, and make sure quality assurance.
-            </p>
+            <p>We handle all cleans, and make sure quality assurance.</p>
             <p></p>
           </div>
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/owner-portal.png'
+            src='/short-term-rental-management/owner-portal-icon.png'
             alt='Owner portal icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Owner Portal</p>
-            <p className={styles.description}>
+            <p>
               All clients have their own dedicated portal to view calendar,
               bookings, and financial statements.
             </p>
@@ -128,12 +117,12 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/property-analysis.png'
+            src='/short-term-rental-management/property-analysis-icon.png'
             alt='Property analysis icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Property Analysis</p>
-            <p className={styles.description}>
+            <p>
               Expert property analysis provides you with valuable insights to
               make informed decisions.
             </p>
@@ -142,12 +131,12 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/vacation-rental/competitive-pricing.png'
+            src='/short-term-rental-management/competitive-pricing-icon.png'
             alt='Competitive pricing icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Competitive Pricing</p>
-            <p className={styles.description}>
+            <p>
               We offer top-quality real estate services at competitive rates.
               Experience value and excellence without compromise.
             </p>
@@ -156,9 +145,7 @@ export default function Services() {
         </div>
       </div>
 
-      <Link className={styles.rental_estimate_button} href='/'>
-        Get Your Rental Estimate
-      </Link>
+      <ExploreProperties />
     </section>
   );
 }

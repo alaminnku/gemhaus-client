@@ -15,7 +15,11 @@ export default function Header({ isDarkBackground = false }: Props) {
   return (
     <header className={styles.container}>
       <DesktopNav isDarkBackground={isDarkBackground} />
-      <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileNav
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        isDarkBackground={isDarkBackground}
+      />
     </header>
   );
 }

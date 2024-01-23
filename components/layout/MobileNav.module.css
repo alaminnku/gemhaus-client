@@ -18,7 +18,7 @@
 .line {
   width: 1.25rem;
   height: 2px;
-  background: var(--black);
+  background-color: var(--black);
   border-radius: 0.5rem;
   transition: all 0.25s ease-in-out;
 }
@@ -29,7 +29,7 @@
   position: absolute;
   width: 1.25rem;
   height: 2px;
-  background: var(--black);
+  background-color: var(--black);
   border-radius: 0.5rem;
   transition: all 0.25s ease-in-out;
 }
@@ -52,6 +52,15 @@
 
 .hamburger.open .line::after {
   transform: rotate(45deg);
+}
+
+.is_dark_background {
+  background-color: var(--white);
+}
+
+.is_dark_background::before,
+.is_dark_background::after {
+  background-color: var(--white);
 }
 
 @media (min-width: 768px) {
