@@ -32,14 +32,6 @@
     border-bottom: 1px solid var(--black);
   }
 
-  .is_dark_background .navigation a {
-    color: var(--white);
-  }
-
-  .is_dark_background .navigation a.active {
-    border-bottom: 1px solid var(--white);
-  }
-
   .sign_in {
     color: var(--white);
     display: flex;
@@ -51,5 +43,18 @@
 
   .sign_in:hover {
     color: var(--white);
+  }
+
+  .is_dark_background .navigation a {
+    color: var(--white);
+  }
+
+  .is_dark_background .navigation a.active {
+    border-bottom: 1px solid var(--white);
+  }
+
+  .is_dark_background .sign_in {
+    color: var(--black);
+    background-color: var(--white);
   }
 }
