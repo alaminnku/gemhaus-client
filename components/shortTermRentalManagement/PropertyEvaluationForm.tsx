@@ -1,4 +1,5 @@
-import styles from '@components/longTermRental/PropertyEvaluationForm.module.css';
+import SubmitButton from '@components/layout/SubmitButton';
+import styles from '@components/shortTermRentalManagement/PropertyEvaluationForm.module.css';
 
 export default function PropertyEvaluationForm() {
   return (
@@ -6,14 +7,61 @@ export default function PropertyEvaluationForm() {
       <h3>It Takes Just Few Minutes!</h3>
 
       <div className={styles.evaluation_inputs}>
-        <input type='text' placeholder='First Name' />
-        <input type='text' placeholder='Last Name' />
-        <input type='email' placeholder='Email' />
-        <input type='text' placeholder='Phone Number' />
-        <input type='text' placeholder='Address' />
-        <input type='text' placeholder='City' />
-        <input type='text' placeholder='State' />
-        <input type='text' placeholder='Zip' />
+        <div className={styles.evaluation_input}>
+          <label htmlFor='name'>Full name</label>
+          <input
+            id='name'
+            name='name'
+            type='text'
+            placeholder='Enter your name'
+          />
+        </div>
+        <div className={styles.evaluation_input}>
+          <label htmlFor='phone'>Phone number</label>
+          <input
+            id='phone'
+            name='phone'
+            type='text'
+            placeholder='Enter your phone number'
+          />
+        </div>
+        <div className={styles.evaluation_input}>
+          <label htmlFor='email'>Email</label>
+          <input
+            id='email'
+            name='email'
+            type='email'
+            placeholder='Enter your email'
+          />
+        </div>
+        <div className={styles.evaluation_input}>
+          <label htmlFor='city'>City</label>
+          <input
+            id='city'
+            name='city'
+            type='text'
+            placeholder='Enter your city'
+          />
+        </div>
+        <div className={styles.evaluation_input}>
+          <label htmlFor='address'>Address</label>
+          <input
+            id='address'
+            name='address'
+            type='text'
+            placeholder='Enter your address'
+          />
+        </div>
+
+        <div className={styles.evaluation_input}>
+          <label htmlFor='state'>State</label>
+          <input
+            id='state'
+            name='state'
+            type='text'
+            placeholder='Enter your state'
+          />
+        </div>
 
         <div className={styles.input_options}>
           <p>
@@ -65,7 +113,7 @@ export default function PropertyEvaluationForm() {
         </div>
       </div>
 
-      <input type='submit' value='Submit Form' />
+      <SubmitButton text='Submit Form' style={{ alignSelf: 'center' }} />
     </form>
   );
 }

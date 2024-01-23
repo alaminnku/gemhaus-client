@@ -1,9 +1,10 @@
+import BecomeHost from '@components/layout/BecomeHost';
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import PropertyEvaluationForm from '@components/shortTermRentalManagement/PropertyEvaluationForm';
 import Services from '@components/shortTermRentalManagement/Services';
 
-export default function VacationRentalPage() {
+export default function ShortTermRentalManagementPage() {
   return (
     <main>
       <GenericHero
@@ -16,6 +17,7 @@ export default function VacationRentalPage() {
         backgroundImage='/short-term-rental-management/hero-bg.png'
       />
       <Services />
+      <BecomeHost />
       <PropertyEvaluation children={<PropertyEvaluationForm />} />
     </main>
   );

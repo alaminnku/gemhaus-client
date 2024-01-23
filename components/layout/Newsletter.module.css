@@ -49,11 +49,11 @@
   }
 
   .input_and_button {
-    width: 50%;
     flex-direction: row;
   }
 
   .input_and_button input {
+    flex: 1;
     margin-bottom: 0rem;
     margin-right: 0.5rem;
   }

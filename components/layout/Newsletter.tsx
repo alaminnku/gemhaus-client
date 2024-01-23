@@ -1,6 +1,6 @@
-import styles from '@components/home/Newsletter.module.css';
+import styles from '@components/layout/Newsletter.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
-import newsletter from '@public/home/newsletter.png';
+import newsletter from '@public/layout/newsletter.png';
 import Image from 'next/image';
 
 export default function Newsletter() {

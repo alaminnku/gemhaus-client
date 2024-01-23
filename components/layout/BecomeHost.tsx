@@ -1,7 +1,7 @@
-import styles from '@components/home/WorthSharing.module.css';
+import styles from '@components/layout/BecomeHost.module.css';
 import LinkButton from '@components/layout/LinkButton';
 
-export default function WorthSharing() {
+export default function BecomeHost() {
   return (
     <section className={styles.container}>
       <h2>

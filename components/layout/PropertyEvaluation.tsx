@@ -2,6 +2,7 @@ import styles from '@components/layout/PropertyEvaluation.module.css';
 import Image from 'next/image';
 import newsletter from '@public/layout/newsletter.png';
 import { ReactNode } from 'react';
+import Newsletter from '@components/layout/Newsletter';
 
 type Props = {
   children: ReactNode;
@@ -13,30 +14,17 @@ export default function PropertyEvaluation({ children }: Props) {
       <div className={styles.header}>
         <h2>Property Evaluation</h2>
         <p>
-          Fill out the information below to reveal the tru earning capacity of
-          your property. Our expert property evaluation services are here to
-          help you determine if a short-term rental is the right fit for your
-          home. We analyze market dynamics, property features, and guest
-          preference to provide you with an accurate revenue projection. With
-          data-driven insights, we can ensure a precise proforma tailored to
-          your property.
+          Unlock the Power of Flexibility. We specialize in turning your
+          property into a lucrative short-term rental, optimizing your returns
+          without the long-term commitment. We specialize in delivering seamless
+          and profitable short-term rental experiences for property owners and
+          guests alike
         </p>
       </div>
 
-      {children}
+      <div className={styles.evaluation_form}>{children}</div>
 
-      <div className={styles.subscribe}>
-        <Image src={newsletter} alt='Newsletter image' />
-
-        <form>
-          <h3>Subscribe To Our Newsletter</h3>
-
-          <div className={styles.subscribe_inputs}>
-            <input type='email' placeholder='Enter your email' />
-            <input type='submit' value='Subscribe Us' />
-          </div>
-        </form>
-      </div>
+      <Newsletter />
     </section>
   );
 }
