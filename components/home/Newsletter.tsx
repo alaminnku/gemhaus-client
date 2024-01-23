@@ -18,7 +18,7 @@ export default function Newsletter() {
           </h2>
           <div className={styles.input_and_button}>
             <input type='email' name='email' placeholder='Write your email' />
-            <SubmitButton text='Submit' style={{ padding: '.5rem 2rem' }} />
+            <SubmitButton text='Submit' style={{ padding: '.75rem 2rem' }} />
           </div>
         </form>
       </div>
