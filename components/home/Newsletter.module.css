@@ -16,19 +16,20 @@
 }
 
 .content h2 {
-  font-size: 63px;
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .input_and_button {
   display: flex;
+  flex-direction: column;
 }
 
 .input_and_button input {
   padding: 10px 14px;
   border-radius: 0.5rem;
-  margin-right: 0.5rem;
+  margin-bottom: 1rem;
   border: 1px solid var(--black);
 }
 
@@ -43,7 +44,16 @@
     object-fit: contain;
   }
 
+  .content h2 {
+    font-size: 63px;
+  }
+
   .input_and_button {
     width: 50%;
+  }
+
+  .input_and_button input {
+    margin-bottom: 0rem;
+    margin-right: 0.5rem;
   }
 }
