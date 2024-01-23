@@ -1,4 +1,4 @@
-.link_button {
+.container {
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
@@ -10,11 +10,20 @@
   background-color: var(--black);
 }
 
+.container:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
 .icon svg {
   margin-left: 1rem;
 }
 
-.link_button:hover {
-  color: var(--white);
-  text-decoration: none;
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.reversed.icon svg {
+  margin-left: 0rem;
+  margin-right: 1rem;
 }

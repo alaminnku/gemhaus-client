@@ -3,14 +3,14 @@ export type ServicesState = { [key: string]: { isOpen: boolean } };
 
 export type Property = {
   _id: string;
-  hostawayId: string;
+  hostawayId: number;
   name: string;
-  price: string;
+  price: number;
   images: string[];
-  beds: string;
-  baths: string;
-  guests: string;
-  rating: string;
+  beds: number;
+  baths: number;
+  guests: number;
+  rating: number;
   cleaningFee: number;
   insuranceFee: number;
   lodgingTaxPercent: number;

@@ -1,6 +1,6 @@
 .container {
   color: var(--black);
-  padding: 2rem 4rem;
+  padding: var(--section_padding);
 }
 
 .content_and_reservation {

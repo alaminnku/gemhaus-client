@@ -1,0 +1,41 @@
+.container {
+  background-color: #e2e9e8;
+}
+
+.content,
+.time_image {
+  padding: var(--section_padding);
+}
+
+.content {
+  background-color: #d1faca;
+}
+
+.title {
+  font-size: 63px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  padding: var(--section_padding);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .content,
+  .container img {
+    width: 50%;
+  }
+}

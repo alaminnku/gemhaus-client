@@ -4,7 +4,6 @@ import { initialServicesState, services } from '@data/services';
 import styles from './Services.module.css';
 import { useState } from 'react';
 import { ServicesState } from 'types';
-import Link from 'next/link';
 import { TbDiamond } from 'react-icons/tb';
 import LinkButton from '@components/layout/LinkButton';
 

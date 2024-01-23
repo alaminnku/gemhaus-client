@@ -7,14 +7,23 @@ type Props = {
   text: string;
   icon?: ReactNode;
   style?: CSSProperties;
+  isReversed?: boolean;
 };
 
-export default function LinkButton({ href, text, icon, style }: Props) {
+export default function LinkButton({
+  href,
+  text,
+  icon,
+  style,
+  isReversed,
+}: Props) {
   return (
     <Link
       href={href}
       style={style}
-      className={`${styles.link_button} ${icon && styles.icon}`}
+      className={`${styles.container} ${icon && styles.icon} ${
+        isReversed && styles.reversed
+      }`}
     >
       {text} {icon}
     </Link>

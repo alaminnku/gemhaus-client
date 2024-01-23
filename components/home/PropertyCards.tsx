@@ -1,5 +1,5 @@
 import styles from '@components/home/PropertyCards.module.css';
-import PropertyCard from './PropertyCard';
+import PropertyCard from '../properties/PropertyCard';
 import { Property } from 'types';
 
 type Props = {
