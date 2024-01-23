@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-size: 63px;
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -37,5 +37,9 @@
   .content,
   .container img {
     width: 50%;
+  }
+
+  .title {
+    font-size: 63px;
   }
 }
