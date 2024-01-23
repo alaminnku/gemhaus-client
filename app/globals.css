@@ -3,7 +3,7 @@
   --white: #ffffff;
   --green: #008858;
   --border_color: #e6e6e6;
-  --section_padding: 2rem 4rem;
+  --section_padding: 2rem;
   --max_viewport_width: 1256px;
   --shadow_medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow_large: 0 30px 60px rgba(0, 0, 0, 0.12);
@@ -70,4 +70,10 @@ textarea {
 
 .rs-picker-block {
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section_padding: 2rem 4rem;
+  }
 }
