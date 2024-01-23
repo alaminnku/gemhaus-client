@@ -1,10 +1,10 @@
 import BecomeHost from '@components/layout/BecomeHost';
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import EvaluationInputOptions from '@components/shortTermRentalManagement/EvaluationInputOptions';
-import Services from '@components/shortTermRentalManagement/Services';
+import EvaluationInputOptions from '@components/shortTermRental/EvaluationInputOptions';
+import Services from '@components/shortTermRental/Services';
 
-export default function ShortTermRentalManagementPage() {
+export default function ShortTermRentalPage() {
   return (
     <main>
       <GenericHero
@@ -14,7 +14,7 @@ export default function ShortTermRentalManagementPage() {
             Management
           </h1>
         }
-        backgroundImage='/short-term-rental-management/hero-bg.png'
+        backgroundImage='/short-term-rental/hero-bg.png'
       />
       <Services />
       <BecomeHost />

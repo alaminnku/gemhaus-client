@@ -1,7 +1,5 @@
 import ExploreProperties from '@components/layout/ExploreProperties';
-import LinkButton from '@components/layout/LinkButton';
-import styles from '@components/shortTermRentalManagement/Services.module.css';
-import Link from 'next/link';
+import styles from './Services.module.css';
 
 export default function Services() {
   return (
@@ -9,7 +7,7 @@ export default function Services() {
       <div className={styles.services}>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/listing-optimization-icon.png'
+            src='/short-term-rental/listing-optimization-icon.png'
             alt='Listing optimization icon'
           />
           <div className={styles.content}>
@@ -24,7 +22,7 @@ export default function Services() {
 
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/property-management-icon.png'
+            src='/short-term-rental/property-management-icon.png'
             alt='Property management icon'
           />
           <div className={styles.content}>
@@ -38,7 +36,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/dynamic-pricing-icon.png'
+            src='/short-term-rental/dynamic-pricing-icon.png'
             alt='Dynamic pricing icon'
           />
           <div className={styles.content}>
@@ -52,7 +50,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/marketing-and-promotion-icon.png'
+            src='/short-term-rental/marketing-and-promotion-icon.png'
             alt='Marketing and promotion icon'
           />
           <div className={styles.content}>
@@ -65,7 +63,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/guest-service-icon.png'
+            src='/short-term-rental/guest-service-icon.png'
             alt='Guest services icon'
           />
           <div className={styles.content}>
@@ -79,7 +77,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/revenue-reporting-icon.png'
+            src='/short-term-rental/revenue-reporting-icon.png'
             alt='Revenue reporting icon'
           />
           <div className={styles.content}>
@@ -93,7 +91,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/house-keeping-icon.png'
+            src='/short-term-rental/house-keeping-icon.png'
             alt='House keeping icon'
           />
           <div className={styles.content}>
@@ -104,7 +102,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/owner-portal-icon.png'
+            src='/short-term-rental/owner-portal-icon.png'
             alt='Owner portal icon'
           />
           <div className={styles.content}>
@@ -117,7 +115,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/property-analysis-icon.png'
+            src='/short-term-rental/property-analysis-icon.png'
             alt='Property analysis icon'
           />
           <div className={styles.content}>
@@ -131,7 +129,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/short-term-rental-management/competitive-pricing-icon.png'
+            src='/short-term-rental/competitive-pricing-icon.png'
             alt='Competitive pricing icon'
           />
           <div className={styles.content}>

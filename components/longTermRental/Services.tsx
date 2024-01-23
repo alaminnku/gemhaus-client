@@ -1,22 +1,14 @@
+import ExploreProperties from '@components/layout/ExploreProperties';
 import styles from '@components/longTermRental/Services.module.css';
 import Link from 'next/link';
 
 export default function Services() {
   return (
     <section className={styles.container}>
-      <div className={styles.header}>
-        <p>Steady Income, Worry-Free Ownership.</p>
-        <p>
-          We specialize in turning your property into a lucrative short-term
-          rental, optimizing your returns without the long-term commitment. Our
-          comprehensive suite of services includes:
-        </p>
-      </div>
-
       <div className={styles.services}>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/listing-and-marketing.png'
+            src='/long-term-rental/listing-and-marketing-icon.png'
             alt='Listing and marketing icon'
           />
           <div className={styles.content}>
@@ -30,7 +22,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/financial-reporting.png'
+            src='/long-term-rental/financial-reporting-icon.png'
             alt='Financial reporting icon'
           />
           <div className={styles.content}>
@@ -44,13 +36,13 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/tenant-screening.png'
+            src='/long-term-rental/tenant-screening-icon.png'
             alt='Tenant screening icon'
           />
           <div className={styles.content}>
             <p className={styles.title}>Tenant Screening</p>
             <p className={styles.description}>
-              we carefully screen prospective tenants to ensure they meet your
+              We carefully screen prospective tenants to ensure they meet your
               criteria for a reliable, long-term rental experience.
             </p>
             <p></p>
@@ -58,7 +50,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/legal-compliance.png'
+            src='/long-term-rental/legal-compliance-icon.png'
             alt='Legal compliance icon'
           />
           <div className={styles.content}>
@@ -72,7 +64,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/lease-management.png'
+            src='/long-term-rental/lease-management-icon.png'
             alt='Lease management icon'
           />
           <div className={styles.content}>
@@ -86,7 +78,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/owner-and-tenant-portal.png'
+            src='/long-term-rental/owner-and-tenant-portal-icon.png'
             alt="Owner & tenant's portal icon"
           />
           <div className={styles.content}>
@@ -99,7 +91,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/maintenance-and-repairs.png'
+            src='/long-term-rental/maintenance-and-repairs-icon.png'
             alt='Maintenance and repairs icon'
           />
           <div className={styles.content}>
@@ -113,7 +105,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/monthly-sales-tax-filing.png'
+            src='/long-term-rental/monthly-sales-tax-filing-icon.png'
             alt='Monthly sales tax filing icon'
           />
           <div className={styles.content}>
@@ -127,7 +119,7 @@ export default function Services() {
         </div>
         <div className={styles.service}>
           <img
-            src='/long-term-rental/property-inspections.png'
+            src='/long-term-rental/property-inspections-icon.png'
             alt='Property inspections icon'
           />
           <div className={styles.content}>
@@ -139,11 +131,23 @@ export default function Services() {
             <p></p>
           </div>
         </div>
+        <div className={styles.service}>
+          <img
+            src='/long-term-rental/competitive-pricing-icon.png'
+            alt='Property inspections icon'
+          />
+          <div className={styles.content}>
+            <p className={styles.title}>Competitive Pricing</p>
+            <p className={styles.description}>
+              We offer top-quality real estate services at competitive rates.
+              Experience value and excellence without compromise.
+            </p>
+            <p></p>
+          </div>
+        </div>
       </div>
 
-      <Link className={styles.rental_estimate_button} href='/'>
-        Get Your Rental Estimate
-      </Link>
+      <ExploreProperties />
     </section>
   );
 }

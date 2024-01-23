@@ -1,24 +1,11 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  padding: 4rem;
-}
-
-.header {
-  text-align: center;
-  align-self: center;
-  max-width: 65%;
-  margin-bottom: 2rem;
-}
-
-.header p {
-  font-size: 18px;
+  padding: var(--section_padding);
 }
 
 .services {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  grid-template-columns: 1fr;
   margin-bottom: 3rem;
 }
 
@@ -28,23 +15,19 @@
 }
 
 .service img {
-  width: 2.5rem;
+  width: 24px;
   margin-right: 1rem;
 }
 
 .title {
   font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.description {
-  font-size: 14px;
-}
-
-.rental_estimate_button {
-  align-self: center;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1.5rem;
-  color: var(--white);
-  font-weight: 500;
-  background-color: var(--black);
+@media (min-width: 1024px) {
+  .services {
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

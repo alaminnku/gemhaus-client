@@ -28,10 +28,8 @@ export default function DesktopNav({ isDarkBackground }: Props) {
           Blog
         </Link>
         <Link
-          href='/short-term-rental-management'
-          className={
-            pathname === '/short-term-rental-management' ? styles.active : ''
-          }
+          href='/short-term-rental'
+          className={pathname === '/short-term-rental' ? styles.active : ''}
         >
           Management
         </Link>

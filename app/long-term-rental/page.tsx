@@ -12,7 +12,7 @@ export default function LongTermRentalPage() {
             Long Term Rental <br /> Management
           </h1>
         }
-        backgroundImage='/home/long-term-rental.jpg'
+        backgroundImage='/long-term-rental/hero-bg.png'
       />
       <Services />
       <PropertyEvaluation children={<PropertyEvaluationForm />} />
