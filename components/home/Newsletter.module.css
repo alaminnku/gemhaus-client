@@ -1,56 +1,49 @@
 .container {
-  position: relative;
-  padding: 4rem;
-  background-color: var(--green);
+  background-color: #f7f7f7;
+  padding: var(--section_padding);
 }
 
-.container img {
-  position: absolute;
-  width: 45%;
-  height: auto;
-  bottom: 0;
-}
-
-.container form {
-  width: 100%;
-  max-width: 500px;
-  margin-left: auto;
-}
-
-.container form h2 {
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: var(--white);
-}
-
-.inputs {
-  position: relative;
-}
-
-.inputs input {
-  padding: 14px;
-}
-
-.inputs input[type='email'] {
-  width: 65%;
-  color: var(--white);
-  background-color: transparent;
-  border: 2px solid var(--white);
-  border-radius: 0.5rem 0rem 0rem 0.5rem;
-}
-
-.inputs input[type='submit'] {
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  translate: 0% -50%;
-  width: 35%;
+.content {
+  padding: 2rem;
   border-radius: 0.5rem;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
+  background-color: var(--white);
 }
 
-.inputs input[type='email']::placeholder {
-  color: var(--white);
+.content img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.content h2 {
+  font-size: 63px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.input_and_button {
+  display: flex;
+}
+
+.input_and_button input {
+  padding: 10px 14px;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--black);
+}
+
+@media (min-width: 1024px) {
+  .content {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .content img {
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .input_and_button {
+    width: 50%;
+  }
 }

@@ -1,23 +1,19 @@
+'use client';
+
+import { useFormStatus } from 'react-dom';
 import styles from './SubmitButton.module.css';
+import { CSSProperties } from 'react';
 
 type Props = {
-  buttonText: string;
-  isLoading: boolean;
-  handleSubmit: () => Promise<void>;
+  text: string;
+  style?: CSSProperties;
 };
 
-export default function SubmitButton({
-  buttonText,
-  isLoading,
-  handleSubmit,
-}: Props) {
+export default function SubmitButton({ text, style }: Props) {
+  const { pending } = useFormStatus();
   return (
-    <button
-      className={styles.submit_button}
-      onClick={handleSubmit}
-      disabled={isLoading}
-    >
-      {isLoading ? 'Adding...' : buttonText}
+    <button type='submit' className={styles.submit_button} style={style}>
+      {pending ? 'Adding...' : text}
     </button>
   );
 }

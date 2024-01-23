@@ -1,25 +1,27 @@
-'use client';
-
 import styles from '@components/home/Newsletter.module.css';
-import newsletter from '@public/layout/newsletter.png';
+import SubmitButton from '@components/layout/SubmitButton';
+import newsletter from '@public/home/newsletter.png';
 import Image from 'next/image';
-import { FormEvent } from 'react';
 
 export default function Newsletter() {
-  async function handleSubscribe(e: FormEvent) {
-    e.preventDefault();
+  async function handleSubscribe(formData: FormData) {
+    'use server';
   }
   return (
     <section className={styles.container}>
-      <Image src={newsletter} alt='Property image' />
+      <div className={styles.content}>
+        <Image src={newsletter} alt='Property images' />
 
-      <form onSubmit={handleSubscribe}>
-        <h2>Subscribe To Our Newsletter</h2>
-        <div className={styles.inputs}>
-          <input type='email' placeholder='Enter your email' />
-          <input type='submit' value='Subscribe Us' />
-        </div>
-      </form>
+        <form action={handleSubscribe}>
+          <h2>
+            Subscribe To Our <br /> Newsletter
+          </h2>
+          <div className={styles.input_and_button}>
+            <input type='email' name='email' placeholder='Write your email' />
+            <SubmitButton text='Submit' style={{ padding: '.5rem 2rem' }} />
+          </div>
+        </form>
+      </div>
     </section>
   );
 }
