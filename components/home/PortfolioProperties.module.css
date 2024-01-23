@@ -4,7 +4,7 @@
 }
 
 .container h2 {
-  font-size: 63px;
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -58,6 +58,10 @@
 }
 
 @media (min-width: 1024px) {
+  .container h2 {
+    font-size: 63px;
+  }
+
   .content_and_properties {
     gap: 3rem;
     align-items: center;
