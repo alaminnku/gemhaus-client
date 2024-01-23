@@ -1,7 +1,7 @@
 import BecomeHost from '@components/layout/BecomeHost';
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import PropertyEvaluationForm from '@components/shortTermRentalManagement/PropertyEvaluationForm';
+import EvaluationInputOptions from '@components/shortTermRentalManagement/EvaluationInputOptions';
 import Services from '@components/shortTermRentalManagement/Services';
 
 export default function ShortTermRentalManagementPage() {
@@ -18,7 +18,7 @@ export default function ShortTermRentalManagementPage() {
       />
       <Services />
       <BecomeHost />
-      <PropertyEvaluation children={<PropertyEvaluationForm />} />
+      <PropertyEvaluation children={<EvaluationInputOptions />} />
     </main>
   );
 }

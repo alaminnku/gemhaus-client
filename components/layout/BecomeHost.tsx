@@ -1,19 +1,26 @@
 import styles from '@components/layout/BecomeHost.module.css';
 import LinkButton from '@components/layout/LinkButton';
 
-export default function BecomeHost() {
+type Props = {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+};
+
+export default function BecomeHost({
+  title = 'Your world is <br /> worth sharing',
+  description = 'Turn your extra space into your next <br /> opportunity',
+  buttonText = 'Become a Host',
+  buttonLink = '/',
+}: Props) {
   return (
     <section className={styles.container}>
-      <h2>
-        Your world is <br />
-        worth sharing
-      </h2>
-      <p>
-        Turn your extra space into your next <br /> opportunity.
-      </p>
+      <h2 dangerouslySetInnerHTML={{ __html: title }}></h2>
+      <p dangerouslySetInnerHTML={{ __html: description }}></p>
       <LinkButton
-        href='/'
-        text='Become a Host'
+        href={buttonLink}
+        text={buttonText}
         style={{
           width: '12rem',
           color: 'var(--black)',
