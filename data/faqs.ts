@@ -1,12 +1,6 @@
 import { FAQsState } from 'types';
 
-type FAQ = {
-  id: string;
-  question: string;
-  answer: string;
-};
-
-export const faqs: FAQ[] = [
+export const faqs = [
   {
     id: 'question1',
     question: 'Who is GemHaus?',

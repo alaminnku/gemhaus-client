@@ -1,0 +1,46 @@
+.container {
+  padding: 2rem 4rem;
+}
+
+.container h2 {
+  font-size: 63px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.content p {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.service {
+  width: 100%;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid var(--border_color);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.description {
+  display: none;
+  font-weight: 24px;
+}
+
+.show_description {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .content_and_services {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .content,
+  .services {
+    width: 50%;
+  }
+}
