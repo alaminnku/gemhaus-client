@@ -3,10 +3,6 @@
   margin-bottom: 12px;
 }
 
-.input_options p span {
-  color: red;
-}
-
 .options {
   display: flex;
   align-items: center;

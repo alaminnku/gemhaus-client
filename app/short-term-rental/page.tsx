@@ -1,4 +1,4 @@
-import BecomeHost from '@components/layout/BecomeHost';
+import CallToAction from '@components/layout/CallToAction';
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import EvaluationInputOptions from '@components/shortTermRental/EvaluationInputOptions';
@@ -17,7 +17,7 @@ export default function ShortTermRentalPage() {
         backgroundImage='/short-term-rental/hero-bg.png'
       />
       <Services />
-      <BecomeHost />
+      <CallToAction />
       <PropertyEvaluation children={<EvaluationInputOptions />} />
     </main>
   );

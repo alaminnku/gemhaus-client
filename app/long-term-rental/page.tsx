@@ -1,6 +1,7 @@
+import CallToAction from '@components/layout/CallToAction';
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import PropertyEvaluationForm from '@components/longTermRental/PropertyEvaluationForm';
+import EvaluationInputOptions from '@components/shortTermRental/EvaluationInputOptions';
 import Services from '@components/longTermRental/Services';
 
 export default function LongTermRentalPage() {
@@ -15,7 +16,15 @@ export default function LongTermRentalPage() {
         backgroundImage='/long-term-rental/hero-bg.png'
       />
       <Services />
-      <PropertyEvaluation children={<PropertyEvaluationForm />} />
+      <CallToAction
+        title='Transform your property into a stable, long-term investment'
+        description='Unlock the potential of your property'
+        buttonText='Become a Landlord'
+        buttonLink='/'
+      />
+      <PropertyEvaluation
+        children={<EvaluationInputOptions showStrLtr={false} />}
+      />
     </main>
   );
 }

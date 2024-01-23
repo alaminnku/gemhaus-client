@@ -1,4 +1,4 @@
-import styles from '@components/layout/BecomeHost.module.css';
+import styles from '@components/layout/CallToAction.module.css';
 import LinkButton from '@components/layout/LinkButton';
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
   buttonLink?: string;
 };
 
-export default function BecomeHost({
+export default function CallToAction({
   title = 'Your world is <br /> worth sharing',
   description = 'Turn your extra space into your next <br /> opportunity',
   buttonText = 'Become a Host',

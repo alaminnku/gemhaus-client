@@ -1,6 +1,6 @@
 import FeaturedProperties from '@components/home/FeaturedProperties';
 import Hero from '@components/home/Hero';
-import BecomeHost from '@components/layout/BecomeHost';
+import CallToAction from '@components/layout/CallToAction';
 import Blog from '@components/home/Blog';
 import FAQs from '@components/home/FAQs';
 import Newsletter from '@components/layout/Newsletter';
@@ -13,7 +13,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <FeaturedProperties />
-      <BecomeHost />
+      <CallToAction />
       <Services />
       <PortfolioProperties />
       <Blog />

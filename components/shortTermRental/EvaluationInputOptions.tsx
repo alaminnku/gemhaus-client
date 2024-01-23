@@ -1,6 +1,10 @@
 import styles from './EvaluationInputOptions.module.css';
 
-export default function EvaluationInputOptions() {
+type Props = {
+  showStrLtr?: boolean;
+};
+
+export default function EvaluationInputOptions({ showStrLtr = true }: Props) {
   return (
     <>
       <div className={styles.input_options}>
@@ -13,21 +17,21 @@ export default function EvaluationInputOptions() {
 
       <div className={styles.input_options}>
         <p>Is your property currently rented?</p>
-
         <div className={styles.option}>
           <input type='checkbox' name='isRented' id='isRented' />
           <label htmlFor='isRented'>Yes</label>
         </div>
       </div>
 
-      <div className={styles.input_options}>
-        <p>If so, does that HOA community allows STR/LTR?</p>
-
-        <div className={styles.option}>
-          <input type='checkbox' name='allowsStrLtr' id='allowsStrLtr' />
-          <label htmlFor='allowsStrLtr'>Yes</label>
+      {showStrLtr && (
+        <div className={styles.input_options}>
+          <p>If so, does that HOA community allows STR/LTR?</p>
+          <div className={styles.option}>
+            <input type='checkbox' name='allowsStrLtr' id='allowsStrLtr' />
+            <label htmlFor='allowsStrLtr'>Yes</label>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
