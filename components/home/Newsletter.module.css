@@ -50,6 +50,7 @@
 
   .input_and_button {
     width: 50%;
+    flex-direction: row;
   }
 
   .input_and_button input {
