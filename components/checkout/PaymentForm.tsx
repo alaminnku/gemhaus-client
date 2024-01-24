@@ -127,6 +127,51 @@ export default function PaymentForm({ booking }: Props) {
               placeholder='Enter your Phone number'
             />
           </div>
+          <div className={styles.item}>
+            <label htmlFor='address'>Address</label>
+            <input
+              type='text'
+              id='address'
+              name='address'
+              placeholder='Enter your address'
+            />
+          </div>
+          <div className={styles.item}>
+            <label htmlFor='city'>City</label>
+            <input
+              type='text'
+              id='city'
+              name='city'
+              placeholder='Enter your city'
+            />
+          </div>
+          <div className={styles.item}>
+            <label htmlFor='state'>State</label>
+            <input
+              type='text'
+              id='state'
+              name='state'
+              placeholder='Enter your state'
+            />
+          </div>
+          <div className={styles.item}>
+            <label htmlFor='country'>Country</label>
+            <input
+              type='text'
+              id='country'
+              name='country'
+              placeholder='Enter your country'
+            />
+          </div>
+          <div className={styles.item}>
+            <label htmlFor='zipCode'>Zip code</label>
+            <input
+              type='text'
+              id='zipCode'
+              name='zipCode'
+              placeholder='Enter your zip code'
+            />
+          </div>
         </div>
 
         <div className={styles.payment}>
