@@ -1,7 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import logoWhite from '@public/layout/logo-white.png';
-import logoBlack from '@public/layout/logo-black.png';
 import styles from '@components/layout/Logo.module.css';
 
 type Props = {
@@ -11,11 +8,12 @@ type Props = {
 export default function Logo({ isDarkBackground = false }: Props) {
   return (
     <Link href='/' className={styles.container}>
-      <Image
-        src={isDarkBackground ? logoWhite : logoBlack}
+      <img
+        src={
+          isDarkBackground ? '/layout/logo-white.png' : '/layout/logo-black.png'
+        }
         alt='GemHaus logo'
       />
-
       <p className={isDarkBackground ? styles.light : ''}>GemHaus</p>
     </Link>
   );
