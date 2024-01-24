@@ -4,6 +4,8 @@ import { FormEvent, useEffect } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
 import { getGemhausData, mutateData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
+import SubmitButton from '@components/layout/SubmitButton';
+import axios from 'axios';
 
 type Props = {
   propertyId: string;
@@ -50,19 +52,14 @@ export default function PaymentForm({ propertyId }: Props) {
     initializeBraintree();
   }, []);
 
-  const handleReservation = async (e: FormEvent) => {
-    e.preventDefault();
-
+  const handleReservation = async (formData: FormData) => {
     try {
       if (hostedFields) {
         const { nonce } = await hostedFields.tokenize();
-        const data = {
-          nonce,
-          propertyId,
-        };
+        formData.append('nonce', nonce);
         const response = await mutateData.post(
           `/properties/${propertyId}/reserve`,
-          data
+          formData
         );
         console.log(response);
       }
@@ -73,25 +70,66 @@ export default function PaymentForm({ propertyId }: Props) {
 
   return (
     <section>
-      <h2>Payment form</h2>
-      <form onSubmit={handleReservation}>
-        <div className={styles.item}>
-          <label htmlFor='card_number'>Card Number</label>
-          <div id='card_number'></div>
-        </div>
-
-        {process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production' && (
+      <form action={handleReservation}>
+        <div className={styles.guest}>
           <div className={styles.item}>
-            <label htmlFor='cvv'>CVV</label>
-            <div id='cvv'></div>
+            <label htmlFor='firstName'>First name</label>
+            <input
+              type='text'
+              id='firstName'
+              name='firstName'
+              placeholder='Enter your first name'
+            />
           </div>
-        )}
-
-        <div className={styles.item}>
-          <label htmlFor='expiration_date'>Expiration Date</label>
-          <div id='expiration_date'></div>
+          <div className={styles.item}>
+            <label htmlFor='lastName'>Last name</label>
+            <input
+              type='text'
+              id='lastName'
+              name='lastName'
+              placeholder='Enter your last name'
+            />
+          </div>
+          <div className={styles.item}>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              placeholder='Enter your email address'
+            />
+          </div>
+          <div className={styles.item}>
+            <label htmlFor='phone'>Phone</label>
+            <input
+              type='number'
+              id='phone'
+              name='phone'
+              placeholder='Enter your Phone number'
+            />
+          </div>
         </div>
-        <button type='submit'>Submit</button>
+
+        <div className={styles.payment}>
+          <div className={styles.item}>
+            <label htmlFor='card_number'>Card Number</label>
+            <div id='card_number'></div>
+          </div>
+
+          {process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production' && (
+            <div className={styles.item}>
+              <label htmlFor='cvv'>CVV</label>
+              <div id='cvv'></div>
+            </div>
+          )}
+
+          <div className={styles.item}>
+            <label htmlFor='expiration_date'>Expiration Date</label>
+            <div id='expiration_date'></div>
+          </div>
+        </div>
+
+        <SubmitButton text='Reserve Now' />
       </form>
     </section>
   );
