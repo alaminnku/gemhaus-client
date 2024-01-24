@@ -44,7 +44,6 @@ export default function Reservation({ property, calendar }: Props) {
         size='lg'
         ranges={[]}
         value={dates}
-        // preventOverflow
         onChange={setDates}
         placeholder='Check-in -> Check-out'
         shouldDisableDate={(date: Date) => !availableDatesMap[getISODate(date)]}

@@ -26,8 +26,28 @@ export async function getGemhausData(
   } else {
     data = result;
   }
-
   return { data, error };
+}
+
+// Get Hostaway access token
+async function getHostawayAccessToken() {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTAWAY_API_URL}/accessTokens`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        scope: 'general',
+        grant_type: 'client_credentials',
+        client_id: process.env.HOSTAWAY_ACCOUNT_ID as string,
+        client_secret: process.env.HOSTAWAY_API_KEY as string,
+      }),
+    }
+  );
+  const data = await response.json();
+  return data.access_token;
 }
 
 // Get Hostaway data
@@ -35,12 +55,14 @@ export async function getHostawayData(path: string) {
   let data;
   let error;
 
+  const accessToken = await getHostawayAccessToken();
+
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_HOSTAWAY_API_URL}${path}`,
     {
       cache: 'no-cache',
       headers: {
-        Authorization: `Bearer ${process.env.HOSTAWAY_ACCESS_TOKEN}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     }
   );
@@ -51,7 +73,6 @@ export async function getHostawayData(path: string) {
   } else {
     data = result;
   }
-
   return { data, error };
 }
 
