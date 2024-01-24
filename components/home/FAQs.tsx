@@ -2,17 +2,17 @@
 
 import styles from '@components/home/FAQs.module.css';
 import { useState } from 'react';
-import { faqs, initialFAQsState } from '@data/faqs';
-import { FAQsState } from 'types';
+import { faqs, initialFAQState } from '@data/faqs';
+import { FAQState } from 'types';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
 export default function FAQ() {
-  const [faqsState, setFAQsState] = useState(initialFAQsState);
+  const [faqState, setFAQState] = useState(initialFAQState);
 
-  function toggleFAQsState(id: string) {
-    setFAQsState((prevState) => {
-      const updatedState: FAQsState = {} as FAQsState;
+  function handleFAQStateChange(id: string) {
+    setFAQState((prevState) => {
+      const updatedState: FAQState = {} as FAQState;
       for (const prop in prevState) {
         updatedState[prop] = {
           isOpen: prop === id ? !prevState[prop].isOpen : false,
@@ -34,18 +34,20 @@ export default function FAQ() {
           <div className={styles.question_and_answer} key={id}>
             <div className={styles.question}>
               <p>{question}</p>
-              {faqsState[id].isOpen ? (
-                <MdOutlineKeyboardArrowUp onClick={() => toggleFAQsState(id)} />
+              {faqState[id].isOpen ? (
+                <MdOutlineKeyboardArrowUp
+                  onClick={() => handleFAQStateChange(id)}
+                />
               ) : (
                 <MdOutlineKeyboardArrowDown
-                  onClick={() => toggleFAQsState(id)}
+                  onClick={() => handleFAQStateChange(id)}
                 />
               )}
             </div>
 
             <p
               className={`${styles.answer} ${
-                faqsState[id].isOpen && styles.show_answer
+                faqState[id].isOpen && styles.show_answer
               }`}
             >
               {answer}

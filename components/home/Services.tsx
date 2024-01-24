@@ -1,18 +1,18 @@
 'use client';
 
-import { initialServicesState, services } from '@data/services';
+import { initialServiceState, services } from '@data/services';
 import styles from './Services.module.css';
 import { useState } from 'react';
-import { ServicesState } from 'types';
+import { ServiceState } from 'types';
 import { TbDiamond } from 'react-icons/tb';
 import LinkButton from '@components/layout/LinkButton';
 
 export default function Services() {
-  const [servicesStates, setServicesStates] = useState(initialServicesState);
+  const [serviceState, setServiceState] = useState(initialServiceState);
 
-  function toggleServicesState(id: string) {
-    setServicesStates((prevState) => {
-      const updatedState: ServicesState = {} as ServicesState;
+  function handleServiceStateChange(id: string) {
+    setServiceState((prevState) => {
+      const updatedState: ServiceState = {} as ServiceState;
       for (const prop in prevState) {
         updatedState[prop] = {
           isOpen: prop === id ? !prevState[prop].isOpen : false,
@@ -52,13 +52,13 @@ export default function Services() {
             <div key={id} className={styles.service}>
               <p
                 className={styles.title}
-                onClick={() => toggleServicesState(id)}
+                onClick={() => handleServiceStateChange(id)}
               >
                 {title}
               </p>
               <p
                 className={`${styles.description} ${
-                  servicesStates[id].isOpen && styles.show_description
+                  serviceState[id].isOpen && styles.show_description
                 }`}
               >
                 {description}

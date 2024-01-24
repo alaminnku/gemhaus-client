@@ -1,5 +1,5 @@
-export type FAQsState = { [key: string]: { isOpen: boolean } };
-export type ServicesState = { [key: string]: { isOpen: boolean } };
+export type FAQState = { [key: string]: { isOpen: boolean } };
+export type ServiceState = { [key: string]: { isOpen: boolean } };
 
 export type Property = {
   _id: string;

@@ -1,7 +1,8 @@
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import Services from '@components/buyAndSell/Services';
+import Services from '@components/layout/Services';
 import CallToAction from '@components/layout/CallToAction';
+import { buyAndSellServices } from '@data/services';
 
 export default function BuyAndSellPage() {
   return (
@@ -14,7 +15,7 @@ export default function BuyAndSellPage() {
         }
         backgroundImage='/buy-and-sell/hero-bg.jpg'
       />
-      <Services />
+      <Services services={buyAndSellServices} />
       <CallToAction
         title='Unlock the door to your dream home or sell with confidence.'
         description='Navigate the selling process seamlessly with GemHaus'

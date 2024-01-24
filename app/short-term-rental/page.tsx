@@ -1,8 +1,9 @@
 import CallToAction from '@components/layout/CallToAction';
 import GenericHero from '@components/layout/GenericHero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
-import EvaluationInputOptions from '@components/shortTermRental/EvaluationInputOptions';
-import Services from '@components/shortTermRental/Services';
+import EvaluationInputOptions from '@components/layout/EvaluationInputOptions';
+import Services from '@components/layout/Services';
+import { shortTermServices } from '@data/services';
 
 export default function ShortTermRentalPage() {
   return (
@@ -16,7 +17,7 @@ export default function ShortTermRentalPage() {
         }
         backgroundImage='/short-term-rental/hero-bg.png'
       />
-      <Services />
+      <Services services={shortTermServices} />
       <CallToAction />
       <PropertyEvaluation children={<EvaluationInputOptions />} />
     </main>

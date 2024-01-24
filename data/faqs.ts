@@ -1,4 +1,4 @@
-import { FAQsState } from 'types';
+import { FAQState } from 'types';
 
 export const faqs = [
   {
@@ -34,7 +34,7 @@ export const faqs = [
   },
 ];
 
-export const initialFAQsState = faqs.reduce((acc, curr) => {
+export const initialFAQState = faqs.reduce((acc, curr) => {
   acc[curr.id] = { isOpen: false };
   return acc;
-}, {} as FAQsState);
+}, {} as FAQState);
