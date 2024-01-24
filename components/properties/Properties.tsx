@@ -1,10 +1,10 @@
 import PropertyCards from '@components/home/PropertyCards';
 import styles from './Properties.module.css';
-import { getGemhausData } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
 
 export default async function Properties() {
-  const { data, error } = await getGemhausData('/properties', {
+  const { data, error } = await fetchGemhausData('/properties', {
     next: {
       revalidate: 60 * 60 * 24,
     },

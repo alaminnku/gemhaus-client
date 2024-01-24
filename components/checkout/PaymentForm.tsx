@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
-import { getGemhausData, mutateData } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
 
@@ -22,7 +22,7 @@ export default function PaymentForm({ booking }: Props) {
   useEffect(() => {
     async function initializeBraintree() {
       try {
-        const { data: clientToken, error } = await getGemhausData(
+        const { data: clientToken, error } = await fetchGemhausData(
           '/braintree/client-token'
         );
 
@@ -57,39 +57,29 @@ export default function PaymentForm({ booking }: Props) {
     initializeBraintree();
   }, []);
 
-  const handleReservation = async (formData: FormData) => {
-    try {
-      // if (hostedFields) {
-      //   const { nonce } = await hostedFields.tokenize();
+  const handleBookProperty = async (formData: FormData) => {
+    // if (!hostedFields) return;
+    // const { nonce } = await hostedFields.tokenize();
 
-      //   formData.append('nonce', nonce);
-      //   formData.append('arrivalDate', arrivalDate);
-      //   formData.append('departureDate', departureDate);
+    formData.append('numberOfGuests', guests);
+    formData.append('arrivalDate', arrivalDate);
+    formData.append('departureDate', departureDate);
 
-      //   const response = await mutateData.post(
-      //     `/properties/${propertyId}/reserve`,
-      //     formData
-      //   );
-      //   console.log(response);
-      // }
+    const { data, error } = await fetchGemhausData(
+      `/properties/${propertyId}/book`,
+      {
+        method: 'POST',
+        body: formData,
+      }
+    );
+    if (error) return console.log(error);
 
-      formData.append('numberOfGuests', guests);
-      formData.append('arrivalDate', arrivalDate);
-      formData.append('departureDate', departureDate);
-
-      const response = await mutateData.post(
-        `/properties/${propertyId}/reserve`,
-        formData
-      );
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+    console.log(data);
   };
 
   return (
     <section>
-      <form action={handleReservation}>
+      <form action={handleBookProperty}>
         <div className={styles.guest}>
           <div className={styles.item}>
             <label htmlFor='firstName'>First name</label>

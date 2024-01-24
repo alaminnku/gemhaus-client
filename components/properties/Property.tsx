@@ -1,5 +1,5 @@
 import Error from '@components/layout/Error';
-import { getGemhausData, getHostawayData } from '@lib/utils';
+import { fetchGemhausData, fetchHostawayData } from '@lib/utils';
 import styles from './Property.module.css';
 import Reservation from './Reservation';
 import PropertyImages from './PropertyImages';
@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default async function Property({ id }: Props) {
-  const { data: property, error: propertyError } = await getGemhausData(
+  const { data: property, error: propertyError } = await fetchGemhausData(
     `/properties/${id}`,
     {
       next: {
@@ -17,7 +17,7 @@ export default async function Property({ id }: Props) {
       },
     }
   );
-  const { data: calendar, error: calendarError } = await getHostawayData(
+  const { data: calendar, error: calendarError } = await fetchHostawayData(
     `/listings/${property.hostawayId}/calendar`
   );
 

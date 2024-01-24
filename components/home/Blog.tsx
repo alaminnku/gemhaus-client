@@ -1,10 +1,10 @@
 import ArticleCards from '@components/blog/ArticleCards';
 import styles from '@components/home/Blog.module.css';
 import Error from '@components/layout/Error';
-import { getGemhausData } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 
 export default async function Blog() {
-  const { data, error } = await getGemhausData('/articles');
+  const { data, error } = await fetchGemhausData('/articles');
 
   return (
     <section className={styles.container}>

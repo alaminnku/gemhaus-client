@@ -1,10 +1,10 @@
 import Error from '@components/layout/Error';
-import { getGemhausData } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 import styles from './Article.module.css';
 import Image from 'next/image';
 
 export default async function Article({ id }: { id: string }) {
-  const { data, error } = await getGemhausData(`/articles/${id}`);
+  const { data, error } = await fetchGemhausData(`/articles/${id}`);
 
   return (
     <section className={styles.container}>

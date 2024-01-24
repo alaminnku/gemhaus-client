@@ -1,11 +1,11 @@
 import styles from '@components/home/FeaturedProperties.module.css';
 import PropertyCards from './PropertyCards';
-import { getGemhausData } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
 import ExploreProperties from '@components/layout/ExploreProperties';
 
 export default async function FeaturedProperties() {
-  const { data, error } = await getGemhausData('/properties', {
+  const { data, error } = await fetchGemhausData('/properties', {
     next: { revalidate: 60 * 60 * 24 },
   });
 

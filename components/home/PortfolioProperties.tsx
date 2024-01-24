@@ -1,14 +1,14 @@
 import LinkButton from '@components/layout/LinkButton';
 import styles from './PortfolioProperties.module.css';
 import { TbDiamond } from 'react-icons/tb';
-import { createUSD, getGemhausData } from '@lib/utils';
+import { createUSD, fetchGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
 import { Property } from 'types';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function PortfolioProperties() {
-  const { data, error } = await getGemhausData('/properties', {
+  const { data, error } = await fetchGemhausData('/properties', {
     next: { revalidate: 60 * 60 * 24 },
   });
 
