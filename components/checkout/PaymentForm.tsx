@@ -1,17 +1,22 @@
 'use client';
 
-import { FormEvent, useEffect } from 'react';
+import { useEffect } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
 import { getGemhausData, mutateData } from '@lib/utils';
 import styles from './PaymentForm.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
-import axios from 'axios';
 
 type Props = {
-  propertyId: string;
+  booking: {
+    guests: string;
+    propertyId: string;
+    arrivalDate: string;
+    departureDate: string;
+  };
 };
 
-export default function PaymentForm({ propertyId }: Props) {
+export default function PaymentForm({ booking }: Props) {
+  const { guests, propertyId, arrivalDate, departureDate } = booking;
   let hostedFields: HostedFields | null = null;
 
   useEffect(() => {
@@ -54,15 +59,29 @@ export default function PaymentForm({ propertyId }: Props) {
 
   const handleReservation = async (formData: FormData) => {
     try {
-      if (hostedFields) {
-        const { nonce } = await hostedFields.tokenize();
-        formData.append('nonce', nonce);
-        const response = await mutateData.post(
-          `/properties/${propertyId}/reserve`,
-          formData
-        );
-        console.log(response);
-      }
+      // if (hostedFields) {
+      //   const { nonce } = await hostedFields.tokenize();
+
+      //   formData.append('nonce', nonce);
+      //   formData.append('arrivalDate', arrivalDate);
+      //   formData.append('departureDate', departureDate);
+
+      //   const response = await mutateData.post(
+      //     `/properties/${propertyId}/reserve`,
+      //     formData
+      //   );
+      //   console.log(response);
+      // }
+
+      formData.append('numberOfGuests', guests);
+      formData.append('arrivalDate', arrivalDate);
+      formData.append('departureDate', departureDate);
+
+      const response = await mutateData.post(
+        `/properties/${propertyId}/reserve`,
+        formData
+      );
+      console.log(response);
     } catch (err) {
       console.log(err);
     }

@@ -64,15 +64,17 @@ export default function Reservation({ property, calendar }: Props) {
         <>
           <LinkButton
             text='Reserve'
-            href={`/properties/${property._id}/checkout?startDate=${getISODate(
+            href={`/properties/${
+              property._id
+            }/checkout?arrivalDate=${getISODate(
               dates[0]
-            )}&endDate=${getISODate(dates[1])}&guests=${guests}`}
+            )}&departureDate=${getISODate(dates[1])}&guests=${guests}`}
             style={{ width: '100%', marginBottom: '10px' }}
           />
 
           <Price
-            startDate={dates[0]}
-            endDate={dates[1]}
+            arrivalDate={dates[0]}
+            departureDate={dates[1]}
             property={property}
             calendar={calendar.result}
           />

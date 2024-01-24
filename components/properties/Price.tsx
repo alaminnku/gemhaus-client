@@ -3,22 +3,22 @@ import { Property, HostawayDate } from 'types';
 import styles from './Price.module.css';
 
 type Props = {
-  startDate: Date;
-  endDate: Date;
+  arrivalDate: Date;
+  departureDate: Date;
   calendar: HostawayDate[];
   property: Property;
 };
 
 export default function Price({
-  startDate,
-  endDate,
+  arrivalDate,
+  departureDate,
   calendar,
   property,
 }: Props) {
   // All dates between check in and checkout
   const dates: { [key: string]: boolean } = {};
-  const currDate = new Date(startDate);
-  while (currDate <= new Date(endDate)) {
+  const currDate = new Date(arrivalDate);
+  while (currDate <= new Date(departureDate)) {
     dates[getISODate(currDate)] = true;
     currDate.setDate(currDate.getDate() + 1);
   }
