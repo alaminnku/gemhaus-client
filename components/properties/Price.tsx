@@ -28,7 +28,7 @@ export default function Price({
     .filter((el) => dates[el.date])
     .reduce((acc, curr) => acc + curr.price, 0);
 
-  const days = Object.keys(dates).length;
+  const days = Object.keys(dates).length - 1;
   const unitPrice = price / days;
 
   // Fees
