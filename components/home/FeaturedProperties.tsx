@@ -14,12 +14,7 @@ export default async function FeaturedProperties() {
       <h2>
         Featured <br /> Properties
       </h2>
-
-      {error ? (
-        <Error error={error} />
-      ) : (
-        <PropertyCards properties={data.slice(0, 3)} />
-      )}
+      {error ? <Error error={error} /> : <PropertyCards properties={data} />}
       <ExploreProperties />
     </section>
   );
