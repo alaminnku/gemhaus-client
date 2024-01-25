@@ -4,6 +4,7 @@ import styles from '@components/layout/DesktopNav.module.css';
 import Logo from './Logo';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 type Props = {
   isDarkBackground: boolean;
@@ -27,12 +28,13 @@ export default function DesktopNav({ isDarkBackground }: Props) {
         >
           Blog
         </Link>
-        <Link
-          href='/short-term-rental'
-          className={pathname === '/short-term-rental' ? styles.active : ''}
-        >
+        <p className={`${styles.management} `}>
           Management
-        </Link>
+          <div className={styles.popup}>
+            <Link href='/short-term-rental'>Short term rental</Link>
+            <Link href='/long-term-rental'>Long term rental</Link>
+          </div>
+        </p>
         <Link
           href='/list-your-home'
           className={pathname === '/list-your-home' ? styles.active : ''}

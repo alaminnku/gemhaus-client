@@ -18,10 +18,11 @@
     align-items: center;
   }
 
-  .navigation a {
+  .navigation a,
+  .management {
+    font-size: 14px;
     margin: 0rem 1rem;
     color: var(--black);
-    font-size: 14px;
   }
 
   .navigation a:hover {
@@ -30,6 +31,43 @@
 
   .navigation a.active {
     border-bottom: 1px solid var(--black);
+  }
+
+  .management {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 0px;
+  }
+
+  .popup {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: max-content;
+    border-radius: 4px;
+    background-color: var(--border_color);
+  }
+
+  .popup:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--border_color);
+  }
+
+  .popup a {
+    margin: 0;
+    padding: 12px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .management:hover .popup {
+    display: flex;
+    flex-direction: column;
   }
 
   .sign_in {
@@ -45,8 +83,26 @@
     color: var(--white);
   }
 
-  .is_dark_background .navigation a {
+  .is_dark_background .navigation a,
+  .is_dark_background .management {
     color: var(--white);
+  }
+
+  .is_dark_background .popup {
+    background-color: var(--white);
+  }
+
+  .is_dark_background .popup a {
+    color: var(--black);
+    border-bottom: 1px solid var(--border_color);
+  }
+
+  .is_dark_background .popup::before {
+    border-color: transparent transparent var(--white);
+  }
+
+  .popup a:last-child {
+    border: none;
   }
 
   .is_dark_background .navigation a.active {
