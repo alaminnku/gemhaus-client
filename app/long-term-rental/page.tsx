@@ -22,7 +22,7 @@ export default function LongTermRentalPage() {
         description='Unlock the potential of your property'
         buttonText='Become a Landlord'
         buttonLink='/'
-        buttonWidth='14rem'
+        buttonWidth='15rem'
       />
       <PropertyEvaluation
         children={<EvaluationInputOptions showStrLtr={false} />}

@@ -1,7 +1,7 @@
 .container {
+  padding: 0px 32px;
   line-height: 32px;
   color: var(--black);
-  padding: var(--section_padding);
   font-family: 'PP Mori', sans-serif;
 }
 
@@ -47,6 +47,10 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 0px 48px;
+  }
+
   .content_and_reservation {
     gap: 2rem;
     flex-direction: row;

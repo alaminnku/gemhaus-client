@@ -1,5 +1,5 @@
 .container {
-  padding: 72px 32px;
+  padding: var(--section_padding);
 }
 
 .services {
@@ -34,7 +34,6 @@
   .container {
     max-width: 80%;
     margin: 0 auto;
-    padding: 112px 32px;
   }
 
   .services {
