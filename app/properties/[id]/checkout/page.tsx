@@ -1,4 +1,5 @@
 import PaymentForm from '@components/checkout/PaymentForm';
+import PropertyDetails from '@components/checkout/PropertyDetails';
 import Header from '@components/layout/Header';
 
 type Props = {
@@ -17,7 +18,10 @@ export default function CheckoutPage({ params, searchParams }: Props) {
   return (
     <main>
       <Header />
-      <PaymentForm booking={booking} />
+      <PaymentForm
+        booking={booking}
+        children={<PropertyDetails {...booking} />}
+      />
     </main>
   );
 }

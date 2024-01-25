@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './Reservation.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
 import { DateRange } from 'rsuite/esm/DateRangePicker';
@@ -20,6 +20,7 @@ type Props = {
 export default function Reservation({ property, calendar }: Props) {
   const [dates, setDates] = useState<DateRange | null>();
   const [guests, setGuests] = useState('');
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   // Create available dates map
   const availableDatesMap: { [key: string]: boolean } = {};
@@ -33,6 +34,15 @@ export default function Reservation({ property, calendar }: Props) {
       availableDatesMap[el.date] = true;
     });
 
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.container}>
       <p className={styles.price}>
@@ -45,7 +55,9 @@ export default function Reservation({ property, calendar }: Props) {
         ranges={[]}
         value={dates}
         showOneCalendar
+        preventOverflow
         onChange={setDates}
+        placement={windowWidth > 500 ? 'leftStart' : 'bottomStart'}
         placeholder='Check-in -> Check-out'
         shouldDisableDate={(date: Date) => !availableDatesMap[getISODate(date)]}
       />

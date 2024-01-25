@@ -3,8 +3,8 @@ import { Property, HostawayDate } from 'types';
 import styles from './Price.module.css';
 
 type Props = {
-  arrivalDate: Date;
-  departureDate: Date;
+  arrivalDate: Date | string;
+  departureDate: Date | string;
   calendar: HostawayDate[];
   property: Property;
 };
