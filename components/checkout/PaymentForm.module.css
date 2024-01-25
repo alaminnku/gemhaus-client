@@ -1,2 +1,108 @@
 .container {
+  padding: var(--section_padding);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.title svg {
+  margin-right: 8px;
+}
+
+.reservation_details {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border_color);
+}
+
+.reservation_details_title {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.reservation_details_dates_title,
+.reservation_details_guests_title,
+.reservation_details_dates,
+.reservation_details_guests {
+  font-size: 18px;
+}
+
+.reservation_details_dates_title,
+.reservation_details_guests_title {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reservation_details_dates,
+.reservation_details_guests {
+  color: #666666;
+}
+
+.reservation_details_dates {
+  margin-bottom: 20px;
+}
+
+.reservation_details_guests_controller {
+  display: flex;
+  align-items: center;
+}
+
+.reservation_details_guests_controller p {
+  margin: 0px 12px;
+}
+
+.guest_details,
+.payment_details {
+  padding: 44px 0px;
+}
+
+.guest_details {
+  border-bottom: 1px solid var(--border_color);
+}
+
+.guest_details_title,
+.payment_details_title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  margin-bottom: 1rem;
+}
+
+.item label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.item input {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border_color);
+}
+
+#card_number,
+#cvv,
+#expiration_date {
+  padding: 24px 16px;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
 }

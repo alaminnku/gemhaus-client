@@ -112,3 +112,9 @@ export const manrope = Manrope({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 });
+
+// Get month abbreviation
+export const getMonthAbbr = (date: Date) =>
+  new Intl.DateTimeFormat('en', { month: 'short' }).format(date);
+
+export const getDate = (date: string) => new Date(date).getDate();

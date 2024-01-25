@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
-import { fetchGemhausData } from '@lib/utils';
+import { fetchGemhausData, getDate, getMonthAbbr, inter } from '@lib/utils';
 import styles from './PaymentForm.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
+import { MdKeyboardArrowLeft } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 type Props = {
   booking: {
@@ -16,8 +18,13 @@ type Props = {
 };
 
 export default function PaymentForm({ booking }: Props) {
-  const { guests, propertyId, arrivalDate, departureDate } = booking;
+  const router = useRouter();
   let hostedFields: HostedFields | null = null;
+  const { guests, propertyId, arrivalDate, departureDate } = booking;
+  const [guestsCount, setGuestsCount] = useState(+guests);
+
+  const arrivalMonth = getMonthAbbr(new Date(arrivalDate));
+  const departureMonth = getMonthAbbr(new Date(departureDate));
 
   useEffect(() => {
     async function initializeBraintree() {
@@ -78,112 +85,141 @@ export default function PaymentForm({ booking }: Props) {
   };
 
   return (
-    <section>
+    <section className={styles.container}>
+      <p className={styles.title}>
+        <MdKeyboardArrowLeft onClick={() => router.back()} />
+        Finalize your booking
+      </p>
+
+      <div className={`${styles.reservation_details} ${inter.className}`}>
+        <p className={styles.reservation_details_title}>Reservation Details</p>
+        <p className={styles.reservation_details_dates_title}>
+          Dates <span onClick={() => router.back()}>Edit</span>
+        </p>
+        <p className={styles.reservation_details_dates}>
+          {arrivalMonth === departureMonth
+            ? `${arrivalMonth} ${getDate(arrivalDate)} - ${getDate(
+                departureDate
+              )}`
+            : `${arrivalMonth} ${getDate(
+                arrivalDate
+              )} - ${departureMonth} ${getDate(departureDate)}`}
+        </p>
+        <div className={styles.reservation_details_guests_title}>
+          <p>Guests</p>
+          <div className={styles.reservation_details_guests_controller}>
+            <span
+              onClick={() =>
+                setGuestsCount((prevState) =>
+                  prevState > 1 ? prevState - 1 : prevState
+                )
+              }
+            >
+              -
+            </span>
+            <p>{guestsCount}</p>
+            <span onClick={() => setGuestsCount((prevState) => prevState + 1)}>
+              +
+            </span>
+          </div>
+        </div>
+        <p className={styles.reservation_details_guests}>{guestsCount} guest</p>
+      </div>
+
       <form action={handleBookProperty}>
-        <div className={styles.guest}>
-          <div className={styles.item}>
-            <label htmlFor='firstName'>First name</label>
-            <input
-              type='text'
-              id='firstName'
-              name='firstName'
-              placeholder='Enter your first name'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='lastName'>Last name</label>
-            <input
-              type='text'
-              id='lastName'
-              name='lastName'
-              placeholder='Enter your last name'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='email'>Email</label>
-            <input
-              type='email'
-              id='email'
-              name='email'
-              placeholder='Enter your email address'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='phone'>Phone</label>
-            <input
-              type='number'
-              id='phone'
-              name='phone'
-              placeholder='Enter your Phone number'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='address'>Address</label>
-            <input
-              type='text'
-              id='address'
-              name='address'
-              placeholder='Enter your address'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='city'>City</label>
-            <input
-              type='text'
-              id='city'
-              name='city'
-              placeholder='Enter your city'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='state'>State</label>
-            <input
-              type='text'
-              id='state'
-              name='state'
-              placeholder='Enter your state'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='country'>Country</label>
-            <input
-              type='text'
-              id='country'
-              name='country'
-              placeholder='Enter your country'
-            />
-          </div>
-          <div className={styles.item}>
-            <label htmlFor='zipCode'>Zip code</label>
-            <input
-              type='text'
-              id='zipCode'
-              name='zipCode'
-              placeholder='Enter your zip code'
-            />
-          </div>
-        </div>
+        <div className={styles.guest_details}>
+          <p className={styles.guest_details_title}>Guest details</p>
 
-        <div className={styles.payment}>
-          <div className={styles.item}>
-            <label htmlFor='card_number'>Card Number</label>
-            <div id='card_number'></div>
-          </div>
-
-          {process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production' && (
+          <div className={inter.className}>
             <div className={styles.item}>
-              <label htmlFor='cvv'>CVV</label>
-              <div id='cvv'></div>
+              <label htmlFor='fullName'>Full name</label>
+              <input
+                type='text'
+                id='fullName'
+                name='fullName'
+                placeholder='Name'
+              />
             </div>
-          )}
-
-          <div className={styles.item}>
-            <label htmlFor='expiration_date'>Expiration Date</label>
-            <div id='expiration_date'></div>
+            <div className={styles.item}>
+              <label htmlFor='email'>Email Address</label>
+              <input
+                type='email'
+                id='email'
+                name='email'
+                placeholder='Email address'
+              />
+            </div>
+            <div className={styles.item}>
+              <label htmlFor='phone'>Phone number</label>
+              <input
+                type='number'
+                id='phone'
+                name='phone'
+                placeholder='Phone number'
+              />
+            </div>
+            <div className={styles.item}>
+              <label htmlFor='address'>Billing address</label>
+              <input
+                type='text'
+                id='address'
+                name='address'
+                placeholder='Billing address'
+              />
+            </div>
+            <div className={styles.item}>
+              <label htmlFor='city'>City</label>
+              <input type='text' id='city' name='city' placeholder='City' />
+            </div>
+            <div className={styles.item}>
+              <label htmlFor='state'>State</label>
+              <input type='text' id='state' name='state' placeholder='State' />
+            </div>
+            <div className={styles.item}>
+              <label htmlFor='country'>Country</label>
+              <input
+                type='text'
+                id='country'
+                name='country'
+                placeholder='Country'
+              />
+            </div>
+            <div className={styles.item}>
+              <label htmlFor='zipCode'>Zip code</label>
+              <input
+                type='text'
+                id='zipCode'
+                name='zipCode'
+                placeholder='Zip code'
+              />
+            </div>
           </div>
         </div>
 
-        <SubmitButton text='Reserve Now' />
+        <div className={styles.payment_details}>
+          <p className={styles.payment_details_title}>Payment Information</p>
+
+          <div className={styles.payment}>
+            <div className={styles.item}>
+              <label htmlFor='card_number'>Card Number</label>
+              <div id='card_number'></div>
+            </div>
+
+            {process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT === 'Production' && (
+              <div className={styles.item}>
+                <label htmlFor='cvv'>CVV</label>
+                <div id='cvv'></div>
+              </div>
+            )}
+
+            <div className={styles.item}>
+              <label htmlFor='expiration_date'>Expiration Date</label>
+              <div id='expiration_date'></div>
+            </div>
+          </div>
+        </div>
+
+        <SubmitButton text='Continue' style={{ width: '100%' }} />
       </form>
     </section>
   );
