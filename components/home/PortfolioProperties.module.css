@@ -1,4 +1,7 @@
 .container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
   background-color: #f7f7f7;
   padding: var(--section_padding);
 }
@@ -6,7 +9,7 @@
 .container h2 {
   font-size: 40px;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 26px;
 }
 
 .content_and_properties {
@@ -17,13 +20,14 @@
 
 .content p {
   font-size: 24px;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  line-height: 32px;
 }
 
 .properties {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
+  flex-direction: column;
 }
 
 .property {
@@ -32,7 +36,7 @@
 
 .property img {
   width: 100%;
-  height: 20rem;
+  height: 25rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
@@ -47,7 +51,7 @@
 }
 
 .name {
-  margin-bottom: 0.25rem;
+  margin-bottom: 16px;
 }
 
 .price {
@@ -58,6 +62,10 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
   .container h2 {
     font-size: 63px;
   }
@@ -75,5 +83,9 @@
   .properties {
     width: 60%;
     flex-direction: row;
+  }
+
+  .property img {
+    height: 100%;
   }
 }

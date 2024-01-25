@@ -26,18 +26,23 @@
   cursor: pointer;
 }
 
+.answer {
+  margin-top: 8px;
+  line-height: 32px;
+}
+
 @media (min-width: 1024px) {
   .container {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .container h2 {
-    width: 40%;
+    width: 50%;
     font-size: 63px;
   }
 
   .questions_and_answers {
-    width: 60%;
+    width: 50%;
   }
 }

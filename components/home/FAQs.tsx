@@ -40,7 +40,7 @@ export default function FAQ() {
               )}
             </div>
 
-            {selectedFaqId === id && <p>{answer}</p>}
+            {selectedFaqId === id && <p className={styles.answer}>{answer}</p>}
           </div>
         ))}
       </div>

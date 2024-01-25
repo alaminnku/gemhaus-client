@@ -59,6 +59,7 @@
 .search_field {
   width: 100%;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .search_field input[type='text'] {
@@ -100,6 +101,7 @@
 .title {
   font-size: 40px;
   font-weight: 600;
+  margin-bottom: 18px;
 }
 
 .description {
@@ -139,11 +141,11 @@
 
 @media (min-width: 1024px) {
   .container {
-    margin-bottom: 18rem;
+    margin-bottom: 20rem;
   }
 
   .search_and_cta {
-    padding: 6rem 2rem 11rem 2rem;
+    padding: 6rem 2rem 13rem 2rem;
   }
 
   .search_field input[type='text'] {

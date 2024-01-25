@@ -1,3 +1,5 @@
+import { Inter, Manrope } from 'next/font/google';
+
 type FetchGemhausDataOptions = {
   body?: FormData;
   method?: 'POST' | 'DELETE';
@@ -99,3 +101,14 @@ export const createUSD = (number: number) =>
     style: 'currency',
     currency: 'USD',
   }).format(number);
+
+// Fonts
+export const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+export const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});

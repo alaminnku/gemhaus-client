@@ -3,6 +3,7 @@ import styles from '@components/properties/PropertyCard.module.css';
 import { FaBath, FaBed, FaHeart, FaStar, FaUser } from 'react-icons/fa6';
 import { Property } from 'types';
 import Link from 'next/link';
+import { manrope } from '@lib/utils';
 
 type Props = {
   property: Property;
@@ -13,7 +14,10 @@ export default function PropertyCard({ property }: Props) {
     property;
 
   return (
-    <Link href={`/properties/${_id}`} className={styles.container}>
+    <Link
+      href={`/properties/${_id}`}
+      className={`${styles.container} ${manrope.className}`}
+    >
       <div className={styles.image_and_icons}>
         <Image src={images[0]} width={800} height={450} alt='Property image' />
 

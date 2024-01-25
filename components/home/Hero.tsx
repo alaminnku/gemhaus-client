@@ -9,6 +9,7 @@ import buyIcon from '@public/home/buy-icon.png';
 import rentIcon from '@public/home/rent-icon.png';
 import hero from '@public/home/hero.jpg';
 import Image from 'next/image';
+import { inter } from '@lib/utils';
 
 type PropertyState = 'selected' | 'first' | 'second';
 
@@ -63,7 +64,7 @@ export default function Hero() {
 
       <div className={styles.search_and_cta}>
         <form className={styles.search} action={handleSearch}>
-          <div className={styles.search_types}>
+          <div className={`${styles.search_types} ${inter.className}`}>
             <div
               className={`${styles[vacation]} ${styles.vacation}`}
               onClick={() => changePropertyType('vacation')}
@@ -89,7 +90,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className={styles.search_field}>
+          <div className={`${styles.search_field} ${inter.className}`}>
             <MdOutlineSearch onClick={handleSearch} />
             <input type='text' name='search' placeholder='Find your gem' />
             <input type='submit' className={styles.search_button} />
