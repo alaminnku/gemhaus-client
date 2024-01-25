@@ -30,8 +30,13 @@
 .buy {
   display: flex;
   align-items: center;
-  padding-bottom: 6px;
   cursor: pointer;
+  color: var(--black);
+}
+
+.vacation {
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--black);
 }
 
 .vacation,
@@ -52,10 +57,6 @@
   font-weight: 500;
 }
 
-.selected {
-  border-bottom: 2px solid var(--black);
-}
-
 .search_field {
   width: 100%;
   position: relative;
@@ -71,7 +72,7 @@
   box-shadow: 0px 0px 6px 1px #bfbfbf;
 }
 
-.search_field input[type='submit'] {
+.search_button {
   position: absolute;
   right: 6px;
   top: 50%;
