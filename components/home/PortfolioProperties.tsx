@@ -1,11 +1,10 @@
-import LinkButton from '@components/layout/LinkButton';
 import styles from './PortfolioProperties.module.css';
-import { TbDiamond } from 'react-icons/tb';
 import { createUSD, fetchGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
 import { Property } from 'types';
 import Image from 'next/image';
 import Link from 'next/link';
+import PortfolioPropertiesContent from './PortfolioPropertiesContent';
 
 export default async function PortfolioProperties() {
   const { data, error } = await fetchGemhausData('/properties', {
@@ -14,23 +13,7 @@ export default async function PortfolioProperties() {
 
   return (
     <section className={styles.container}>
-      <div className={styles.content}>
-        <h2>
-          Expand Your <br /> Portfolio
-        </h2>
-        <p>
-          Are you looking to make your mark in the world of real estate? At
-          GemHaus, we provide you with the expertise and opportunities to do
-          just that.
-        </p>
-
-        <LinkButton
-          text='Find your Gem'
-          href='/vacation-rental'
-          isReversed={true}
-          icon={<TbDiamond />}
-        />
-      </div>
+      <PortfolioPropertiesContent />
 
       {error ? (
         <Error error={error} />

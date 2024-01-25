@@ -6,24 +6,6 @@
   padding: var(--section_padding);
 }
 
-.container h2 {
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 26px;
-}
-
-.content_and_properties {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-}
-
-.content p {
-  font-size: 24px;
-  margin-bottom: 20px;
-  line-height: 32px;
-}
-
 .properties {
   display: flex;
   gap: 1rem;
@@ -63,21 +45,8 @@
 
 @media (min-width: 1024px) {
   .container {
+    gap: 4rem;
     flex-direction: row;
-  }
-
-  .container h2 {
-    font-size: 63px;
-  }
-
-  .content_and_properties {
-    gap: 3rem;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  .content {
-    width: 40%;
   }
 
   .properties {

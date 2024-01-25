@@ -1,31 +1,17 @@
 import Link from 'next/link';
 import styles from './LinkButton.module.css';
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties } from 'react';
 
 type Props = {
   href: string;
   text: string;
-  icon?: ReactNode;
   style?: CSSProperties;
-  isReversed?: boolean;
 };
 
-export default function LinkButton({
-  href,
-  text,
-  icon,
-  style,
-  isReversed,
-}: Props) {
+export default function LinkButton({ href, text, style }: Props) {
   return (
-    <Link
-      href={href}
-      style={style}
-      className={`${styles.container} ${icon && styles.icon} ${
-        isReversed && styles.reversed
-      }`}
-    >
-      {text} {icon}
+    <Link href={href} style={style} className={styles.container}>
+      {text}
     </Link>
   );
 }

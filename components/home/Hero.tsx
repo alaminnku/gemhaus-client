@@ -48,7 +48,7 @@ export default function Hero() {
             />
             <Link
               className={styles.search_button}
-              href={`/properties/?search=${search}`}
+              href={`/vacation-rental/?search=${search}`}
             >
               Submit
             </Link>

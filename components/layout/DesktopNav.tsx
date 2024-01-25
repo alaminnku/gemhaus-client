@@ -36,8 +36,8 @@ export default function DesktopNav({ isDarkBackground }: Props) {
           </div>
         </p>
         <Link
-          href='/list-your-home'
-          className={pathname === '/list-your-home' ? styles.active : ''}
+          href='/buy-and-sell'
+          className={pathname === '/buy-and-sell' ? styles.active : ''}
         >
           List your home
         </Link>

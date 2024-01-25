@@ -8,10 +8,20 @@
   font-size: 19px;
   color: var(--white);
   font-weight: 600;
+  border: none;
+  cursor: pointer;
   background-color: var(--black);
 }
 
-.container:hover {
-  color: var(--white);
-  text-decoration: none;
+.icon svg {
+  margin-left: 1rem;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.reversed.icon svg {
+  margin-left: 0rem;
+  margin-right: 1rem;
 }

@@ -4,9 +4,12 @@ import { services } from '@data/services';
 import styles from './Services.module.css';
 import { useState } from 'react';
 import { TbDiamond } from 'react-icons/tb';
-import LinkButton from '@components/layout/LinkButton';
+import ModalContainer from '@components/layout/Modal';
+import ContactForm from '@components/layout/ContactForm';
+import ModalButton from '@components/layout/ModalButton';
 
 export default function Services() {
+  const [showModal, setShowModal] = useState(false);
   const [selectedServiceId, setSelectedServiceId] = useState<number | null>(1);
 
   return (
@@ -25,8 +28,16 @@ export default function Services() {
           investor looking to maximize your returns, we provide comprehensive
           solutions and unwavering support.
         </p>
-
-        <LinkButton text='Our Services' href='/services' icon={<TbDiamond />} />
+        <ModalButton
+          text='Our Services'
+          icon={<TbDiamond />}
+          setShowModal={setShowModal}
+        />
+        <ModalContainer
+          component={<ContactForm />}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
       </div>
 
       <div className={styles.services}>

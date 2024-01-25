@@ -13,7 +13,7 @@ export default function CallToAction({
   title = 'Your world is <br /> worth sharing',
   description = 'Turn your extra space into your next <br /> opportunity',
   buttonText = 'Become a Host',
-  buttonLink = '/',
+  buttonLink = '/short-term-rental',
   buttonWidth = '12rem',
 }: Props) {
   return (
