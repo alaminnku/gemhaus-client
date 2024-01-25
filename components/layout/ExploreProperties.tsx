@@ -5,7 +5,7 @@ export default function ExploreProperties() {
   return (
     <div className={styles.container}>
       <p>Continue exploring Properties</p>
-      <LinkButton text='Show more' href='/properties' />
+      <LinkButton text='Show more' href='/vacation-rental' />
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function Hero() {
               <p>Vacation</p>
             </div>
 
-            <Link href='/properties' className={styles.rent}>
+            <Link href='/vacation-rental' className={styles.rent}>
               <Image src={rentIcon} alt='Rent icon' />
               <p>Rent</p>
             </Link>

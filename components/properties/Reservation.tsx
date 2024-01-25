@@ -77,7 +77,7 @@ export default function Reservation({ property, calendar }: Props) {
         <>
           <LinkButton
             text='Reserve'
-            href={`/properties/${
+            href={`/vacation-rental/${
               property._id
             }/checkout?arrivalDate=${getISODate(
               dates[0]

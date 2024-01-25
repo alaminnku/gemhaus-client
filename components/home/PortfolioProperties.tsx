@@ -26,7 +26,7 @@ export default async function PortfolioProperties() {
 
         <LinkButton
           text='Find your Gem'
-          href='/properties'
+          href='/vacation-rental'
           isReversed={true}
           icon={<TbDiamond />}
         />
@@ -38,7 +38,7 @@ export default async function PortfolioProperties() {
         <div className={styles.properties}>
           {data.slice(0, 2).map((property: Property) => (
             <Link
-              href={`/properties/${property._id}`}
+              href={`/vacation-rental/${property._id}`}
               className={styles.property}
             >
               <Image

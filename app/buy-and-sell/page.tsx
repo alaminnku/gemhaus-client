@@ -20,7 +20,7 @@ export default function BuyAndSellPage() {
         title='Unlock the door to your dream home or sell with confidence.'
         description='Navigate the selling process seamlessly with GemHaus'
         buttonText='Find your Gem'
-        buttonLink='/properties'
+        buttonLink='/vacation-rental'
       />
       <PropertyEvaluation />
     </main>

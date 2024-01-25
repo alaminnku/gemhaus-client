@@ -15,7 +15,7 @@ export default function PropertyCard({ property }: Props) {
 
   return (
     <Link
-      href={`/properties/${_id}`}
+      href={`/vacation-rental/${_id}`}
       className={`${styles.container} ${manrope.className}`}
     >
       <div className={styles.image_and_icons}>
