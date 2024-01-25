@@ -1,6 +1,8 @@
 .container {
+  line-height: 32px;
   color: var(--black);
   padding: var(--section_padding);
+  font-family: 'PP Mori', sans-serif;
 }
 
 .content_and_reservation {

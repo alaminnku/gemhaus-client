@@ -4,8 +4,7 @@
 }
 
 .header {
-  margin-bottom: 2rem;
-  padding: var(--section_padding);
+  padding: 72px 32px;
 }
 
 .header h2 {
@@ -16,6 +15,7 @@
 
 .header p {
   font-size: 24px;
+  line-height: 32px;
 }
 
 .property_evaluation {
@@ -36,12 +36,12 @@
   font-weight: 500;
   text-align: center;
   font-size: 36px;
-  margin-bottom: 3rem;
+  margin-bottom: 72px;
 }
 
 .evaluation_inputs {
   display: grid;
-  gap: 1rem;
+  gap: 20px;
   grid-template-columns: 1fr;
   margin-bottom: 40px;
 }
@@ -67,6 +67,7 @@
   .header {
     display: flex;
     gap: 5rem;
+    padding: 120px 32px;
   }
 
   .header h2 {
@@ -77,14 +78,11 @@
     width: 70%;
   }
 
-  .evaluation_form {
+  .property_evaluation {
     padding: 4rem;
   }
 
   .evaluation_inputs {
-    display: grid;
-    gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 40px;
   }
 }

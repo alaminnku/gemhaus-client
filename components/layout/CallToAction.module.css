@@ -1,6 +1,6 @@
 .container {
   padding: var(--section_padding);
-  margin: 2rem;
+  margin: 0px 32px;
   border-radius: 0.5rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,10 +12,11 @@
   font-size: 40px;
   font-weight: 600;
   color: var(--white);
+  margin-bottom: 20px;
 }
 
 .container p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 63px;
   color: var(--white);
 }
 
@@ -35,10 +36,6 @@
 }
 
 @media (min-width: 1024px) {
-  .container {
-    margin: 2rem 4rem;
-  }
-
   .container h2 {
     font-size: 60px;
   }

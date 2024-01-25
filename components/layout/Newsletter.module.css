@@ -36,11 +36,11 @@
 @media (min-width: 1024px) {
   .content {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
   }
 
   .content img {
-    width: 50%;
+    width: 40%;
     object-fit: contain;
   }
 
