@@ -70,9 +70,9 @@ export default function PaymentForm({ children, booking }: Props) {
     const { nonce } = await hostedFields.tokenize();
 
     formData.append('nonce', nonce);
-    formData.append('numberOfGuests', guests);
     formData.append('arrivalDate', arrivalDate);
     formData.append('departureDate', departureDate);
+    formData.append('numberOfGuests', guestsCount.toString());
 
     const { data, error } = await fetchGemhausData(
       `/properties/${propertyId}/book`,
@@ -142,13 +142,8 @@ export default function PaymentForm({ children, booking }: Props) {
 
               <div className={inter.className}>
                 <div className={styles.item}>
-                  <label htmlFor='fullName'>Full name</label>
-                  <input
-                    type='text'
-                    id='fullName'
-                    name='fullName'
-                    placeholder='Name'
-                  />
+                  <label htmlFor='name'>Full name</label>
+                  <input type='text' id='name' name='name' placeholder='Name' />
                 </div>
                 <div className={styles.item}>
                   <label htmlFor='email'>Email Address</label>
