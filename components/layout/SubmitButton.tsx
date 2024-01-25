@@ -11,6 +11,7 @@ type Props = {
 
 export default function SubmitButton({ text, style }: Props) {
   const { pending } = useFormStatus();
+
   return (
     <button type='submit' className={styles.submit_button} style={style}>
       {pending ? 'Adding...' : text}

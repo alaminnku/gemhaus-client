@@ -4,7 +4,6 @@ import styles from '@components/layout/DesktopNav.module.css';
 import Logo from './Logo';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 
 type Props = {
   isDarkBackground: boolean;

@@ -7,8 +7,6 @@ import styles from './PaymentForm.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import Price from '@components/properties/Price';
 
 type Props = {
   children: ReactNode;
