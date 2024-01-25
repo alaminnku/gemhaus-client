@@ -30,12 +30,7 @@
 }
 
 .description {
-  display: none;
   font-weight: 24px;
-}
-
-.show_description {
-  display: block;
 }
 
 @media (min-width: 1024px) {

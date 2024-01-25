@@ -26,14 +26,6 @@
   cursor: pointer;
 }
 
-.answer {
-  display: none;
-}
-
-.show_answer {
-  display: block;
-}
-
 @media (min-width: 1024px) {
   .container {
     display: flex;

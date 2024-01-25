@@ -1,6 +1,3 @@
-export type FAQState = { [key: string]: { isOpen: boolean } };
-export type ServiceState = { [key: string]: { isOpen: boolean } };
-
 export type Property = {
   _id: string;
   hostawayId: number;

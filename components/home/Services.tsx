@@ -1,26 +1,16 @@
 'use client';
 
-import { initialServiceState, services } from '@data/services';
+import { services } from '@data/services';
 import styles from './Services.module.css';
 import { useState } from 'react';
-import { ServiceState } from 'types';
 import { TbDiamond } from 'react-icons/tb';
 import LinkButton from '@components/layout/LinkButton';
 
 export default function Services() {
-  const [serviceState, setServiceState] = useState(initialServiceState);
+  const [selectedServiceId, setSelectedServiceId] = useState<number | null>(
+    null
+  );
 
-  function handleServiceStateChange(id: string) {
-    setServiceState((prevState) => {
-      const updatedState: ServiceState = {} as ServiceState;
-      for (const prop in prevState) {
-        updatedState[prop] = {
-          isOpen: prop === id ? !prevState[prop].isOpen : false,
-        };
-      }
-      return updatedState;
-    });
-  }
   return (
     <section className={styles.container}>
       <h2>
@@ -52,17 +42,17 @@ export default function Services() {
             <div key={id} className={styles.service}>
               <p
                 className={styles.title}
-                onClick={() => handleServiceStateChange(id)}
+                onClick={() =>
+                  setSelectedServiceId((prevState) =>
+                    prevState === id ? null : id
+                  )
+                }
               >
                 {title}
               </p>
-              <p
-                className={`${styles.description} ${
-                  serviceState[id].isOpen && styles.show_description
-                }`}
-              >
-                {description}
-              </p>
+              {selectedServiceId === id && (
+                <p className={styles.description}>{description}</p>
+              )}
             </div>
           ))}
         </div>

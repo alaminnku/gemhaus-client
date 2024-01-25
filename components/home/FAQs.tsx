@@ -2,25 +2,12 @@
 
 import styles from '@components/home/FAQs.module.css';
 import { useState } from 'react';
-import { faqs, initialFAQState } from '@data/faqs';
-import { FAQState } from 'types';
+import { faqs } from '@data/faqs';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
 export default function FAQ() {
-  const [faqState, setFAQState] = useState(initialFAQState);
-
-  function handleFAQStateChange(id: string) {
-    setFAQState((prevState) => {
-      const updatedState: FAQState = {} as FAQState;
-      for (const prop in prevState) {
-        updatedState[prop] = {
-          isOpen: prop === id ? !prevState[prop].isOpen : false,
-        };
-      }
-      return updatedState;
-    });
-  }
+  const [selectedFaqId, setSelectedFaqId] = useState<number | null>(null);
 
   return (
     <section className={styles.container}>
@@ -34,24 +21,26 @@ export default function FAQ() {
           <div className={styles.question_and_answer} key={id}>
             <div className={styles.question}>
               <p>{question}</p>
-              {faqState[id].isOpen ? (
+              {selectedFaqId === id ? (
                 <MdOutlineKeyboardArrowUp
-                  onClick={() => handleFAQStateChange(id)}
+                  onClick={() =>
+                    setSelectedFaqId((prevState) =>
+                      prevState === id ? null : id
+                    )
+                  }
                 />
               ) : (
                 <MdOutlineKeyboardArrowDown
-                  onClick={() => handleFAQStateChange(id)}
+                  onClick={() =>
+                    setSelectedFaqId((prevState) =>
+                      prevState === id ? null : id
+                    )
+                  }
                 />
               )}
             </div>
 
-            <p
-              className={`${styles.answer} ${
-                faqState[id].isOpen && styles.show_answer
-              }`}
-            >
-              {answer}
-            </p>
+            {selectedFaqId === id && <p>{answer}</p>}
           </div>
         ))}
       </div>
