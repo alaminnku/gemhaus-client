@@ -58,6 +58,10 @@
   margin: 0px 12px;
 }
 
+.reservation_details_guests_controller span {
+  cursor: pointer;
+}
+
 .guest_and_payment_details {
   margin-bottom: 44px;
 }

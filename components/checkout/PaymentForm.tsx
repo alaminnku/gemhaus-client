@@ -66,9 +66,10 @@ export default function PaymentForm({ children, booking }: Props) {
   }, []);
 
   const handleBookProperty = async (formData: FormData) => {
-    // if (!hostedFields) return;
-    // const { nonce } = await hostedFields.tokenize();
+    if (!hostedFields) return;
+    const { nonce } = await hostedFields.tokenize();
 
+    formData.append('nonce', nonce);
     formData.append('numberOfGuests', guests);
     formData.append('arrivalDate', arrivalDate);
     formData.append('departureDate', departureDate);
