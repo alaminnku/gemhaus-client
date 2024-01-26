@@ -1,4 +1,4 @@
-import { getISODate, createUSD } from '@lib/utils';
+import { createUSD, formatDate } from '@lib/utils';
 import { Property, HostawayDate } from 'types';
 import styles from './Price.module.css';
 
@@ -19,7 +19,7 @@ export default function Price({
   const dates: { [key: string]: boolean } = {};
   const currDate = new Date(arrivalDate);
   while (currDate <= new Date(departureDate)) {
-    dates[getISODate(currDate)] = true;
+    dates[formatDate(currDate)] = true;
     currDate.setDate(currDate.getDate() + 1);
   }
 

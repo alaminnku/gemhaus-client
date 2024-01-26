@@ -1,14 +1,15 @@
 'use client';
 
 import styles from './Reservation.module.css';
-import { useEffect, useState } from 'react';
-import { DateRangePicker } from 'rsuite';
-import 'rsuite/dist/rsuite.min.css';
-import { DateRange } from 'rsuite/esm/DateRangePicker';
-import { dateToMS, getISODate } from '@lib/utils';
+import { useState } from 'react';
+import { dateToMS, formatDate } from '@lib/utils';
 import { HostawayDate, Property } from 'types';
 import LinkButton from '@components/layout/LinkButton';
 import Price from '@components/properties/Price';
+import 'react-calendar/dist/Calendar.css';
+import Calendar from 'react-calendar';
+
+type Dates = [string, string];
 
 type Props = {
   property: Property;
@@ -18,9 +19,9 @@ type Props = {
 };
 
 export default function Reservation({ property, calendar }: Props) {
-  const [dates, setDates] = useState<DateRange | null>();
   const [guests, setGuests] = useState('');
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [dates, setDates] = useState<Dates | null>(null);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   // Create available dates map
   const availableDatesMap: { [key: string]: boolean } = {};
@@ -28,20 +29,11 @@ export default function Reservation({ property, calendar }: Props) {
     .filter(
       (el) =>
         el.status === 'available' &&
-        dateToMS(el.date) >= dateToMS(getISODate(new Date()))
+        dateToMS(el.date) >= dateToMS(formatDate(new Date()))
     )
     .forEach((el) => {
       availableDatesMap[el.date] = true;
     });
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div className={styles.container}>
@@ -49,18 +41,35 @@ export default function Reservation({ property, calendar }: Props) {
         ${property.price} <span>Night</span>
       </p>
 
-      <DateRangePicker
-        block
-        size='lg'
-        ranges={[]}
-        value={dates}
-        showOneCalendar
-        preventOverflow
-        onChange={setDates}
-        placement={windowWidth > 500 ? 'leftStart' : 'bottomStart'}
-        placeholder='Check-in -> Check-out'
-        shouldDisableDate={(date: Date) => !availableDatesMap[getISODate(date)]}
-      />
+      <div className={styles.dates}>
+        <input
+          type='text'
+          readOnly
+          onClick={() => setShowCalendar((prevState) => !prevState)}
+          value={
+            dates
+              ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}`
+              : 'Check-in -> Check-out'
+          }
+        />
+
+        {showCalendar && (
+          <div className={styles.calendar}>
+            <Calendar
+              selectRange
+              value={dates}
+              onChange={setDates}
+              tileDisabled={({ date }) => !availableDatesMap[formatDate(date)]}
+            />
+            <button
+              className={styles.calendar_button}
+              onClick={() => setShowCalendar(false)}
+            >
+              OK
+            </button>
+          </div>
+        )}
+      </div>
 
       <div className={styles.guests}>
         <label htmlFor='guests'>Guests</label>
@@ -79,9 +88,9 @@ export default function Reservation({ property, calendar }: Props) {
             text='Reserve'
             href={`/vacation-rental/${
               property._id
-            }/checkout?arrivalDate=${getISODate(
+            }/checkout?arrivalDate=${formatDate(
               dates[0]
-            )}&departureDate=${getISODate(dates[1])}&guests=${guests}`}
+            )}&departureDate=${formatDate(dates[1])}&guests=${guests}`}
             style={{ width: '100%', marginBottom: '10px' }}
           />
 

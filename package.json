@@ -12,6 +12,7 @@
     "braintree-web": "^3.99.0",
     "next": "14.0.4",
     "react": "^18",
+    "react-calendar": "^4.8.0",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "rsuite": "^5.50.0"

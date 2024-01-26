@@ -10,8 +10,3 @@
   font-weight: 600;
   background-color: var(--black);
 }
-
-.container:hover {
-  color: var(--white);
-  text-decoration: none;
-}

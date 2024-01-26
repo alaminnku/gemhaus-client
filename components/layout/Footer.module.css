@@ -17,10 +17,6 @@
   padding: 0.25rem 0.5rem;
 }
 
-.socials a:hover {
-  color: var(--white);
-}
-
 .socials a svg {
   font-size: 1.25rem;
 }

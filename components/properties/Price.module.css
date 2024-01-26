@@ -4,6 +4,7 @@
 }
 
 .container p {
+  line-height: 32px;
   font-size: 18px;
   display: flex;
   align-items: center;
