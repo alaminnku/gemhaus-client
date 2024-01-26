@@ -98,6 +98,21 @@
   border: 4px solid var(--black);
 }
 
+.offering {
+  display: flex;
+  align-items: center;
+  padding: 12px 0px;
+}
+
+.offering input {
+  margin-right: 16px;
+}
+
+.offering img {
+  width: 24px;
+  margin-right: 8px;
+}
+
 .filter_trucks button {
   border: none;
   cursor: pointer;

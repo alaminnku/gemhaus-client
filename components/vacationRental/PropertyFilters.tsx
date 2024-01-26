@@ -5,6 +5,7 @@ import { CSSProperties, ChangeEvent, useEffect, useState } from 'react';
 import styles from './PropertyFilters.module.css';
 import { Dates, Property } from 'types';
 import { formatDate } from '@lib/utils';
+import { propertyOfferings } from '@data/offerings';
 
 type Props = {
   properties: Property[];
@@ -14,17 +15,17 @@ export default function PropertyFilters({ properties }: Props) {
   const [showCalendar, setShowCalendar] = useState(false);
   const [dates, setDates] = useState<Dates | null>(null);
   const [guests, setGuests] = useState<number>();
-
-  const isDateUnavailable = (date: Date) => false;
-  const handleDateChange = (dates: Dates) => setDates(dates);
-
   const [highestPrice, setHighestPrice] = useState(0);
   const [prices, setPrices] = useState({
     min: 0,
     max: 0,
   });
+  const [offerings, setOfferings] = useState<string[]>([]);
   const { min, max } = prices;
+
   const step = 10;
+  const isDateUnavailable = (date: Date) => false;
+  const handleDateChange = (dates: Dates) => setDates(dates);
 
   // Get max price
   useEffect(() => {
@@ -39,9 +40,8 @@ export default function PropertyFilters({ properties }: Props) {
     setHighestPrice(highestPriceRounded);
   }, [properties]);
 
-  // Change slider range
-  function handleChangeRange(e: ChangeEvent<HTMLInputElement>) {
-    // Get gap, id and value
+  // Handle slider range change
+  function handlePriceSliderChange(e: ChangeEvent<HTMLInputElement>) {
     const gap = step * 1;
     const id = e.target.id;
     const value = e.target.value;
@@ -57,6 +57,15 @@ export default function PropertyFilters({ properties }: Props) {
           ? prevState.min + gap
           : +value,
     }));
+  }
+
+  // Handle offering change
+  function handleOfferingChange(e: ChangeEvent<HTMLInputElement>) {
+    setOfferings((prevState) =>
+      prevState.includes(e.target.name) && !e.target.checked
+        ? prevState.filter((el) => el !== e.target.name)
+        : [...prevState, e.target.name]
+    );
   }
 
   return (
@@ -123,7 +132,7 @@ export default function PropertyFilters({ properties }: Props) {
               step={step}
               value={min}
               max={highestPrice}
-              onChange={handleChangeRange}
+              onChange={handlePriceSliderChange}
             />
 
             <input
@@ -133,7 +142,7 @@ export default function PropertyFilters({ properties }: Props) {
               step={step}
               value={max}
               max={highestPrice}
-              onChange={handleChangeRange}
+              onChange={handlePriceSliderChange}
             />
           </div>
 
@@ -150,7 +159,18 @@ export default function PropertyFilters({ properties }: Props) {
       </div>
 
       <div>
-        <p>Include Services</p>
+        <p className={styles.title}>Include Services</p>
+        {propertyOfferings.map((offering, index) => (
+          <div key={index} className={styles.offering}>
+            <input
+              type='checkbox'
+              name={offering.name}
+              onChange={handleOfferingChange}
+            />
+            <img src={offering.icon} />
+            <p>{offering.name}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
