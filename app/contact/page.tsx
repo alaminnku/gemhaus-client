@@ -1,4 +1,5 @@
 import Contact from '@components/contact/Contact';
+import UsefulLinks from '@components/contact/UsefulLinks';
 import Header from '@components/layout/Header';
 
 export default function ContactPage() {
@@ -6,6 +7,7 @@ export default function ContactPage() {
     <main>
       <Header />
       <Contact />
+      <UsefulLinks />
     </main>
   );
 }

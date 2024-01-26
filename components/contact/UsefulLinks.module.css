@@ -1,0 +1,33 @@
+.container {
+  padding: 32px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--black);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation a {
+  color: var(--black);
+  font-size: 24px;
+  padding: 16px 0px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr 1fr auto;
+  }
+}
