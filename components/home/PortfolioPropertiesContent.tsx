@@ -1,6 +1,6 @@
 'use client';
 
-import ModalContainer from '@components/layout/Modal';
+import Modal from '@components/layout/Modal';
 import styles from './PortfolioPropertiesContent.module.css';
 import ContactForm from '@components/layout/ContactForm';
 import { useState } from 'react';
@@ -26,7 +26,7 @@ export default function PortfolioPropertiesContent() {
         icon={<TbDiamond />}
         setShowModal={setShowModal}
       />
-      <ModalContainer
+      <Modal
         component={<ContactForm />}
         showModal={showModal}
         setShowModal={setShowModal}

@@ -4,7 +4,7 @@ import { services } from '@data/services';
 import styles from './Services.module.css';
 import { useState } from 'react';
 import { TbDiamond } from 'react-icons/tb';
-import ModalContainer from '@components/layout/Modal';
+import Modal from '@components/layout/Modal';
 import ContactForm from '@components/layout/ContactForm';
 import ModalButton from '@components/layout/ModalButton';
 
@@ -33,7 +33,7 @@ export default function Services() {
           icon={<TbDiamond />}
           setShowModal={setShowModal}
         />
-        <ModalContainer
+        <Modal
           component={<ContactForm />}
           showModal={showModal}
           setShowModal={setShowModal}

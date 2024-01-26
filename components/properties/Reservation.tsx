@@ -3,19 +3,17 @@
 import styles from './Reservation.module.css';
 import { useEffect, useState } from 'react';
 import { dateToMS, formatDate } from '@lib/utils';
-import { HostawayDate, Property } from 'types';
+import { HostawayCalendar, Property } from 'types';
 import LinkButton from '@components/layout/LinkButton';
 import Price from '@components/properties/Price';
-import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 type Dates = [string, string];
 
 type Props = {
   property: Property;
-  calendar: {
-    result: HostawayDate[];
-  };
+  calendar: HostawayCalendar;
 };
 
 export default function Reservation({ property, calendar }: Props) {
@@ -29,7 +27,7 @@ export default function Reservation({ property, calendar }: Props) {
   // Get available dates map
   useEffect(() => {
     const availableDatesMap: { [key: string]: boolean } = {};
-    calendar.result
+    calendar
       .filter(
         (el) =>
           el.status === 'available' &&
@@ -125,7 +123,7 @@ export default function Reservation({ property, calendar }: Props) {
             arrivalDate={dates[0]}
             departureDate={dates[1]}
             property={property}
-            calendar={calendar.result}
+            calendar={calendar}
           />
         </>
       )}

@@ -24,8 +24,8 @@ export type Article = {
   createdAt: string;
 };
 
-export type HostawayDate = {
+export type HostawayCalendar = {
   date: string;
   price: number;
   status: 'available';
-};
+}[];

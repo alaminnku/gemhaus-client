@@ -1,11 +1,11 @@
 import { createUSD, formatDate } from '@lib/utils';
-import { Property, HostawayDate } from 'types';
+import { Property, HostawayCalendar } from 'types';
 import styles from './Price.module.css';
 
 type Props = {
   arrivalDate: Date | string;
   departureDate: Date | string;
-  calendar: HostawayDate[];
+  calendar: HostawayCalendar;
   property: Property;
 };
 

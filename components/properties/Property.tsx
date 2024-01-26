@@ -43,7 +43,7 @@ export default async function Property({ id }: Props) {
               ></div>
             </div>
 
-            <Reservation calendar={calendar} property={property} />
+            <Reservation calendar={calendar.result} property={property} />
           </div>
         </>
       )}
