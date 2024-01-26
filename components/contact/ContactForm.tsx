@@ -1,12 +1,18 @@
+'use client';
+
 import styles from './ContactForm.module.css';
-import SubmitButton from './SubmitButton';
+import SubmitButton from '../layout/SubmitButton';
+import { inter } from '@lib/utils';
 
 export default function ContactForm() {
   async function handleSubmit(formData: FormData) {
     console.log(formData);
   }
   return (
-    <form className={styles.container} action={handleSubmit}>
+    <form
+      className={`${styles.container} ${inter.className}`}
+      action={handleSubmit}
+    >
       <div className={styles.item}>
         <label htmlFor='name'>Full name</label>
         <input type='text' id='name' name='name' placeholder='Full name' />
@@ -21,14 +27,8 @@ export default function ContactForm() {
         />
       </div>
       <div className={styles.item}>
-        <label htmlFor='phone'>Phone</label>
-        <input
-          type='number'
-          id='phone'
-          name='phone'
-          inputMode='numeric'
-          placeholder='Phone number'
-        />
+        <label htmlFor='subject'>Subject</label>
+        <input type='text' id='subject' name='subject' placeholder='Subject' />
       </div>
       <div className={styles.item}>
         <label htmlFor='message'>Message</label>
@@ -41,7 +41,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <SubmitButton text='Submit Form' style={{ alignSelf: 'center' }} />
+      <SubmitButton text='Submit Form' style={{ width: '100%' }} />
     </form>
   );
 }

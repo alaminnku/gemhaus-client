@@ -2,7 +2,7 @@
 
 import Modal from '@components/layout/Modal';
 import styles from './PortfolioPropertiesContent.module.css';
-import ContactForm from '@components/layout/ContactForm';
+import ContactForm from '@components/contact/ContactForm';
 import { useState } from 'react';
 import ModalButton from '@components/layout/ModalButton';
 import { TbDiamond } from 'react-icons/tb';

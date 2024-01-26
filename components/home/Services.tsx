@@ -5,7 +5,7 @@ import styles from './Services.module.css';
 import { useState } from 'react';
 import { TbDiamond } from 'react-icons/tb';
 import Modal from '@components/layout/Modal';
-import ContactForm from '@components/layout/ContactForm';
+import ContactForm from '@components/contact/ContactForm';
 import ModalButton from '@components/layout/ModalButton';
 
 export default function Services() {

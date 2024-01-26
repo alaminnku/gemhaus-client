@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  padding: var(--section_padding);
+}
+
+.content h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.content p {
+  font-size: 18px;
+  color: #999999;
+  margin-bottom: 32px;
+}
+
+.content h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.phone {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .content {
+    width: 40%;
+  }
+}
