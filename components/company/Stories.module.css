@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  gap: 24px;
+  margin: 24px;
+  flex-direction: column;
+}
+
+.story,
+.item {
+  padding: 32px;
+  border-radius: 40px;
+  background-color: #f8f8f0;
+}
+
+.story h2,
+.item h3 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.story p {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+
+.story p:last-child {
+  margin-bottom: 0px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .story,
+  .item {
+    padding: 48px 32px;
+    border-radius: 70px;
+  }
+
+  .item {
+    position: relative;
+  }
+
+  .story h2,
+  .item h3 {
+    font-size: 63px;
+  }
+
+  .item img {
+    width: 11.5rem;
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+  }
+
+  .mission img {
+    width: 18rem;
+  }
+}
