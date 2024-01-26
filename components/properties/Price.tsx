@@ -16,19 +16,19 @@ export default function Price({
   property,
 }: Props) {
   // All dates between check in and checkout
-  const dates: { [key: string]: boolean } = {};
-  const currDate = new Date(arrivalDate);
-  while (currDate <= new Date(departureDate)) {
-    dates[formatDate(currDate)] = true;
+  const datesMap: Record<string, boolean> = {};
+  const currDate = new Date(formatDate(arrivalDate));
+  while (currDate < new Date(formatDate(departureDate))) {
+    datesMap[formatDate(currDate)] = true;
     currDate.setDate(currDate.getDate() + 1);
   }
 
   // Nights' total
   const price = calendar
-    .filter((el) => dates[el.date])
+    .filter((el) => datesMap[el.date])
     .reduce((acc, curr) => acc + curr.price, 0);
 
-  const days = Object.keys(dates).length - 1;
+  const days = Object.keys(datesMap).length;
   const unitPrice = price / days;
 
   // Fees

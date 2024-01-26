@@ -97,6 +97,20 @@ textarea {
   background-color: var(--black) !important;
 }
 
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+  display: none;
+}
+
+.react-calendar__navigation__label__labelText {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: underline solid;
+}
+
 @media (min-width: 1024px) {
   :root {
     --section_padding: 72px 48px;

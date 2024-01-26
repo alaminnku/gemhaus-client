@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './Reservation.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { dateToMS, formatDate } from '@lib/utils';
 import { HostawayDate, Property } from 'types';
 import LinkButton from '@components/layout/LinkButton';
@@ -22,18 +22,44 @@ export default function Reservation({ property, calendar }: Props) {
   const [guests, setGuests] = useState('');
   const [dates, setDates] = useState<Dates | null>(null);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [availableDatesMap, setAvailableDatesMap] = useState<
+    Record<string, boolean>
+  >({});
 
-  // Create available dates map
-  const availableDatesMap: { [key: string]: boolean } = {};
-  calendar.result
-    .filter(
-      (el) =>
-        el.status === 'available' &&
-        dateToMS(el.date) >= dateToMS(formatDate(new Date()))
-    )
-    .forEach((el) => {
-      availableDatesMap[el.date] = true;
-    });
+  // Get available dates map
+  useEffect(() => {
+    const availableDatesMap: { [key: string]: boolean } = {};
+    calendar.result
+      .filter(
+        (el) =>
+          el.status === 'available' &&
+          dateToMS(el.date) >= dateToMS(formatDate(new Date()))
+      )
+      .forEach((el) => {
+        availableDatesMap[el.date] = true;
+      });
+    setAvailableDatesMap(availableDatesMap);
+  }, [calendar]);
+
+  // Check if date is unavailable
+  const isDateUnavailable = (date: Date | string) =>
+    !availableDatesMap[formatDate(date)];
+
+  // Handle date change
+  const handleDateChange = (dates: Dates) => {
+    const currDate = new Date(dates[0]);
+    let unavailableDateSelected = false;
+
+    while (currDate <= new Date(dates[1])) {
+      const date = formatDate(currDate);
+      if (isDateUnavailable(date)) {
+        unavailableDateSelected = true;
+        break;
+      }
+      currDate.setDate(currDate.getDate() + 1);
+    }
+    if (!unavailableDateSelected) setDates(dates);
+  };
 
   return (
     <div className={styles.container}>
@@ -49,7 +75,7 @@ export default function Reservation({ property, calendar }: Props) {
           value={
             dates
               ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}`
-              : 'Check-in -> Check-out'
+              : 'Check-in --> Check-out'
           }
         />
 
@@ -58,8 +84,9 @@ export default function Reservation({ property, calendar }: Props) {
             <Calendar
               selectRange
               value={dates}
-              onChange={setDates}
-              tileDisabled={({ date }) => !availableDatesMap[formatDate(date)]}
+              // @ts-ignore
+              onChange={handleDateChange}
+              tileDisabled={({ date }) => isDateUnavailable(date)}
             />
             <button
               className={styles.calendar_button}
