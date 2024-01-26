@@ -30,7 +30,7 @@ export default function ContactForm() {
         <label htmlFor='subject'>Subject</label>
         <input type='text' id='subject' name='subject' placeholder='Subject' />
       </div>
-      <div className={styles.item}>
+      <div className={`${styles.item} ${styles.message}`}>
         <label htmlFor='message'>Message</label>
         <textarea
           rows={10}

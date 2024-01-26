@@ -1,5 +1,5 @@
 import Header from '@components/layout/Header';
-import Properties from '@components/properties/Properties';
+import Properties from '@components/vacationRental/Properties';
 
 export default async function PropertiesPage() {
   return (

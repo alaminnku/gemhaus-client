@@ -1,5 +1,5 @@
 import Header from '@components/layout/Header';
-import Property from '@components/properties/Property';
+import Property from '@components/vacationRental/Property';
 
 type Props = {
   params: { id: string };

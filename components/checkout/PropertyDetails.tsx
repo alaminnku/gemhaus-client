@@ -1,7 +1,7 @@
 import { fetchGemhausData, fetchHostawayData } from '@lib/utils';
 import styles from './PropertyDetails.module.css';
 import Image from 'next/image';
-import Price from '@components/properties/Price';
+import Price from '@components/vacationRental/Price';
 
 type Props = {
   propertyId: string;

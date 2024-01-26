@@ -3,13 +3,10 @@
 import styles from './Reservation.module.css';
 import { useEffect, useState } from 'react';
 import { dateToMS, formatDate } from '@lib/utils';
-import { HostawayCalendar, Property } from 'types';
+import { Dates, HostawayCalendar, Property } from 'types';
 import LinkButton from '@components/layout/LinkButton';
-import Price from '@components/properties/Price';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-
-type Dates = [string, string];
+import Price from '@components/vacationRental/Price';
+import Calendar from '@components/layout/Calendar';
 
 type Props = {
   property: Property;
@@ -78,21 +75,12 @@ export default function Reservation({ property, calendar }: Props) {
         />
 
         {showCalendar && (
-          <div className={styles.calendar}>
-            <Calendar
-              selectRange
-              value={dates}
-              // @ts-ignore
-              onChange={handleDateChange}
-              tileDisabled={({ date }) => isDateUnavailable(date)}
-            />
-            <button
-              className={styles.calendar_button}
-              onClick={() => setShowCalendar(false)}
-            >
-              OK
-            </button>
-          </div>
+          <Calendar
+            dates={dates}
+            handleChange={handleDateChange}
+            setShowCalendar={setShowCalendar}
+            isDateUnavailable={isDateUnavailable}
+          />
         )}
       </div>
 

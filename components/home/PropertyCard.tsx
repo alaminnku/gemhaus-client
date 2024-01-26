@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@components/properties/PropertyCard.module.css';
+import styles from './PropertyCard.module.css';
 import { FaBath, FaBed, FaHeart, FaStar, FaUser } from 'react-icons/fa6';
 import { Property } from 'types';
 import Link from 'next/link';

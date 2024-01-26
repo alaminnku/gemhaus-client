@@ -1,0 +1,76 @@
+.container {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border_color);
+}
+
+.content {
+  margin-bottom: 1rem;
+}
+
+.image {
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.featured {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.featured p {
+  padding: 0.25rem 0.75rem;
+  font-size: 12px;
+  border-radius: 0.25rem;
+  background-color: var(--white);
+}
+
+.featured svg {
+  margin-left: 0.5rem;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 20px;
+  color: #717171;
+  margin-bottom: 24px;
+}
+
+.price strong {
+  color: var(--black);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content {
+    display: flex;
+    gap: 32px;
+    width: 70%;
+    margin: 0px;
+  }
+
+  .content img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}

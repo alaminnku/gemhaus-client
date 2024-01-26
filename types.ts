@@ -29,3 +29,5 @@ export type HostawayCalendar = {
   price: number;
   status: 'available';
 }[];
+
+export type Dates = [string, string];
