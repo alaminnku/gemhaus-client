@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './AboutFounder.module.css';
-import founderImage from '@public/company/about-founder.png';
+import founderImage from '@public/company/founder-image.png';
 
 export default function AboutFounder() {
   return (
