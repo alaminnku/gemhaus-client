@@ -10,7 +10,7 @@ export default function PropertyCards({ properties }: Props) {
   return (
     <div className={styles.container}>
       {properties.map((property) => (
-        <PropertyCard property={property} />
+        <PropertyCard key={property._id} property={property} />
       ))}
     </div>
   );

@@ -27,13 +27,15 @@ export default function DesktopNav({ isDarkBackground }: Props) {
         >
           Blog
         </Link>
-        <p className={`${styles.management} `}>
-          Management
+
+        <div className={`${styles.management} `}>
+          <p>Management</p>
           <div className={styles.popup}>
             <Link href='/short-term-rental'>Short term rental</Link>
             <Link href='/long-term-rental'>Long term rental</Link>
           </div>
-        </p>
+        </div>
+
         <Link
           href='/buy-and-sell'
           className={pathname === '/buy-and-sell' ? styles.active : ''}
