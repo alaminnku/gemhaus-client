@@ -11,10 +11,45 @@
   border-radius: 0.5rem;
 }
 
+.main_image img,
+.other_images img {
+  cursor: pointer;
+}
+
 .other_images {
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.expanded_image_container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.expanded_image {
+  width: 85%;
+  position: relative;
+}
+
+.expanded_image img {
+  display: flex;
+}
+
+.close_button {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--white);
 }
 
 @media (min-width: 1024px) {
