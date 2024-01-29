@@ -1,7 +1,14 @@
 'use client';
 
 import Calendar from '@components/layout/Calendar';
-import { CSSProperties, ChangeEvent, useEffect, useState } from 'react';
+import {
+  CSSProperties,
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from 'react';
 import styles from './PropertyFilters.module.css';
 import { Dates, Property } from 'types';
 import { formatDate } from '@lib/utils';
@@ -9,35 +16,39 @@ import { propertyOfferings } from '@data/offerings';
 
 type Props = {
   properties: Property[];
+  setFilteredProperties: Dispatch<SetStateAction<Property[]>>;
 };
 
-export default function PropertyFilters({ properties }: Props) {
+export default function PropertyFilters({
+  properties,
+  setFilteredProperties,
+}: Props) {
   const [showCalendar, setShowCalendar] = useState(false);
   const [dates, setDates] = useState<Dates | null>(null);
   const [guests, setGuests] = useState<number>();
-  const [highestPrice, setHighestPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
   const [prices, setPrices] = useState({
     min: 0,
     max: 0,
   });
   const [offerings, setOfferings] = useState<string[]>([]);
-  const { min, max } = prices;
 
   const step = 10;
+  const { min, max } = prices;
   const isDateUnavailable = (date: Date) => false;
   const handleDateChange = (dates: Dates) => setDates(dates);
 
   // Get max price
   useEffect(() => {
-    const highestPrice = Math.max(
+    const maximumPrice = Math.max(
       ...properties.map((property) => +property.price)
     );
-    const highestPriceRounded = highestPrice + step - (highestPrice % step);
+    const maximumPriceRounded = maximumPrice + step - (maximumPrice % step);
     setPrices((prevState) => ({
       ...prevState,
-      max: highestPriceRounded,
+      max: maximumPriceRounded,
     }));
-    setHighestPrice(highestPriceRounded);
+    setMaxPrice(maximumPriceRounded);
   }, [properties]);
 
   // Handle slider range change
@@ -61,15 +72,43 @@ export default function PropertyFilters({ properties }: Props) {
 
   // Handle offering change
   function handleOfferingChange(e: ChangeEvent<HTMLInputElement>) {
+    const name = e.target.name.toLowerCase();
     setOfferings((prevState) =>
-      prevState.includes(e.target.name) && !e.target.checked
-        ? prevState.filter((el) => el !== e.target.name)
-        : [...prevState, e.target.name]
+      prevState.includes(name) && !e.target.checked
+        ? prevState.filter((el) => el !== name)
+        : [...prevState, name]
     );
   }
 
+  // Filter properties
+  function filterProperties() {
+    let filteredProperties = properties;
+
+    if (guests) {
+      filteredProperties = filteredProperties.filter(
+        (property) => property.guests >= guests
+      );
+    }
+    if (min) {
+      filteredProperties = filteredProperties.filter(
+        (property) => property.price >= min
+      );
+    }
+    if (max) {
+      filteredProperties = filteredProperties.filter(
+        (property) => property.price <= max
+      );
+    }
+    if (offerings.length) {
+      filteredProperties = filteredProperties.filter((property) =>
+        property.offerings.some((offering) => offerings.includes(offering))
+      );
+    }
+    setFilteredProperties(filteredProperties);
+  }
+
   return (
-    <div className={styles.container}>
+    <form className={styles.container} action={filterProperties}>
       <p className={styles.title}>Booking Details</p>
 
       <div className={styles.dates}>
@@ -117,8 +156,8 @@ export default function PropertyFilters({ properties }: Props) {
               className={styles.progress}
               style={
                 {
-                  '--progress_left': `${(min / highestPrice) * 100}%`,
-                  '--progress_right': ` ${100 - (max / highestPrice) * 100}%`,
+                  '--progress_left': `${(min / maxPrice) * 100}%`,
+                  '--progress_right': ` ${100 - (max / maxPrice) * 100}%`,
                 } as CSSProperties
               }
             ></div>
@@ -131,7 +170,7 @@ export default function PropertyFilters({ properties }: Props) {
               min={0}
               step={step}
               value={min}
-              max={highestPrice}
+              max={maxPrice}
               onChange={handlePriceSliderChange}
             />
 
@@ -141,7 +180,7 @@ export default function PropertyFilters({ properties }: Props) {
               min={0}
               step={step}
               value={max}
-              max={highestPrice}
+              max={maxPrice}
               onChange={handlePriceSliderChange}
             />
           </div>
@@ -150,15 +189,15 @@ export default function PropertyFilters({ properties }: Props) {
             className={styles.prices}
             style={
               {
-                '--margin_left': `${(min / highestPrice) * 100}%`,
-                '--margin_right': ` ${100 - (max / highestPrice) * 100}%`,
+                '--margin_left': `${(min / maxPrice) * 100}%`,
+                '--margin_right': ` ${100 - (max / maxPrice) * 100}%`,
               } as CSSProperties
             }
           ></div>
         </div>
       </div>
 
-      <div>
+      <div className={styles.offerings}>
         <p className={styles.title}>Include Services</p>
         {propertyOfferings.map((offering, index) => (
           <div key={index} className={styles.offering}>
@@ -172,6 +211,8 @@ export default function PropertyFilters({ properties }: Props) {
           </div>
         ))}
       </div>
-    </div>
+
+      <button type='submit'>Apply</button>
+    </form>
   );
 }

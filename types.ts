@@ -1,3 +1,7 @@
+import { propertyOfferings } from '@data/offerings';
+
+export type Offerings = (typeof propertyOfferings)[number]['name'][];
+
 export type Property = {
   _id: string;
   hostawayId: number;
@@ -15,6 +19,7 @@ export type Property = {
   serviceFeePercent: number;
   description: string;
   isFeatured: boolean;
+  offerings: Offerings;
 };
 
 export type Article = {
@@ -25,9 +30,18 @@ export type Article = {
 };
 
 export type HostawayCalendar = {
+  listingMapId: number;
   date: string;
   price: number;
   status: 'available';
 }[];
 
 export type Dates = [string, string];
+
+export type Filters = {
+  dates: Dates;
+  guests: number;
+  minPrice: number;
+  maxPrice: number;
+  offerings: Offerings;
+};

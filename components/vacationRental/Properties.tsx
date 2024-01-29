@@ -1,8 +1,7 @@
-import PropertyCards from './PropertyCards';
 import styles from './Properties.module.css';
 import { fetchGemhausData } from '@lib/utils';
 import Error from '@components/layout/Error';
-import PropertyFilters from './PropertyFilters';
+import PropertiesAndFilters from './PropertiesAndFilters';
 
 export default async function Properties() {
   const { data, error } = await fetchGemhausData('/properties', {
@@ -13,8 +12,11 @@ export default async function Properties() {
 
   return (
     <section className={styles.container}>
-      <PropertyFilters properties={data} />
-      {error ? <Error error={error} /> : <PropertyCards properties={data} />}
+      {error ? (
+        <Error error={error} />
+      ) : (
+        <PropertiesAndFilters properties={data} />
+      )}
     </section>
   );
 }
