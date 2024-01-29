@@ -98,7 +98,7 @@ export default function Reservation({ property, calendar }: Props) {
       {dates && guests && (
         <>
           <LinkButton
-            text='Reserve'
+            text='Book Now'
             href={`/vacation-rental/${
               property._id
             }/checkout?arrivalDate=${formatDate(

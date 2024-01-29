@@ -17,7 +17,7 @@
 
 .title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   margin-bottom: 8px;
 }
@@ -25,4 +25,5 @@
 .published {
   font-size: 18px;
   margin-bottom: 0.5rem;
+  color: #b3b3b3;
 }

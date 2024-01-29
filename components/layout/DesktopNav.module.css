@@ -19,6 +19,7 @@
     font-size: 14px;
     margin: 0rem 1rem;
     color: var(--black);
+    font-weight: 500;
   }
 
   .navigation a.active {
@@ -68,6 +69,7 @@
     align-items: center;
     border-radius: 2rem;
     padding: 0.5rem 1rem;
+    font-weight: 500;
     background-color: var(--green);
   }
 

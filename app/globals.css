@@ -28,7 +28,7 @@
   --green: #008858;
   --border_color: #e6e6e6;
   --section_padding: 48px 32px;
-  --max_viewport_width: 1256px;
+  --max_viewport_width: 1920px;
   --shadow_medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow_large: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
