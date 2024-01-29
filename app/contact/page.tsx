@@ -5,7 +5,7 @@ import Header from '@components/layout/Header';
 export default function ContactPage() {
   return (
     <main>
-      <Header />
+      <Header isBlackSignIn={true} />
       <Contact />
       <UsefulLinks />
     </main>

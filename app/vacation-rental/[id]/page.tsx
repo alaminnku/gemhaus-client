@@ -10,7 +10,7 @@ export default function PropertyPage({ params }: Props) {
 
   return (
     <main>
-      <Header />
+      <Header hasBorder={true} isBlackSignIn={true} />
       <Property id={id} />
     </main>
   );

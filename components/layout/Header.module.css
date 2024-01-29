@@ -2,6 +2,10 @@
   padding: 32px;
 }
 
+.has_border {
+  border-bottom: 1px solid var(--border_color);
+}
+
 @media (min-width: 1024px) {
   .container {
     padding: 32px 48px;

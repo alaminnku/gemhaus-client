@@ -7,15 +7,31 @@ import MobileNav from './MobileNav';
 import { inter } from '@lib/utils';
 
 type Props = {
+  hasBorder?: boolean;
+  isBlackSignIn?: boolean;
+  showLogoOnly?: boolean;
   isDarkBackground?: boolean;
 };
 
-export default function Header({ isDarkBackground = false }: Props) {
+export default function Header({
+  hasBorder = false,
+  isBlackSignIn = false,
+  showLogoOnly = false,
+  isDarkBackground = false,
+}: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <header className={`${styles.container} ${inter.className}`}>
-      <DesktopNav isDarkBackground={isDarkBackground} />
+    <header
+      className={`${styles.container} ${inter.className} ${
+        hasBorder && styles.has_border
+      }`}
+    >
+      <DesktopNav
+        isDarkBackground={isDarkBackground}
+        isBlackSignIn={isBlackSignIn}
+        showLogoOnly={showLogoOnly}
+      />
       <MobileNav
         isOpen={isOpen}
         setIsOpen={setIsOpen}

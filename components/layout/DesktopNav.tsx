@@ -6,17 +6,23 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 type Props = {
+  showLogoOnly: boolean;
+  isBlackSignIn: boolean;
   isDarkBackground: boolean;
 };
 
-export default function DesktopNav({ isDarkBackground }: Props) {
+export default function DesktopNav({
+  isDarkBackground,
+  isBlackSignIn,
+  showLogoOnly,
+}: Props) {
   const pathname = usePathname();
 
   return (
     <nav
       className={`${styles.container} ${
         isDarkBackground && styles.is_dark_background
-      }`}
+      } ${showLogoOnly && styles.show_logo_only}`}
     >
       <Logo isDarkBackground={isDarkBackground} />
 
@@ -56,7 +62,10 @@ export default function DesktopNav({ isDarkBackground }: Props) {
         </Link>
       </div>
 
-      <Link href='/sign-in' className={styles.sign_in}>
+      <Link
+        href='/sign-in'
+        className={`${styles.sign_in} ${isBlackSignIn && styles.black_sign_in}`}
+      >
         Sign in
       </Link>
     </nav>

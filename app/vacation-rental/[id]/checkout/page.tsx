@@ -17,7 +17,7 @@ export default function CheckoutPage({ params, searchParams }: Props) {
 
   return (
     <main>
-      <Header />
+      <Header hasBorder={true} isBlackSignIn={true} showLogoOnly={true} />
       <PaymentForm
         booking={booking}
         children={<PropertyDetails {...booking} />}
