@@ -72,7 +72,7 @@ export default function PropertyFilters({
 
   // Handle offering change
   function handleOfferingChange(e: ChangeEvent<HTMLInputElement>) {
-    const name = e.target.name.toLowerCase();
+    const name = e.target.name;
     setOfferings((prevState) =>
       prevState.includes(name) && !e.target.checked
         ? prevState.filter((el) => el !== name)
@@ -101,7 +101,7 @@ export default function PropertyFilters({
     }
     if (offerings.length) {
       filteredProperties = filteredProperties.filter((property) =>
-        property.offerings.some((offering) => offerings.includes(offering))
+        property.offerings.some((offering) => offerings.includes(offering.name))
       );
     }
     setFilteredProperties(filteredProperties);

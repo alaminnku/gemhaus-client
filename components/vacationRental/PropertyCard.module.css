@@ -42,7 +42,18 @@
 .name {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 24px;
+}
+
+.offering_icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.offering_icons img {
+  width: 24px;
+  height: 24px;
 }
 
 .price {
@@ -68,9 +79,13 @@
     margin: 0px;
   }
 
-  .content img {
+  .image img {
     width: 12rem;
     height: 12rem;
     object-fit: cover;
+  }
+
+  .name {
+    margin-bottom: 38px;
   }
 }

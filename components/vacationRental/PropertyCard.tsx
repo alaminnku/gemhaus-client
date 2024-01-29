@@ -28,12 +28,12 @@ export default function PropertyCard({ property }: Props) {
 
         <div>
           <p className={styles.name}>{property.name}</p>
-          <p>
-            {property.beds}beds {property.baths} baths
-          </p>
+          <div className={styles.offering_icons}>
+            {property.offerings.map((offering, index) => (
+              <img key={index} src={offering.icon} alt='Offering icon' />
+            ))}
+          </div>
         </div>
-
-        <div></div>
       </div>
 
       <div>
