@@ -4,6 +4,7 @@ import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import EvaluationInputOptions from '@components/layout/EvaluationInputOptions';
 import Services from '@components/layout/Services';
 import { longTermServices } from '@data/services';
+import Newsletter from '@components/layout/Newsletter';
 
 export default function LongTermRentalPage() {
   return (
@@ -27,6 +28,7 @@ export default function LongTermRentalPage() {
       <PropertyEvaluation
         children={<EvaluationInputOptions showStrLtr={false} />}
       />
+      <Newsletter />
     </main>
   );
 }

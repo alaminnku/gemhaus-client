@@ -4,6 +4,7 @@ import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import EvaluationInputOptions from '@components/layout/EvaluationInputOptions';
 import Services from '@components/layout/Services';
 import { shortTermServices } from '@data/services';
+import Newsletter from '@components/layout/Newsletter';
 
 export default function ShortTermRentalPage() {
   return (
@@ -20,6 +21,7 @@ export default function ShortTermRentalPage() {
       <Services services={shortTermServices} />
       <CallToAction />
       <PropertyEvaluation children={<EvaluationInputOptions />} />
+      <Newsletter />
     </main>
   );
 }

@@ -3,6 +3,7 @@ import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import Services from '@components/layout/Services';
 import CallToAction from '@components/layout/CallToAction';
 import { buyAndSellServices } from '@data/services';
+import Newsletter from '@components/layout/Newsletter';
 
 export default function BuyAndSellPage() {
   return (
@@ -23,6 +24,7 @@ export default function BuyAndSellPage() {
         buttonLink='/vacation-rental'
       />
       <PropertyEvaluation />
+      <Newsletter />
     </main>
   );
 }
