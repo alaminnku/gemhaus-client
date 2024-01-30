@@ -5,17 +5,6 @@
 }
 
 .container img {
-  width: 28px;
+  width: 10rem;
   height: auto;
-  margin-right: 12px;
-}
-
-.container p {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--black);
-}
-
-.container p.light {
-  color: var(--white);
 }

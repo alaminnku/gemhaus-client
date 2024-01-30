@@ -14,7 +14,6 @@ export default function Logo({ isDarkBackground = false }: Props) {
         }
         alt='GemHaus logo'
       />
-      <p className={isDarkBackground ? styles.light : ''}>GemHaus</p>
     </Link>
   );
 }
