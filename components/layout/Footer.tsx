@@ -1,13 +1,8 @@
 import styles from '@components/layout/Footer.module.css';
 import Logo from './Logo';
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa6';
+import { FaFacebookF, FaTwitter } from 'react-icons/fa6';
 import { AiOutlineYoutube } from 'react-icons/ai';
 import { FiInstagram } from 'react-icons/fi';
-import Link from 'next/link';
-import Image from 'next/image';
-import appStoreBadge from '@public/layout/app-store-badge.png';
-import googlePlayBadge from '@public/layout/google-play-badge.png';
-import { currentYear } from '@lib/utils';
 
 export default function Footer() {
   return (
@@ -30,7 +25,10 @@ export default function Footer() {
           <FaTwitter />
         </a>
 
-        <a href='/' target='_blank'>
+        <a
+          href='https://www.youtube.com/channel/UC7qEyohm83uLSD44-eTpQHA'
+          target='_blank'
+        >
           <AiOutlineYoutube />
         </a>
       </div>

@@ -15,7 +15,9 @@ export default function PropertyEvaluation({ children }: Props) {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h2>Property Evaluation</h2>
+        <h2>
+          Property <br /> Evaluation
+        </h2>
         <p>
           Unlock the Power of Flexibility. We specialize in turning your
           property into a lucrative short-term rental, optimizing your returns

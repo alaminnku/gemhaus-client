@@ -76,7 +76,7 @@
   width: 90%;
   position: absolute;
   left: 50%;
-  bottom: -10%;
+  top: 28rem;
   translate: -50%;
 }
 
@@ -116,10 +116,16 @@
   }
 
   .hero_image {
-    bottom: -45%;
+    top: 32rem;
   }
 
   .hero_image_container p {
     font-size: 46px;
+  }
+}
+
+@media (min-width: 1256px) {
+  .container {
+    margin-bottom: 38rem;
   }
 }

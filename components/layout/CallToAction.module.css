@@ -1,10 +1,10 @@
 .container {
-  padding: var(--section_padding);
   margin: 0px 32px;
   border-radius: 0.5rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: var(--section_padding);
   background-image: url('/layout/call-to-action-bg.jpg');
 }
 

@@ -32,6 +32,8 @@ export default function PropertyFilters({
     max: 0,
   });
   const [offerings, setOfferings] = useState<string[]>([]);
+  const [bedrooms, setBedrooms] = useState<number>();
+  const [bathrooms, setBathrooms] = useState<number>();
 
   const step = 10;
   const { min, max } = prices;
@@ -89,6 +91,16 @@ export default function PropertyFilters({
         (property) => property.guests >= guests
       );
     }
+    if (bedrooms) {
+      filteredProperties = filteredProperties.filter(
+        (property) => property.beds >= bedrooms
+      );
+    }
+    if (bathrooms) {
+      filteredProperties = filteredProperties.filter(
+        (property) => property.baths >= bathrooms
+      );
+    }
     if (min) {
       filteredProperties = filteredProperties.filter(
         (property) => property.price >= min
@@ -111,38 +123,62 @@ export default function PropertyFilters({
     <form className={styles.container} action={filterProperties}>
       <p className={styles.title}>Booking Details</p>
 
-      <div className={styles.dates}>
-        <input
-          type='text'
-          readOnly
-          onClick={() => setShowCalendar((prevState) => !prevState)}
-          value={
-            dates
-              ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}`
-              : 'Check-in --> Check-out'
-          }
-        />
-
-        {showCalendar && (
-          <Calendar
-            dates={dates}
-            handleChange={handleDateChange}
-            setShowCalendar={setShowCalendar}
-            isDateUnavailable={isDateUnavailable}
+      <div className={styles.items}>
+        <div className={styles.item}>
+          <input
+            type='text'
+            readOnly
+            onClick={() => setShowCalendar((prevState) => !prevState)}
+            value={
+              dates
+                ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}`
+                : 'Check-in --> Check-out'
+            }
           />
-        )}
-      </div>
 
-      <div className={styles.guests}>
-        <label htmlFor='guests'>Guests</label>
-        <input
-          id='guests'
-          type='number'
-          value={guests}
-          inputMode='numeric'
-          placeholder='1 Guest'
-          onChange={(e) => setGuests(+e.target.value)}
-        />
+          {showCalendar && (
+            <Calendar
+              dates={dates}
+              handleChange={handleDateChange}
+              setShowCalendar={setShowCalendar}
+              isDateUnavailable={isDateUnavailable}
+            />
+          )}
+        </div>
+
+        <div className={styles.item}>
+          <label htmlFor='guests'>Guests</label>
+          <input
+            id='guests'
+            type='number'
+            value={guests}
+            inputMode='numeric'
+            placeholder='1 Guest'
+            onChange={(e) => setGuests(+e.target.value)}
+          />
+        </div>
+        <div className={styles.item}>
+          <label htmlFor='bedrooms'>Bedrooms</label>
+          <input
+            id='bedrooms'
+            type='number'
+            value={bedrooms}
+            inputMode='numeric'
+            placeholder='1 Bedroom'
+            onChange={(e) => setBedrooms(+e.target.value)}
+          />
+        </div>
+        <div className={styles.item}>
+          <label htmlFor='bathrooms'>Bathrooms</label>
+          <input
+            id='bathrooms'
+            type='number'
+            value={bathrooms}
+            inputMode='numeric'
+            placeholder='1 Bathroom'
+            onChange={(e) => setBathrooms(+e.target.value)}
+          />
+        </div>
       </div>
 
       <div className={styles.price}>
@@ -212,7 +248,9 @@ export default function PropertyFilters({
         ))}
       </div>
 
-      <button type='submit'>Apply</button>
+      <button className={styles.apply_button} type='submit'>
+        Apply
+      </button>
     </form>
   );
 }

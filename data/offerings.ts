@@ -39,4 +39,4 @@ export const propertyOfferings = [
     icon: '/vacation-rental/iron-icon.png',
     name: 'Iron',
   },
-] as const;
+];

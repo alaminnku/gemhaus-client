@@ -1,3 +1,5 @@
+'use client';
+
 import { CSSProperties, ReactNode, Dispatch, SetStateAction } from 'react';
 import styles from './Modal.module.css';
 

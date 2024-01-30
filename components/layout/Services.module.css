@@ -4,14 +4,19 @@
 
 .services {
   display: grid;
-  gap: 32px;
+  gap: 16px;
   grid-template-columns: 1fr;
   margin-bottom: 72px;
 }
 
 .service {
+  padding: 24px;
   display: flex;
   align-items: flex-start;
+}
+
+.service:hover {
+  background-color: #d1faca;
 }
 
 .service img {
@@ -37,8 +42,11 @@
   }
 
   .services {
-    gap: 60px;
     margin-bottom: 112px;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service {
+    padding: 24px 32px;
   }
 }

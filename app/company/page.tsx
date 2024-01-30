@@ -8,8 +8,9 @@ export default function CompanyPage() {
   return (
     <main>
       <GenericHero
-        backgroundImage='/company/hero-bg.png'
+        isRounded={true}
         children={<h1>Company</h1>}
+        backgroundImage='/company/hero-bg.png'
       />
       <AboutUs />
       <Stories />
