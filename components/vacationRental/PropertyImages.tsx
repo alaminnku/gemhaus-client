@@ -24,41 +24,15 @@ export default function PropertyImages({ images }: Props) {
         />
       </div>
       <div className={styles.other_images}>
-        {images.map((src, index) => (
-          <>
-            <Image
-              key={index}
-              src={src}
-              width={800}
-              height={500}
-              alt='Image'
-              onClick={() => setExpandedImage(src)}
-            />
-            <Image
-              key={index}
-              src={src}
-              width={800}
-              height={500}
-              alt='Image'
-              onClick={() => setExpandedImage(src)}
-            />
-            <Image
-              key={index}
-              src={src}
-              width={800}
-              height={500}
-              alt='Image'
-              onClick={() => setExpandedImage(src)}
-            />
-            <Image
-              key={index}
-              src={src}
-              width={800}
-              height={500}
-              alt='Image'
-              onClick={() => setExpandedImage(src)}
-            />
-          </>
+        {images.slice(1, 5).map((src, index) => (
+          <Image
+            key={index}
+            src={src}
+            width={800}
+            height={500}
+            alt='Image'
+            onClick={() => setExpandedImage(src)}
+          />
         ))}
       </div>
 
