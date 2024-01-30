@@ -2,11 +2,18 @@
 
 import styles from './ContactForm.module.css';
 import SubmitButton from '../layout/SubmitButton';
-import { inter } from '@lib/utils';
+import { fetchGemhausData, inter } from '@lib/utils';
 
 export default function ContactForm() {
   async function handleSubmit(formData: FormData) {
-    console.log(formData);
+    const { data, error } = await fetchGemhausData('/mail/query', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (error) return console.log(error);
+
+    console.log(data);
   }
   return (
     <form

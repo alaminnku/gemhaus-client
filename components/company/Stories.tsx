@@ -2,9 +2,6 @@
 
 import Image from 'next/image';
 import styles from './Stories.module.css';
-import missionImage from '@public/company/mission.png';
-import whyUsImage from '@public/company/why-us.png';
-import communityImage from '@public/company/community-involvement.png';
 import { useState } from 'react';
 import { stories } from '@data/stories';
 

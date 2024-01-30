@@ -1,7 +1,9 @@
+'use client';
+
 import styles from '@components/layout/PropertyEvaluation.module.css';
 import { ReactNode } from 'react';
-import Newsletter from '@components/layout/Newsletter';
 import SubmitButton from './SubmitButton';
+import { fetchGemhausData } from '@lib/utils';
 
 type Props = {
   children?: ReactNode;
@@ -9,7 +11,17 @@ type Props = {
 
 export default function PropertyEvaluation({ children }: Props) {
   async function handleSubmit(formData: FormData) {
-    'use server';
+    const { data, error } = await fetchGemhausData(
+      '/mail/property-evaluation',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    );
+
+    if (error) return console.log(error);
+
+    console.log(data);
   }
 
   return (
