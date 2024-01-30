@@ -5,24 +5,26 @@
   flex-direction: column;
 }
 
-.story,
-.item {
+.story {
   padding: 32px;
   border-radius: 40px;
   background-color: #f8f8f0;
 }
 
-.story h2,
-.item h3 {
+.story h2 {
   font-size: 40px;
 }
 
 .content {
+  display: none;
   margin-top: 40px;
 }
 
-.story p,
-.item p {
+.show_content {
+  display: block;
+}
+
+.story p {
   font-size: 24px;
   line-height: 32px;
   margin-bottom: 24px;
@@ -32,41 +34,39 @@
   margin-bottom: 0px;
 }
 
-.item {
+.image {
   display: flex;
-  flex-direction: column;
 }
 
-.item img {
+.image img {
   width: 100%;
   height: auto;
   margin-top: 40px;
 }
 
+.hide_image {
+  display: none;
+}
+
 @media (min-width: 1024px) {
-  .story,
-  .item {
+  .story {
+    position: relative;
     padding: 48px 32px;
     border-radius: 70px;
   }
 
-  .item {
-    position: relative;
-  }
-
-  .story h2,
-  .item h3 {
+  .story h2 {
     font-size: 63px;
   }
 
-  .item img {
-    width: 9rem;
+  .image {
     position: absolute;
+    width: 9rem;
     bottom: 24px;
     right: 32px;
   }
 
-  .mission img {
+  .mission_image {
     width: 15rem;
   }
 }
