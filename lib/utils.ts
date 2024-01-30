@@ -1,4 +1,6 @@
 import { Inter, Manrope } from 'next/font/google';
+import { Dispatch, SetStateAction } from 'react';
+import { Alert } from 'types';
 
 type FetchGemhausDataOptions = {
   body?: FormData;
@@ -125,3 +127,30 @@ export const getMonthAbbr = (date: Date) =>
   new Intl.DateTimeFormat('en', { month: 'short' }).format(date);
 
 export const getDate = (date: string) => new Date(date).getDate();
+
+// Success alert
+export function showSuccessAlert(
+  data: { message: string },
+  setAlerts: Dispatch<SetStateAction<Alert[]>>
+) {
+  setAlerts((prevState) => [
+    ...prevState,
+    { message: data.message, type: 'success' },
+  ]);
+}
+
+// Error alert
+export function showErrorAlert(
+  err: { message: string } | string,
+  setAlerts: Dispatch<SetStateAction<Alert[]>>
+) {
+  const type = 'failed';
+
+  setAlerts((prevState) =>
+    typeof err === 'string'
+      ? [...prevState, { message: err, type }]
+      : err.message
+      ? [...prevState, { message: err.message, type }]
+      : [...prevState, { message: "Something wen't wrong", type }]
+  );
+}

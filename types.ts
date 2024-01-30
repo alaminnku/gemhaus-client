@@ -35,3 +35,8 @@ export type HostawayCalendar = {
 }[];
 
 export type Dates = [string, string];
+
+export type Alert = {
+  message: string;
+  type: 'success' | 'failed';
+};

@@ -3,13 +3,16 @@
 import styles from '@components/layout/PropertyEvaluation.module.css';
 import { ReactNode } from 'react';
 import SubmitButton from './SubmitButton';
-import { fetchGemhausData } from '@lib/utils';
+import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
+import { useAlert } from 'contexts/Alert';
 
 type Props = {
   children?: ReactNode;
 };
 
 export default function PropertyEvaluation({ children }: Props) {
+  const { setAlerts } = useAlert();
+
   async function handleSubmit(formData: FormData) {
     const { data, error } = await fetchGemhausData(
       '/mail/property-evaluation',
@@ -19,9 +22,8 @@ export default function PropertyEvaluation({ children }: Props) {
       }
     );
 
-    if (error) return console.log(error);
-
-    console.log(data);
+    if (error) return showErrorAlert(error, setAlerts);
+    showSuccessAlert(data, setAlerts);
   }
 
   return (

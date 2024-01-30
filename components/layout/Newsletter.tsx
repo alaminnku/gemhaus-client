@@ -2,20 +2,22 @@
 
 import styles from '@components/layout/Newsletter.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
-import { fetchGemhausData } from '@lib/utils';
+import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
 import newsletter from '@public/layout/newsletter.png';
+import { useAlert } from 'contexts/Alert';
 import Image from 'next/image';
 
 export default function Newsletter() {
+  const { setAlerts } = useAlert();
+
   async function handleSubscribe(formData: FormData) {
     const { data, error } = await fetchGemhausData('/subscribers/add', {
       method: 'POST',
       body: formData,
     });
 
-    if (error) return console.log(error);
-
-    console.log(data);
+    if (error) return showErrorAlert(error, setAlerts);
+    showSuccessAlert(data, setAlerts);
   }
   return (
     <section className={styles.container}>

@@ -2,18 +2,25 @@
 
 import styles from './ContactForm.module.css';
 import SubmitButton from '../layout/SubmitButton';
-import { fetchGemhausData, inter } from '@lib/utils';
+import {
+  fetchGemhausData,
+  inter,
+  showErrorAlert,
+  showSuccessAlert,
+} from '@lib/utils';
+import { useAlert } from 'contexts/Alert';
 
 export default function ContactForm() {
+  const { setAlerts } = useAlert();
+
   async function handleSubmit(formData: FormData) {
     const { data, error } = await fetchGemhausData('/mail/query', {
       method: 'POST',
       body: formData,
     });
 
-    if (error) return console.log(error);
-
-    console.log(data);
+    if (error) return showErrorAlert(error, setAlerts);
+    showSuccessAlert(data, setAlerts);
   }
   return (
     <form

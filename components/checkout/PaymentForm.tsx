@@ -2,11 +2,19 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
-import { fetchGemhausData, getDate, getMonthAbbr, inter } from '@lib/utils';
+import {
+  fetchGemhausData,
+  getDate,
+  getMonthAbbr,
+  inter,
+  showErrorAlert,
+  showSuccessAlert,
+} from '@lib/utils';
 import styles from './PaymentForm.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
+import { useAlert } from 'contexts/Alert';
 
 type Props = {
   children: ReactNode;
@@ -20,6 +28,7 @@ type Props = {
 
 export default function PaymentForm({ children, booking }: Props) {
   const router = useRouter();
+  const { setAlerts } = useAlert();
   let hostedFields: HostedFields | null = null;
   const { guests, propertyId, arrivalDate, departureDate } = booking;
   const [guestsCount, setGuestsCount] = useState(+guests);
@@ -81,9 +90,8 @@ export default function PaymentForm({ children, booking }: Props) {
         body: formData,
       }
     );
-    if (error) return console.log(error);
-
-    console.log(data);
+    if (error) return showErrorAlert(error, setAlerts);
+    showSuccessAlert(data, setAlerts);
   };
 
   return (
