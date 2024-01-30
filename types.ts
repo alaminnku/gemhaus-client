@@ -1,23 +1,21 @@
-import { propertyOfferings } from '@data/offerings';
-
 export type Property = {
   _id: string;
   hostawayId: number;
   name: string;
   price: number;
-  images: string[];
-  beds: number;
-  baths: number;
   guests: number;
   rating: number;
+  images: string[];
+  bedrooms: number;
+  bathrooms: number;
   cleaningFee: number;
   insuranceFee: number;
+  description: string;
+  isFeatured: boolean;
   lodgingTaxPercent: number;
   salesTaxPercent: number;
   serviceFeePercent: number;
-  description: string;
-  isFeatured: boolean;
-  offerings: typeof propertyOfferings;
+  offerings: { name: string; icon: string }[];
 };
 
 export type Article = {

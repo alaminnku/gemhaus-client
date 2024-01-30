@@ -21,13 +21,13 @@
   border-radius: 20px;
 }
 
-.property_name_and_beds p:nth-child(1) {
+.property_name_and_bedrooms p:nth-child(1) {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
-.property_name_and_beds p:nth-child(2) {
+.property_name_and_bedrooms p:nth-child(2) {
   font-size: 18px;
   color: #666666;
 }
@@ -74,7 +74,7 @@
 }
 
 @media (min-width: 1024px) {
-  .property_name_and_beds p:nth-child(1) {
+  .property_name_and_bedrooms p:nth-child(1) {
     font-size: 24px;
   }
 

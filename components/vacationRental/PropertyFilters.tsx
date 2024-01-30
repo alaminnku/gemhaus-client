@@ -93,12 +93,12 @@ export default function PropertyFilters({
     }
     if (bedrooms) {
       filteredProperties = filteredProperties.filter(
-        (property) => property.beds >= bedrooms
+        (property) => property.bedrooms >= bedrooms
       );
     }
     if (bathrooms) {
       filteredProperties = filteredProperties.filter(
-        (property) => property.baths >= bathrooms
+        (property) => property.bathrooms >= bathrooms
       );
     }
     if (min) {

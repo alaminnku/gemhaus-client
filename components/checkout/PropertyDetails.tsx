@@ -36,9 +36,9 @@ export default async function PropertyDetails({
             height={300}
             alt={`${property.name} image`}
           />
-          <div className={styles.property_name_and_beds}>
+          <div className={styles.property_name_and_bedrooms}>
             <p>{property.name}</p>
-            <p>{property.beds} bedrooms</p>
+            <p>{property.bedrooms} bedrooms</p>
           </div>
         </div>
 
