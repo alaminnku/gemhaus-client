@@ -1,3 +1,5 @@
+export type Offering = { name: string; icon: string };
+
 export type Property = {
   _id: string;
   hostawayId: number;
@@ -12,10 +14,10 @@ export type Property = {
   insuranceFee: number;
   description: string;
   isFeatured: boolean;
+  offerings: Offering[];
   lodgingTaxPercent: number;
   salesTaxPercent: number;
   serviceFeePercent: number;
-  offerings: { name: string; icon: string }[];
 };
 
 export type Article = {

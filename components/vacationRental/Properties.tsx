@@ -4,18 +4,24 @@ import Error from '@components/layout/Error';
 import PropertiesAndFilters from './PropertiesAndFilters';
 
 export default async function Properties() {
-  const { data, error } = await fetchGemhausData('/properties', {
-    next: {
-      revalidate: 60 * 60 * 24,
-    },
-  });
+  const { data: properties, error: propertiesError } = await fetchGemhausData(
+    '/properties',
+    {
+      next: {
+        revalidate: 60 * 60 * 24,
+      },
+    }
+  );
+  const { data: offerings, error: offeringsError } = await fetchGemhausData(
+    '/properties/offerings'
+  );
 
   return (
     <section className={styles.container}>
-      {error ? (
-        <Error error={error} />
+      {propertiesError || offeringsError ? (
+        <Error error={propertiesError || offeringsError} />
       ) : (
-        <PropertiesAndFilters properties={data} />
+        <PropertiesAndFilters properties={properties} offerings={offerings} />
       )}
     </section>
   );

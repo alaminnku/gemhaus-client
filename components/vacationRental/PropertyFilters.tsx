@@ -10,17 +10,18 @@ import {
   useState,
 } from 'react';
 import styles from './PropertyFilters.module.css';
-import { Dates, Property } from 'types';
+import { Dates, Offering, Property } from 'types';
 import { formatDate } from '@lib/utils';
-import { propertyOfferings } from '@data/offerings';
 
 type Props = {
   properties: Property[];
+  propertyOfferings: Offering[];
   setFilteredProperties: Dispatch<SetStateAction<Property[]>>;
 };
 
 export default function PropertyFilters({
   properties,
+  propertyOfferings,
   setFilteredProperties,
 }: Props) {
   const [showCalendar, setShowCalendar] = useState(false);
