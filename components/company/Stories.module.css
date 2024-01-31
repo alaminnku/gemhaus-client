@@ -12,7 +12,7 @@
 }
 
 .story h2 {
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .content {
@@ -25,7 +25,7 @@
 }
 
 .story p {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
   margin-bottom: 24px;
 }
@@ -50,23 +50,31 @@
 
 @media (min-width: 1024px) {
   .story {
+    min-height: 271px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     padding: 48px 32px;
     border-radius: 70px;
   }
 
   .story h2 {
-    font-size: 63px;
+    font-size: 43px;
+  }
+
+  .community_title {
+    max-width: 20rem;
   }
 
   .image {
     position: absolute;
-    width: 9rem;
+    width: 15rem;
     bottom: 24px;
     right: 32px;
   }
 
   .mission_image {
-    width: 15rem;
+    width: 23rem;
   }
 }

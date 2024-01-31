@@ -20,6 +20,11 @@ export default function OurStory() {
                 prevState === story.title ? null : story.title
               )
             }
+            className={
+              story.title === 'Community Involvement'
+                ? styles.community_title
+                : ''
+            }
           >
             {story.title}
           </h2>

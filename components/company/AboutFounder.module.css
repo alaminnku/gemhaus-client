@@ -16,12 +16,12 @@
 
 .content h2 {
   line-height: 61px;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
 }
 
 .content p {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
 }
 
@@ -42,7 +42,7 @@
   }
 
   .content h2 {
-    font-size: 63px;
+    font-size: 33px;
     margin-bottom: 32px;
   }
 }
