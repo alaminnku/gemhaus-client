@@ -16,9 +16,9 @@
 }
 
 .content h2 {
-  font-size: 40px;
+  font-size: var(--h2_size);
   font-weight: 600;
-  margin-bottom: 36px;
+  margin-bottom: 16px;
 }
 
 .input_and_button {
@@ -45,7 +45,7 @@
   }
 
   .content h2 {
-    font-size: 63px;
+    margin-bottom: 36px;
   }
 
   .input_and_button {
@@ -53,7 +53,7 @@
   }
 
   .input_and_button input {
-    flex: 1;
+    min-width: 70%;
     margin-bottom: 0rem;
     margin-right: 0.5rem;
   }

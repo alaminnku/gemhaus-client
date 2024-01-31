@@ -10,18 +10,21 @@ export default function SearchField() {
   const [search, setSearch] = useState('');
   return (
     <div className={`${styles.search_field} ${inter.className}`}>
-      <MdOutlineSearch />
+      <div className={styles.search_input}>
+        <MdOutlineSearch />
 
-      <input
-        type='text'
-        placeholder='Find your gem'
-        onChange={(e) => setSearch(e.target.value)}
-      />
+        <input
+          type='text'
+          placeholder='Find your gem'
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
       <Link
         className={styles.search_button}
         href={`/vacation-rental/?search=${search}`}
       >
-        Submit
+        Search
       </Link>
     </div>
   );

@@ -4,7 +4,7 @@
 }
 
 .container h2 {
-  font-size: 40px;
+  font-size: var(--h2_size);
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .question svg {
@@ -39,10 +39,13 @@
 
   .container h2 {
     width: 50%;
-    font-size: 63px;
   }
 
   .questions_and_answers {
     width: 50%;
+  }
+
+  .question {
+    font-size: 24px;
   }
 }

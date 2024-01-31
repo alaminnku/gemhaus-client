@@ -10,25 +10,28 @@ type Props = {
 };
 
 export default function CallToAction({
-  title = 'Your world is <br /> worth sharing',
-  description = 'Turn your extra space into your next <br /> opportunity',
+  buttonWidth,
   buttonText = 'Become a Host',
   buttonLink = '/short-term-rental',
-  buttonWidth = '12rem',
+  title = 'Your world is <br /> worth sharing',
+  description = 'Turn your extra space into your next <br /> opportunity',
 }: Props) {
   return (
     <section className={styles.container}>
-      <h2 dangerouslySetInnerHTML={{ __html: title }}></h2>
-      <p dangerouslySetInnerHTML={{ __html: description }}></p>
-      <LinkButton
-        href={buttonLink}
-        text={buttonText}
-        style={{
-          width: buttonWidth,
-          color: 'var(--black)',
-          backgroundColor: 'var(--white)',
-        }}
-      />
+      <div className={styles.content}>
+        <h2 dangerouslySetInnerHTML={{ __html: title }}></h2>
+        <p dangerouslySetInnerHTML={{ __html: description }}></p>
+        <LinkButton
+          href={buttonLink}
+          text={buttonText}
+          style={{
+            width: buttonWidth,
+            color: 'var(--black)',
+            fontSize: '14px',
+            backgroundColor: 'var(--white)',
+          }}
+        />
+      </div>
     </section>
   );
 }

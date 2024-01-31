@@ -12,9 +12,9 @@
 }
 
 .title {
-  font-size: 40px;
+  font-size: var(--h2_size);
   font-weight: 600;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .content p:nth-child(2) {
@@ -22,7 +22,7 @@
 }
 
 .description {
-  font-size: 24px;
+  font-size: 14px;
 }
 
 .container img {
@@ -47,6 +47,10 @@
   }
 
   .title {
-    font-size: 63px;
+    margin-bottom: 32px;
+  }
+
+  .description {
+    font-size: 24px;
   }
 }

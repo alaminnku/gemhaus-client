@@ -23,6 +23,7 @@
 }
 
 :root {
+  --h2_size: 24px;
   --black: #000000;
   --white: #ffffff;
   --green: #008858;
@@ -113,6 +114,7 @@ textarea {
 
 @media (min-width: 1024px) {
   :root {
+    --h2_size: 63px;
     --section_padding: 72px 48px;
   }
 }

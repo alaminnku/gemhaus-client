@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from 'react';
-import Logo from './Logo';
 import styles from './MobileNav.module.css';
 
 type Props = {
@@ -15,8 +14,6 @@ export default function MobileNav({
 }: Props) {
   return (
     <nav className={styles.container}>
-      <Logo isDarkBackground={isDarkBackground} />
-
       <div
         className={`${styles.hamburger} ${isOpen && styles.open} `}
         onClick={() => setIsOpen(!isOpen)}

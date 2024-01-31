@@ -3,13 +3,13 @@
 }
 
 .container h2 {
-  font-size: 40px;
+  font-size: var(--h2_size);
   font-weight: 600;
-  margin-bottom: 48px;
+  margin-bottom: 34px;
 }
 
 @media (min-width: 1024px) {
   .container h2 {
-    font-size: 63px;
+    margin-bottom: 48px;
   }
 }
