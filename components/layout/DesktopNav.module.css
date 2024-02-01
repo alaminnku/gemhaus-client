@@ -39,6 +39,7 @@
     left: 0;
     width: max-content;
     border-radius: 4px;
+    z-index: 1;
     background-color: var(--border_color);
   }
 

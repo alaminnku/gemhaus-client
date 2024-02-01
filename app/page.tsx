@@ -19,7 +19,7 @@ export default function HomePage() {
       <Blog />
       <SaveTime />
       <FAQs />
-      <Newsletter />
+      <Newsletter hasBackground={true} />
     </main>
   );
 }

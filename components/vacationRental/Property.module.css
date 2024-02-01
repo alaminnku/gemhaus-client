@@ -1,5 +1,6 @@
 .container {
   padding: 32px;
+  padding-top: 0px;
   line-height: 32px;
   font-family: 'PP Mori', sans-serif;
 }
@@ -28,6 +29,8 @@
 
 .offerings {
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .offering {
@@ -68,5 +71,9 @@
   .content_and_reservation {
     gap: 2rem;
     flex-direction: row;
+  }
+
+  .offerings {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

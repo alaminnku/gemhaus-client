@@ -6,8 +6,13 @@ import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
 import newsletter from '@public/layout/newsletter.png';
 import { useAlert } from 'contexts/Alert';
 import Image from 'next/image';
+import { CSSProperties } from 'react';
 
-export default function Newsletter() {
+type Props = {
+  hasBackground?: boolean;
+};
+
+export default function Newsletter({ hasBackground }: Props) {
   const { setAlerts } = useAlert();
 
   async function handleSubscribe(formData: FormData) {
@@ -20,7 +25,14 @@ export default function Newsletter() {
     showSuccessAlert(data, setAlerts);
   }
   return (
-    <section className={styles.container}>
+    <section
+      className={styles.container}
+      style={
+        {
+          '--bgColor': hasBackground ? '#f7f7f7' : 'transparent',
+        } as CSSProperties
+      }
+    >
       <div className={styles.content}>
         <Image src={newsletter} alt='Property images' />
 

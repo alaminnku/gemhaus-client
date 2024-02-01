@@ -8,6 +8,7 @@ export default function CompanyPage() {
   return (
     <main>
       <GenericHero
+        desktopRadius='42px'
         children={<h1>Company</h1>}
         backgroundImage='/company/hero-bg.png'
       />
