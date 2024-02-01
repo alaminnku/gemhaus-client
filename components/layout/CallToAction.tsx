@@ -6,11 +6,9 @@ type Props = {
   description?: string;
   buttonText?: string;
   buttonLink?: string;
-  buttonWidth?: string;
 };
 
 export default function CallToAction({
-  buttonWidth,
   buttonText = 'Become a Host',
   buttonLink = '/short-term-rental',
   title = 'Your world is <br /> worth sharing',
@@ -25,9 +23,8 @@ export default function CallToAction({
           href={buttonLink}
           text={buttonText}
           style={{
-            width: buttonWidth,
-            color: 'var(--black)',
             fontSize: '14px',
+            color: 'var(--black)',
             backgroundColor: 'var(--white)',
           }}
         />

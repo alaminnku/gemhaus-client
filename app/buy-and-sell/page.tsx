@@ -18,10 +18,10 @@ export default function BuyAndSellPage() {
       />
       <Services services={buyAndSellServices} />
       <CallToAction
-        title='Unlock the door to your dream home or sell with confidence.'
-        description='Navigate the selling process seamlessly with GemHaus'
         buttonText='Find your Gem'
         buttonLink='/vacation-rental'
+        title='Unlock the door to your dream home or sell with confidence.'
+        description='Navigate the selling process seamlessly with GemHaus'
       />
       <PropertyEvaluation />
       <Newsletter />
