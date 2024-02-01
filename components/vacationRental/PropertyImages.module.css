@@ -2,24 +2,37 @@
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 18px;
 }
 
 .container img {
   width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 20px;
+}
+
+.main_image {
+  display: flex;
+  position: relative;
+}
+
+.image_count {
+  bottom: 0.5rem;
+  right: 0.5rem;
+  padding: 0px 10px;
+  border-radius: 10px;
+  color: var(--white);
+  position: absolute;
+  background-color: #00000072;
+}
+
+.other_images {
+  display: none;
 }
 
 .main_image img,
 .other_images img {
   cursor: pointer;
-}
-
-.other_images {
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .expanded_image_container {
@@ -41,7 +54,9 @@
   justify-content: center;
 }
 
-.close_button {
+.close_button,
+.prev_button,
+.next_button {
   position: absolute;
   top: -1.5rem;
   right: -1.5rem;
@@ -50,14 +65,48 @@
   color: var(--white);
 }
 
+.prev_button,
+.next_button {
+  top: 50%;
+  translate: 0% -50%;
+  color: var(--white);
+}
+
+.prev_button {
+  left: 0rem;
+}
+
+.next_button {
+  right: 0rem;
+}
+
 @media (min-width: 1024px) {
   .container {
     flex-direction: row;
     align-items: center;
+    margin-bottom: 32px;
   }
 
   .main_image,
   .other_images {
     width: 50%;
+  }
+
+  .image_count {
+    display: none;
+  }
+
+  .prev_button {
+    left: 0.5rem;
+  }
+
+  .next_button {
+    right: 0.5rem;
+  }
+
+  .other_images {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

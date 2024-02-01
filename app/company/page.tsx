@@ -8,7 +8,6 @@ export default function CompanyPage() {
   return (
     <main>
       <GenericHero
-        isRounded={true}
         children={<h1>Company</h1>}
         backgroundImage='/company/hero-bg.png'
       />

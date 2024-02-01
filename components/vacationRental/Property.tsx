@@ -3,6 +3,7 @@ import { fetchGemhausData, fetchHostawayData } from '@lib/utils';
 import styles from './Property.module.css';
 import Reservation from './Reservation';
 import PropertyImages from './PropertyImages';
+import { Offering } from 'types';
 
 type Props = {
   id: string;
@@ -34,8 +35,16 @@ export default async function Property({ id }: Props) {
               <div className={styles.title}>
                 <h1>{property.name}</h1>
               </div>
-              <div className={styles.offerings}>
+              <div className={styles.property_offerings}>
                 <h2>What this place offers</h2>
+                <div className={styles.offerings}>
+                  {property.offerings.map((offering: Offering) => (
+                    <div className={styles.offering}>
+                      <img src={offering.icon} />
+                      <p>{offering.name}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div
                 className={styles.description}

@@ -2,18 +2,23 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: var(--radius);
+  border-radius: 0px 0px 10px 10px;
   background-image: var(--background_image);
 }
 
 .container h1 {
-  font-size: 40px;
+  font-size: 36px;
+  font-weight: 600;
   color: var(--white);
   text-align: center;
   padding: 4rem 0rem 7rem 0rem;
 }
 
 @media (min-width: 1024px) {
+  .container {
+    border-radius: var(--desktop_radius);
+  }
+
   .container h1 {
     font-size: 91px;
   }

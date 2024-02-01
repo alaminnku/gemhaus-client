@@ -3,14 +3,14 @@ import Header from '@components/layout/Header';
 import { CSSProperties, ReactNode } from 'react';
 
 type Props = {
-  isRounded?: boolean;
+  desktopRadius?: string;
   children: ReactNode;
   backgroundImage: string;
 };
 
 export default function GenericHero({
+  desktopRadius,
   children,
-  isRounded,
   backgroundImage,
 }: Props) {
   return (
@@ -18,7 +18,7 @@ export default function GenericHero({
       className={styles.container}
       style={
         {
-          '--radius': isRounded ? '62px' : '0px',
+          '--desktop_radius': desktopRadius || '0px',
           '--background_image': `url(${backgroundImage})`,
         } as CSSProperties
       }

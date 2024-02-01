@@ -1,5 +1,5 @@
 .input_options p {
-  font-size: 21px;
+  font-size: 16px;
   margin-bottom: 12px;
 }
 
@@ -18,5 +18,12 @@
 
 .option label {
   cursor: pointer;
-  font-size: 21px;
+  font-size: 18px;
+}
+
+@media (min-width: 1024px) {
+  .input_options p,
+  .option label {
+    font-size: 21px;
+  }
 }
