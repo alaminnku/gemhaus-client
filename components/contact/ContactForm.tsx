@@ -9,8 +9,13 @@ import {
   showSuccessAlert,
 } from '@lib/utils';
 import { useAlert } from 'contexts/Alert';
+import { Dispatch, SetStateAction } from 'react';
 
-export default function ContactForm() {
+type Props = {
+  setShowModal?: Dispatch<SetStateAction<boolean>>;
+};
+
+export default function ContactForm({ setShowModal }: Props) {
   const { setAlerts } = useAlert();
 
   async function handleSubmit(formData: FormData) {
@@ -20,6 +25,7 @@ export default function ContactForm() {
     });
 
     if (error) return showErrorAlert(error, setAlerts);
+    if (setShowModal) setShowModal(false);
     showSuccessAlert(data, setAlerts);
   }
   return (

@@ -27,9 +27,9 @@ export default function PortfolioPropertiesContent() {
         setShowModal={setShowModal}
       />
       <Modal
-        component={<ContactForm />}
         showModal={showModal}
         setShowModal={setShowModal}
+        component={<ContactForm setShowModal={setShowModal} />}
       />
     </div>
   );
