@@ -1,6 +1,7 @@
 .container {
   display: flex;
   gap: 24px;
+  margin: 0px 14px;
   flex-direction: column;
   color: var(--white);
   border-radius: 32px;
@@ -10,14 +11,15 @@
 
 .content {
   display: flex;
-  gap: 24px;
+  gap: 26px;
   flex-direction: column;
 }
 
 .content h2 {
-  line-height: 61px;
-  font-size: 32px;
+  line-height: 41px;
+  font-size: 36px;
   font-weight: 600;
+  margin-bottom: 73px;
 }
 
 .content p {
@@ -43,6 +45,7 @@
 
   .content h2 {
     font-size: 33px;
+    line-height: 61px;
     margin-bottom: 32px;
   }
 }

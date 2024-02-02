@@ -9,13 +9,14 @@ import {
   showSuccessAlert,
 } from '@lib/utils';
 import { useAlert } from 'contexts/Alert';
-import { Dispatch, SetStateAction } from 'react';
+import { CSSProperties, Dispatch, SetStateAction } from 'react';
 
 type Props = {
+  buttonFontSize?: string;
   setShowModal?: Dispatch<SetStateAction<boolean>>;
 };
 
-export default function ContactForm({ setShowModal }: Props) {
+export default function ContactForm({ setShowModal, buttonFontSize }: Props) {
   const { setAlerts } = useAlert();
 
   async function handleSubmit(formData: FormData) {
@@ -61,7 +62,10 @@ export default function ContactForm({ setShowModal }: Props) {
         />
       </div>
 
-      <SubmitButton text='Submit Form' style={{ width: '100%' }} />
+      <SubmitButton
+        text='Submit Form'
+        style={{ width: '100%', fontSize: buttonFontSize }}
+      />
     </form>
   );
 }

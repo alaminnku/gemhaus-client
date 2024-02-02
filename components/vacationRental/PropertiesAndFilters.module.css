@@ -1,0 +1,7 @@
+@media (min-width: 1024px) {
+  .filters_and_properties {
+    display: flex;
+    gap: 61px;
+    margin-top: 45px;
+  }
+}

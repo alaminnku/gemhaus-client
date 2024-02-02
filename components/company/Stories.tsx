@@ -13,7 +13,11 @@ export default function OurStory() {
   return (
     <section className={styles.container}>
       {stories.map((story) => (
-        <div className={styles.story}>
+        <div
+          className={`${styles.story} ${
+            selectedStory === story.title && styles.selected_story
+          }`}
+        >
           <h2
             onClick={() =>
               setSelectedStory((prevState) =>
@@ -28,11 +32,7 @@ export default function OurStory() {
           >
             {story.title}
           </h2>
-          <div
-            className={`${styles.content} ${
-              selectedStory === story.title && styles.show_content
-            }`}
-          >
+          <div className={styles.content}>
             {story.content.map((el) => (
               <p>{el}</p>
             ))}
@@ -41,7 +41,7 @@ export default function OurStory() {
           <div
             className={`${styles.image} ${
               selectedStory === story.title && styles.hide_image
-            } ${story.title === 'Mission and Values' && styles.mission_image}`}
+            }`}
           >
             {story.image && (
               <Image

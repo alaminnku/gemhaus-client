@@ -14,13 +14,17 @@ import { Dates, Offering, Property } from 'types';
 import { formatDate } from '@lib/utils';
 
 type Props = {
+  showFilters: boolean;
   properties: Property[];
   propertyOfferings: Offering[];
+  setShowFilters: Dispatch<SetStateAction<boolean>>;
   setFilteredProperties: Dispatch<SetStateAction<Property[]>>;
 };
 
 export default function PropertyFilters({
   properties,
+  showFilters,
+  setShowFilters,
   propertyOfferings,
   setFilteredProperties,
 }: Props) {
@@ -117,11 +121,15 @@ export default function PropertyFilters({
         property.offerings.some((offering) => offerings.includes(offering.name))
       );
     }
+    setShowFilters(false);
     setFilteredProperties(filteredProperties);
   }
 
   return (
-    <form className={styles.container} action={filterProperties}>
+    <form
+      className={`${styles.container} ${showFilters && styles.show_filters}`}
+      action={filterProperties}
+    >
       <p className={styles.title}>Booking Details</p>
 
       <div className={styles.items}>

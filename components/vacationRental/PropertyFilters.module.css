@@ -1,4 +1,9 @@
 .container {
+  display: none;
+  margin-top: 20px;
+}
+
+.show_filters {
   display: flex;
   flex-direction: column;
 }
@@ -133,6 +138,8 @@
 @media (min-width: 1024px) {
   .container {
     width: 18rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .items {

@@ -1,10 +1,7 @@
-.property_details {
-}
-
 .property_header_and_price {
   padding: 1rem;
   border-radius: 10px;
-  margin-bottom: 72px;
+  margin-bottom: 34px;
   border: 1px solid var(--border_color);
 }
 
@@ -22,7 +19,7 @@
 }
 
 .property_name_and_bedrooms p:nth-child(1) {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -41,21 +38,24 @@
   margin-bottom: 26px;
 }
 
-.cancellation_policy {
-  margin-bottom: 62px;
+.cancellation_policy,
+.house_rules {
+  margin-bottom: 33px;
+  padding-bottom: 33px;
+  border-bottom: 1px solid var(--border_color);
 }
 
 .cancellation_policy_title,
 .house_rules_title {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 11px;
 }
 
 .cancellation_policy_item {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 18px;
   color: #666666;
+  margin-bottom: 15px;
 }
 
 .cancellation_policy_item strong {
@@ -74,11 +74,23 @@
 }
 
 @media (min-width: 1024px) {
-  .property_name_and_bedrooms p:nth-child(1) {
-    font-size: 24px;
-  }
-
   .property_header_and_price {
     margin-bottom: 104px;
+  }
+
+  .cancellation_policy,
+  .house_rules {
+    border-bottom: none;
+  }
+
+  .cancellation_policy_title,
+  .house_rules_title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .cancellation_policy_item {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 }

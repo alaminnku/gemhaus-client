@@ -96,12 +96,14 @@ export default function PaymentForm({ children, booking }: Props) {
 
   return (
     <section className={styles.container}>
-      <p className={styles.title}>
-        <MdKeyboardArrowLeft onClick={() => router.back()} />
-        Finalize your booking
-      </p>
+      {children}
 
-      <div className={styles.guest_payment_and_property_details}>
+      <div className={styles.booking_guest_and_payment}>
+        <p className={styles.title}>
+          <MdKeyboardArrowLeft onClick={() => router.back()} />
+          Finalize your booking
+        </p>
+
         <div className={styles.guest_and_payment_details}>
           <div className={`${styles.reservation_details} ${inter.className}`}>
             <p className={styles.reservation_details_title}>
@@ -241,13 +243,26 @@ export default function PaymentForm({ children, booking }: Props) {
                   ></div>
                 </div>
               </div>
+
+              <div className={styles.agreement}>
+                <input type='checkbox' id='agreement' />
+                <label htmlFor='agreement'>
+                  I agree to the Privacy Policy and Terms of Service
+                </label>
+              </div>
             </div>
 
-            <SubmitButton text='Continue' style={{ width: '100%' }} />
+            <SubmitButton
+              text='Continue'
+              style={{
+                width: '100%',
+                padding: '1rem',
+                fontWeight: '600',
+                fontSize: '19px',
+              }}
+            />
           </form>
         </div>
-
-        {children}
       </div>
     </section>
   );

@@ -5,12 +5,19 @@
   grid-template-columns: 1fr;
 }
 
-.title {
-  font-size: 26px;
-  font-weight: 600;
+.item {
   padding-bottom: 24px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--border_color);
+}
+
+.item:last-child {
+  border: none;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 36px;
 }
 
 .navigation {
@@ -29,5 +36,16 @@
     display: grid;
     gap: 0;
     grid-template-columns: 1fr 1fr auto;
+  }
+
+  .item {
+    border: none;
+  }
+
+  .title {
+    font-size: 26px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--black);
   }
 }

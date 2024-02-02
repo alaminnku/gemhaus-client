@@ -17,8 +17,6 @@
 
 .line {
   width: 1.25rem;
-  height: 2px;
-  background-color: var(--black);
   border-radius: 0.5rem;
   transition: all 0.25s ease-in-out;
 }
@@ -35,11 +33,11 @@
 }
 
 .line::before {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .line::after {
-  transform: translateY(6px);
+  transform: translateY(4px);
 }
 
 .hamburger.open .line {

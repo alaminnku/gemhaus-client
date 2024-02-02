@@ -4,7 +4,7 @@ import styles from './UsefulLinks.module.css';
 export default function UsefulLinks() {
   return (
     <section className={styles.container}>
-      <div>
+      <div className={styles.item}>
         <p className={styles.title}>Job</p>
         <div className={styles.navigation}>
           <Link href='/'>Designer</Link>
@@ -14,7 +14,7 @@ export default function UsefulLinks() {
           <Link href='/'>Intern Real Estate Agent</Link>
         </div>
       </div>
-      <div>
+      <div className={styles.item}>
         <p className={styles.title}>Location</p>
         <div className={styles.navigation}>
           <Link href='/'>Los Angeles</Link>
@@ -24,7 +24,7 @@ export default function UsefulLinks() {
           <Link href='/'>New York</Link>
         </div>
       </div>
-      <div>
+      <div className={styles.item}>
         <p className={styles.title}>Category</p>
         <div className={styles.navigation}>
           <Link href='/'>Design</Link>

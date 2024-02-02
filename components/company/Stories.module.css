@@ -6,22 +6,17 @@
 }
 
 .story {
+  display: flex;
+  gap: 0rem 2rem;
+  align-items: center;
   padding: 32px;
   border-radius: 40px;
   background-color: #f8f8f0;
 }
 
 .story h2 {
-  font-size: 32px;
-}
-
-.content {
-  display: none;
-  margin-top: 40px;
-}
-
-.show_content {
-  display: block;
+  flex: 1;
+  font-size: 24px;
 }
 
 .story p {
@@ -34,14 +29,28 @@
   margin-bottom: 0px;
 }
 
+.selected_story {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.content {
+  display: none;
+  margin-top: 29px;
+}
+
+.selected_story .content {
+  display: block;
+}
+
 .image {
   display: flex;
+  width: 100px;
 }
 
 .image img {
   width: 100%;
   height: auto;
-  margin-top: 40px;
 }
 
 .hide_image {
@@ -51,16 +60,18 @@
 @media (min-width: 1024px) {
   .story {
     min-height: 271px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     position: relative;
     padding: 48px 32px;
     border-radius: 70px;
+    justify-content: space-between;
   }
 
   .story h2 {
     font-size: 43px;
+  }
+
+  .content {
+    margin-top: 40px;
   }
 
   .community_title {
@@ -69,12 +80,8 @@
 
   .image {
     position: absolute;
-    width: 15rem;
+    width: 19.5rem;
     bottom: 24px;
     right: 32px;
-  }
-
-  .mission_image {
-    width: 23rem;
   }
 }
