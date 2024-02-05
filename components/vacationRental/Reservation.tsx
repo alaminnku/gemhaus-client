@@ -95,25 +95,27 @@ export default function Reservation({ property, calendar }: Props) {
         />
       </div>
 
-      {dates && guests && (
-        <>
-          <LinkButton
-            text='Book Now'
-            href={`/vacation-rental/${
-              property._id
-            }/checkout?arrivalDate=${formatDate(
-              dates[0]
-            )}&departureDate=${formatDate(dates[1])}&guests=${guests}`}
-            style={{ width: '100%', marginBottom: '10px' }}
-          />
+      <LinkButton
+        text='Book Now'
+        href={
+          dates && guests
+            ? `/vacation-rental/${
+                property._id
+              }/checkout?arrivalDate=${formatDate(
+                dates[0]
+              )}&departureDate=${formatDate(dates[1])}&guests=${guests}`
+            : '#'
+        }
+        style={{ width: '100%', marginBottom: '10px' }}
+      />
 
-          <Price
-            arrivalDate={dates[0]}
-            departureDate={dates[1]}
-            property={property}
-            calendar={calendar}
-          />
-        </>
+      {dates && guests && (
+        <Price
+          arrivalDate={dates[0]}
+          departureDate={dates[1]}
+          property={property}
+          calendar={calendar}
+        />
       )}
     </div>
   );
