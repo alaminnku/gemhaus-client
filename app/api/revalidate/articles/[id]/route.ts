@@ -1,11 +1,11 @@
-import { NextApiRequest } from 'next';
 import { revalidateTag } from 'next/cache';
+import { NextRequest } from 'next/server';
 
 type Params = {
   params: { id: string };
 };
 
-export async function POST(req: NextApiRequest, { params }: Params) {
+export async function POST(req: NextRequest, { params }: Params) {
   const { id } = params;
   revalidateTag(`articles/${id}`);
   return Response.json({ message: 'Success' });
