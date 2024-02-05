@@ -8,5 +8,5 @@ type Params = {
 export async function POST(req: NextRequest, { params }: Params) {
   const { id } = params;
   revalidateTag(`properties/${id}`);
-  return Response.json({ message: 'Success' });
+  return Response.json({ message: 'Property revalidated' });
 }
