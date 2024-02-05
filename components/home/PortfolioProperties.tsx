@@ -19,7 +19,7 @@ export default async function PortfolioProperties() {
         <Error error={error} />
       ) : (
         <div className={styles.properties}>
-          {data.slice(0, 2).map((property: Property) => (
+          {data.map((property: Property) => (
             <Link
               className={styles.property}
               href={`/vacation-rental/${property._id}`}

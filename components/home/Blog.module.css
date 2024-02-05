@@ -8,6 +8,16 @@
   margin-bottom: 34px;
 }
 
+.article_cards {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.article_cards::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .container h2 {
     margin-bottom: 48px;

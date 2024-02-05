@@ -1,7 +1,8 @@
-import ArticleCards from '@components/blog/ArticleCards';
+import ArticleCard from '@components/blog/ArticleCard';
 import styles from '@components/home/Blog.module.css';
 import Error from '@components/layout/Error';
 import { fetchGemhausData } from '@lib/utils';
+import { Article } from 'types';
 
 export default async function Blog() {
   const { data, error } = await fetchGemhausData('/articles');
@@ -15,7 +16,11 @@ export default async function Blog() {
       {error ? (
         <Error error={error} />
       ) : (
-        <ArticleCards articles={data.slice(0, 3)} />
+        <div className={styles.article_cards}>
+          {data.map((article: Article) => (
+            <ArticleCard article={article} />
+          ))}
+        </div>
       )}
     </section>
   );
