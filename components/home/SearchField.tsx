@@ -15,7 +15,7 @@ export default function SearchField() {
 
         <input
           type='text'
-          placeholder='Find your gem'
+          placeholder='Find your gem. Enter in your trip dates.'
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>

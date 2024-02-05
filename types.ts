@@ -15,6 +15,7 @@ export type Property = {
   description: string;
   isFeatured: boolean;
   offerings: Offering[];
+  availableDates: string[];
   lodgingTaxPercent: number;
   salesTaxPercent: number;
   serviceFeePercent: number;

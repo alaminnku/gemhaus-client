@@ -38,12 +38,14 @@ export default async function Property({ id }: Props) {
               <div className={styles.property_offerings}>
                 <h2>What this place offers</h2>
                 <div className={styles.offerings}>
-                  {property.offerings.map((offering: Offering) => (
-                    <div className={styles.offering}>
-                      <img src={offering.icon} />
-                      <p>{offering.name}</p>
-                    </div>
-                  ))}
+                  {property.offerings.map(
+                    (offering: Offering, index: number) => (
+                      <div key={index} className={styles.offering}>
+                        <img src={offering.icon} />
+                        <p>{offering.name}</p>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
               <div

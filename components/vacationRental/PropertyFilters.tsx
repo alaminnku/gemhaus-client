@@ -91,6 +91,19 @@ export default function PropertyFilters({
   function filterProperties() {
     let filteredProperties = properties;
 
+    if (dates) {
+      const datesMap: string[] = [];
+      const currDate = new Date(formatDate(dates[0]));
+      while (currDate < new Date(formatDate(dates[1]))) {
+        datesMap.push(formatDate(currDate));
+        currDate.setDate(currDate.getDate() + 1);
+      }
+
+      filteredProperties = filteredProperties.filter((property) =>
+        datesMap.every((date) => property.availableDates.includes(date))
+      );
+    }
+
     if (guests) {
       filteredProperties = filteredProperties.filter(
         (property) => property.guests >= guests
