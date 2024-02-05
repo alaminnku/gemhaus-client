@@ -19,7 +19,7 @@ export default async function PropertyDetails({
     `/properties/${propertyId}`,
     {
       next: {
-        revalidate: 60 * 60 * 24,
+        tags: [`properties/${propertyId}`],
       },
     }
   );

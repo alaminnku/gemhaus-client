@@ -6,7 +6,7 @@ import ExploreProperties from '@components/layout/ExploreProperties';
 
 export default async function FeaturedProperties() {
   const { data, error } = await fetchGemhausData('/properties', {
-    next: { revalidate: 60 * 60 * 24 },
+    next: { tags: ['properties'] },
   });
 
   return (

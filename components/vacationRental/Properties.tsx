@@ -8,12 +8,13 @@ export default async function Properties() {
     '/properties',
     {
       next: {
-        revalidate: 60 * 60 * 24,
+        tags: ['properties'],
       },
     }
   );
   const { data: offerings, error: offeringsError } = await fetchGemhausData(
-    '/properties/offerings'
+    '/properties/offerings',
+    { next: { tags: ['offerings'] } }
   );
 
   return (

@@ -14,7 +14,7 @@ export default async function Property({ id }: Props) {
     `/properties/${id}`,
     {
       next: {
-        revalidate: 60 * 60 * 24,
+        tags: [`properties/${id}`],
       },
     }
   );

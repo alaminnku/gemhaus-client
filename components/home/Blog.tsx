@@ -5,7 +5,9 @@ import { fetchGemhausData } from '@lib/utils';
 import { Article } from 'types';
 
 export default async function Blog() {
-  const { data, error } = await fetchGemhausData('/articles');
+  const { data, error } = await fetchGemhausData('/articles', {
+    next: { tags: ['articles'] },
+  });
 
   return (
     <section className={styles.container}>

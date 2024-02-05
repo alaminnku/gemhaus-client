@@ -5,7 +5,7 @@ import { Alert } from 'types';
 type FetchGemhausDataOptions = {
   body?: FormData;
   method?: 'POST' | 'DELETE';
-  next?: { revalidate: number };
+  next?: { tags: string[] };
 };
 
 export const currentYear = new Date().getFullYear();
