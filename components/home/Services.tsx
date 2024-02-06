@@ -36,7 +36,7 @@ export default function Services() {
         <Modal
           showModal={showModal}
           setShowModal={setShowModal}
-          component={<ContactForm setShowModal={setShowModal} />}
+          children={<ContactForm setShowModal={setShowModal} />}
         />
       </div>
 

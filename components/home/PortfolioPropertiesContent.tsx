@@ -29,7 +29,7 @@ export default function PortfolioPropertiesContent() {
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
-        component={<ContactForm setShowModal={setShowModal} />}
+        children={<ContactForm setShowModal={setShowModal} />}
       />
     </div>
   );

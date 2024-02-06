@@ -5,14 +5,14 @@ import styles from './Modal.module.css';
 
 type Props = {
   width?: CSSProperties;
-  component: ReactNode;
+  children: ReactNode;
   showModal: boolean;
   setShowModal: Dispatch<SetStateAction<boolean>>;
 };
 
 export default function Modal({
   width,
-  component,
+  children,
   showModal,
   setShowModal,
 }: Props) {
@@ -22,7 +22,7 @@ export default function Modal({
         className={`${styles.modal} ${showModal && styles.show}`}
         style={{ '--width': width || 'fit-content' } as CSSProperties}
       >
-        {component}
+        {children}
       </div>
 
       <div
