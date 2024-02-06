@@ -3,25 +3,25 @@ export const services = [
     id: 1,
     title: 'Short Term Rental Management',
     description:
-      'Unlock the Power of Flexibility. We specialize in turning your property into a lucrative short-term rental, optimizing your returns without the long-term commitment. We specialize in delivering seamless and profitable short-term rental experiences for property owners and guests alike.',
+      'Unlock the Power of Flexibility. We specialize in turning your property into a lucrative short-term rental, optimizing your returns. We specialize in delivering seamless and profitable short-term rental experiences for property owners and guests alike.',
   },
   {
     id: 2,
     title: 'Long Term Rental Management',
     description:
-      'Unlock the Power of Flexibility. We specialize in turning your property into a lucrative short-term rental, optimizing your returns without the long-term commitment. We specialize in delivering seamless and profitable short-term rental experiences for property owners and guests alike.',
+      'Steady Income, Worry-Free Ownership. We specialize in turning your property into a lucrative long-term rental, optimizing your returns, while managing everything from tenant screening to maintenance requests.',
   },
   {
     id: 3,
     title: 'Buy & Sell',
     description:
-      'Unlock the Power of Flexibility. We specialize in turning your property into a lucrative short-term rental, optimizing your returns without the long-term commitment. We specialize in delivering seamless and profitable short-term rental experiences for property owners and guests alike.',
+      'Looking to buy or sell a property? Our experienced real estate professionals are here to guide you through the process, ensuring you make informed decisions every step of the way while maximizing your profits.',
   },
   {
     id: 4,
     title: 'Become a Host',
     description:
-      'Unlock the Power of Flexibility. We specialize in turning your property into a lucrative short-term rental, optimizing your returns without the long-term commitment. We specialize in delivering seamless and profitable short-term rental experiences for property owners and guests alike.',
+      'Ready to rent your property out to guests? As Superhosts, our comprehensive suite of services include 24/7 guest services, housekeeping, an array of concierge services available to ensure 5 star reviews.',
   },
 ];
 

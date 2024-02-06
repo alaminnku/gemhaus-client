@@ -3,31 +3,31 @@ export const faqs = [
     id: 1,
     question: 'Who is GemHaus?',
     answer:
-      'Q1: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
+      'GemHaus is a dynamic real estate management company committed to providing top-notch services in property management, vacation rentals, and real estate transactions.',
   },
   {
     id: 2,
     question: 'What is GemHaus management?',
     answer:
-      'Q2: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
+      'GemHaus Management specializes in unlocking the full potential of your property, offering tailored solutions in short-term and long-term rentals, property maintenance, and comprehensive real estate management.',
   },
 
   {
     id: 3,
-    question: 'How does GemHaus help you?',
+    question: 'How can I rent a house?',
     answer:
-      'Q3: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
+      'Renting a house with GemHaus is easy! Explore our curated listings, select the property that suits your needs, and follow a simple rental process to secure your stay.',
   },
   {
     id: 4,
     question: 'Want to be a GemHaus agent?',
     answer:
-      'Q4: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available',
+      "Joining GemHaus as an agent means becoming part of a dynamic team dedicated to excellence in real estate. If you're passionate about real estate, we'd love to hear from you!",
   },
   {
     id: 5,
     question: 'Why you choose GemHaus?',
     answer:
-      'Q5: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.',
+      'GemHaus stands out for its commitment to personalized service, cutting-edge property management, and a track record of delivering exceptional experiences for both property owners and guests. Choose GemHaus for a seamless and rewarding real estate journey.',
   },
 ];
