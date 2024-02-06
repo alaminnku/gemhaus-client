@@ -11,7 +11,7 @@ import {
 } from 'react';
 import styles from './PropertyFilters.module.css';
 import { Dates, Offering, Property } from 'types';
-import { formatDate } from '@lib/utils';
+import { dateToMS, formatDate } from '@lib/utils';
 
 type Props = {
   showFilters: boolean;
@@ -42,7 +42,8 @@ export default function PropertyFilters({
 
   const step = 10;
   const { min, max } = prices;
-  const isDateUnavailable = (date: Date) => false;
+  const isDateUnavailable = (date: Date) =>
+    dateToMS(formatDate(date)) < dateToMS(formatDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
 
   // Get max price
