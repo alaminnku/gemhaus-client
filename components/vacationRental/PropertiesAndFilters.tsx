@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import PropertyCards from './PropertyCards';
-import { Offering, Property } from 'types';
+import { Offering, PropertiesView, Property } from 'types';
 import PropertyFilters from './PropertyFilters';
 import ViewSortFilter from './ViewSortFilter';
 import styles from './PropertiesAndFilters.module.css';
@@ -15,10 +15,11 @@ type Props = {
 export default function PropertiesAndFilters({ properties, offerings }: Props) {
   const [filteredProperties, setFilteredProperties] = useState(properties);
   const [showFilters, setShowFilters] = useState(false);
+  const [view, setView] = useState<PropertiesView>('row');
 
   return (
     <>
-      <ViewSortFilter setShowFilters={setShowFilters} />
+      <ViewSortFilter setView={setView} setShowFilters={setShowFilters} />
 
       <div className={styles.filters_and_properties}>
         <PropertyFilters
@@ -28,7 +29,7 @@ export default function PropertiesAndFilters({ properties, offerings }: Props) {
           setShowFilters={setShowFilters}
           setFilteredProperties={setFilteredProperties}
         />
-        <PropertyCards properties={filteredProperties} />
+        <PropertyCards view={view} properties={filteredProperties} />
       </div>
     </>
   );

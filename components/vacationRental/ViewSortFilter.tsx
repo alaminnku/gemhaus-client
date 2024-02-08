@@ -1,18 +1,26 @@
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import styles from './ViewSortFilter.module.css';
 import { Dispatch, SetStateAction } from 'react';
+import { PropertiesView } from 'types';
 
 type Props = {
+  setView: Dispatch<SetStateAction<PropertiesView>>;
   setShowFilters: Dispatch<SetStateAction<boolean>>;
 };
 
-export default function ViewSortFilter({ setShowFilters }: Props) {
+export default function ViewSortFilter({ setView, setShowFilters }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.view}>
         <p>View</p>
-        <img src='/vacation-rental/list-icon.png' />
-        <img src='/vacation-rental/grid-icon.png' />
+        <img
+          src='/vacation-rental/list-icon.png'
+          onClick={() => setView('row')}
+        />
+        <img
+          src='/vacation-rental/grid-icon.png'
+          onClick={() => setView('grid')}
+        />
       </div>
 
       <div className={styles.sort}>

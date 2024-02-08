@@ -1,4 +1,4 @@
-.container {
+.grid_container {
   padding: 1rem;
   border-radius: 12px;
   border: 1px solid var(--border_color);
@@ -67,25 +67,25 @@
 }
 
 @media (min-width: 1024px) {
-  .container {
+  .row_container {
     display: flex;
     justify-content: space-between;
   }
 
-  .content {
+  .row_container .content {
     display: flex;
     gap: 32px;
     width: 70%;
     margin: 0px;
   }
 
-  .image img {
+  .row_container .image img {
     width: 12rem;
     height: 12rem;
     object-fit: cover;
   }
 
-  .name {
+  .row_container .name {
     margin-bottom: 38px;
   }
 }

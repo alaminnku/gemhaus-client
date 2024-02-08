@@ -41,3 +41,5 @@ export type Alert = {
   message: string;
   type: 'success' | 'failed';
 };
+
+export type PropertiesView = 'grid' | 'row';

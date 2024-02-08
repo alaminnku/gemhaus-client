@@ -1,15 +1,19 @@
-import { Property } from 'types';
+import { PropertiesView, Property } from 'types';
 import styles from './PropertyCard.module.css';
 import Image from 'next/image';
 import LinkButton from '@components/layout/LinkButton';
 import { manrope } from '@lib/utils';
 import { FaHeart } from 'react-icons/fa6';
 
-type Props = { property: Property };
+type Props = { view: PropertiesView; property: Property };
 
-export default function PropertyCard({ property }: Props) {
+export default function PropertyCard({ view, property }: Props) {
   return (
-    <div className={`${styles.container} ${manrope.className}`}>
+    <div
+      className={`${styles.grid_container} ${manrope.className} ${
+        view === 'row' && styles.row_container
+      }`}
+    >
       <div className={styles.content}>
         <div className={styles.image}>
           <Image
