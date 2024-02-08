@@ -33,11 +33,6 @@ export default function Services() {
           icon={<TbDiamond />}
           setShowModal={setShowModal}
         />
-        <Modal
-          showModal={showModal}
-          setShowModal={setShowModal}
-          children={<ContactForm setShowModal={setShowModal} />}
-        />
       </div>
 
       <div className={styles.services}>
@@ -59,6 +54,19 @@ export default function Services() {
           </div>
         ))}
       </div>
+
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        children={
+          <ContactForm
+            showOptions={true}
+            showSubject={false}
+            setShowModal={setShowModal}
+            title='Tell us what you need help with'
+          />
+        }
+      />
     </section>
   );
 }

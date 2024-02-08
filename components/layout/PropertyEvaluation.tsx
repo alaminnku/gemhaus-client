@@ -41,7 +41,7 @@ export default function PropertyEvaluation({ children }: Props) {
         </p>
       </div>
 
-      <div className={styles.property_evaluation}>
+      <div className={styles.property_evaluation} id='evaluation'>
         <form action={handleSubmit}>
           <h3>It Takes Just Few Minutes!</h3>
 

@@ -104,7 +104,7 @@ export default function Reservation({ property, calendar }: Props) {
               }/checkout?arrivalDate=${formatDate(
                 dates[0]
               )}&departureDate=${formatDate(dates[1])}&guests=${guests}`
-            : '#'
+            : ''
         }
         style={{ width: '100%', marginBottom: '10px' }}
       />

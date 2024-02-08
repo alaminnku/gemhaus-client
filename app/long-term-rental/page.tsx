@@ -19,7 +19,7 @@ export default function LongTermRentalPage() {
       />
       <Services services={longTermServices} />
       <CallToAction
-        buttonLink='/'
+        buttonLink='#evaluation'
         buttonText='Become a Landlord'
         description='Unlock the potential of your property'
         title='Transform your property into a stable, long-term investment'

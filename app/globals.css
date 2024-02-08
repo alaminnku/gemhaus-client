@@ -51,6 +51,7 @@ html {
   font-weight: 400;
   color: var(--black);
   margin: 0 auto;
+  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   max-width: var(--max_viewport_width);
 }

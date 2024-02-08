@@ -3,13 +3,21 @@
   flex-direction: column;
 }
 
-.item {
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.item,
+.options {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
 }
 
-.item label {
+.item label,
+.option label {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -20,6 +28,16 @@
   padding: 0.75rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border_color);
+}
+
+.options {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.option input {
+  margin-right: 0.75rem;
 }
 
 .message {

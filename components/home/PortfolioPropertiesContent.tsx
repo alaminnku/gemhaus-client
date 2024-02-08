@@ -29,7 +29,12 @@ export default function PortfolioPropertiesContent() {
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
-        children={<ContactForm setShowModal={setShowModal} />}
+        children={
+          <ContactForm
+            title='Get email updates on new top performing investments'
+            setShowModal={setShowModal}
+          />
+        }
       />
     </div>
   );
