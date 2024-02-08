@@ -42,4 +42,4 @@ export type Alert = {
   type: 'success' | 'failed';
 };
 
-export type PropertiesView = 'grid' | 'row';
+export type PropertiesView = 'singleColumn' | 'multipleColumns';

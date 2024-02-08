@@ -10,8 +10,8 @@ type Props = { view: PropertiesView; property: Property };
 export default function PropertyCard({ view, property }: Props) {
   return (
     <div
-      className={`${styles.grid_container} ${manrope.className} ${
-        view === 'row' && styles.row_container
+      className={`${styles.container} ${manrope.className} ${
+        view === 'singleColumn' && styles.multiple_columns
       }`}
     >
       <div className={styles.content}>

@@ -1,4 +1,4 @@
-.grid_container {
+.container {
   padding: 1rem;
   border-radius: 12px;
   border: 1px solid var(--border_color);
@@ -67,25 +67,25 @@
 }
 
 @media (min-width: 1024px) {
-  .row_container {
+  .multiple_columns {
     display: flex;
     justify-content: space-between;
   }
 
-  .row_container .content {
+  .multiple_columns .content {
     display: flex;
     gap: 32px;
     width: 70%;
     margin: 0px;
   }
 
-  .row_container .image img {
+  .multiple_columns .image img {
     width: 12rem;
     height: 12rem;
     object-fit: cover;
   }
 
-  .row_container .name {
+  .multiple_columns .name {
     margin-bottom: 38px;
   }
 }

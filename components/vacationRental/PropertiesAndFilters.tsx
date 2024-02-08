@@ -15,7 +15,7 @@ type Props = {
 export default function PropertiesAndFilters({ properties, offerings }: Props) {
   const [filteredProperties, setFilteredProperties] = useState(properties);
   const [showFilters, setShowFilters] = useState(false);
-  const [view, setView] = useState<PropertiesView>('row');
+  const [view, setView] = useState<PropertiesView>('singleColumn');
 
   return (
     <>

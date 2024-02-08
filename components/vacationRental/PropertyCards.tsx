@@ -11,7 +11,7 @@ export default function PropertyCards({ view, properties }: Props) {
   return (
     <div
       className={`${styles.container} ${
-        view === 'grid' && styles.grid_container
+        view === 'multipleColumns' && styles.multiple_columns
       }`}
     >
       {properties.map((property) => (

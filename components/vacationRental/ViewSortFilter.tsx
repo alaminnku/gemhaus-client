@@ -15,11 +15,11 @@ export default function ViewSortFilter({ setView, setShowFilters }: Props) {
         <p>View</p>
         <img
           src='/vacation-rental/list-icon.png'
-          onClick={() => setView('row')}
+          onClick={() => setView('singleColumn')}
         />
         <img
           src='/vacation-rental/grid-icon.png'
-          onClick={() => setView('grid')}
+          onClick={() => setView('multipleColumns')}
         />
       </div>
 
