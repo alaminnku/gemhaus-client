@@ -16,6 +16,8 @@ import { dateToMS, formatDate } from '@lib/utils';
 type Props = {
   showFilters: boolean;
   properties: Property[];
+  arrivalDate: string;
+  departureDate: string;
   propertyOfferings: Offering[];
   setShowFilters: Dispatch<SetStateAction<boolean>>;
   setFilteredProperties: Dispatch<SetStateAction<Property[]>>;
@@ -24,6 +26,8 @@ type Props = {
 export default function PropertyFilters({
   properties,
   showFilters,
+  arrivalDate,
+  departureDate,
   setShowFilters,
   propertyOfferings,
   setFilteredProperties,
@@ -58,6 +62,25 @@ export default function PropertyFilters({
     }));
     setMaxPrice(maximumPriceRounded);
   }, [properties]);
+
+  // Apply dates filter
+  useEffect(() => {
+    if (arrivalDate && departureDate) {
+      const datesMap: string[] = [];
+      const currDate = new Date(formatDate(arrivalDate));
+      while (currDate < new Date(formatDate(departureDate))) {
+        datesMap.push(formatDate(currDate));
+        currDate.setDate(currDate.getDate() + 1);
+      }
+
+      setDates([arrivalDate, departureDate]);
+      setFilteredProperties(
+        properties.filter((property) =>
+          datesMap.every((date) => property.availableDates.includes(date))
+        )
+      );
+    }
+  }, [arrivalDate, departureDate]);
 
   // Handle slider range change
   function handlePriceSliderChange(e: ChangeEvent<HTMLInputElement>) {
