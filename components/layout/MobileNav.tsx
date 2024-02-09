@@ -15,15 +15,11 @@ export default function MobileNav({
   return (
     <nav className={styles.container}>
       <div
-        className={`${styles.hamburger} ${isOpen && styles.open} `}
         onClick={() => setIsOpen(!isOpen)}
-      >
-        <div
-          className={`${styles.line} ${
-            isDarkBackground && styles.is_dark_background
-          }`}
-        ></div>
-      </div>
+        className={`${styles.line} ${
+          isDarkBackground && styles.is_dark_background
+        }`}
+      ></div>
     </nav>
   );
 }

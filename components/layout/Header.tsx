@@ -5,6 +5,7 @@ import DesktopNav from './DesktopNav';
 import styles from './Header.module.css';
 import MobileNav from './MobileNav';
 import { inter } from '@lib/utils';
+import MobileMenu from './MobileMenu';
 
 type Props = {
   hasBorder?: boolean;
@@ -37,6 +38,7 @@ export default function Header({
         setIsOpen={setIsOpen}
         isDarkBackground={isDarkBackground}
       />
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 }

@@ -4,17 +4,6 @@
   justify-content: space-between;
 }
 
-.hamburger {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-
 .line {
   width: 1.25rem;
   border-radius: 0.5rem;
@@ -38,18 +27,6 @@
 
 .line::after {
   transform: translateY(4px);
-}
-
-.hamburger.open .line {
-  background: transparent;
-}
-
-.hamburger.open .line::before {
-  transform: rotate(-45deg);
-}
-
-.hamburger.open .line::after {
-  transform: rotate(45deg);
 }
 
 .is_dark_background {
