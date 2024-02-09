@@ -40,14 +40,14 @@
   background-color: #016416;
 }
 
-.date_picker {
+.calendar_container {
   position: fixed;
   bottom: -100%;
   z-index: 11;
   transition: all 200ms;
 }
 
-.date_picker.show {
+.calendar_container.show {
   bottom: 0;
 }
 
@@ -81,16 +81,12 @@
     background-color: var(--black);
   }
 
-  .date_picker {
+  .calendar_container {
     position: absolute;
     max-width: 800px;
   }
 
-  .date_picker.show {
+  .calendar_container.show {
     bottom: 8.5rem;
-  }
-
-  .overlay {
-    display: none;
   }
 }

@@ -60,7 +60,11 @@ export default function SearchField() {
         </Link>
       </div>
 
-      <div className={`${styles.date_picker} ${showCalendar && styles.show}`}>
+      <div
+        className={`${styles.calendar_container} ${
+          showCalendar && styles.show
+        }`}
+      >
         <Calendar
           dates={dates}
           handleChange={handleDateChange}
@@ -75,9 +79,9 @@ export default function SearchField() {
           }}
         />
 
-        <div className={styles.overlay}>
+        {!isDesktop && (
           <Overlay show={showCalendar} setShow={setShowCalendar} />
-        </div>
+        )}
       </div>
     </>
   );
