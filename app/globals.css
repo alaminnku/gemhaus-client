@@ -23,6 +23,7 @@
   --border_color: #e6e6e6;
   --section_padding: 48px 32px;
   --max_viewport_width: 1920px;
+  --primary_font: 'PP Mori', sans-serif;
   --shadow_medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow_large: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
@@ -53,7 +54,7 @@ body {
   min-height: 100%;
   max-width: 100vw;
   position: relative;
-  font-family: 'PP Mori', sans-serif;
+  font-family: var(--primary_font);
   text-rendering: optimizeLegibility;
 }
 
@@ -85,7 +86,7 @@ textarea {
   width: 100% !important;
   border-radius: 10px;
   border: none !important;
-  font-family: 'PP Mori', sans-serif !important;
+  font-family: var(--primary_font) !important;
 }
 
 .react-calendar__month-view__days__day--weekend {

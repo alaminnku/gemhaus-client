@@ -221,12 +221,12 @@ export default function PaymentForm({ children, booking }: Props) {
                 Payment Information
               </p>
 
-              <div className={styles.payment}>
-                <div className={styles.item}>
-                  <label htmlFor='card_number'>Card Number</label>
-                  <div className={styles.payment_input} id='card_number'></div>
-                </div>
+              <div className={styles.item}>
+                <label htmlFor='card_number'>Card Number</label>
+                <div className={styles.payment_input} id='card_number'></div>
+              </div>
 
+              <div className={styles.cvv_and_expiration}>
                 {process.env.NEXT_PUBLIC_BRAINTREE_ENVIRONMENT ===
                   'Production' && (
                   <div className={styles.item}>

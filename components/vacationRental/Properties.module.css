@@ -1,3 +1,10 @@
 .container {
   padding: var(--section_padding);
+  padding-top: 15px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-top: 45px;
+  }
 }

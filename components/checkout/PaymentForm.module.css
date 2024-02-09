@@ -81,6 +81,7 @@
 }
 
 .item {
+  width: 100%;
   margin-bottom: 1rem;
 }
 
@@ -97,6 +98,11 @@
   padding: 16px;
   border-radius: 8px;
   border: 1px solid var(--border_color);
+}
+
+.cvv_and_expiration {
+  display: flex;
+  gap: 1rem;
 }
 
 .payment_input {
