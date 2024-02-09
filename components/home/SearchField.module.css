@@ -42,9 +42,10 @@
 
 .calendar_container {
   position: fixed;
-  bottom: -100%;
+  bottom: -50%;
   z-index: 11;
   transition: all 200ms;
+  height: fit-content;
 }
 
 .calendar_container.show {
@@ -84,9 +85,11 @@
   .calendar_container {
     position: absolute;
     max-width: 800px;
+    display: none;
   }
 
   .calendar_container.show {
+    display: block;
     bottom: 8.5rem;
   }
 }
