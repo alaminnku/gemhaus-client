@@ -17,27 +17,6 @@
   transition: ease-out 200ms;
 }
 
-.overlay {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9;
-  opacity: 0;
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  position: fixed;
-  pointer-events: none;
-  transition: all 250ms ease-in-out;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.overlay.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
 .close_icon {
   font-size: 20px;
   margin-bottom: 15px;

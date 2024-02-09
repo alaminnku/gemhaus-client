@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import styles from './MobileMenu.module.css';
 import { IoClose } from 'react-icons/io5';
+import Overlay from './Overlay';
 
 type Props = {
   isOpen: boolean;
@@ -54,10 +55,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         </div>
       </div>
 
-      <div
-        onClick={() => setIsOpen(false)}
-        className={`${styles.overlay} ${isOpen && styles.show}`}
-      ></div>
+      <Overlay show={isOpen} setShow={setIsOpen} />
     </>
   );
 }

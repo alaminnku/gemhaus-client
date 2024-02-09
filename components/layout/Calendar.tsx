@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { CSSProperties, Dispatch, SetStateAction } from 'react';
 import ReactCalendar from 'react-calendar';
 import styles from './Calendar.module.css';
 import 'react-calendar/dist/Calendar.css';
@@ -6,6 +6,8 @@ import { Dates } from 'types';
 
 type Props = {
   dates: Dates | null;
+  buttonStyle?: CSSProperties;
+  calendarStyle?: CSSProperties;
   handleChange: (dates: Dates) => void;
   isDateUnavailable: (date: Date) => boolean;
   setShowCalendar: Dispatch<SetStateAction<boolean>>;
@@ -13,12 +15,14 @@ type Props = {
 
 export default function Calendar({
   dates,
+  buttonStyle,
   handleChange,
+  calendarStyle,
   setShowCalendar,
   isDateUnavailable,
 }: Props) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={calendarStyle}>
       <ReactCalendar
         selectRange
         value={dates}
@@ -27,10 +31,11 @@ export default function Calendar({
         tileDisabled={({ date }) => isDateUnavailable(date)}
       />
       <button
-        className={styles.calendar_button}
+        style={buttonStyle}
+        className={styles.button}
         onClick={() => setShowCalendar(false)}
       >
-        OK
+        Done
       </button>
     </div>
   );

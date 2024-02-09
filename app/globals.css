@@ -90,12 +90,21 @@ textarea {
 
 .react-calendar {
   width: 100% !important;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none !important;
   font-family: 'PP Mori', sans-serif !important;
 }
 
+.react-calendar__month-view__days__day--weekend {
+  color: var(--black) !important;
+}
+
+.react-calendar__tile--now {
+  background: transparent !important;
+}
+
 .react-calendar__tile--active {
+  color: var(--white) !important;
   background-color: var(--black) !important;
 }
 
@@ -105,12 +114,13 @@ textarea {
 }
 
 .react-calendar__navigation__label__labelText {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .react-calendar__month-view__weekdays__weekday abbr {
-  text-decoration: underline solid;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 @media (min-width: 1024px) {

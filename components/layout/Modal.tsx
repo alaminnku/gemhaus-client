@@ -2,6 +2,7 @@
 
 import { CSSProperties, ReactNode, Dispatch, SetStateAction } from 'react';
 import styles from './Modal.module.css';
+import Overlay from './Overlay';
 
 type Props = {
   width?: CSSProperties;
@@ -25,10 +26,12 @@ export default function Modal({
         {children}
       </div>
 
-      <div
+      <Overlay show={showModal} setShow={setShowModal} />
+
+      {/* <div
         onClick={() => setShowModal(false)}
         className={`${styles.overlay} ${showModal && styles.show}`}
-      ></div>
+      ></div> */}
     </>
   );
 }

@@ -40,6 +40,17 @@
   background-color: #016416;
 }
 
+.date_picker {
+  position: fixed;
+  bottom: -100%;
+  z-index: 11;
+  transition: all 200ms;
+}
+
+.date_picker.show {
+  bottom: 0;
+}
+
 @media (min-width: 1024px) {
   .search_field {
     max-width: 50rem;
