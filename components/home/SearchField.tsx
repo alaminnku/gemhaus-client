@@ -37,8 +37,9 @@ export default function SearchField() {
           <MdOutlineSearch />
 
           <input
-            onClick={() => setShowCalendar((prevState) => !prevState)}
+            readOnly
             type='text'
+            onClick={() => setShowCalendar((prevState) => !prevState)}
             value={
               dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
             }

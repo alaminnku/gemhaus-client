@@ -64,14 +64,13 @@ export default function Reservation({ property, calendar }: Props) {
 
       <div className={styles.dates}>
         <input
-          type='text'
           readOnly
+          type='text'
           onClick={() => setShowCalendar((prevState) => !prevState)}
           value={
-            dates
-              ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}`
-              : 'Check-in --> Check-out'
+            dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
           }
+          placeholder='Check-in --> Check-out'
         />
 
         {showCalendar && (

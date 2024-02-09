@@ -37,6 +37,7 @@ export default function Calendar({
       />
       {showButton && (
         <button
+          disabled={!dates || dates.length < 2}
           style={buttonStyle}
           className={styles.button}
           onClick={() => setShowCalendar(false)}

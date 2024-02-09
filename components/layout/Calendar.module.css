@@ -23,3 +23,7 @@
   background-color: var(--black);
   font-family: 'PP Mori', sans-serif;
 }
+
+.button:disabled {
+  background-color: var(--disabled_bg);
+}

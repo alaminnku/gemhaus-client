@@ -172,14 +172,13 @@ export default function PropertyFilters({
       <div className={styles.items}>
         <div className={styles.item}>
           <input
-            type='text'
             readOnly
+            type='text'
             onClick={() => setShowCalendar((prevState) => !prevState)}
             value={
-              dates
-                ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}`
-                : 'Check-in --> Check-out'
+              dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
             }
+            placeholder='Check-in --> Check-out'
           />
 
           {showCalendar && (
