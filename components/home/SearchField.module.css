@@ -80,4 +80,17 @@
     top: 3.5px;
     background-color: var(--black);
   }
+
+  .date_picker {
+    position: absolute;
+    max-width: 800px;
+  }
+
+  .date_picker.show {
+    bottom: 11.5rem;
+  }
+
+  .overlay {
+    display: none;
+  }
 }

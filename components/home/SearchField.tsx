@@ -4,19 +4,31 @@ import { dateToMS, formatDate, inter } from '@lib/utils';
 import styles from './SearchField.module.css';
 import { MdOutlineSearch } from 'react-icons/md';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Calendar from '@components/layout/Calendar';
 import { Dates } from 'types';
 import Overlay from '@components/layout/Overlay';
 
 export default function SearchField() {
-  const [search, setSearch] = useState('');
   const [showCalendar, setShowCalendar] = useState(false);
   const [dates, setDates] = useState<Dates | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const isDateUnavailable = (date: Date) =>
     dateToMS(formatDate(date)) < dateToMS(formatDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 1024);
+    function handleResize() {
+      setIsDesktop(window.innerWidth >= 1024);
+    }
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -31,7 +43,6 @@ export default function SearchField() {
               dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
             }
             placeholder='Find your gem. Enter in your trip dates.'
-            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
 
@@ -52,13 +63,20 @@ export default function SearchField() {
       <div className={`${styles.date_picker} ${showCalendar && styles.show}`}>
         <Calendar
           dates={dates}
+          showButton={isDesktop ? false : true}
+          showDoubleView={isDesktop ? true : false}
           handleChange={handleDateChange}
           isDateUnavailable={isDateUnavailable}
           setShowCalendar={setShowCalendar}
-          calendarStyle={{ border: 'none', borderRadius: '10px 10px 0px 0px' }}
+          calendarStyle={{
+            border: 'none',
+            borderRadius: isDesktop ? '20px' : '10px 10px 0px 0px',
+          }}
         />
 
-        <Overlay show={showCalendar} setShow={setShowCalendar} />
+        <div className={styles.overlay}>
+          <Overlay show={showCalendar} setShow={setShowCalendar} />
+        </div>
       </div>
     </>
   );

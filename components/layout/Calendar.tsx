@@ -6,6 +6,8 @@ import { Dates } from 'types';
 
 type Props = {
   dates: Dates | null;
+  showButton?: boolean;
+  showDoubleView?: boolean;
   buttonStyle?: CSSProperties;
   calendarStyle?: CSSProperties;
   handleChange: (dates: Dates) => void;
@@ -20,6 +22,8 @@ export default function Calendar({
   calendarStyle,
   setShowCalendar,
   isDateUnavailable,
+  showButton = true,
+  showDoubleView = false,
 }: Props) {
   return (
     <div className={styles.container} style={calendarStyle}>
@@ -28,15 +32,18 @@ export default function Calendar({
         value={dates}
         // @ts-ignore
         onChange={handleChange}
+        showDoubleView={showDoubleView}
         tileDisabled={({ date }) => isDateUnavailable(date)}
       />
-      <button
-        style={buttonStyle}
-        className={styles.button}
-        onClick={() => setShowCalendar(false)}
-      >
-        Done
-      </button>
+      {showButton && (
+        <button
+          style={buttonStyle}
+          className={styles.button}
+          onClick={() => setShowCalendar(false)}
+        >
+          Done
+        </button>
+      )}
     </div>
   );
 }
