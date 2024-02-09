@@ -4,6 +4,7 @@ import styles from './Property.module.css';
 import Reservation from './Reservation';
 import PropertyImages from './PropertyImages';
 import { Offering } from 'types';
+import Map from './Map';
 
 type Props = {
   id: string;
@@ -52,6 +53,8 @@ export default async function Property({ id }: Props) {
                 className={styles.description}
                 dangerouslySetInnerHTML={{ __html: property.description }}
               ></div>
+
+              <Map latitude={51.505} longitude={-0.09} name={property.name} />
             </div>
 
             <Reservation calendar={calendar.result} property={property} />
