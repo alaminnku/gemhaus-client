@@ -9,7 +9,7 @@ type FetchGemhausDataOptions = {
   next?: { tags?: string[]; revalidate: number };
 };
 
-export const revalidateIn = 10;
+export const revalidateIn = 300;
 
 export const currentYear = new Date().getFullYear();
 
