@@ -54,7 +54,11 @@ export default async function Property({ id }: Props) {
                 dangerouslySetInnerHTML={{ __html: property.description }}
               ></div>
 
-              <Map latitude={51.505} longitude={-0.09} name={property.name} />
+              <Map
+                name={property.name}
+                latitude={property.latitude}
+                longitude={property.longitude}
+              />
             </div>
 
             <Reservation calendar={calendar.result} property={property} />

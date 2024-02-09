@@ -18,7 +18,7 @@ const customIcon = icon({
 export default function Map({ name, latitude, longitude }: Props) {
   return (
     <MapContainer
-      zoom={12}
+      zoom={10}
       scrollWheelZoom={false}
       center={[latitude, longitude]}
       style={{ height: '300px', width: '100%', borderRadius: '20px' }}
