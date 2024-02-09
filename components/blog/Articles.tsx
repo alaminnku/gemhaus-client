@@ -1,5 +1,5 @@
 import ArticleCards from './ArticleCards';
-import { fetchGemhausData } from '@lib/utils';
+import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import Error from '@components/layout/Error';
 import styles from './Articles.module.css';
 
@@ -7,6 +7,7 @@ export default async function Articles() {
   const { data, error } = await fetchGemhausData('/articles', {
     next: {
       tags: ['articles'],
+      revalidate: revalidateIn,
     },
   });
 

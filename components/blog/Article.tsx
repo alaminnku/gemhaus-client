@@ -1,11 +1,14 @@
 import Error from '@components/layout/Error';
-import { fetchGemhausData } from '@lib/utils';
+import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import styles from './Article.module.css';
 import Image from 'next/image';
 
 export default async function Article({ id }: { id: string }) {
   const { data, error } = await fetchGemhausData(`/articles/${id}`, {
-    next: { tags: [`articles/${id}`] },
+    next: {
+      revalidate: revalidateIn,
+      tags: [`articles/${id}`],
+    },
   });
 
   return (

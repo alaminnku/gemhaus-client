@@ -4,10 +4,12 @@ import { Alert } from 'types';
 
 type FetchGemhausDataOptions = {
   body?: FormData;
-  next?: { tags: string[] };
   cache?: 'no-store';
   method?: 'POST' | 'DELETE';
+  next?: { tags?: string[]; revalidate: number };
 };
+
+export const revalidateIn = 10;
 
 export const currentYear = new Date().getFullYear();
 

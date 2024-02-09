@@ -1,5 +1,5 @@
 import Error from '@components/layout/Error';
-import { fetchGemhausData, fetchHostawayData } from '@lib/utils';
+import { fetchGemhausData, fetchHostawayData, revalidateIn } from '@lib/utils';
 import styles from './Property.module.css';
 import Reservation from './Reservation';
 import PropertyImages from './PropertyImages';
@@ -15,6 +15,7 @@ export default async function Property({ id }: Props) {
     `/properties/${id}`,
     {
       next: {
+        revalidate: revalidateIn,
         tags: [`properties/${id}`],
       },
     }

@@ -40,7 +40,8 @@ export default function PaymentForm({ children, booking }: Props) {
     async function initializeBraintree() {
       try {
         const { data: clientToken, error } = await fetchGemhausData(
-          '/braintree/client-token'
+          '/braintree/client-token',
+          { cache: 'no-store' }
         );
 
         const clientInstance = await braintree.client.create({

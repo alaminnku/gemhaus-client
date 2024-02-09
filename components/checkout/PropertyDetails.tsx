@@ -1,4 +1,4 @@
-import { fetchGemhausData, fetchHostawayData } from '@lib/utils';
+import { fetchGemhausData, fetchHostawayData, revalidateIn } from '@lib/utils';
 import styles from './PropertyDetails.module.css';
 import Image from 'next/image';
 import Price from '@components/vacationRental/Price';
@@ -19,6 +19,7 @@ export default async function PropertyDetails({
     `/properties/${propertyId}`,
     {
       next: {
+        revalidate: revalidateIn,
         tags: [`properties/${propertyId}`],
       },
     }

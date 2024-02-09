@@ -1,5 +1,5 @@
 import styles from './Properties.module.css';
-import { fetchGemhausData } from '@lib/utils';
+import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import Error from '@components/layout/Error';
 import PropertiesAndFilters from './PropertiesAndFilters';
 
@@ -20,7 +20,12 @@ export default async function Properties({
   );
   const { data: offerings, error: offeringsError } = await fetchGemhausData(
     '/properties/offerings',
-    { next: { tags: ['offerings'] } }
+    {
+      next: {
+        tags: ['offerings'],
+        revalidate: revalidateIn,
+      },
+    }
   );
 
   return (

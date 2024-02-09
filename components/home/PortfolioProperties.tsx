@@ -1,5 +1,5 @@
 import styles from './PortfolioProperties.module.css';
-import { createUSD, fetchGemhausData } from '@lib/utils';
+import { createUSD, fetchGemhausData, revalidateIn } from '@lib/utils';
 import Error from '@components/layout/Error';
 import { Property } from 'types';
 import Image from 'next/image';
@@ -8,7 +8,10 @@ import PortfolioPropertiesContent from './PortfolioPropertiesContent';
 
 export default async function PortfolioProperties() {
   const { data, error } = await fetchGemhausData('/properties', {
-    next: { tags: ['properties'] },
+    next: {
+      tags: ['properties'],
+      revalidate: revalidateIn,
+    },
   });
 
   return (
