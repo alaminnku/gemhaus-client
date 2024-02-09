@@ -63,13 +63,14 @@ export default function SearchField() {
       <div className={`${styles.date_picker} ${showCalendar && styles.show}`}>
         <Calendar
           dates={dates}
-          showButton={isDesktop ? false : true}
-          showDoubleView={isDesktop ? true : false}
           handleChange={handleDateChange}
           isDateUnavailable={isDateUnavailable}
           setShowCalendar={setShowCalendar}
+          showButton={!isDesktop}
+          showDoubleView={isDesktop}
           calendarStyle={{
             border: 'none',
+            padding: isDesktop ? '24px' : '',
             borderRadius: isDesktop ? '20px' : '10px 10px 0px 0px',
           }}
         />
