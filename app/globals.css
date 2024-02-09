@@ -14,14 +14,6 @@
   src: local(''), url('/fonts/PPMori-SemiBold.otf') format('otf');
 }
 
-@font-face {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 300;
-  font-display: fallback;
-  src: local(''), url('/fonts/Gilroy-Light.otf') format('otf');
-}
-
 :root {
   --h2_size: 24px;
   --black: #000000;
