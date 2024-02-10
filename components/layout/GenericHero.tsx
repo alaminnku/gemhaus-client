@@ -19,9 +19,10 @@ export default function GenericHero({
       <Header isDarkBackground={true} />
       {children}
       <Image
-        src={backgroundImage}
+        priority
         width={800}
         height={500}
+        src={backgroundImage}
         alt='Background image'
         className={styles.background_image}
         style={

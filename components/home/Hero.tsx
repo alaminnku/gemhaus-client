@@ -46,9 +46,10 @@ export default function Hero() {
       <div className={styles.hero_image}>
         <div className={styles.image_container}>
           <Image
-            src='/home/hero-bg.jpg'
+            priority
             width={800}
             height={500}
+            src='/home/hero-bg.jpg'
             alt='Background image'
           />
           <p>The real estate help you need with the hospitality touch</p>

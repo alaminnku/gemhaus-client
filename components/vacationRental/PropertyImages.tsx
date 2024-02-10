@@ -64,8 +64,8 @@ export default function PropertyImages({ images }: Props) {
             <Image
               src={images[index]}
               alt='Expanded Image'
-              width={1600}
-              height={1000}
+              width={800}
+              height={500}
             />
             <IoIosCloseCircleOutline
               className={styles.close_button}

@@ -10,17 +10,8 @@ type Props = {
 };
 
 export default function PropertyCard({ property }: Props) {
-  const {
-    _id,
-    name,
-    price,
-    bedrooms,
-    bathrooms,
-    guests,
-    rating,
-    images,
-    isFeatured,
-  } = property;
+  const { _id, name, price, bedrooms, bathrooms, rating, images, isFeatured } =
+    property;
 
   return (
     <Link
@@ -28,7 +19,7 @@ export default function PropertyCard({ property }: Props) {
       className={`${styles.container} ${manrope.className}`}
     >
       <div className={styles.image_and_featured}>
-        <Image src={images[0]} width={800} height={450} alt='Property image' />
+        <Image src={images[0]} width={400} height={400} alt='Property image' />
 
         {isFeatured && (
           <div className={styles.featured}>

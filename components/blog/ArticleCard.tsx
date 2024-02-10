@@ -14,7 +14,7 @@ export default function ArticleCard({ article }: Props) {
       <Image
         src={article.image}
         width={400}
-        height={300}
+        height={400}
         alt={`${article.title} cover image`}
       />
 
