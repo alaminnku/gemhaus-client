@@ -1,5 +1,6 @@
 import styles from '@components/layout/CallToAction.module.css';
 import LinkButton from '@components/layout/LinkButton';
+import Image from 'next/image';
 
 type Props = {
   title?: string;
@@ -29,6 +30,13 @@ export default function CallToAction({
           }}
         />
       </div>
+      <Image
+        src='/layout/call-to-action-desktop-bg.jpg'
+        width={800}
+        height={500}
+        alt='Background image'
+        className={styles.background_image}
+      />
     </section>
   );
 }

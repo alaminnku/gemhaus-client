@@ -1,61 +1,58 @@
 .container {
-  padding: 32px;
+  position: relative;
   margin: 0px 16px;
-  border-radius: 16px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('/layout/call-to-action-mobile-bg.png');
+  min-height: 310px;
+  display: flex;
+  align-items: center;
 }
 
 .content {
-  z-index: 2;
+  padding: 32px;
   position: relative;
 }
 
-.container h2 {
+.content h2 {
   font-size: 40px;
   font-weight: 600;
   color: var(--white);
   margin-bottom: 20px;
 }
 
-.container p {
+.content p {
   font-size: 14px;
   margin-bottom: 46px;
   color: var(--white);
 }
 
-.services_button {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  color: var(--white);
-  background-color: var(--black);
-}
-
-.services_button svg {
-  margin-left: 1rem;
-  font-size: 1.25rem;
+.background_image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 @media (min-width: 1024px) {
   .container {
-    border-radius: 20px;
+    min-height: 494px;
     margin: 0px 32px;
-    height: 494px;
-    display: flex;
-    align-items: center;
-    background-image: url('/layout/call-to-action-desktop-bg.jpg');
   }
 
-  .container h2 {
+  .content {
+    max-width: 75%;
+  }
+
+  .content h2 {
     font-size: 60px;
   }
 
-  .container p {
+  .content p {
     font-size: 21px;
+  }
+
+  .background_image {
+    border-radius: 20px;
   }
 }

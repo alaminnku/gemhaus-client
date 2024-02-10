@@ -45,8 +45,13 @@ export default function Hero() {
       </div>
 
       <div className={styles.hero_image}>
-        <div className={styles.hero_image_container}>
-          <Image src={heroBackground} alt='Happy family' />
+        <div className={styles.image_container}>
+          <Image
+            src='/home/hero-bg.jpg'
+            width={800}
+            height={500}
+            alt='Background image'
+          />
           <p>The real estate help you need with the hospitality touch</p>
         </div>
       </div>
