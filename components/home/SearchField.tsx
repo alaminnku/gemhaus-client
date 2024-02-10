@@ -34,7 +34,7 @@ export default function SearchField() {
     <>
       <div className={`${styles.search_field} ${inter.className}`}>
         <div className={styles.search_input}>
-          <MdOutlineSearch />
+          <img src='/home/search-icon.png' />
 
           <input
             readOnly

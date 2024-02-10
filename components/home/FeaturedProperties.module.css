@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: var(--section_padding);
+  padding: 48px 16px;
 }
 
 .container h2 {
@@ -18,6 +18,10 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: var(--section_padding);
+  }
+
   .container h2 {
     margin-bottom: 70px;
   }

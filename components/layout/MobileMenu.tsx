@@ -31,11 +31,11 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         </Link>
 
         <div className={styles.nav_items}>
+          <Link onClick={() => setIsOpen(false)} href='/'>
+            Home
+          </Link>
           <Link onClick={() => setIsOpen(false)} href='/blog'>
             Blog
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href='/management'>
-            Management
           </Link>
           <Link onClick={() => setIsOpen(false)} href='/long-term-rental'>
             Long term rental

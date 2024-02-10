@@ -3,7 +3,7 @@ import styles from '@components/home/Hero.module.css';
 import vacationIcon from '@public/home/vacation-icon.png';
 import buyIcon from '@public/home/buy-icon.png';
 import rentIcon from '@public/home/rent-icon.png';
-import hero from '@public/home/hero.jpg';
+import heroBackground from '@public/home/hero-bg.jpg';
 import Image from 'next/image';
 import { inter } from '@lib/utils';
 import Link from 'next/link';
@@ -46,7 +46,7 @@ export default function Hero() {
 
       <div className={styles.hero_image}>
         <div className={styles.hero_image_container}>
-          <Image src={hero} alt='Happy family' />
+          <Image src={heroBackground} alt='Happy family' />
           <p>The real estate help you need with the hospitality touch</p>
         </div>
       </div>

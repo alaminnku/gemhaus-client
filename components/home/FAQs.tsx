@@ -19,24 +19,17 @@ export default function FAQ() {
       <div className={styles.questions_and_answers}>
         {faqs.map(({ id, question, answer }) => (
           <div className={styles.question_and_answer} key={id}>
-            <div className={styles.question}>
+            <div
+              className={styles.question}
+              onClick={() =>
+                setSelectedFaqId((prevState) => (prevState === id ? null : id))
+              }
+            >
               <p>{question}</p>
               {selectedFaqId === id ? (
-                <MdOutlineKeyboardArrowUp
-                  onClick={() =>
-                    setSelectedFaqId((prevState) =>
-                      prevState === id ? null : id
-                    )
-                  }
-                />
+                <MdOutlineKeyboardArrowUp />
               ) : (
-                <MdOutlineKeyboardArrowDown
-                  onClick={() =>
-                    setSelectedFaqId((prevState) =>
-                      prevState === id ? null : id
-                    )
-                  }
-                />
+                <MdOutlineKeyboardArrowDown />
               )}
             </div>
 
