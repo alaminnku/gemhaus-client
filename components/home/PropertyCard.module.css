@@ -9,7 +9,7 @@
 
 .image_and_featured img {
   width: 100%;
-  height: 20rem;
+  height: 323px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -30,10 +30,9 @@
 }
 
 .featured img {
-  margin-left: 0.5rem;
-  color: var(--white);
-  width: 24px;
   height: 20px;
+  width: 24px;
+  margin-left: 0.5rem;
 }
 
 .content_and_details {
@@ -42,7 +41,7 @@
 }
 
 .content {
-  width: 60%;
+  width: 50%;
 }
 
 .content h3 {

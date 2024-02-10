@@ -31,7 +31,7 @@ export default function CallToAction({
         />
       </div>
       <Image
-        src='/layout/call-to-action-desktop-bg.jpg'
+        src='/layout/call-to-action-bg.jpg'
         width={800}
         height={500}
         alt='Background image'

@@ -3,7 +3,6 @@ import styles from '@components/home/Hero.module.css';
 import vacationIcon from '@public/home/vacation-icon.png';
 import buyIcon from '@public/home/buy-icon.png';
 import rentIcon from '@public/home/rent-icon.png';
-import heroBackground from '@public/home/hero-bg.jpg';
 import Image from 'next/image';
 import { inter } from '@lib/utils';
 import Link from 'next/link';
