@@ -10,11 +10,8 @@
   margin-bottom: 30px;
 }
 
-.explore_text {
-  font-size: 24px;
-  margin-top: 3rem;
-  text-align: center;
-  margin-bottom: 1rem;
+.explore_properties_container {
+  padding: 0px 16px;
 }
 
 @media (min-width: 1024px) {

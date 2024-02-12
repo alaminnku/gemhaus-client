@@ -38,7 +38,7 @@ export default function Hero() {
         <div className={styles.cta}>
           <p className={styles.title}>What's next?</p>
           <p className={styles.description}>
-            Find your place, or hire industry leading management experts
+            Find your place, or hire industry leading experts
           </p>
         </div>
       </div>

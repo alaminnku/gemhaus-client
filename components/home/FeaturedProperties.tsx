@@ -18,7 +18,9 @@ export default async function FeaturedProperties() {
         Featured <br /> Properties
       </h2>
       {error ? <Error error={error} /> : <PropertyCards properties={data} />}
-      <ExploreProperties />
+      <div className={styles.explore_properties_container}>
+        <ExploreProperties />
+      </div>
     </section>
   );
 }

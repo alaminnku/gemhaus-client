@@ -27,7 +27,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         />
 
         <Link href='/sign-in' className={styles.sign_in}>
-          Sing in
+          Sign in
         </Link>
 
         <div className={styles.nav_items}>
