@@ -88,12 +88,13 @@
 
   .calendar_container {
     position: absolute;
-    max-width: 800px;
-    display: none;
+    max-width: 943px;
+    z-index: -1;
+    transition: all 200ms ease-in-out;
   }
 
   .calendar_container.show {
-    display: block;
-    bottom: 8.5rem;
+    z-index: 1;
+    bottom: 1.5rem;
   }
 }
