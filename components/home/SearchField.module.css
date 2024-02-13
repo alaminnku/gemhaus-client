@@ -90,11 +90,13 @@
     position: absolute;
     max-width: 943px;
     z-index: -1;
+    opacity: 0;
     transition: all 200ms ease-in-out;
   }
 
   .calendar_container.show {
     z-index: 1;
+    opacity: 1;
     bottom: 1.5rem;
   }
 }
