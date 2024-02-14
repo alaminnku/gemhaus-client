@@ -49,6 +49,7 @@ export default function Hero() {
             priority
             width={800}
             height={500}
+            quality={100}
             src='/home/hero-bg.jpg'
             alt='Background image'
           />

@@ -22,6 +22,7 @@ export default function GenericHero({
         priority
         width={800}
         height={500}
+        quality={100}
         src={backgroundImage}
         alt='Background image'
         className={styles.background_image}

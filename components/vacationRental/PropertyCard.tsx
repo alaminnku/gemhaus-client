@@ -1,9 +1,9 @@
 import { PropertiesView, Property } from 'types';
 import styles from './PropertyCard.module.css';
 import Image from 'next/image';
-import LinkButton from '@components/layout/LinkButton';
 import { manrope } from '@lib/utils';
 import { FaHeart } from 'react-icons/fa6';
+import Link from 'next/link';
 
 type Props = { view: PropertiesView; property: Property };
 
@@ -40,15 +40,11 @@ export default function PropertyCard({ view, property }: Props) {
         </div>
       </div>
 
-      <div>
+      <div className={styles.price_and_button}>
         <p className={styles.price}>
           <strong>From ${property.price}</strong> Per Night
         </p>
-        <LinkButton
-          text='Book Now'
-          href={`/vacation-rental/${property._id}`}
-          style={{ width: '100%' }}
-        />
+        <Link href={`/vacation-rental/${property._id}`}> Book Now</Link>
       </div>
     </div>
   );

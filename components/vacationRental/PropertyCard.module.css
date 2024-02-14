@@ -66,6 +66,17 @@
   color: var(--black);
 }
 
+.price_and_button a {
+  display: block;
+  color: var(--white);
+  text-align: center;
+  font-size: 22px;
+  padding: 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: var(--black);
+}
+
 @media (min-width: 1024px) {
   .multiple_columns {
     display: flex;
@@ -87,5 +98,17 @@
 
   .multiple_columns .name {
     margin-bottom: 38px;
+  }
+
+  .price_and_button {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price_and_button a {
+    font-size: 19px;
+    padding: 17px 0px;
+    width: 170px;
+    align-self: flex-end;
   }
 }

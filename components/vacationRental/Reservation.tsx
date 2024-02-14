@@ -4,9 +4,9 @@ import styles from './Reservation.module.css';
 import { useEffect, useState } from 'react';
 import { dateToMS, formatDate } from '@lib/utils';
 import { Dates, HostawayCalendar, Property } from 'types';
-import LinkButton from '@components/layout/LinkButton';
 import Price from '@components/vacationRental/Price';
 import Calendar from '@components/layout/Calendar';
+import Link from 'next/link';
 
 type Props = {
   property: Property;
@@ -94,8 +94,7 @@ export default function Reservation({ property, calendar }: Props) {
         />
       </div>
 
-      <LinkButton
-        text='Book Now'
+      <Link
         href={
           dates && guests
             ? `/vacation-rental/${
@@ -106,7 +105,9 @@ export default function Reservation({ property, calendar }: Props) {
             : '#'
         }
         style={{ width: '100%', marginBottom: '10px' }}
-      />
+      >
+        Book Now
+      </Link>
 
       {dates && guests && (
         <Price

@@ -19,7 +19,7 @@ export default function ShortTermRentalPage() {
         backgroundImage='/short-term-rental/hero-bg.png'
       />
       <Services services={shortTermServices} />
-      <CallToAction buttonLink='#evaluation' />
+      <CallToAction link='#evaluation' />
       <PropertyEvaluation children={<EvaluationInputOptions />} />
       <Newsletter />
     </main>

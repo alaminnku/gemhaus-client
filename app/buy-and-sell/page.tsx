@@ -18,8 +18,8 @@ export default function BuyAndSellPage() {
       />
       <Services services={buyAndSellServices} />
       <CallToAction
-        buttonLink='#evaluation'
-        buttonText='Find your Gem'
+        link='#evaluation'
+        text='Find your Gem'
         title='Unlock the door to your dream home or sell with confidence.'
         description='Navigate the selling process seamlessly with GemHaus'
       />

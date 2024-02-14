@@ -49,6 +49,17 @@
   border: 1px solid var(--border_color);
 }
 
+.container a {
+  display: block;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--black);
+}
+
 @media (min-width: 1024px) {
   .container {
     min-width: 375px;
