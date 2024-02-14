@@ -8,7 +8,7 @@
 
 .properties {
   display: flex;
-  gap: 1rem;
+  gap: 22px;
   overflow-x: auto;
 }
 
@@ -48,18 +48,19 @@
   bottom: 1rem;
   padding: 1rem;
   color: var(--white);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 .name {
-  margin-bottom: 16px;
+  margin-bottom: 11px;
 }
 
 .price {
-  padding: 2px 8px;
+  padding: 10px;
   display: inline-block;
-  border-radius: 0.5rem;
+  border-radius: 12px;
+  font-weight: 400;
   border: 1px solid var(--white);
 }
 
@@ -70,6 +71,7 @@
   }
 
   .properties {
+    gap: 28px;
     width: 60%;
     flex-direction: row;
   }

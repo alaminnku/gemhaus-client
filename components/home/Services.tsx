@@ -39,7 +39,9 @@ export default function Services() {
         {services.map(({ id, title, description }) => (
           <div key={id} className={styles.service}>
             <p
-              className={styles.title}
+              className={`${styles.title} ${
+                selectedServiceId === id && styles.open
+              }`}
               onClick={() =>
                 setSelectedServiceId((prevState) =>
                   prevState === id ? null : id

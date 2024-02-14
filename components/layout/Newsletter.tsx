@@ -44,7 +44,7 @@ export default function Newsletter({ hasBackground }: Props) {
             <input type='email' name='email' placeholder='Write your email' />
             <SubmitButton
               text='Submit'
-              style={{ padding: '.75rem 2rem', width: '100%' }}
+              style={{ padding: '1rem 2rem', width: '100%' }}
             />
           </div>
         </form>

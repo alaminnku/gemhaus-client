@@ -3,6 +3,7 @@
   gap: 46px;
   flex-direction: column;
   padding: var(--section_padding);
+  padding-bottom: 24px;
 }
 
 .container h2 {
@@ -20,9 +21,14 @@
   margin-bottom: 26px;
 }
 
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .service {
   width: 100%;
-  padding: 1rem 0rem;
   border-bottom: 1px solid var(--border_color);
 }
 
@@ -30,10 +36,15 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.title.open {
+  padding-bottom: 0;
 }
 
 .description {
-  margin-top: 8px;
+  margin: 5px 0px;
   font-size: 16px;
   line-height: 18px;
 }
@@ -41,6 +52,7 @@
 @media (min-width: 1024px) {
   .container {
     flex-direction: row;
+    padding: var(--section_padding);
   }
 
   .container h2 {
@@ -69,9 +81,22 @@
     width: 50%;
   }
 
+  .services {
+    gap: 34px;
+  }
+
+  .title {
+    padding-bottom: 25px;
+  }
+
   .title,
   .description {
     font-size: 24px;
     line-height: 32px;
+  }
+
+  .description {
+    margin-top: 9px;
+    margin-bottom: 11px;
   }
 }

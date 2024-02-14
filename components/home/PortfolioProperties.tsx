@@ -35,7 +35,13 @@ export default async function PortfolioProperties() {
               />
 
               <div className={styles.name_and_price}>
-                <p className={styles.name}>{property.name}</p>
+                <p className={styles.name}>
+                  {property.name
+                    .split(/\s+/)
+                    .slice(0, 2)
+                    .join(' ')
+                    .replace(/[^a-zA-Z ]/g, ' ')}
+                </p>
                 <p className={styles.price}>
                   From {createUSD(property.price)} Per Night
                 </p>

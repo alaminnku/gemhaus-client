@@ -10,7 +10,7 @@
 
 .article_cards {
   display: flex;
-  gap: 1rem;
+  gap: 22px;
   overflow-x: auto;
 }
 
