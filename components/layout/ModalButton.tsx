@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, ReactNode, CSSProperties } from 'react';
 import styles from './ModalButton.module.css';
-import { inter } from '@lib/utils';
 
 type Props = {
   text: string;
@@ -22,7 +21,7 @@ export default function ModalButton({
       style={style}
       className={`${styles.container} ${icon && styles.icon} ${
         isReversed && styles.reversed
-      } ${inter.className}`}
+      }`}
       onClick={() => setShowModal(true)}
     >
       {text} {icon}

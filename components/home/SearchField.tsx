@@ -1,8 +1,7 @@
 'use client';
 
-import { dateToMS, formatDate, inter } from '@lib/utils';
+import { dateToMS, formatDate } from '@lib/utils';
 import styles from './SearchField.module.css';
-import { MdOutlineSearch } from 'react-icons/md';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Calendar from '@components/layout/Calendar';
@@ -32,9 +31,12 @@ export default function SearchField() {
 
   return (
     <>
-      <div className={`${styles.search_field} ${inter.className}`}>
+      <div className={styles.search_field}>
         <div className={styles.search_input}>
-          <img src='/home/search-icon.png' />
+          <img
+            src='/home/black-search-icon.png'
+            className={styles.black_search_icon}
+          />
 
           <input
             readOnly
@@ -57,6 +59,10 @@ export default function SearchField() {
               : ''
           }
         >
+          <img
+            src='/home/white-search-icon.png'
+            className={styles.white_search_icon}
+          />
           Search
         </Link>
       </div>

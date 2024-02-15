@@ -1,6 +1,6 @@
-import { Inter, Manrope } from 'next/font/google';
 import { Dispatch, SetStateAction } from 'react';
 import { Alert } from 'types';
+import { Manrope } from 'next/font/google';
 
 type FetchGemhausDataOptions = {
   body?: FormData;
@@ -114,15 +114,8 @@ export const createUSD = (number: number) =>
     currency: 'USD',
   }).format(number);
 
-// Fonts
-export const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-});
-
 export const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
 });
 
 // Get month abbreviation

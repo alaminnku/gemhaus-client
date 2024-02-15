@@ -10,6 +10,11 @@
     justify-content: space-between;
   }
 
+  .has_black_background {
+    border-radius: 10px;
+    background-color: #1e1e1e;
+  }
+
   .navigation {
     display: flex;
     align-items: center;
@@ -79,8 +84,15 @@
     background-color: var(--black);
   }
 
+  .yellow_sign_in {
+    color: var(--black);
+    background-color: #e7ff56;
+  }
+
   .is_dark_background .navigation a,
-  .is_dark_background .management {
+  .is_dark_background .management,
+  .has_black_background .navigation a,
+  .has_black_background .management {
     color: var(--white);
   }
 
@@ -101,7 +113,8 @@
     border: none;
   }
 
-  .is_dark_background .navigation a.active {
+  .is_dark_background .navigation a.active,
+  .has_black_background .navigation a.active {
     border-bottom: 1px solid var(--white);
   }
 

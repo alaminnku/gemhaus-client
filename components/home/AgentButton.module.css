@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 150px;
+  color: #394b33;
+  font-size: 19px;
+  padding: 18px 27px;
+  font-weight: 500;
+  background-color: #d4e587;
+}
+
+.container img {
+  width: 24px;
+  height: auto;
+  margin-left: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 324px;
+  }
+}

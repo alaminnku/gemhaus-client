@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.vacation,
+.rent,
+.buy {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.vacation {
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--black);
+}
+
+.vacation img,
+.rent img,
+.buy img {
+  width: 1.5rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.container p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-bottom: 0;
+  }
+}

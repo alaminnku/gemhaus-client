@@ -2,12 +2,7 @@
 
 import styles from './ContactForm.module.css';
 import SubmitButton from '../layout/SubmitButton';
-import {
-  fetchGemhausData,
-  inter,
-  showErrorAlert,
-  showSuccessAlert,
-} from '@lib/utils';
+import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
 import { useAlert } from 'contexts/Alert';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 
@@ -50,10 +45,7 @@ export default function ContactForm({
     showSuccessAlert(data, setAlerts);
   }
   return (
-    <form
-      action={handleSubmit}
-      className={`${styles.container} ${inter.className}`}
-    >
+    <form action={handleSubmit} className={styles.container}>
       {title && <p className={styles.title}>{title}</p>}
 
       <div className={styles.item}>

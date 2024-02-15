@@ -7,11 +7,13 @@ import Newsletter from '@components/layout/Newsletter';
 import Services from '@components/home/Services';
 import PortfolioProperties from '@components/home/PortfolioProperties';
 import SaveTime from '@components/home/SaveTime';
+import Agents from '@components/home/Agents';
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
+      <Agents />
       <FeaturedProperties />
       <CallToAction />
       <Services />

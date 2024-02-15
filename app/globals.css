@@ -3,15 +3,26 @@
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
-  src: local(''), url('/fonts/PPMori-Regular.otf') format('otf');
+  src: url('/layout/fonts/PPMori-Regular.otf') format('otf');
 }
-
 @font-face {
   font-family: 'PP Mori';
   font-style: normal;
   font-weight: 600;
   font-display: fallback;
-  src: local(''), url('/fonts/PPMori-SemiBold.otf') format('otf');
+  src: url('/layout/fonts/PPMori-SemiBold.otf') format('otf');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: fallback;
+  src: url('/layout/fonts/Inter-VariableFont_slnt,wght.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: fallback;
+  src: url('/layout/fonts/Manrope-VariableFont_wght.ttf') format('ttf');
 }
 
 :root {
@@ -23,7 +34,9 @@
   --border_color: #e6e6e6;
   --section_padding: 48px 32px;
   --max_viewport_width: 1920px;
-  --primary_font: 'PP Mori', sans-serif;
+  --inter: 'Inter', sans-serif;
+  --pp_mori: 'PP Mori', sans-serif;
+  --manrope: 'Manrope', sans-serif;
   --shadow_medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow_large: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
@@ -54,7 +67,7 @@ body {
   min-height: 100%;
   max-width: 100vw;
   position: relative;
-  font-family: var(--primary_font);
+  font-family: var(--inter);
   text-rendering: optimizeLegibility;
 }
 
@@ -67,7 +80,6 @@ select,
 textarea {
   border: none;
   border-radius: 0px;
-  font-family: inherit;
 }
 
 input[type='number']::-webkit-outer-spin-button,
@@ -86,7 +98,7 @@ textarea {
   width: 100% !important;
   border-radius: 10px;
   border: none !important;
-  font-family: var(--primary_font) !important;
+  font-family: var(--pp_mori) !important;
 }
 
 .react-calendar__tile,

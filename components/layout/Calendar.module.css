@@ -21,7 +21,7 @@
   border-radius: 2rem;
   cursor: pointer;
   background-color: var(--black);
-  font-family: var(--primary_font);
+  font-family: var(--pp_mori);
 }
 
 .button:disabled {

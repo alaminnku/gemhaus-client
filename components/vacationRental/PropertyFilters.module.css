@@ -135,7 +135,7 @@
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   background: var(--black);
-  font-family: var(--primary_font);
+  font-family: var(--pp_mori);
 }
 
 @media (min-width: 1024px) {

@@ -6,7 +6,6 @@ import {
   fetchGemhausData,
   getDate,
   getMonthAbbr,
-  inter,
   showErrorAlert,
   showSuccessAlert,
 } from '@lib/utils';
@@ -106,7 +105,7 @@ export default function PaymentForm({ children, booking }: Props) {
         </p>
 
         <div className={styles.guest_and_payment_details}>
-          <div className={`${styles.reservation_details} ${inter.className}`}>
+          <div className={styles.reservation_details}>
             <p className={styles.reservation_details_title}>
               Reservation Details
             </p>
@@ -151,7 +150,7 @@ export default function PaymentForm({ children, booking }: Props) {
             <div className={styles.guest_details}>
               <p className={styles.guest_details_title}>Guest details</p>
 
-              <div className={inter.className}>
+              <div>
                 <div className={styles.item}>
                   <label htmlFor='name'>Full name</label>
                   <input type='text' id='name' name='name' placeholder='Name' />
