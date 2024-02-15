@@ -15,9 +15,9 @@
 .container h1 {
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  translate: -50% -50%;
+  translate: -50% -60%;
   font-size: 36px;
   font-weight: 600;
   color: var(--white);

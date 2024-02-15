@@ -106,7 +106,14 @@ export default function PropertyEvaluation({ children }: Props) {
             {children}
           </div>
 
-          <SubmitButton text='Submit Form' style={{ alignSelf: 'center' }} />
+          <SubmitButton
+            text='Submit Form'
+            style={{
+              width: 'fit-content',
+              alignSelf: 'center',
+              padding: '19px 32px',
+            }}
+          />
         </form>
       </div>
     </section>

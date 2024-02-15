@@ -253,15 +253,7 @@ export default function PaymentForm({ children, booking }: Props) {
               </div>
             </div>
 
-            <SubmitButton
-              text='Continue'
-              style={{
-                width: '100%',
-                padding: '1rem',
-                fontWeight: '600',
-                fontSize: '19px',
-              }}
-            />
+            <SubmitButton text='Continue' />
           </form>
         </div>
       </div>

@@ -127,10 +127,7 @@ export default function ContactForm({
         />
       </div>
 
-      <SubmitButton
-        text='Submit Form'
-        style={{ width: '100%', fontSize: buttonFontSize }}
-      />
+      <SubmitButton text='Submit Form' />
     </form>
   );
 }

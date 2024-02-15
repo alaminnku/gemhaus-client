@@ -1,18 +1,12 @@
 .submit_button {
   border: none;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
+  width: 100%;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 19px;
   border-radius: 0.5rem;
-  width: fit-content;
-  padding: 1rem;
   color: var(--white);
   font-family: 'PP Mori', sans-serif;
   background-color: var(--black);
-}
-
-@media (min-width: 1024px) {
-  .submit_button {
-    font-size: 19px;
-  }
 }
