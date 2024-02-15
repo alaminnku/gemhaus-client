@@ -1,9 +1,8 @@
 .container {
   display: flex;
-  gap: 2rem;
   flex-direction: column;
   background-color: #f7f7f7;
-  padding: var(--section_padding);
+  padding: 57px 21px 34px 21px;
 }
 
 .properties {
@@ -66,8 +65,9 @@
 
 @media (min-width: 1024px) {
   .container {
-    gap: 4rem;
+    gap: 73px;
     flex-direction: row;
+    padding: 57px 0px 57px 57px;
   }
 
   .properties {

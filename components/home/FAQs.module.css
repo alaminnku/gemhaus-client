@@ -1,5 +1,5 @@
 .container {
-  padding: var(--section_padding);
+  padding: 40px 28px 23px 28px;
   background-color: #f7f7f7;
 }
 
@@ -35,6 +35,7 @@
   .container {
     display: flex;
     gap: 3rem;
+    padding: 78px 76px 77px 76px;
   }
 
   .container h2 {

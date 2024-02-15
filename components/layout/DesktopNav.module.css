@@ -4,6 +4,7 @@
 
 @media (min-width: 1024px) {
   .container {
+    padding: 14px 44px;
     display: flex;
     align-items: center;
     justify-content: space-between;

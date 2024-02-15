@@ -1,5 +1,5 @@
 .container {
-  padding: var(--section_padding);
+  padding: 50px 21px;
 }
 
 .container h2 {
@@ -19,6 +19,10 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 70px 0px 35px 56px;
+  }
+
   .container h2 {
     margin-bottom: 48px;
   }

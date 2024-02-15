@@ -2,12 +2,8 @@
   background-color: #e2e9e8;
 }
 
-.content,
-.time_image {
-  padding: var(--section_padding);
-}
-
 .content {
+  padding: 52px 40px;
   background-color: #d1faca;
 }
 
@@ -28,13 +24,17 @@
 .container img {
   width: 100%;
   height: auto;
-  padding: var(--section_padding);
+  padding: 25px;
 }
 
 @media (min-width: 1024px) {
   .container {
     display: flex;
     align-items: center;
+  }
+
+  .content {
+    padding: 132px 76px 72px 76px;
   }
 
   .content,

@@ -1,5 +1,5 @@
 .container {
-  padding: var(--section_padding);
+  padding: 0px 28px 28px 28px;
   background-color: var(--bgColor);
 }
 
@@ -34,6 +34,10 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 0px 66px 72px 66px;
+  }
+
   .content {
     display: flex;
     gap: 4rem;
