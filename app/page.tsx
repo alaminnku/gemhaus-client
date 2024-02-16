@@ -8,6 +8,7 @@ import Services from '@components/home/Services';
 import PortfolioProperties from '@components/home/PortfolioProperties';
 import SaveTime from '@components/home/SaveTime';
 import Agents from '@components/home/Agents';
+import GreenFooter from '@components/layout/GreenFooter';
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <SaveTime />
       <FAQs />
       <Newsletter hasBackground={true} />
+      <GreenFooter />
     </main>
   );
 }

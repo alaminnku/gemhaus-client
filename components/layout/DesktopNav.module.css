@@ -117,7 +117,6 @@
 
   .is_dark_background .sign_in {
     color: var(--black);
-    background-color: var(--white);
   }
 
   .show_logo_only .navigation,

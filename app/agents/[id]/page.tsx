@@ -3,6 +3,7 @@ import Properties from '@components/agent/Properties';
 import FeaturedProperties from '@components/agent/FeaturedProperties';
 import Header from '@components/layout/Header';
 import Transactions from '@components/agent/Transactions';
+import GreenFooter from '@components/layout/GreenFooter';
 
 export default function AgentPage() {
   return (
@@ -12,6 +13,7 @@ export default function AgentPage() {
       <Properties />
       <FeaturedProperties />
       <Transactions />
+      <GreenFooter />
     </main>
   );
 }

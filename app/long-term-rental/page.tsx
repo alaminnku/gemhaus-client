@@ -5,6 +5,7 @@ import EvaluationInputOptions from '@components/layout/EvaluationInputOptions';
 import Services from '@components/layout/Services';
 import { longTermServices } from '@data/services';
 import Newsletter from '@components/layout/Newsletter';
+import DarkFooter from '@components/layout/DarkFooter';
 
 export default function LongTermRentalPage() {
   return (
@@ -28,6 +29,7 @@ export default function LongTermRentalPage() {
         children={<EvaluationInputOptions showStrLtr={false} />}
       />
       <Newsletter />
+      <DarkFooter />
     </main>
   );
 }

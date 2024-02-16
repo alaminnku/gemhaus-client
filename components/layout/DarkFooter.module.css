@@ -9,17 +9,8 @@
   background-color: var(--black);
 }
 
-.socials {
-  margin-top: 1rem;
-}
-
-.socials a {
-  color: var(--white);
-  padding: 0.25rem 0.5rem;
-}
-
-.socials a svg {
-  font-size: 1.25rem;
+.logo {
+  margin-bottom: 72px;
 }
 
 @media (min-width: 1024px) {

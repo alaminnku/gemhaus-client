@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  gap: 38px;
+}
+
+.facebook_icon {
+  width: 14px;
+  height: 27px;
+}
+
+.instagram_icon {
+  width: 27px;
+  height: 27px;
+}
+
+.twitter_icon {
+  width: 30px;
+  height: 24px;
+}
+
+.youtube_icon {
+  width: 33px;
+  height: 24px;
+}

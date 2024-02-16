@@ -5,6 +5,7 @@ import EvaluationInputOptions from '@components/layout/EvaluationInputOptions';
 import Services from '@components/layout/Services';
 import { shortTermServices } from '@data/services';
 import Newsletter from '@components/layout/Newsletter';
+import DarkFooter from '@components/layout/DarkFooter';
 
 export default function ShortTermRentalPage() {
   return (
@@ -22,6 +23,7 @@ export default function ShortTermRentalPage() {
       <CallToAction link='#evaluation' />
       <PropertyEvaluation children={<EvaluationInputOptions />} />
       <Newsletter />
+      <DarkFooter />
     </main>
   );
 }

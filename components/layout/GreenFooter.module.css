@@ -1,0 +1,50 @@
+.container {
+  background-color: #074d43;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 700px;
+    padding: 76px 64px 25px 64px;
+  }
+
+  .logo {
+    margin-bottom: 48px;
+  }
+
+  .branding_and_contact {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 50px;
+    font-family: var(--pp_mori);
+  }
+
+  .contact_title,
+  .office span {
+    color: #1c8576;
+  }
+
+  .office,
+  .office a,
+  .email,
+  .social {
+    color: var(--white);
+  }
+
+  .website {
+    color: #ff8344;
+  }
+
+  .house_logo {
+    width: 84px;
+    height: 80px;
+  }
+}
