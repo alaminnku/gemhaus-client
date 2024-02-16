@@ -1,0 +1,60 @@
+.container {
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    gap: 71px;
+    margin-bottom: 83px;
+    padding: 50px 50px 0px 50px;
+  }
+
+  .media {
+    width: 461px;
+  }
+
+  .agent_image {
+    border-radius: 27px;
+    margin-bottom: 35px;
+  }
+
+  .cta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .qr_code {
+    width: 100px;
+    height: auto;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .content h1 {
+    font-size: 42px;
+    font-weight: 400;
+  }
+
+  .address {
+    font-size: 19.5px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .name,
+  .email {
+    font-size: 18px;
+  }
+
+  .phone {
+    margin-bottom: 11px;
+  }
+
+  .about {
+    font-size: 14px;
+    line-height: 29px;
+  }
+}

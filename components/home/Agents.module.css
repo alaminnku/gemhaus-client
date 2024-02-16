@@ -1,7 +1,7 @@
 .container {
   display: grid;
   gap: 12px;
-  padding: 22px 29px;
+  padding: 36px 0px 55px 8px;
 }
 
 .header {
@@ -49,6 +49,7 @@
   .container {
     display: flex;
     gap: 171px;
+    padding-left: 54px;
     margin-bottom: 113px;
   }
 

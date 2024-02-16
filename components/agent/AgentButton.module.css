@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-self: center;
   border-radius: 150px;
   color: #394b33;
   font-size: 14px;
-  width: 241px;
   padding: 18px 27px;
   font-weight: 500;
   background-color: #d4e587;
@@ -30,9 +28,8 @@
 
 @media (min-width: 1024px) {
   .container {
-    width: 324px;
-    font-size: 19px;
-    align-self: flex-start;
+    width: 270px;
+    font-size: 16px;
   }
 
   .container img {

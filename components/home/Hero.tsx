@@ -16,7 +16,7 @@ export default function Hero() {
           <SearchField />
         </div>
 
-        <div className={styles.cta}>
+        <div className={styles.mobile_cta}>
           <span>Sign up for management today, 1st month on GemHaus</span>
           <p>Find your place, or hire industry experts.</p>
           <AgentButton />

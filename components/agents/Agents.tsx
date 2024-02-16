@@ -15,7 +15,7 @@ export default function Agents() {
 
         <p className={styles.name}>Bill Thomas</p>
         <p className={styles.email}>abbie.knowles@theagencyre.com</p>
-        <p className={styles.email}>(626) 807-9132</p>
+        <p className={styles.phone}>(626) 807-9132</p>
       </Link>
       <Link href='/agents/agent' className={styles.agent}>
         <Image

@@ -4,7 +4,7 @@ import styles from './AgentButton.module.css';
 export default function AgentButton() {
   return (
     <Link href='/agents' className={styles.container}>
-      Take me to Agent page
+      Work with Bill
       <img src='/home/right-arrow-green-icon.png' />
     </Link>
   );
