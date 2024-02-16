@@ -11,12 +11,12 @@ export default function SearchTypes() {
 
       <Link href='/vacation-rental' className={styles.rent}>
         <img src='/home/rent-icon.png' alt='Rent icon' />
-        <p>Rent</p>
+        <p className={styles.text}>Rent</p>
       </Link>
 
       <Link href='/buy-and-sell' className={styles.buy}>
         <img src='/home/buy-icon.png' alt='Buy icon' />
-        <p>Buy</p>
+        <p className={styles.text}>Buy</p>
       </Link>
     </div>
   );

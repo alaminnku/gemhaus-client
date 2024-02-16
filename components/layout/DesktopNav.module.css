@@ -28,6 +28,10 @@
     font-weight: 500;
   }
 
+  .navigation a:hover {
+    font-weight: 700;
+  }
+
   .navigation a.active {
     border-bottom: 1px solid var(--black);
   }

@@ -21,6 +21,11 @@
   font-weight: 500;
   line-height: 20px;
   margin-bottom: 8px;
+  transition: var(--link_transition);
+}
+
+.container:hover .title {
+  font-weight: var(--link_hover_weight);
 }
 
 .published {

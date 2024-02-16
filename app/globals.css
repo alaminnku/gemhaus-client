@@ -37,6 +37,8 @@
   --inter: 'Inter', sans-serif;
   --pp_mori: 'PP Mori', sans-serif;
   --manrope: 'Manrope', sans-serif;
+  --link_transition: all 100ms ease-in;
+  --link_hover_weight: 700;
   --shadow_medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow_large: 0 30px 60px rgba(0, 0, 0, 0.12);
 }

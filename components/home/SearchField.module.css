@@ -81,7 +81,7 @@
   .search_input input[type='text'] {
     font-size: 18px;
     border-radius: 10px;
-    padding: 19px;
+    padding: 16px;
   }
 
   .black_search_icon {
@@ -89,12 +89,13 @@
   }
 
   .search_button {
-    padding: 19px 28px;
+    padding: 12px 28px;
     border-radius: 10px;
     background-color: var(--black);
   }
 
   .gem_icon {
+    display: block;
     width: 28px;
     height: 28px;
     margin-right: 17px;

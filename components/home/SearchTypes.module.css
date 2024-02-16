@@ -32,6 +32,16 @@
   font-weight: 500;
 }
 
+.buy,
+.rent {
+  transition: var(--link_transition);
+}
+
+.rent:hover .text,
+.buy:hover .text {
+  font-weight: var(--link_hover_weight);
+}
+
 @media (min-width: 1024px) {
   .container {
     margin-bottom: 0;

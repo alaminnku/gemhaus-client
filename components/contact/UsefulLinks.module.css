@@ -29,6 +29,11 @@
   color: var(--black);
   font-size: 24px;
   padding: 16px 0px;
+  transition: var(--link_transition);
+}
+
+.navigation a:hover {
+  font-weight: var(--link_hover_weight);
 }
 
 @media (min-width: 1024px) {
