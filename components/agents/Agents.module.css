@@ -1,0 +1,30 @@
+.container {
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    gap: 50px 18px;
+    padding: 0px 21px;
+    margin-bottom: 69px;
+    grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+  }
+
+  .agent img {
+    width: 335px;
+    height: 335px;
+    border-radius: 20px;
+  }
+
+  .name {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .email,
+  .phone {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

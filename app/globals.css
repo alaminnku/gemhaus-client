@@ -77,9 +77,11 @@ a {
 
 input,
 select,
+button,
 textarea {
   border: none;
   border-radius: 0px;
+  font-family: inherit;
 }
 
 input[type='number']::-webkit-outer-spin-button,

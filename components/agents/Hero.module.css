@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.container h1 {
+  max-width: 705px;
+}
+
+.container h1 span {
+  color: #074d43;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-top: 72px;
+    margin-bottom: 92px;
+  }
+
+  .container h1 {
+    font-size: 66px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-bottom: 46px;
+  }
+
+  .container img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+  }
+}
