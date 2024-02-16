@@ -17,4 +17,9 @@
   .container {
     border-radius: 0px;
   }
+
+  .is_rounded {
+    margin: 15px;
+    border-radius: 58px;
+  }
 }

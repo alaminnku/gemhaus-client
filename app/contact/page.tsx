@@ -9,7 +9,7 @@ export default function ContactPage() {
       <Header isBlackSignIn={true} />
       <Contact />
       <UsefulLinks />
-      <DarkFooter />
+      <DarkFooter isRounded={true} />
     </main>
   );
 }

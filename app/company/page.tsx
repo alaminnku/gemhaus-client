@@ -17,7 +17,7 @@ export default function CompanyPage() {
       <Stories />
       <AboutFounder />
       <Newsletter />
-      <DarkFooter />
+      <DarkFooter isRounded={true} />
     </main>
   );
 }
