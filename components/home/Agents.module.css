@@ -1,18 +1,36 @@
 .container {
   display: grid;
   gap: 12px;
-  padding: 36px 0px 55px 8px;
+  padding: 0px 8px;
+  margin-bottom: 55px;
 }
 
 .header {
   display: none;
 }
 
+.roles {
+  display: none;
+}
+
+.agents {
+  display: flex;
+  gap: 11px;
+  overflow-x: auto;
+}
+
+.agents::-webkit-scrollbar {
+  display: none;
+}
+
 .agent {
-  padding: 12px 24px;
+  color: var(--black);
+  min-width: 356px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   border-radius: 12px;
+  background-color: #f7f7f7;
   justify-content: space-between;
 }
 
@@ -22,33 +40,45 @@
   align-items: center;
 }
 
-.image_and_name p {
+.agent_name {
   color: var(--black);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.expertise {
+  font-size: 12px;
+  line-height: 22px;
 }
 
 .image_and_name img {
-  height: 53px;
-  width: 53px;
+  height: 64px;
+  width: 64px;
   border-radius: 100%;
-  margin-right: 27px;
+  margin-right: 19px;
 }
 
 .arrow {
-  width: 22px;
-  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  background-color: #d4e587;
 }
 
-.agent:hover {
-  background-color: #f5f5f5;
+.arrow img {
+  width: 14px;
+  height: auto;
 }
 
 @media (min-width: 1024px) {
   .container {
     display: flex;
     gap: 171px;
+    align-items: center;
     padding-left: 54px;
     margin-bottom: 113px;
   }
@@ -61,12 +91,52 @@
   }
 
   .header h2 {
-    font-size: 63px;
+    font-size: 48px;
     font-weight: 500;
-    margin-bottom: 92px;
+    margin-bottom: 40px;
   }
 
   .agents {
-    width: 364px;
+    display: none;
+  }
+
+  .roles {
+    display: flex;
+    gap: 60px;
+  }
+
+  .role {
+    width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--black);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 12px;
+    transition: all 250ms ease-in-out;
+  }
+
+  .agent_image {
+    width: 54px;
+    height: 54px;
+    margin-right: 20px;
+    border-radius: 100%;
+  }
+
+  .right_arrow {
+    width: 16px;
+    height: 8px;
+    display: none;
+  }
+
+  .role:hover .right_arrow {
+    display: block;
+  }
+
+  .role:hover {
+    width: 224px;
+    background-color: #f5f5f5;
   }
 }

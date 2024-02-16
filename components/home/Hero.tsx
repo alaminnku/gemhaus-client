@@ -28,6 +28,8 @@ export default function Hero() {
           <div className={styles.header}>
             <h1>Discover the GemHaus difference.</h1>
             <p>Find your place, or hire industry leading management experts.</p>
+
+            <img className={styles.promo_image} src='/home/promotion.png' />
           </div>
 
           <div className={styles.search}>

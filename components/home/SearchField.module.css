@@ -20,7 +20,7 @@
   background-color: var(--white);
 }
 
-.white_search_icon {
+.gem_icon {
   display: none;
 }
 
@@ -94,9 +94,9 @@
     background-color: var(--black);
   }
 
-  .white_search_icon {
-    width: 18px;
-    height: 20px;
+  .gem_icon {
+    width: 28px;
+    height: 28px;
     margin-right: 17px;
   }
 

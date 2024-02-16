@@ -5,7 +5,7 @@ export default function AgentButton() {
   return (
     <Link href='/agents' className={styles.container}>
       Work with Bill
-      <img src='/home/right-arrow-green-icon.png' />
+      <img src='/home/green-right-arrow-icon.png' />
     </Link>
   );
 }

@@ -5,10 +5,20 @@
   margin-bottom: 22px;
 }
 
-.container h2 {
-  font-size: var(--h2_size);
-  font-weight: 600;
+.header {
   margin-bottom: 30px;
+}
+
+.header h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.header p {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 .explore_properties_container {
@@ -21,7 +31,11 @@
     margin-bottom: 77px;
   }
 
+  .header {
+    margin-bottom: 44px;
+  }
+
   .container h2 {
-    margin-bottom: 70px;
+    font-size: 48px;
   }
 }

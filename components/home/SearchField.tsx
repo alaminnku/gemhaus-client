@@ -59,10 +59,7 @@ export default function SearchField() {
               : ''
           }
         >
-          <img
-            src='/home/white-search-icon.png'
-            className={styles.white_search_icon}
-          />
+          <img src='/home/gem-icon.png' className={styles.gem_icon} />
           Search
         </Link>
       </div>

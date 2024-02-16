@@ -1,3 +1,7 @@
+.container {
+  margin-bottom: 36px;
+}
+
 .desktop {
   display: none;
 }
@@ -63,6 +67,7 @@
   }
 
   .header {
+    position: relative;
     margin-bottom: 111px;
   }
 
@@ -77,6 +82,14 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 19px;
+  }
+
+  .promo_image {
+    position: absolute;
+    width: 185px;
+    height: 95px;
+    bottom: 0;
+    right: 0;
   }
 
   .search {
