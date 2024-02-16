@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import styles from './Agents.module.css';
+import Link from 'next/link';
 
 export default function Agents() {
   return (
     <section className={styles.container}>
-      <div className={styles.agent}>
+      <Link href='/agents/agent' className={styles.agent}>
         <Image
           src='/agents/agent.png'
           width={400}
@@ -15,8 +16,8 @@ export default function Agents() {
         <p className={styles.name}>Bill Thomas</p>
         <p className={styles.email}>abbie.knowles@theagencyre.com</p>
         <p className={styles.email}>(626) 807-9132</p>
-      </div>
-      <div className={styles.agent}>
+      </Link>
+      <Link href='/agents/agent' className={styles.agent}>
         <Image
           src='/agents/agent.png'
           width={400}
@@ -27,8 +28,8 @@ export default function Agents() {
         <p className={styles.name}>Bill Thomas</p>
         <p className={styles.email}>abbie.knowles@theagencyre.com</p>
         <p className={styles.email}>(626) 807-9132</p>
-      </div>
-      <div className={styles.agent}>
+      </Link>
+      <Link href='/agents/agent' className={styles.agent}>
         <Image
           src='/agents/agent.png'
           width={400}
@@ -39,8 +40,8 @@ export default function Agents() {
         <p className={styles.name}>Bill Thomas</p>
         <p className={styles.email}>abbie.knowles@theagencyre.com</p>
         <p className={styles.email}>(626) 807-9132</p>
-      </div>
-      <div className={styles.agent}>
+      </Link>
+      <Link href='/agents/agent' className={styles.agent}>
         <Image
           src='/agents/agent.png'
           width={400}
@@ -51,8 +52,8 @@ export default function Agents() {
         <p className={styles.name}>Bill Thomas</p>
         <p className={styles.email}>abbie.knowles@theagencyre.com</p>
         <p className={styles.email}>(626) 807-9132</p>
-      </div>
-      <div className={styles.agent}>
+      </Link>
+      <Link href='/agents/agent' className={styles.agent}>
         <Image
           src='/agents/agent.png'
           width={400}
@@ -63,7 +64,7 @@ export default function Agents() {
         <p className={styles.name}>Bill Thomas</p>
         <p className={styles.email}>abbie.knowles@theagencyre.com</p>
         <p className={styles.email}>(626) 807-9132</p>
-      </div>
+      </Link>
     </section>
   );
 }

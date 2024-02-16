@@ -1,6 +1,10 @@
 .container {
 }
 
+.agent {
+  color: var(--black);
+}
+
 @media (min-width: 1024px) {
   .container {
     display: grid;
