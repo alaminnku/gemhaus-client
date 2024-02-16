@@ -10,7 +10,7 @@ type Props = {
   showLogoOnly: boolean;
   isBlackSignIn: boolean;
   isDarkBackground: boolean;
-  hasBlackBackground: boolean;
+  withDarkBackground: boolean;
 };
 
 export default function DesktopNav({
@@ -18,19 +18,19 @@ export default function DesktopNav({
   isBlackSignIn,
   showLogoOnly,
   isYellowSignIn,
-  hasBlackBackground,
+  withDarkBackground,
 }: Props) {
   const pathname = usePathname();
 
   return (
     <nav
       className={`${styles.container} ${
-        isDarkBackground && styles.is_dark_background
+        (isDarkBackground || withDarkBackground) && styles.is_dark_background
       } ${showLogoOnly && styles.show_logo_only} ${
-        hasBlackBackground && styles.has_black_background
+        withDarkBackground && styles.with_dark_background
       }`}
     >
-      <Logo isDarkBackground={isDarkBackground || hasBlackBackground} />
+      <Logo isDarkBackground={isDarkBackground || withDarkBackground} />
 
       <div className={styles.navigation}>
         <Link

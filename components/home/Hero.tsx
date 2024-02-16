@@ -1,7 +1,6 @@
 import Header from '@components/layout/Header';
 import styles from '@components/home/Hero.module.css';
 import Image from 'next/image';
-import Link from 'next/link';
 import SearchField from './SearchField';
 import SearchTypes from './SearchTypes';
 import AgentButton from './AgentButton';
@@ -9,7 +8,7 @@ import AgentButton from './AgentButton';
 export default function Hero() {
   return (
     <section className={styles.container}>
-      <Header isYellowSignIn={true} hasBlackBackground={true} />
+      <Header isYellowSignIn={true} withDarkBackground={true} />
 
       <div className={styles.mobile}>
         <div className={styles.search}>

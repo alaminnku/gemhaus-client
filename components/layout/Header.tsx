@@ -12,7 +12,7 @@ type Props = {
   isBlackSignIn?: boolean;
   showLogoOnly?: boolean;
   isDarkBackground?: boolean;
-  hasBlackBackground?: boolean;
+  withDarkBackground?: boolean;
 };
 
 export default function Header({
@@ -21,7 +21,7 @@ export default function Header({
   showLogoOnly = false,
   isYellowSignIn = false,
   isDarkBackground = false,
-  hasBlackBackground = false,
+  withDarkBackground = false,
 }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -32,7 +32,7 @@ export default function Header({
         isBlackSignIn={isBlackSignIn}
         showLogoOnly={showLogoOnly}
         isYellowSignIn={isYellowSignIn}
-        hasBlackBackground={hasBlackBackground}
+        withDarkBackground={withDarkBackground}
       />
       <MobileNav
         isOpen={isOpen}
