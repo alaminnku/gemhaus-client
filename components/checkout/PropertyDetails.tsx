@@ -55,6 +55,7 @@ export default async function PropertyDetails({
                 property={property}
                 arrivalDate={arrivalDate}
                 departureDate={departureDate}
+                style={{ paddingTop: '26px', paddingBottom: '29px' }}
               />
             </div>
           </div>
