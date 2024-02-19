@@ -1,12 +1,14 @@
 import { createUSD, formatDate } from '@lib/utils';
 import { Property, HostawayCalendar } from 'types';
 import styles from './Price.module.css';
+import { CSSProperties } from 'react';
 
 type Props = {
   arrivalDate: Date | string;
   departureDate: Date | string;
   calendar: HostawayCalendar;
   property: Property;
+  style: CSSProperties;
 };
 
 export default function Price({
@@ -14,6 +16,7 @@ export default function Price({
   departureDate,
   calendar,
   property,
+  style,
 }: Props) {
   // All dates between check in and checkout
   const datesMap: Record<string, boolean> = {};
@@ -40,25 +43,20 @@ export default function Price({
 
   return (
     <div className={styles.container}>
-      <p>
-        {createUSD(unitPrice)} x {days} Staying Nights
-        <span>{createUSD(price)}</span>
-      </p>
-      <p>
-        Cleaning Fee <span>{createUSD(cleaningFee)}</span>
-      </p>
-      <p>
-        Insurance Fee <span>{createUSD(insuranceFee)}</span>
-      </p>
-      <p>
-        Service Fee <span>{createUSD(serviceFee)}</span>
-      </p>
-      <p>
-        Lodging tax <span>{createUSD(lodgingTax)}</span>
-      </p>
-      <p>
-        Sales tax <span>{createUSD(salesTax)}</span>
-      </p>
+      <div style={style}>
+        <p>
+          {createUSD(unitPrice)} x {days} Staying Nights
+          <span>{createUSD(price)}</span>
+        </p>
+        <p>
+          Services Charges{' '}
+          <span>
+            {createUSD(
+              cleaningFee + insuranceFee + serviceFee + lodgingTax + salesTax
+            )}
+          </span>
+        </p>
+      </div>
 
       <p className={styles.total}>
         Total

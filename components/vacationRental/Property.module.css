@@ -1,13 +1,16 @@
 .container {
-  padding: 32px;
   padding-top: 0px;
   line-height: 32px;
-  font-family: var(--pp_mori);
 }
 
 .content_and_reservation {
   display: flex;
   flex-direction: column-reverse;
+}
+
+.content {
+  padding: 0px 19px;
+  padding-bottom: 19px;
 }
 
 .content h1,
@@ -17,26 +20,31 @@
   font-weight: 600;
 }
 
-.title {
-  margin-bottom: 24px;
+.content h1 {
+  margin-bottom: 27px;
 }
 
 .property_offerings {
-  padding: 27px 0px;
+  padding-top: 32px;
+  padding-bottom: 43px;
   border-top: 1px solid var(--border_color);
   border-bottom: 1px solid var(--border_color);
 }
 
+.property_offerings h2 {
+  margin-bottom: 34px;
+}
+
 .offerings {
-  margin-top: 20px;
   display: grid;
+  gap: 26px;
   grid-template-columns: 1fr;
 }
 
 .offering {
   display: flex;
+  font-weight: 600;
   align-items: center;
-  padding: 12px 0px;
 }
 
 .offering img {
@@ -68,9 +76,18 @@
     padding: 32px 48px;
   }
 
+  .content h1 {
+    margin-bottom: 25px;
+  }
+
   .content_and_reservation {
     gap: 2rem;
     flex-direction: row;
+  }
+
+  .property_offerings {
+    padding-top: 27px;
+    padding-bottom: 71px;
   }
 
   .offerings {

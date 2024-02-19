@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import styles from './MobileMenu.module.css';
 import { IoClose } from 'react-icons/io5';
 import Overlay from './Overlay';
+import Logo from './Logo';
 
 type Props = {
   isOpen: boolean;
@@ -53,6 +54,8 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
             Contact us
           </Link>
         </div>
+
+        <Logo style={{ paddingLeft: '18px' }} />
       </div>
 
       <Overlay show={isOpen} setShow={setIsOpen} />

@@ -1,21 +1,16 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem 0rem;
-  padding: 1rem;
-  border-radius: 10px;
-  height: fit-content;
-  min-width: 100%;
+  padding: 40px 28px 24px 28px;
+  margin: 0px 9px;
   margin-bottom: 35px;
+  border-radius: 10px;
   border: 1px solid #dddddd;
   box-shadow: 0px 4px 13px 0px var(--border_color);
 }
 
 .price {
-  margin-bottom: 1rem;
   font-weight: 600;
   font-size: 24px;
+  margin-bottom: 30px;
 }
 
 .price span {
@@ -23,30 +18,39 @@
   font-weight: 400;
 }
 
-.dates {
+.dates_and_calendar {
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.dates {
+  display: flex;
+  gap: 20px;
 }
 
 .guests {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 20px 0px 27px 0px;
+  margin-bottom: 27px;
 }
 
+.dates label,
 .guests label {
+  display: inline-block;
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 11px;
 }
 
 .guests input,
 .dates input {
   width: 100%;
+  font-size: 18px;
   display: inline-block;
-  padding: 16px;
+  padding: 20px 16px;
   border-radius: 6px;
-  border: 1px solid var(--border_color);
+  border: 1px solid #a7a7a7;
 }
 
 .container a {
@@ -64,5 +68,6 @@
   .container {
     min-width: 375px;
     margin-bottom: 0px;
+    height: fit-content;
   }
 }

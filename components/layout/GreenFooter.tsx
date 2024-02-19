@@ -15,9 +15,7 @@ export default function GreenFooter() {
 
         <div className={styles.contact}>
           <p className={styles.contact_title}>contact us</p>
-          <p className={styles.office}>
-            <span>Office</span> - <a href='tel:4808414162'>480 841 4162</a>
-          </p>
+
           <a className={styles.email} href='mailto:info@gemhaus.com'>
             info@gemhaus.com
           </a>

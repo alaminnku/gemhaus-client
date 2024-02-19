@@ -62,16 +62,31 @@ export default function Reservation({ property, calendar }: Props) {
         ${property.price} <span>Night</span>
       </p>
 
-      <div className={styles.dates}>
-        <input
-          readOnly
-          type='text'
-          onClick={() => setShowCalendar((prevState) => !prevState)}
-          value={
-            dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
-          }
-          placeholder='Check-in --> Check-out'
-        />
+      <div className={styles.dates_and_calendar}>
+        <div className={styles.dates}>
+          <div>
+            <label htmlFor='check-in'>Check-in</label>
+            <input
+              id='check-in'
+              readOnly
+              type='text'
+              onClick={() => setShowCalendar((prevState) => !prevState)}
+              value={dates ? `${formatDate(dates[0])}` : ''}
+              placeholder='mm/dd/yy'
+            />
+          </div>
+          <div>
+            <label htmlFor='check-out'>Check-out</label>
+            <input
+              id='check-out'
+              readOnly
+              type='text'
+              onClick={() => setShowCalendar((prevState) => !prevState)}
+              value={dates ? `${formatDate(dates[1])}` : ''}
+              placeholder='mm/dd/yy'
+            />
+          </div>
+        </div>
 
         {showCalendar && (
           <Calendar
@@ -104,7 +119,7 @@ export default function Reservation({ property, calendar }: Props) {
               )}&departureDate=${formatDate(dates[1])}&guests=${guests}`
             : '#'
         }
-        style={{ width: '100%', marginBottom: '10px' }}
+        style={{ width: '100%' }}
       >
         Book Now
       </Link>
@@ -115,6 +130,7 @@ export default function Reservation({ property, calendar }: Props) {
           departureDate={dates[1]}
           property={property}
           calendar={calendar}
+          style={{ paddingTop: '43px', paddingBottom: '29px' }}
         />
       )}
     </div>

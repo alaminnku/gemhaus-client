@@ -6,6 +6,7 @@
   left: -150%;
   z-index: 11;
   padding: 1rem;
+  padding-bottom: 42px;
   display: flex;
   flex-direction: column;
   transition: all 200ms;
@@ -34,10 +35,11 @@
 }
 
 .nav_items {
+  flex: 1;
   display: flex;
   gap: 28px;
   flex-direction: column;
-  padding: 30px 0px;
+  padding: 30px 18px;
   border-top: 1px solid var(--border_color);
 }
 

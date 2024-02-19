@@ -3,9 +3,9 @@
   margin-top: 82px;
 }
 
-.container h2 {
-  font-size: var(--h2_size);
-  font-weight: 600;
+.content h2 {
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 26px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .content p {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 1rem;
 }
 
@@ -57,12 +57,13 @@
     gap: 77px;
     flex-direction: row;
     padding: 0px 76px;
-    margin-top: 202px;
-    margin-bottom: 170px;
+    margin-top: 69px;
+    margin-bottom: 62px;
   }
 
-  .container h2 {
-    margin-bottom: 62px;
+  .content h2 {
+    font-size: 48px;
+    margin-bottom: 38px;
   }
 
   .content_and_services {
@@ -72,10 +73,6 @@
 
   .content {
     margin-bottom: 0rem;
-  }
-
-  .content p {
-    font-size: 24px;
   }
 
   .content p:nth-child(3) {
@@ -93,13 +90,14 @@
   }
 
   .title {
+    font-size: 20px;
+    line-height: 32px;
     padding-bottom: 25px;
   }
 
-  .title,
   .description {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 23px;
   }
 
   .description {

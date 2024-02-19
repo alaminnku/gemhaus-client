@@ -12,11 +12,18 @@
 }
 
 .container a {
-  display: block;
-  padding: 19px 27px;
+  display: flex;
+  align-items: center;
+  padding: 16px 27px;
   font-size: 19px;
   font-weight: 600;
   color: var(--white);
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: var(--black);
+}
+
+.container a img {
+  width: 28px;
+  height: 28px;
+  margin-left: 16px;
 }

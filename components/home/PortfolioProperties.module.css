@@ -56,11 +56,14 @@
 }
 
 .price {
-  padding: 10px;
+  padding: 20px;
   display: inline-block;
   border-radius: 12px;
   font-weight: 400;
-  border: 1px solid var(--white);
+  color: var(--black);
+  font-size: 16px;
+  font-family: var(--pp_mori);
+  background-color: #d4e587;
 }
 
 @media (min-width: 1024px) {

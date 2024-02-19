@@ -34,9 +34,7 @@ export default async function Property({ id }: Props) {
 
           <div className={styles.content_and_reservation}>
             <div className={styles.content}>
-              <div className={styles.title}>
-                <h1>{property.name}</h1>
-              </div>
+              <h1>{property.name}</h1>
               <div className={styles.property_offerings}>
                 <h2>What this place offers</h2>
                 <div className={styles.offerings}>

@@ -1,13 +1,13 @@
 .container {
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: column;
+  padding: 0px 3px;
   margin-bottom: 18px;
 }
 
 .container img {
+  cursor: pointer;
   width: 100%;
   height: auto;
+  object-fit: cover;
   border-radius: 20px;
 }
 
@@ -28,11 +28,6 @@
 
 .other_images {
   display: none;
-}
-
-.main_image img,
-.other_images img {
-  cursor: pointer;
 }
 
 .expanded_image_container {
@@ -82,14 +77,21 @@
 
 @media (min-width: 1024px) {
   .container {
-    flex-direction: row;
+    display: flex;
+    gap: 10px;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 37px;
   }
 
   .main_image,
   .other_images {
     width: 50%;
+  }
+
+  .other_images {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .image_count {
@@ -102,11 +104,5 @@
 
   .next_button {
     right: 0.5rem;
-  }
-
-  .other_images {
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: repeat(2, 1fr);
   }
 }

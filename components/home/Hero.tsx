@@ -17,7 +17,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.mobile_cta}>
-          <span>Sign up for management today, 1st month on GemHaus</span>
+          <span>Get management today, 1st month on the Haus.</span>
           <p>Find your place, or hire industry experts.</p>
           <AgentButton />
         </div>
@@ -26,8 +26,12 @@ export default function Hero() {
       <div className={styles.desktop}>
         <div className={styles.content}>
           <div className={styles.header}>
-            <h1>Discover the GemHaus difference.</h1>
-            <p>Find your place, or hire industry leading management experts.</p>
+            <h1>
+              Discover the GemHaus <br /> difference.
+            </h1>
+            <p>
+              Find your place, or hire industry leading housing <br /> experts.
+            </p>
 
             <img className={styles.promo_image} src='/home/promotion.png' />
           </div>

@@ -17,13 +17,13 @@
 
   .navigation {
     display: flex;
+    gap: 68px;
     align-items: center;
   }
 
   .navigation a,
   .management {
     font-size: 14px;
-    margin: 0rem 1rem;
     color: var(--black);
     font-weight: 500;
   }

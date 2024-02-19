@@ -10,11 +10,15 @@
   justify-content: space-between;
 }
 
+.container p:first-child {
+  margin-bottom: 13px;
+}
+
 .container p span {
   font-weight: 500;
 }
 
 .total {
-  padding-top: 0.5rem;
+  padding-top: 21px;
   border-top: 1px solid var(--border_color);
 }

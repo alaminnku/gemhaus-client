@@ -3,13 +3,14 @@
 }
 
 .container h2 {
-  font-size: var(--h2_size);
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 26px;
 }
 
 .container p {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 26px;
   margin-bottom: 40px;
 }
 
@@ -17,6 +18,10 @@
   .container {
     width: 40%;
     margin-bottom: 0px;
+  }
+
+  .container h2 {
+    font-size: 53px;
   }
 
   .container p {

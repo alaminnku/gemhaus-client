@@ -3,8 +3,8 @@
 }
 
 .container h2 {
-  font-size: var(--h2_size);
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 34px;
 }
 
@@ -24,6 +24,7 @@
   }
 
   .container h2 {
+    font-size: 48px;
     margin-bottom: 48px;
   }
 }
