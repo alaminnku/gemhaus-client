@@ -1,19 +1,18 @@
-import ArticleCards from './ArticleCards';
 import { fetchGemhausData, revalidateIn } from '@lib/utils';
-import Error from '@components/layout/Error';
-import styles from './Articles.module.css';
+import AllArticleCards from './AllArticleCards';
+import styles from './AllArticles.module.css';
 
-export default async function Articles() {
+export default async function AllArticles() {
   const { data, error } = await fetchGemhausData('/articles', {
     next: {
       tags: ['articles'],
       revalidate: revalidateIn,
     },
   });
-
   return (
     <section className={styles.container}>
-      {error ? <Error error={error} /> : <ArticleCards articles={data} />}
+      <h2>All Blog Posts</h2>
+      <AllArticleCards articles={data} />
     </section>
   );
 }

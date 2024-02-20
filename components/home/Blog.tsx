@@ -1,4 +1,4 @@
-import ArticleCard from '@components/blog/ArticleCard';
+import ArticleCard from '@components/home/ArticleCard';
 import styles from '@components/home/Blog.module.css';
 import Error from '@components/layout/Error';
 import { fetchGemhausData, revalidateIn } from '@lib/utils';

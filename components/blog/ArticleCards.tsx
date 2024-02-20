@@ -1,5 +1,4 @@
 import styles from '@components/blog/ArticleCards.module.css';
-import ArticleCard from './ArticleCard';
 import { Article } from 'types';
 
 type Props = {
@@ -7,11 +6,5 @@ type Props = {
 };
 
 export default function ArticleCards({ articles }: Props) {
-  return (
-    <div className={styles.container}>
-      {articles.map((article) => (
-        <ArticleCard key={article._id} article={article} />
-      ))}
-    </div>
-  );
+  return <div className={styles.container}></div>;
 }
