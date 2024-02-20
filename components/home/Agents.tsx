@@ -15,7 +15,7 @@ export default function Agents() {
           <div className={styles.image_and_name}>
             <img src='/home/agent.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Name</p>
+              <p className={styles.agent_name}>Agents</p>
               <p className={styles.expertise}>Agent can help you buy a home</p>
             </div>
           </div>
@@ -25,9 +25,9 @@ export default function Agents() {
         </Link>
         <Link href='/agent/id' className={styles.agent}>
           <div className={styles.image_and_name}>
-            <img src='/home/agent.png' />
+            <img src='/home/manager.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Name</p>
+              <p className={styles.agent_name}>Managers</p>
               <p className={styles.expertise}>Agent can help you buy a home</p>
             </div>
           </div>
@@ -37,9 +37,9 @@ export default function Agents() {
         </Link>
         <Link href='/agent/id' className={styles.agent}>
           <div className={styles.image_and_name}>
-            <img src='/home/agent.png' />
+            <img src='/home/designer.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Name</p>
+              <p className={styles.agent_name}>Designer</p>
               <p className={styles.expertise}>Agent can help you buy a home</p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function Agents() {
 
       <div className={styles.roles}>
         <Link href='/agent/id' className={styles.role}>
-          <img className={styles.agent_image} src='/home/agent.png' />
+          <img className={styles.agent_image} src='/home/manager.png' />
           <p>Manager</p>
           <img
             className={styles.right_arrow}
@@ -59,7 +59,7 @@ export default function Agents() {
           />
         </Link>
         <Link href='/agent/id' className={styles.role}>
-          <img className={styles.agent_image} src='/home/agent.png' />
+          <img className={styles.agent_image} src='/home/designer.png' />
           <p>Designers</p>
           <img
             className={styles.right_arrow}
