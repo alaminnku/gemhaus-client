@@ -1,7 +1,13 @@
 @media (min-width: 1024px) {
   .filters_and_properties {
     display: flex;
-    gap: 61px;
+    gap: 40px;
     margin-top: 45px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .filters_and_properties {
+    gap: 61px;
   }
 }

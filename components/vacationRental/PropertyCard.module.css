@@ -80,12 +80,13 @@
 @media (min-width: 1024px) {
   .multiple_columns {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
   }
 
   .multiple_columns .content {
     display: flex;
-    gap: 32px;
+    gap: 20px;
     width: 70%;
     margin: 0px;
   }
@@ -110,5 +111,11 @@
     padding: 17px 0px;
     width: 170px;
     align-self: flex-end;
+  }
+}
+
+@media (min-width: 1440px) {
+  .multiple_columns .content {
+    gap: 32px;
   }
 }

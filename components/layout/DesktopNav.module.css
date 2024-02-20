@@ -17,7 +17,7 @@
 
   .navigation {
     display: flex;
-    gap: 68px;
+    gap: 40px;
     align-items: center;
   }
 
@@ -126,5 +126,11 @@
   .show_logo_only .navigation,
   .show_logo_only .sign_in {
     display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .navigation {
+    gap: 68px;
   }
 }

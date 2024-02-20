@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  gap: 2rem;
+  gap: 20px;
   align-items: center;
   margin-bottom: 26px;
 }
@@ -45,5 +45,11 @@
 @media (min-width: 1024px) {
   .container {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    gap: 2rem;
   }
 }

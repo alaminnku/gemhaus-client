@@ -29,9 +29,7 @@ export default function Hero() {
             <h1>
               Discover the GemHaus <br /> difference.
             </h1>
-            <p>
-              Find your place, or hire industry leading housing <br /> experts.
-            </p>
+            <p>Find your place, or hire industry leading housing experts.</p>
 
             <img className={styles.promo_image} src='/home/promotion.png' />
           </div>
