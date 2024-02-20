@@ -6,32 +6,67 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
+  padding: 0px 30px;
+  margin-bottom: 69px;
 }
 
 .container h1 {
-  max-width: 705px;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 35px;
+  margin-top: 6rem;
+  margin-bottom: 80px;
 }
 
 .container h1 span {
   color: #074d43;
 }
 
+.mobile_background {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 0px 20px;
+}
+
+.desktop_background {
+  display: none;
+}
+
+@media (min-width: 428px) {
+  .container h1 {
+    margin-bottom: 140px;
+  }
+
+  .mobile_background {
+    padding: 0px 30px;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
+    padding: 0;
     margin-top: 72px;
     margin-bottom: 92px;
   }
 
   .container h1 {
     font-size: 66px;
-    font-weight: 500;
     line-height: 60px;
+    margin-top: 0px;
     margin-bottom: 46px;
+    max-width: 705px;
   }
 
-  .container img {
+  .desktop_background {
+    display: block;
     position: absolute;
     width: 100%;
     height: auto;
+  }
+
+  .mobile_background {
+    display: none;
   }
 }

@@ -1,5 +1,45 @@
 .container {
+  padding: 38px 12px;
   background-color: #074d43;
+}
+
+.branding_and_contact {
+  display: flex;
+  margin-bottom: 48px;
+  flex-direction: column-reverse;
+}
+
+.contact {
+  font-size: 37px;
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 43px;
+  font-family: var(--pp_mori);
+}
+
+.contact_title,
+.office span {
+  color: #1c8576;
+}
+
+.office,
+.office a,
+.email,
+.social {
+  color: var(--white);
+}
+
+.website {
+  color: #ff8344;
+}
+
+.logo {
+  margin-bottom: 48px;
+}
+
+.house_logo {
+  width: 84px;
+  height: 80px;
 }
 
 @media (min-width: 1024px) {
@@ -11,40 +51,12 @@
     padding: 76px 64px 25px 64px;
   }
 
-  .logo {
-    margin-bottom: 48px;
-  }
-
   .branding_and_contact {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
   .contact {
     font-size: 30px;
-    font-weight: 600;
-    line-height: 50px;
-    font-family: var(--pp_mori);
-  }
-
-  .contact_title,
-  .office span {
-    color: #1c8576;
-  }
-
-  .office,
-  .office a,
-  .email,
-  .social {
-    color: var(--white);
-  }
-
-  .website {
-    color: #ff8344;
-  }
-
-  .house_logo {
-    width: 84px;
-    height: 80px;
   }
 }

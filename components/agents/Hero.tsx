@@ -13,10 +13,19 @@ export default function Hero() {
       <SearchField />
 
       <Image
-        src='/agents/hero-icons.png'
+        src='/agents/mobile-background.png'
         width={800}
         height={500}
         alt='Agents icon'
+        className={styles.mobile_background}
+      />
+
+      <Image
+        src='/agents/desktop-background.png'
+        width={800}
+        height={500}
+        alt='Agents icon'
+        className={styles.desktop_background}
       />
     </section>
   );
