@@ -29,14 +29,6 @@
   background-image: linear-gradient(140deg, #d1faca, #cafaf800);
 }
 
-.mobile_cta span {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 15px;
-  line-height: 19px;
-}
-
 .mobile_cta p {
   font-size: 46px;
   font-weight: 500;

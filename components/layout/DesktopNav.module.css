@@ -21,18 +21,19 @@
     align-items: center;
   }
 
-  .navigation a,
+  .nav_link,
   .management {
     font-size: 14px;
     color: var(--black);
     font-weight: 500;
   }
 
-  .navigation a:hover {
+  .management_title:hover,
+  .nav_link:hover {
     font-weight: 700;
   }
 
-  .navigation a.active {
+  .nav_link.active {
     border-bottom: 1px solid var(--black);
   }
 
@@ -46,32 +47,61 @@
     display: none;
     position: absolute;
     top: 38px;
-    left: 0;
-    width: max-content;
-    border-radius: 4px;
+    left: -100px;
     z-index: 1;
-    background-color: var(--border_color);
+    width: 600px;
   }
 
-  .popup:before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    border-width: 0 10px 10px;
-    border-style: solid;
-    border-color: transparent transparent var(--border_color);
+  .str_ltr {
+    display: flex;
+    gap: 27px;
+    flex-direction: column;
+    height: 265px;
+    border-radius: 10px 0px 0px 10px;
+    padding: 32px;
+    background-color: var(--white);
   }
 
-  .popup a {
-    margin: 0;
-    padding: 12px;
-    border-bottom: 1px solid var(--white);
+  .str_ltr a {
+    display: flex;
+    gap: 33px;
+    color: var(--black);
+  }
+
+  .str_ltr a .title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 31px;
+    margin-bottom: 2px;
+  }
+
+  .str_ltr a .description {
+    font-size: 13px;
+  }
+
+  .str_ltr a img {
+    width: 56px;
+    height: 58px;
+  }
+
+  .others {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    height: 265px;
+    width: 325px;
+    border-radius: 0px 10px 10px 0px;
+    padding: 32px;
+    background-color: #f8f8f8;
+  }
+
+  .others a {
+    font-size: 13px;
+    color: var(--black);
   }
 
   .management:hover .popup {
     display: flex;
-    flex-direction: column;
   }
 
   .sign_in {
@@ -93,29 +123,12 @@
     background-color: #e7ff56;
   }
 
-  .is_dark_background .navigation a,
+  .is_dark_background .nav_link,
   .is_dark_background .management {
     color: var(--white);
   }
 
-  .is_dark_background .popup {
-    background-color: var(--white);
-  }
-
-  .is_dark_background .popup a {
-    color: var(--black);
-    border-bottom: 1px solid var(--border_color);
-  }
-
-  .is_dark_background .popup::before {
-    border-color: transparent transparent var(--white);
-  }
-
-  .popup a:last-child {
-    border: none;
-  }
-
-  .is_dark_background .navigation a.active {
+  .is_dark_background .nav_link.active {
     border-bottom: 1px solid var(--white);
   }
 
@@ -132,5 +145,9 @@
 @media (min-width: 1440px) {
   .navigation {
     gap: 68px;
+  }
+
+  .popup {
+    width: 665px;
   }
 }

@@ -1,0 +1,19 @@
+.container {
+  overflow: hidden;
+  height: 19px;
+  margin-bottom: 15px;
+}
+
+.ctas {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(var(--span_position));
+  transition: transform 1s ease-in-out;
+}
+
+.ctas span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+}

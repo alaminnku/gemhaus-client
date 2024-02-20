@@ -4,6 +4,7 @@ import Image from 'next/image';
 import SearchField from './SearchField';
 import SearchTypes from './SearchTypes';
 import AgentButton from './AgentButton';
+import Ctas from './Ctas';
 
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.mobile_cta}>
-          <span>Get management today, 1st month on the Haus.</span>
+          <Ctas />
           <p>Find your place, or hire industry experts.</p>
           <AgentButton />
         </div>

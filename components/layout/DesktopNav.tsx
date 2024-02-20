@@ -35,34 +35,66 @@ export default function DesktopNav({
       <div className={styles.navigation}>
         <Link
           href='/blog'
-          className={pathname === '/blog' ? styles.active : ''}
+          className={`${styles.nav_link} ${
+            pathname === '/blog' && styles.active
+          }`}
         >
           Blog
         </Link>
 
-        <div className={`${styles.management} `}>
-          <p>Management</p>
+        <div className={styles.management}>
+          <p className={styles.management_title}>Management</p>
+
           <div className={styles.popup}>
-            <Link href='/short-term-rental'>Short term rental</Link>
-            <Link href='/long-term-rental'>Long term rental</Link>
+            <div className={styles.str_ltr}>
+              <Link href='/short-term-rental'>
+                <img src='/layout/popup-icon-str.png' />
+                <div>
+                  <p className={styles.title}>Short Term Rental</p>
+                  <p className={styles.description}>
+                    Turn your extra space into your next opportunity
+                  </p>
+                </div>
+              </Link>
+              <Link href='/long-term-rental'>
+                <img src='/layout/popup-icon-ltr.png' />
+                <div>
+                  <p className={styles.title}>Long Term Rental</p>
+                  <p className={styles.description}>
+                    Transform your property into a stable, long-term investment
+                  </p>
+                </div>
+              </Link>
+            </div>
+            <div className={styles.others}>
+              <Link href='/'>Invite a friend</Link>
+              <Link href='/agents'>Get in Touch with Agents</Link>
+              <Link href='/reviews'>Read our costumer reviews</Link>
+            </div>
           </div>
         </div>
 
         <Link
           href='/buy-and-sell'
-          className={pathname === '/buy-and-sell' ? styles.active : ''}
+          className={`${styles.nav_link} ${
+            pathname === '/buy-and-sell' && styles.active
+          }`}
         >
           List your home
         </Link>
         <Link
           href='/company'
-          className={pathname === '/company' ? styles.active : ''}
+          className={`${styles.nav_link} ${
+            pathname === '/company' && styles.active
+          }`}
         >
           Company
         </Link>
         <Link
           href='/contact'
-          className={pathname === '/contact' ? styles.active : ''}
+          className={`${styles.nav_link} ${
+            pathname === '/contact' && styles.active
+          }`}
         >
           Contact us
         </Link>
