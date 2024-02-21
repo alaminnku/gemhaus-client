@@ -63,7 +63,6 @@
 @media (min-width: 1024px) {
   .search_field {
     width: 100%;
-    position: relative;
     padding: 0px;
     box-shadow: none;
     border-radius: none;
@@ -105,7 +104,7 @@
 
   .calendar_container {
     position: absolute;
-    max-width: 740px;
+    width: 670px;
     z-index: -1;
     opacity: 0;
     transition: all 200ms ease-in-out;
@@ -115,5 +114,11 @@
     z-index: 1;
     opacity: 1;
     bottom: -19rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .calendar_container.show {
+    bottom: -17.5rem;
   }
 }
