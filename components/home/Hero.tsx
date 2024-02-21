@@ -12,10 +12,8 @@ export default function Hero() {
       <Header isYellowSignIn={true} withDarkBackground={true} />
 
       <div className={styles.mobile}>
-        <div className={styles.search}>
-          <SearchTypes />
-          <SearchField />
-        </div>
+        <SearchTypes />
+        <SearchField />
 
         <div className={styles.mobile_cta}>
           <Ctas />

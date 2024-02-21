@@ -1,5 +1,5 @@
 .container {
-  margin-bottom: 36px;
+  margin-bottom: 430px;
 }
 
 .desktop {
@@ -8,9 +8,6 @@
 
 .mobile {
   position: relative;
-}
-
-.search {
   width: 100%;
   padding: 0px 18px;
   padding-top: 0px;
@@ -20,6 +17,8 @@
 }
 
 .mobile_cta {
+  position: absolute;
+  top: 95%;
   display: flex;
   flex-direction: column;
   min-height: 386px;
@@ -36,9 +35,14 @@
   margin-bottom: 23px;
 }
 
+@media (min-width: 428px) {
+  .container {
+    margin-bottom: 410px;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
-    position: relative;
     margin-bottom: 60px;
   }
 
@@ -74,7 +78,8 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 19px;
-    width: 75%;
+    width: 70%;
+    max-width: 465px;
   }
 
   .promo_image {
@@ -124,7 +129,7 @@
 
 @media (min-width: 1440px) {
   .container {
-    margin-bottom: 126px;
+    margin-bottom: 75px;
   }
 
   .content {

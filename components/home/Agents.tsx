@@ -11,7 +11,7 @@ export default function Agents() {
       </div>
 
       <div className={styles.agents}>
-        <Link href='/agent/id' className={styles.agent}>
+        <Link href='/agents' className={styles.agent}>
           <div className={styles.image_and_name}>
             <img src='/home/agent.png' />
             <div className={styles.name_and_expertise}>
@@ -23,7 +23,19 @@ export default function Agents() {
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
-        <Link href='/agent/id' className={styles.agent}>
+        <Link href='/designers' className={styles.agent}>
+          <div className={styles.image_and_name}>
+            <img src='/home/designer.png' />
+            <div className={styles.name_and_expertise}>
+              <p className={styles.agent_name}>Designers</p>
+              <p className={styles.expertise}>Agent can help you buy a home</p>
+            </div>
+          </div>
+          <div className={styles.arrow}>
+            <img src='/home/black-right-arrow-icon.png' />
+          </div>
+        </Link>
+        <Link href='/managers' className={styles.agent}>
           <div className={styles.image_and_name}>
             <img src='/home/manager.png' />
             <div className={styles.name_and_expertise}>
@@ -35,30 +47,18 @@ export default function Agents() {
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
-        <Link href='/agent/id' className={styles.agent}>
-          <div className={styles.image_and_name}>
-            <img src='/home/designer.png' />
-            <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Designer</p>
-              <p className={styles.expertise}>Agent can help you buy a home</p>
-            </div>
-          </div>
-          <div className={styles.arrow}>
-            <img src='/home/black-right-arrow-icon.png' />
-          </div>
-        </Link>
       </div>
 
       <div className={styles.roles}>
-        <Link href='/agent/id' className={styles.role}>
+        <Link href='/managers' className={styles.role}>
           <img className={styles.agent_image} src='/home/manager.png' />
-          <p>Manager</p>
+          <p>Managers</p>
           <img
             className={styles.right_arrow}
             src='/home/black-right-arrow-icon.png'
           />
         </Link>
-        <Link href='/agent/id' className={styles.role}>
+        <Link href='/designers' className={styles.role}>
           <img className={styles.agent_image} src='/home/designer.png' />
           <p>Designers</p>
           <img
@@ -66,7 +66,7 @@ export default function Agents() {
             src='/home/black-right-arrow-icon.png'
           />
         </Link>
-        <Link href='/agent/id' className={styles.role}>
+        <Link href='/agents' className={styles.role}>
           <img className={styles.agent_image} src='/home/agent.png' />
           <p>Agents</p>
           <img
