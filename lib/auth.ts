@@ -38,4 +38,16 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  callbacks: {
+    async signIn({ user }) {
+      const { email, name, image } = user;
+
+      // Check if the user exists in the DB
+
+      // If yes, update the information
+
+      // Otherwise, create a new user in the DB
+      return true;
+    },
+  },
 };
