@@ -35,6 +35,9 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
           <Link onClick={() => setIsOpen(false)} href='/'>
             Home
           </Link>
+          <Link onClick={() => setIsOpen(false)} href='/agents'>
+            Agents
+          </Link>
           <Link onClick={() => setIsOpen(false)} href='/blog'>
             Blog
           </Link>

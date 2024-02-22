@@ -67,9 +67,9 @@ export default function DesktopNav({
               </Link>
             </div>
             <div className={styles.others}>
-              <Link href='/'>Invite a friend</Link>
+              <Link href='/contact'>Send us a question</Link>
               <Link href='/agents'>Get in Touch with Agents</Link>
-              <Link href='/reviews'>Read our costumer reviews</Link>
+              <Link href='/reviews'>What's the difference?</Link>
             </div>
           </div>
         </div>
