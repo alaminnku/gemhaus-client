@@ -12,6 +12,7 @@
     "braintree-web": "^3.99.0",
     "leaflet": "^1.9.4",
     "next": "14.0.4",
+    "next-auth": "^4.24.6",
     "react": "^18",
     "react-calendar": "^4.8.0",
     "react-dom": "^18",
