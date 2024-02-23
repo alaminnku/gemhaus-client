@@ -1,25 +1,115 @@
+.container {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  color: var(--black);
+}
+
+.single_column {
+  gap: 34px;
+  flex-direction: column;
+}
+
+.media {
+  width: 120px;
+  height: 178px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.single_column .media {
+  width: 100%;
+  height: 231px;
+}
+
+.author_and_date {
+  color: #074d43;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.single_column .author_and_date {
+  margin-bottom: 14px;
+}
+
+.content h3 {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 11px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.single_column .content h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.excerpt {
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.single_column .excerpt {
+  font-size: 14px;
+  margin-bottom: 21px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  line-height: 20px;
+  font-size: 13px;
+}
+
+.tags span {
+  padding: 2px 6px;
+  border-radius: 2rem;
+}
+
+.tags span:nth-child(1) {
+  background-color: #e7f2ee;
+}
+
+.tags span:nth-child(2) {
+  background-color: #e8f1b2;
+}
+
+.tags span:nth-child(3) {
+  background-color: #acd9d6;
+}
+
+@media (min-width: 428px) {
+  .media {
+    width: 161px;
+    height: 178px;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
-    display: flex;
     gap: 20px;
-    color: var(--black);
-    justify-content: space-between;
   }
 
   .single_column {
     gap: 26px;
-    flex-direction: column;
   }
 
   .media {
     width: 208px;
     height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
   }
 
   .single_column .media {
-    width: 100%;
     height: 274px;
   }
 
@@ -31,52 +121,12 @@
     max-width: 468px;
   }
 
-  .author_and_date {
-    color: #074d43;
-    font-size: 14px;
-    margin-bottom: 14px;
-  }
-
   .content h3 {
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 500;
     margin-bottom: 15px;
   }
 
   .excerpt {
-    font-size: 14px;
-    line-height: 20px;
     margin-bottom: 14px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-    line-height: 20px;
-    font-size: 13px;
-  }
-
-  .tags span {
-    padding: 2px 6px;
-    border-radius: 2rem;
-  }
-
-  .tags span:nth-child(1) {
-    background-color: #e7f2ee;
-  }
-
-  .tags span:nth-child(2) {
-    background-color: #e8f1b2;
-  }
-
-  .tags span:nth-child(3) {
-    background-color: #acd9d6;
   }
 }
 

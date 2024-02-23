@@ -1,13 +1,21 @@
+.container {
+  display: grid;
+  gap: 54px;
+}
+
+.articles {
+  display: flex;
+  gap: 34px;
+  flex-direction: column;
+}
+
 @media (min-width: 1024px) {
   .container {
-    display: grid;
     gap: 23px;
     grid-template-columns: repeat(2, 1fr);
   }
 
   .articles {
-    display: flex;
     gap: 24px;
-    flex-direction: column;
   }
 }

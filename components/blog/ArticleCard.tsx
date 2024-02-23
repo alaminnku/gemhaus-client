@@ -2,6 +2,7 @@ import { Article } from 'types';
 import styles from './ArticleCard.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { formatDate } from '@lib/utils';
 
 type Props = {
   article: Article;
@@ -23,7 +24,9 @@ export default function ArticleCard({ article, singleColumn }: Props) {
       />
 
       <div className={styles.content}>
-        <p className={styles.author_and_date}>Author . {article.createdAt}</p>
+        <p className={styles.author_and_date}>
+          Author . {formatDate(article.createdAt)}
+        </p>
         <h3>{article.title}</h3>
         <p className={styles.excerpt}>
           Abbie Knowles brings strong local knowledge and unshakable

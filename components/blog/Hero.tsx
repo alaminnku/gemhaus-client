@@ -10,19 +10,24 @@ export default function Hero() {
         updates
       </p>
 
-      <div className={styles.subscribe}>
-        <form>
+      <form className={styles.subscribe}>
+        <div className={styles.input_agreement}>
           <input type='email' placeholder='Email' />
-          <button type='submit'>
-            Subscribe{' '}
-            <img src='/blog/white-right-arrow.png' alt='White right arrow' />
-          </button>
-        </form>
-        <div className={styles.agreement}>
-          <input id='agreement' type='checkbox' />
-          <label htmlFor='agreement'>Keep me updated for every new sale</label>
+          <div className={styles.agreement}>
+            <div className={styles.agreement}>
+              <input id='agreement' type='checkbox' />
+              <label htmlFor='agreement'>
+                Keep me updated for every new sale
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <button type='submit'>
+          Subscribe{' '}
+          <img src='/blog/white-right-arrow.png' alt='White right arrow' />
+        </button>
+      </form>
     </section>
   );
 }
