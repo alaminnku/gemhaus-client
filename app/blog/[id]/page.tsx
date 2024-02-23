@@ -1,4 +1,5 @@
 import Article from '@components/blog/Article';
+import GreenFooter from '@components/layout/GreenFooter';
 import Header from '@components/layout/Header';
 
 type Props = {
@@ -10,8 +11,9 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <main>
-      <Header />
+      <Header withDarkBackground={true} isYellowSignIn={true} />
       <Article id={id} />
+      <GreenFooter />
     </main>
   );
 }

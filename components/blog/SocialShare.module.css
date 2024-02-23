@@ -1,0 +1,21 @@
+.container {
+  padding: 0px 34px;
+  margin-bottom: 44px;
+}
+
+.container h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+}

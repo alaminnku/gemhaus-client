@@ -1,16 +1,137 @@
-.container {
-  padding: var(--section_padding);
+.header {
+  padding: 0px 10px;
+  text-align: center;
+  margin-bottom: 27px;
 }
 
-.container h1 {
-  font-size: 2.75rem;
+.header_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  line-height: 20px;
+  font-size: 13px;
+  margin-bottom: 32px;
+}
+
+.tags span {
+  padding: 2px 6px;
+  border-radius: 2rem;
+  background-color: #f2f2f2;
+}
+
+.header_content h1 {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 41px;
   margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
-.content h2 {
-  margin-bottom: 0.5rem;
+.author_and_date {
+  font-size: 14px;
 }
 
-.content strong {
-  font-weight: 600;
+.author_and_date span {
+  color: gray;
+}
+
+.header img {
+  padding: 0px 3px;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.article {
+  font-weight: 300;
+  padding: 0px 27px;
+  margin-bottom: 44px;
+}
+
+.article p {
+  font-size: 16px;
+}
+
+.article h2,
+.article h3 {
+  margin-bottom: 10px;
+}
+
+.article ul,
+.article ol {
+  padding-left: 30px;
+}
+
+.suggestions {
+  padding: 0px 34px;
+  margin-bottom: 41px;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.suggestion {
+  padding-left: 7px;
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 300;
+  padding-bottom: 21px;
+  border-left: 1px solid #0000002e;
+}
+
+.active {
+  font-weight: 400;
+  border-left: 1px solid #13b1a6;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    max-width: 1067px;
+    margin: 0 auto;
+    margin-top: 58px;
+    margin-bottom: 67px;
+  }
+
+  .tags {
+    font-size: 17px;
+    line-height: 23px;
+    margin-bottom: 6px;
+  }
+
+  .tags span {
+    border-radius: 12px;
+  }
+
+  .header h1 {
+    font-size: 47px;
+    margin-bottom: 14px;
+  }
+
+  .header img {
+    height: 427px;
+  }
+
+  .article_and_suggestions {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .suggestions_and_social_share {
+    width: 35%;
+  }
+
+  .article {
+    width: 65%;
+  }
 }
