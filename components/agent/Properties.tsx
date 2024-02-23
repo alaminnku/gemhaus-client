@@ -41,7 +41,8 @@ export default function Properties() {
           </div>
 
           <div>
-            <p className={styles.address}>2841 E Osborn Road Phoenix, AZ</p>
+            <p className={styles.address}>2841 E Osborn Road</p>
+            <p className={styles.state}>Phoenix, AZ</p>
             <p className={styles.about}>
               3 BD, 2 BA, 2,262 SQFT, Single-Family Listing courtesy of The
               Agency
