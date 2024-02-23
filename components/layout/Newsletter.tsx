@@ -3,7 +3,6 @@
 import styles from '@components/layout/Newsletter.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
 import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
-import newsletter from '@public/layout/newsletter.png';
 import { useAlert } from 'contexts/Alert';
 import Image from 'next/image';
 import { CSSProperties } from 'react';
@@ -34,7 +33,12 @@ export default function Newsletter({ hasBackground }: Props) {
       }
     >
       <div className={styles.content}>
-        <Image src={newsletter} alt='Property images' />
+        <Image
+          src='/layout/newsletter.png'
+          width={800}
+          height={500}
+          alt='Property images'
+        />
 
         <form action={handleSubscribe}>
           <h2>
