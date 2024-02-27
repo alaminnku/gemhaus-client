@@ -15,16 +15,6 @@
   width: 16px;
   height: auto;
   margin-left: 1rem;
-  animation: animate 1s linear infinite alternate;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(50%);
-  }
 }
 
 @media (min-width: 1024px) {
