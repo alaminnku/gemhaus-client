@@ -50,7 +50,7 @@
 
 .calendar_container {
   position: fixed;
-  bottom: -50%;
+  bottom: -100%;
   z-index: 11;
   transition: all 200ms;
   height: fit-content;

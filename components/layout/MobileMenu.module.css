@@ -1,12 +1,11 @@
 .container {
   position: fixed;
   width: 90vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: -150%;
   z-index: 11;
   padding: 1rem;
-  padding-bottom: 42px;
   display: flex;
   flex-direction: column;
   transition: all 200ms;
