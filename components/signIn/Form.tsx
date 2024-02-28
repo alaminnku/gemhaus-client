@@ -11,7 +11,7 @@ export default function SignInForm() {
   const router = useRouter();
   const { setAlert } = useAlert();
 
-  async function handleSignUp(formData: FormData) {
+  async function credentialSignIn(formData: FormData) {
     const email = formData.get('email');
     const password = formData.get('password');
 
@@ -37,6 +37,10 @@ export default function SignInForm() {
     router.push('/');
   }
 
+  async function googleSignIn() {
+    signIn('google', { redirect: false, callbackUrl: '/' });
+  }
+
   return (
     <div className={styles.container}>
       <img src='/layout/logo.png' className={styles.logo} />
@@ -45,7 +49,7 @@ export default function SignInForm() {
         Welcome to <br />
         GemHaus
       </h2>
-      <form action={handleSignUp}>
+      <form action={credentialSignIn}>
         <input type='email' name='email' placeholder='Email' />
         <input type='password' name='password' placeholder='Password' />
         <div>
@@ -61,7 +65,7 @@ export default function SignInForm() {
         <span></span>
       </div>
 
-      <div className={styles.o_auth} onClick={() => signIn('google')}>
+      <div className={styles.o_auth} onClick={googleSignIn}>
         <img src='/sign-in/google-icon.png' />
         <p>Continue with Google</p>
       </div>

@@ -9,8 +9,12 @@ import PortfolioProperties from '@components/home/PortfolioProperties';
 import SaveTime from '@components/home/SaveTime';
 import Agents from '@components/home/Agents';
 import GreenFooter from '@components/layout/GreenFooter';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@lib/auth';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
     <main>
       <Hero />

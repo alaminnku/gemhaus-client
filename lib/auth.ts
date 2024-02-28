@@ -31,7 +31,6 @@ export const authOptions: NextAuthOptions = {
         formData.append('email', credentials.email);
         formData.append('password', credentials.password);
 
-        // Verify credentials
         const { data, error } = await fetchGemhausData(`/user/authorize`, {
           method: 'POST',
           body: formData,
@@ -44,13 +43,17 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async signIn({ user }) {
-      const { email, name, image } = user;
+      const { name, email, image } = user;
 
-      // Check if the user exists in the DB
+      const formData = new FormData();
+      formData.append('name', name as string);
+      formData.append('email', email as string);
+      formData.append('image', image as string);
 
-      // If yes, update the information
-
-      // Otherwise, create a new user in the DB
+      await fetchGemhausData(`/user/upsert`, {
+        method: 'POST',
+        body: formData,
+      });
       return true;
     },
   },

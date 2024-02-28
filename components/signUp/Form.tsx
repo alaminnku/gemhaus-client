@@ -4,12 +4,14 @@ import { signIn } from 'next-auth/react';
 import styles from './Form.module.css';
 import Link from 'next/link';
 import { useAlert } from 'contexts/Alert';
+import { useRouter } from 'next/navigation';
 import { fetchGemhausData, isValidEmail } from '@lib/utils';
 
 export default function SignUpForm() {
+  const router = useRouter();
   const { setAlert } = useAlert();
 
-  async function handleSignUp(formData: FormData) {
+  async function credentialSignUp(formData: FormData) {
     const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
@@ -32,7 +34,20 @@ export default function SignUpForm() {
     });
     if (error) return setAlert({ message: error.message, type: 'failed' });
 
-    signIn('credentials', { email, password });
+    // Create session
+    const response = await signIn('credentials', {
+      email,
+      password,
+      redirect: false,
+    });
+    if (response?.error)
+      return setAlert({ message: response.error, type: 'failed' });
+
+    router.push('/');
+  }
+
+  async function googleSignIn() {
+    signIn('google', { redirect: false, callbackUrl: '/' });
   }
 
   return (
@@ -43,7 +58,7 @@ export default function SignUpForm() {
         Welcome to <br />
         GemHaus
       </h2>
-      <form action={handleSignUp}>
+      <form action={credentialSignUp}>
         <input type='text' name='name' placeholder='Full name' />
         <input type='email' name='email' placeholder='Email' />
         <input type='password' name='password' placeholder='Password' />
@@ -60,7 +75,7 @@ export default function SignUpForm() {
         <span></span>
       </div>
 
-      <div className={styles.o_auth} onClick={() => signIn('google')}>
+      <div className={styles.o_auth} onClick={googleSignIn}>
         <img src='/sign-up/google-icon.png' alt='Google icon' />
         <p>Continue with Google</p>
       </div>
