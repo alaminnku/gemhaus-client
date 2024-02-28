@@ -4,6 +4,8 @@ import styles from './MobileMenu.module.css';
 import { IoClose } from 'react-icons/io5';
 import Overlay from './Overlay';
 import Logo from './Logo';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 type Props = {
   isOpen: boolean;
@@ -11,6 +13,8 @@ type Props = {
 };
 
 export default function MobileMenu({ isOpen, setIsOpen }: Props) {
+  const { data: session } = useSession();
+
   useEffect(() => {
     const body = document.querySelector('body');
 
@@ -27,9 +31,23 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
           onClick={() => setIsOpen(false)}
         />
 
-        <Link href='/sign-in' className={styles.sign_in}>
-          Sign in
-        </Link>
+        {session && session.user ? (
+          <Image
+            width={100}
+            height={100}
+            alt='User image'
+            className={styles.user_image}
+            src={
+              session.user.image && session.user.image !== 'null'
+                ? session.user.image
+                : '/layout/user-icon.png'
+            }
+          />
+        ) : (
+          <Link href='/sign-in' className={styles.sign_in}>
+            Sign in
+          </Link>
+        )}
 
         <div className={styles.nav_items}>
           <Link onClick={() => setIsOpen(false)} href='/'>
