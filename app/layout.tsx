@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import './globals.css';
-import AlertProvider from 'contexts/Alert';
-import SessionProvider from 'contexts/Auth';
+import AlertProvider from '@contexts/Alert';
+import SessionProvider from '@contexts/Auth';
 import { authOptions } from '@lib/auth';
 import { getServerSession } from 'next-auth';
 

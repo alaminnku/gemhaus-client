@@ -1,22 +1,30 @@
-.container {
+.alert {
   position: fixed;
   right: 50%;
-  top: 1rem;
+  top: -45px;
   z-index: 11;
+  width: max-content;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: var(--inter);
   transform: translateX(50%);
-  transition: ease-in-out 400ms;
+  transition: all ease-out 250ms;
 }
 
-.alert {
-  border-radius: 2rem;
-  padding: 8px 14px;
-  margin-bottom: 0.5rem;
+.show_alert {
+  top: 2rem;
+}
+
+.failed {
+  background-color: red;
+}
+
+.success {
+  background-color: green;
 }
 
 .alert p {
   display: flex;
-  font-weight: 500;
-  font-size: 0.8rem;
   align-items: center;
   justify-content: center;
   color: var(--white);
@@ -25,18 +33,4 @@
 .icon {
   font-size: 1.2rem;
   margin-right: 0.5rem;
-}
-
-.failed {
-  background: red;
-}
-
-.success {
-  background: var(--green);
-}
-
-@media (min-width: 768px) {
-  .alert {
-    padding: 6px 14px;
-  }
 }

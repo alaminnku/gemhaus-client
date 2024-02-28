@@ -150,3 +150,8 @@ export function showErrorAlert(
       : [...prevState, { message: "Something wen't wrong", type }]
   );
 }
+
+export const isValidEmail = (email: string) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};

@@ -1,6 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import Google from 'next-auth/providers/google';
+import { fetchGemhausData } from './utils';
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -24,16 +25,20 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials || !credentials.email || !credentials.password)
-          return null;
+          throw new Error('Email or password is missing');
 
-        const { email, password } = credentials;
+        const formData = new FormData();
+        formData.append('email', credentials.email);
+        formData.append('password', credentials.password);
 
-        // Get user from DB
+        // Verify credentials
+        const { data, error } = await fetchGemhausData(`/user/authorize`, {
+          method: 'POST',
+          body: formData,
+        });
+        if (error) throw new Error(error.message);
 
-        // Match password
-
-        // Return user
-        return { id: 'alamin', email, name: 'alamin' };
+        return data;
       },
     }),
   ],
