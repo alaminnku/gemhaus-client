@@ -1,11 +1,9 @@
-import Hero from '@components/signUp/Hero';
-import Form from '@components/signUp/Form';
+import SignUp from '@components/signUp/SignUp';
 
 export default function page() {
   return (
     <main>
-      <Hero />
-      <Form />
+      <SignUp />
     </main>
   );
 }
