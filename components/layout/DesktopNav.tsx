@@ -4,6 +4,7 @@ import styles from '@components/layout/DesktopNav.module.css';
 import Logo from './Logo';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 
 type Props = {
   isYellowSignIn: boolean;
@@ -21,6 +22,7 @@ export default function DesktopNav({
   withDarkBackground,
 }: Props) {
   const pathname = usePathname();
+  const { status } = useSession();
 
   return (
     <nav
@@ -100,14 +102,20 @@ export default function DesktopNav({
         </Link>
       </div>
 
-      <Link
-        href='/sign-in'
-        className={`${styles.sign_in} ${
-          isBlackSignIn && styles.black_sign_in
-        } ${isYellowSignIn && styles.yellow_sign_in}`}
-      >
-        Sign in
-      </Link>
+      {status !== 'authenticated' ? (
+        <Link
+          href='/sign-in'
+          className={`${styles.sign_in} ${
+            isBlackSignIn && styles.black_sign_in
+          } ${isYellowSignIn && styles.yellow_sign_in}`}
+        >
+          Sign in
+        </Link>
+      ) : (
+        <button className={styles.sign_out} onClick={() => signOut()}>
+          Sign out
+        </button>
+      )}
     </nav>
   );
 }

@@ -43,7 +43,9 @@ export default function SignInForm() {
 
   return (
     <div className={styles.container}>
-      <img src='/layout/logo.png' className={styles.logo} />
+      <Link href='/'>
+        <img src='/layout/logo.png' className={styles.logo} />
+      </Link>
       <h2 className={styles.mobile_header}>Log in</h2>
       <h2 className={styles.desktop_header}>
         Welcome to <br />

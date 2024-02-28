@@ -52,7 +52,13 @@ export default function SignUpForm() {
 
   return (
     <div className={styles.container}>
-      <img src='/layout/logo.png' className={styles.logo} alt='GemHaus logo' />
+      <Link href='/'>
+        <img
+          src='/layout/logo.png'
+          className={styles.logo}
+          alt='GemHaus logo'
+        />
+      </Link>
       <h2 className={styles.mobile_header}>Sign up</h2>
       <h2 className={styles.desktop_header}>
         Welcome to <br />

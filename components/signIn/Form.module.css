@@ -44,6 +44,7 @@
 }
 
 .container form button {
+  cursor: pointer;
   height: 60px;
   font-size: 14px;
   font-weight: 500;
