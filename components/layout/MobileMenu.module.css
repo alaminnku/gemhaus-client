@@ -48,6 +48,12 @@
   color: var(--black);
 }
 
+@media (min-width: 414px) {
+  .container {
+    padding-bottom: 42px;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
     display: none;

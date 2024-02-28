@@ -1,0 +1,70 @@
+.container {
+  padding: 0px 25px;
+}
+
+.container h2 {
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.container form {
+  display: grid;
+  gap: 21px;
+  margin-bottom: 14px;
+}
+
+.container form input {
+  height: 60px;
+  padding: 0px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #b0b0b0;
+}
+
+.container form button {
+  height: 60px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  border-radius: 2rem;
+  background-color: var(--black);
+}
+
+.divider {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.divider span {
+  display: block;
+  height: 1px;
+  width: 137px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.divider p {
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.o_auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid var(--black);
+}
+
+.o_auth img {
+  width: 25px;
+  margin-right: 20px;
+}
+
+.o_auth p {
+  font-size: 14px;
+  font-weight: 500;
+}
