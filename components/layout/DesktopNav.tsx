@@ -5,6 +5,7 @@ import Logo from './Logo';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
+import Image from 'next/image';
 
 type Props = {
   isYellowSignIn: boolean;
@@ -22,7 +23,7 @@ export default function DesktopNav({
   withDarkBackground,
 }: Props) {
   const pathname = usePathname();
-  const { status } = useSession();
+  const { data: session } = useSession();
 
   return (
     <nav
@@ -102,7 +103,19 @@ export default function DesktopNav({
         </Link>
       </div>
 
-      {status !== 'authenticated' ? (
+      {session && session.user ? (
+        <Image
+          width={100}
+          height={100}
+          alt='User image'
+          className={styles.user_image}
+          src={
+            session.user.image && session.user.image !== 'null'
+              ? session.user.image
+              : '/layout/user-icon.png'
+          }
+        />
+      ) : (
         <Link
           href='/sign-in'
           className={`${styles.sign_in} ${
@@ -111,10 +124,6 @@ export default function DesktopNav({
         >
           Sign in
         </Link>
-      ) : (
-        <button className={styles.sign_out} onClick={() => signOut()}>
-          Sign out
-        </button>
       )}
     </nav>
   );

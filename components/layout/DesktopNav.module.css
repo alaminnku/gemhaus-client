@@ -125,13 +125,10 @@
     background-color: #e7ff56;
   }
 
-  .sign_out {
-    cursor: pointer;
-    color: var(--black);
-    border-radius: 2rem;
-    padding: 10px 16px;
-    font-weight: 500;
-    background-color: #e7ff56;
+  .user_image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
   }
 
   .is_dark_background .nav_link,
@@ -142,10 +139,6 @@
   .is_dark_background .nav_link.active {
     border-bottom: 1px solid var(--white);
   }
-
-  /* .is_dark_background .sign_in {
-    color: var(--black);
-  } */
 
   .show_logo_only .navigation,
   .show_logo_only .sign_in {

@@ -13,6 +13,12 @@
   background-color: var(--black);
 }
 
+.user_image {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
 .is_dark_background {
   color: var(--black);
   background-color: var(--white);
