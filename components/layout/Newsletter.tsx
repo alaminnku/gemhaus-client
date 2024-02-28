@@ -2,7 +2,7 @@
 
 import styles from '@components/layout/Newsletter.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
-import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 import { useAlert } from 'contexts/Alert';
 import Image from 'next/image';
 import { CSSProperties } from 'react';
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Newsletter({ hasBackground }: Props) {
-  const { setAlerts } = useAlert();
+  const { setAlert } = useAlert();
 
   async function handleSubscribe(formData: FormData) {
     const { data, error } = await fetchGemhausData('/subscribers/add', {
@@ -20,8 +20,8 @@ export default function Newsletter({ hasBackground }: Props) {
       body: formData,
     });
 
-    if (error) return showErrorAlert(error, setAlerts);
-    showSuccessAlert(data, setAlerts);
+    if (error) return setAlert({ message: error.message, type: 'failed' });
+    setAlert({ message: data.message, type: 'success' });
   }
   return (
     <section

@@ -2,13 +2,7 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import braintree, { HostedFields } from 'braintree-web';
-import {
-  fetchGemhausData,
-  getDate,
-  getMonthAbbr,
-  showErrorAlert,
-  showSuccessAlert,
-} from '@lib/utils';
+import { fetchGemhausData, getDate, getMonthAbbr } from '@lib/utils';
 import styles from './PaymentForm.module.css';
 import SubmitButton from '@components/layout/SubmitButton';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
@@ -91,7 +85,7 @@ export default function PaymentForm({ children, booking }: Props) {
       }
     );
     if (error) return setAlert({ message: error.message, type: 'failed' });
-    setAlert({ message: data, type: 'success' });
+    setAlert({ message: data.message, type: 'success' });
   };
 
   return (

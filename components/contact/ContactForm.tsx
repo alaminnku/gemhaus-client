@@ -2,7 +2,7 @@
 
 import styles from './ContactForm.module.css';
 import SubmitButton from '../layout/SubmitButton';
-import { fetchGemhausData, showErrorAlert, showSuccessAlert } from '@lib/utils';
+import { fetchGemhausData } from '@lib/utils';
 import { useAlert } from 'contexts/Alert';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 
@@ -10,18 +10,16 @@ type Props = {
   title?: string;
   showSubject?: boolean;
   showOptions?: boolean;
-  buttonFontSize?: string;
   setShowModal?: Dispatch<SetStateAction<boolean>>;
 };
 
 export default function ContactForm({
   title,
   setShowModal,
-  buttonFontSize,
   showSubject = true,
   showOptions = false,
 }: Props) {
-  const { setAlerts } = useAlert();
+  const { setAlert } = useAlert();
   const [services, setServices] = useState<string[]>([]);
 
   function handleServicesChange(e: ChangeEvent<HTMLInputElement>) {
@@ -40,9 +38,9 @@ export default function ContactForm({
       body: formData,
     });
 
-    if (error) return showErrorAlert(error, setAlerts);
+    if (error) return setAlert({ message: error.message, type: 'failed' });
     if (setShowModal) setShowModal(false);
-    showSuccessAlert(data, setAlerts);
+    setAlert({ message: data.message, type: 'success' });
   }
   return (
     <form action={handleSubmit} className={styles.container}>

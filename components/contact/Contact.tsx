@@ -23,7 +23,7 @@ export default function Contact() {
       </div>
 
       <div className={styles.form}>
-        <ContactForm buttonFontSize='19px' />
+        <ContactForm />
       </div>
     </section>
   );
