@@ -1,7 +1,9 @@
-'use client';
-
-import { signIn } from 'next-auth/react';
+import SignIn from '@components/signIn/SignIn';
 
 export default function SignInPage() {
-  return <div onClick={() => signIn('google')}>Sign in</div>;
+  return (
+    <main>
+      <SignIn />
+    </main>
+  );
 }

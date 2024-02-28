@@ -6,32 +6,30 @@ import Link from 'next/link';
 
 export default function Form() {
   async function handleSignUp(formData: FormData) {
-    const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
 
-    if (!name || !email || !password) return;
+    if (!email || !password) return;
     signIn('credentials', { email, password });
   }
 
   return (
     <div className={styles.container}>
       <img src='/layout/logo.png' className={styles.logo} />
-      <h2 className={styles.mobile_header}>Sign up</h2>
+      <h2 className={styles.mobile_header}>Log in</h2>
       <h2 className={styles.desktop_header}>
         Welcome to <br />
         GemHaus
       </h2>
       <form action={handleSignUp}>
-        <input type='text' name='name' placeholder='Full name' />
         <input type='email' name='email' placeholder='Email' />
         <input type='password' name='password' placeholder='Password' />
-        <button type='submit'>Sign up</button>
+        <div>
+          <input type='checkbox' id='remember' />
+          <label htmlFor='remember'>Remember me</label>
+        </div>
+        <button type='submit'>Sign in</button>
       </form>
-
-      <p className={styles.sign_in}>
-        Already have an account? <Link href='/sign-in'>Sign in</Link>
-      </p>
 
       <div className={styles.divider}>
         <span></span>
@@ -40,9 +38,13 @@ export default function Form() {
       </div>
 
       <div className={styles.o_auth} onClick={() => signIn('google')}>
-        <img src='/sign-up/google-icon.png' />
+        <img src='/sign-in/google-icon.png' />
         <p>Continue with Google</p>
       </div>
+
+      <p className={styles.sign_up}>
+        Not a member? <Link href='/sign-up'>Sign up now</Link>
+      </p>
     </div>
   );
 }
