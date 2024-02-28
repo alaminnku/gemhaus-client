@@ -27,7 +27,7 @@ type Props = {
 
 export default function PaymentForm({ children, booking }: Props) {
   const router = useRouter();
-  const { setAlerts } = useAlert();
+  const { setAlert } = useAlert();
   let hostedFields: HostedFields | null = null;
   const { guests, propertyId, arrivalDate, departureDate } = booking;
   const [guestsCount, setGuestsCount] = useState(+guests);
@@ -90,8 +90,8 @@ export default function PaymentForm({ children, booking }: Props) {
         body: formData,
       }
     );
-    if (error) return showErrorAlert(error, setAlerts);
-    showSuccessAlert(data, setAlerts);
+    if (error) return setAlert({ message: error.message, type: 'failed' });
+    setAlert({ message: data, type: 'success' });
   };
 
   return (
