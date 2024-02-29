@@ -105,15 +105,12 @@ export default function DesktopNav({
 
       {session && session.user ? (
         <Image
+          // onClick={() => signOut()}
           width={100}
           height={100}
           alt='User image'
           className={styles.user_image}
-          src={
-            session.user.image && session.user.image !== 'null'
-              ? session.user.image
-              : '/layout/user-icon.png'
-          }
+          src={session.user.image || '/layout/user-icon.png'}
         />
       ) : (
         <Link
