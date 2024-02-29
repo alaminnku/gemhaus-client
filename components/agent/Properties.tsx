@@ -19,7 +19,7 @@ export default function Properties() {
             <p className={styles.price}>$1,075,000</p>
           </div>
 
-          <div>
+          <div className={styles.address_and_description}>
             <p className={styles.address}>2841 E Osborn Road</p>
             <p className={styles.state}>Phoenix, AZ</p>
             <p className={styles.about}>
@@ -40,7 +40,7 @@ export default function Properties() {
             <p className={styles.price}>$1,075,000</p>
           </div>
 
-          <div>
+          <div className={styles.address_and_description}>
             <p className={styles.address}>2841 E Osborn Road</p>
             <p className={styles.state}>Phoenix, AZ</p>
             <p className={styles.about}>
