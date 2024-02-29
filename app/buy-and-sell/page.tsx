@@ -1,22 +1,17 @@
-import GenericHero from '@components/layout/GenericHero';
+import Hero from '@components/buyAndSell/Hero';
 import PropertyEvaluation from '@components/layout/PropertyEvaluation';
 import Services from '@components/layout/Services';
 import CallToAction from '@components/layout/CallToAction';
 import { buyAndSellServices } from '@data/services';
 import Newsletter from '@components/layout/Newsletter';
 import DarkFooter from '@components/layout/DarkFooter';
+import Header from '@components/layout/Header';
 
 export default function BuyAndSellPage() {
   return (
     <main>
-      <GenericHero
-        children={
-          <h1>
-            Buy & Sell <br /> Property
-          </h1>
-        }
-        backgroundImage='/buy-and-sell/hero-bg.jpg'
-      />
+      <Header />
+      <Hero />
       <Services services={buyAndSellServices} />
       <CallToAction
         link='#evaluation'

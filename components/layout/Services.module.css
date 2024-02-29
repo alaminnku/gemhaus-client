@@ -1,5 +1,6 @@
 .container {
-  padding: var(--section_padding);
+  padding: 0px 16px;
+  margin-bottom: 62px;
 }
 
 .services {
@@ -39,6 +40,7 @@
   .container {
     max-width: 80%;
     margin: 0 auto;
+    margin-bottom: 47px;
   }
 
   .services {
