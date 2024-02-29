@@ -20,12 +20,12 @@ export default async function ArticlePage({ params }: Props) {
   );
 }
 
-export async function generateStaticParams() {
-  const { data } = await fetchGemhausData('/articles', {
-    next: {
-      tags: ['articles'],
-      revalidate: revalidateIn,
-    },
-  });
-  return data.map((article: TArticle) => ({ id: article._id }));
-}
+// export async function generateStaticParams() {
+//   const { data } = await fetchGemhausData('/articles', {
+//     next: {
+//       tags: ['articles'],
+//       revalidate: revalidateIn,
+//     },
+//   });
+//   return data.map((article: TArticle) => ({ id: article._id }));
+// }
