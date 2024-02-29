@@ -28,7 +28,7 @@ export default function SignUpForm() {
       });
 
     // Add the user details to db
-    const { error } = await fetchGemhausData('/user/sign-up', {
+    const { error } = await fetchGemhausData('/users/sign-up', {
       method: 'POST',
       body: formData,
     });

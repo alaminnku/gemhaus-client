@@ -31,7 +31,7 @@ export const authOptions: NextAuthOptions = {
         formData.append('email', credentials.email);
         formData.append('password', credentials.password);
 
-        const { data, error } = await fetchGemhausData(`/user/authorize`, {
+        const { data, error } = await fetchGemhausData('/users/authorize', {
           method: 'POST',
           body: formData,
         });
@@ -50,7 +50,7 @@ export const authOptions: NextAuthOptions = {
       formData.append('email', email as string);
       formData.append('image', image as string);
 
-      await fetchGemhausData(`/user/upsert`, {
+      await fetchGemhausData('/users/upsert', {
         method: 'POST',
         body: formData,
       });
