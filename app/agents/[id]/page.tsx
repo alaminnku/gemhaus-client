@@ -1,19 +1,15 @@
-import Hero from '@components/agent/Hero';
-import Properties from '@components/agent/Properties';
-import FeaturedProperties from '@components/agent/FeaturedProperties';
-import Header from '@components/layout/Header';
-import Transactions from '@components/agent/Transactions';
-import GreenFooter from '@components/layout/GreenFooter';
+import Agent from '@components/agent/Agent';
 
-export default function AgentPage() {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default function AgentPage({ params }: Props) {
   return (
     <main>
-      <Header withDarkBackground={true} />
-      <Hero />
-      <Properties />
-      <FeaturedProperties />
-      <Transactions />
-      <GreenFooter />
+      <Agent id={params.id} />
     </main>
   );
 }

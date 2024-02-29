@@ -43,3 +43,34 @@ export type Alert = {
 };
 
 export type PropertiesView = 'singleColumn' | 'multipleColumns';
+
+export type Agent = {
+  _id: string;
+  name: string;
+  phone: string;
+  email: string;
+  address: string;
+  bio: string;
+  image: string;
+  qrCodeLink: string;
+  file: File | undefined;
+  properties: AgentProperty[];
+  transactions: AgentTransaction[];
+};
+
+export type AgentProperty = {
+  _id: string;
+  isFeatured: boolean;
+  price: number;
+  address: string;
+  city: string;
+  state: string;
+  images: string;
+  description: string;
+  file: File | undefined;
+};
+
+export type AgentTransaction = {
+  address: string;
+  type: 'sold' | 'available';
+};
