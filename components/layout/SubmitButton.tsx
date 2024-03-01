@@ -15,7 +15,7 @@ export default function SubmitButton({ text, style }: Props) {
 
   return (
     <button type='submit' className={styles.submit_button} style={style}>
-      {pending ? <BeatLoader color='#ffffff' size={12} margin={4} /> : text}
+      {pending ? <BeatLoader color='#ffffff' size={10} margin={4} /> : text}
     </button>
   );
 }

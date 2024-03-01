@@ -21,7 +21,7 @@ export default function Hero({ agent }: Props) {
         />
 
         <div className={styles.cta}>
-          <AgentButton />
+          <AgentButton id={agent._id} name={agent.name} />
           <QRCodeSVG value={agent.qrCodeLink} className={styles.qr_code} />
         </div>
       </div>

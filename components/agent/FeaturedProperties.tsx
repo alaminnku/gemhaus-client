@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './FeaturedProperties.module.css';
 import { Agent } from 'types';
-import { createUSD } from '@lib/utils';
+import { createUSD, getFirstName } from '@lib/utils';
 
 type Props = {
   agent: Agent;
@@ -11,10 +11,11 @@ export default function FeaturedProperties({ agent }: Props) {
   const featuredProperties = agent.properties.filter(
     (property) => property.isFeatured
   );
+  const firstName = getFirstName(agent.name);
 
   return (
     <section className={styles.container}>
-      <h2>{agent.name}'s Featured Properties</h2>
+      <h2>{firstName}'s Featured Properties</h2>
 
       <div className={styles.cards}>
         {featuredProperties.map((property) => (

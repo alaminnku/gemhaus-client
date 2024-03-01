@@ -1,5 +1,6 @@
 import { Agent } from 'types';
 import styles from './Transaction.module.css';
+import { getFirstName } from '@lib/utils';
 
 type Props = {
   agent: Agent;
@@ -9,11 +10,12 @@ export default function Transactions({ agent }: Props) {
   const soldTransactions = agent.transactions.filter(
     (transaction) => transaction.type === 'sold'
   );
+  const firstName = getFirstName(agent.name);
 
   return (
     <section className={styles.container}>
       <h2>
-        {agent.name}'s Transaction <br /> History
+        {firstName}'s Transaction <br /> History
       </h2>
       <table>
         <thead>

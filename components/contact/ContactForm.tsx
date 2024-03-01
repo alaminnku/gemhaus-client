@@ -42,6 +42,7 @@ export default function ContactForm({
     if (setShowModal) setShowModal(false);
     setAlert({ message: data.message, type: 'success' });
   }
+
   return (
     <form action={handleSubmit} className={styles.container}>
       {title && <p className={styles.title}>{title}</p>}
