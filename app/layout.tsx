@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { ReactNode } from 'react';
 import './globals.css';
 import AlertProvider from '@contexts/Alert';
-import SessionProvider from '@contexts/Auth';
+import { AuthProvider } from '@contexts/Auth';
 import { authOptions } from '@lib/auth';
 import { getServerSession } from 'next-auth';
 
@@ -27,9 +27,9 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <SessionProvider session={session}>
+        <AuthProvider session={session}>
           <AlertProvider>{children}</AlertProvider>
-        </SessionProvider>
+        </AuthProvider>
       </body>
     </html>
   );

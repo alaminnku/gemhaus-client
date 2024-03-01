@@ -105,7 +105,7 @@ export default function DesktopNav({
 
       {session && session.user ? (
         <Image
-          // onClick={() => signOut()}
+          onClick={() => signOut()}
           width={100}
           height={100}
           alt='User image'

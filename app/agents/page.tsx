@@ -6,7 +6,7 @@ import GreenFooter from '@components/layout/GreenFooter';
 export default function AgentsPage() {
   return (
     <main>
-      <Header withDarkBackground={true} />
+      <Header withDarkBackground={true} isYellowSignIn={true} />
       <Hero />
       <Agents />
       <GreenFooter />

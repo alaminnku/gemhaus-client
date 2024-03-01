@@ -1,9 +1,7 @@
-import Header from '@components/layout/Header';
 import Hero from './Hero';
 import Properties from './Properties';
 import FeaturedProperties from './FeaturedProperties';
 import Transactions from './Transactions';
-import GreenFooter from '@components/layout/GreenFooter';
 import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import Error from '@components/layout/Error';
 
@@ -18,7 +16,6 @@ export default async function Agent({ id }: Props) {
 
   return (
     <>
-      <Header withDarkBackground={true} />
       {error ? (
         <Error error={error} />
       ) : (
@@ -29,7 +26,6 @@ export default async function Agent({ id }: Props) {
           {data.transactions && <Transactions agent={data} />}
         </>
       )}
-      <GreenFooter />
     </>
   );
 }
