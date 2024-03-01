@@ -47,10 +47,9 @@ export const authOptions: NextAuthOptions = {
 
       const formData = new FormData();
       formData.append('name', name as string);
-      formData.append('email', email as string);
       image && formData.append('image', image as string);
 
-      await fetchGemhausData('/users/upsert', {
+      await fetchGemhausData(`/users/upsert/${email}`, {
         method: 'POST',
         body: formData,
       });
