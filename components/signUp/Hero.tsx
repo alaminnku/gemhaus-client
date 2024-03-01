@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className={styles.container}>
       <Image
-        src='/sign-up/hero-bg-with-triangle.png'
+        src='/sign-up/hero-bg.png'
         width={500}
         height={500}
         quality={100}
