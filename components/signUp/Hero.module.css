@@ -1,17 +1,15 @@
 .container {
+  height: 245px;
   position: relative;
   margin-bottom: 20px;
 }
 
-.background_mobile {
+.background {
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: -1;
-  height: 257px;
-  width: 100%;
-}
-
-.background_desktop {
-  display: none;
+  object-fit: cover;
 }
 
 .content {
@@ -35,40 +33,27 @@
   margin-bottom: 16px;
 }
 
-.promo_mobile {
+.promotion {
   width: 131px;
   height: auto;
-}
-
-.promo_desktop {
-  display: none;
 }
 
 @media (min-width: 1024px) {
   .container {
     width: 60%;
-  }
-
-  .background_desktop {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: left;
   }
 
-  .background_mobile {
-    display: none;
+  .background {
+    object-position: left;
   }
 
   .content {
     width: 550px;
-    margin-top: 200px;
+    margin-top: 240px;
     position: relative;
+    padding: 0;
     padding-left: 40px;
-    color: var(--white);
   }
 
   .content h1 {
@@ -81,19 +66,14 @@
     width: 365px;
     font-size: 18px;
     line-height: 19px;
+    margin-bottom: 0;
   }
 
-  .promo_desktop {
-    display: block;
+  .promotion {
     width: 140px;
-    height: auto;
     position: absolute;
     right: 0;
     bottom: 0;
-  }
-
-  .promo_mobile {
-    display: none;
   }
 }
 
@@ -112,7 +92,7 @@
     width: 465px;
   }
 
-  .promo_desktop {
+  .promotion {
     width: 185px;
   }
 }

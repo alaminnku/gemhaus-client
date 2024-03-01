@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className={styles.container}>
       <Image
-        src='/sign-in/hero-bg-desktop.png'
+        src='/sign-in/hero-bg.png'
         width={1600}
         height={1600}
         quality={100}

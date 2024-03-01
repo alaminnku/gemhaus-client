@@ -49,10 +49,10 @@
   }
 
   .content {
-    color: var(--black);
     width: 550px;
-    margin-top: 200px;
+    margin-top: 240px;
     position: relative;
+    padding: 0;
     padding-left: 40px;
   }
 
@@ -66,9 +66,10 @@
     width: 365px;
     font-size: 18px;
     line-height: 19px;
+    margin-bottom: 0;
   }
 
-  .promo {
+  .promotion {
     width: 140px;
     position: absolute;
     right: 0;
@@ -91,7 +92,7 @@
     width: 465px;
   }
 
-  .promo {
+  .promotion {
     width: 185px;
   }
 }
