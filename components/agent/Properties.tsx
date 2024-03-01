@@ -17,7 +17,7 @@ export default function Properties({ agent }: Props) {
 
       <div className={styles.cards}>
         {agent.properties.map((property) => (
-          <div className={styles.card}>
+          <div className={styles.card} key={property._id}>
             <div className={styles.image_and_price}>
               <Image
                 src={property.images[0]}

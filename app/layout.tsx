@@ -1,10 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { ReactNode } from 'react';
 import './globals.css';
 import AlertProvider from '@contexts/Alert';
 import SessionProvider from '@contexts/Auth';
 import { authOptions } from '@lib/auth';
 import { getServerSession } from 'next-auth';
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+  initialScale: 1,
+  maximumScale: 1,
+  width: 'device-width',
+};
 
 export const metadata: Metadata = {
   title: 'GemHaus - Find Your Gem',

@@ -2,7 +2,7 @@ import Article from '@components/blog/Article';
 import GreenFooter from '@components/layout/GreenFooter';
 import Header from '@components/layout/Header';
 import { fetchGemhausData, revalidateIn } from '@lib/utils';
-import { Article as TArticle } from 'types';
+import { Article as ArticleType } from 'types';
 
 type Props = {
   params: { id: string };
@@ -28,5 +28,5 @@ export async function generateStaticParams() {
     },
   });
   if (error) return [];
-  return data.map((article: TArticle) => ({ id: article._id }));
+  return data.map((article: ArticleType) => ({ id: article._id }));
 }
