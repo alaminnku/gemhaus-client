@@ -16,7 +16,7 @@ export default function Hero() {
       <div className={styles.content}>
         <h1>Discover the GemHaus difference.</h1>
         <p>Find your place, or hire industry leading housing experts.</p>
-        <img src='/sign-in/promotion.png' className={styles.promotion} />
+        <img src='/sign-in/promotion.png' className={styles.promo_image} />
       </div>
     </div>
   );

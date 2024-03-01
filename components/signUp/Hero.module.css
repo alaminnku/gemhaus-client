@@ -33,7 +33,7 @@
   margin-bottom: 16px;
 }
 
-.promotion {
+.promo_image {
   width: 131px;
   height: auto;
 }
@@ -69,7 +69,7 @@
     margin-bottom: 0;
   }
 
-  .promotion {
+  .promo_image {
     width: 140px;
     position: absolute;
     right: 0;
@@ -92,7 +92,7 @@
     width: 465px;
   }
 
-  .promotion {
+  .promo_image {
     width: 185px;
   }
 }

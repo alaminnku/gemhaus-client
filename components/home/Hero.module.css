@@ -86,7 +86,7 @@
   .promo_image {
     position: absolute;
     width: 148px;
-    height: 76px;
+    height: auto;
     bottom: 0;
     right: 0;
   }
@@ -147,7 +147,6 @@
 
   .promo_image {
     width: 185px;
-    height: 95px;
   }
 
   .desktop_cta_and_search_types {
