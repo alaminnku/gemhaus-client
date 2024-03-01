@@ -10,13 +10,13 @@ export default function Hero() {
         height={1600}
         quality={100}
         alt='Hero background'
-        className={styles.background_desktop}
+        className={styles.background}
       />
 
       <div className={styles.content}>
         <h1>Discover the GemHaus difference.</h1>
         <p>Find your place, or hire industry leading housing experts.</p>
-        <img src='/sign-in/promo.png' className={styles.promo} />
+        <img src='/sign-in/promotion.png' className={styles.promotion} />
       </div>
     </div>
   );
