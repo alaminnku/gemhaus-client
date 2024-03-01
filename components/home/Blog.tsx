@@ -23,7 +23,7 @@ export default async function Blog() {
       ) : (
         <div className={styles.article_cards}>
           {data.map((article: Article) => (
-            <ArticleCard article={article} />
+            <ArticleCard key={article._id} article={article} />
           ))}
         </div>
       )}

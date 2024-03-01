@@ -76,6 +76,7 @@ export default async function Article({ id }: { id: string }) {
               <div className={styles.suggestions}>
                 {suggestions.map((suggestion) => (
                   <Link
+                    key={suggestion.id}
                     className={` ${styles.suggestion} ${
                       id === suggestion.id && styles.active
                     }`}

@@ -17,7 +17,11 @@ export default async function Agents() {
       ) : (
         <>
           {data.map((agent: Agent) => (
-            <Link href={`/agents/${agent._id}`} className={styles.agent}>
+            <Link
+              key={agent._id}
+              href={`/agents/${agent._id}`}
+              className={styles.agent}
+            >
               <Image
                 src={agent.image}
                 width={400}

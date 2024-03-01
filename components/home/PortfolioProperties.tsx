@@ -24,6 +24,7 @@ export default async function PortfolioProperties() {
         <div className={styles.properties}>
           {data.map((property: Property) => (
             <Link
+              key={property._id}
               className={styles.property}
               href={`/vacation-rental/${property._id}`}
             >
