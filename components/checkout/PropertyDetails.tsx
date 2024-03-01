@@ -20,7 +20,7 @@ export default async function PropertyDetails({
     {
       next: {
         revalidate: revalidateIn,
-        tags: [`properties/${propertyId}`],
+        tags: [`property-${propertyId}`],
       },
     }
   );

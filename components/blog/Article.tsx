@@ -11,8 +11,8 @@ export default async function Article({ id }: { id: string }) {
     `/articles/${id}`,
     {
       next: {
+        tags: [`article-${id}`],
         revalidate: revalidateIn,
-        tags: [`articles/${id}`],
       },
     }
   );
@@ -20,8 +20,8 @@ export default async function Article({ id }: { id: string }) {
     '/articles',
     {
       next: {
-        revalidate: revalidateIn,
         tags: ['articles'],
+        revalidate: revalidateIn,
       },
     }
   );
