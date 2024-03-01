@@ -79,6 +79,10 @@
     flex-direction: row;
   }
 
+  .property {
+    max-width: 323px;
+  }
+
   .property img {
     height: 100%;
   }

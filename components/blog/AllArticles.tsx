@@ -1,6 +1,7 @@
 import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import AllArticleCards from './AllArticleCards';
 import styles from './AllArticles.module.css';
+import Error from '@components/layout/Error';
 
 export default async function AllArticles() {
   const { data, error } = await fetchGemhausData('/articles', {
@@ -9,10 +10,11 @@ export default async function AllArticles() {
       revalidate: revalidateIn,
     },
   });
+
   return (
     <section className={styles.container}>
       <h2>All Blog Posts</h2>
-      <AllArticleCards articles={data} />
+      {error ? <Error error={error} /> : <AllArticleCards articles={data} />}
     </section>
   );
 }
