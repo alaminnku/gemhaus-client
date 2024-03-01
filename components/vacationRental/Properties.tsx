@@ -3,15 +3,7 @@ import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import Error from '@components/layout/Error';
 import PropertiesAndFilters from './PropertiesAndFilters';
 
-type Props = {
-  arrivalDate: string;
-  departureDate: string;
-};
-
-export default async function Properties({
-  arrivalDate,
-  departureDate,
-}: Props) {
+export default async function Properties() {
   const { data: properties, error: propertiesError } = await fetchGemhausData(
     '/properties',
     {
@@ -33,12 +25,7 @@ export default async function Properties({
       {propertiesError || offeringsError ? (
         <Error error={propertiesError || offeringsError} />
       ) : (
-        <PropertiesAndFilters
-          properties={properties}
-          offerings={offerings}
-          arrivalDate={arrivalDate}
-          departureDate={departureDate}
-        />
+        <PropertiesAndFilters offerings={offerings} properties={properties} />
       )}
     </section>
   );

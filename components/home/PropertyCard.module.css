@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.image_and_featured img {
+.property_image {
   width: 100%;
   height: 323px;
   object-fit: cover;
@@ -30,8 +30,8 @@
 }
 
 .featured img {
-  height: 20px;
   width: 24px;
+  height: 20px;
   margin-left: 0.5rem;
 }
 

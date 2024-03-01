@@ -19,7 +19,13 @@ export default function PropertyCard({ property }: Props) {
       className={`${styles.container} ${manrope.className}`}
     >
       <div className={styles.image_and_featured}>
-        <Image src={images[0]} width={400} height={400} alt='Property image' />
+        <Image
+          src={images[0]}
+          width={400}
+          height={400}
+          alt='Property image'
+          className={styles.property_image}
+        />
 
         {isFeatured && (
           <div className={styles.featured}>

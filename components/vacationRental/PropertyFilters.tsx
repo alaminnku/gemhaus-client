@@ -12,12 +12,11 @@ import {
 import styles from './PropertyFilters.module.css';
 import { Dates, Offering, Property } from 'types';
 import { dateToMS, formatDate } from '@lib/utils';
+import { useSearchParams } from 'next/navigation';
 
 type Props = {
   showFilters: boolean;
   properties: Property[];
-  arrivalDate: string;
-  departureDate: string;
   propertyOfferings: Offering[];
   setShowFilters: Dispatch<SetStateAction<boolean>>;
   setFilteredProperties: Dispatch<SetStateAction<Property[]>>;
@@ -26,12 +25,11 @@ type Props = {
 export default function PropertyFilters({
   properties,
   showFilters,
-  arrivalDate,
-  departureDate,
   setShowFilters,
   propertyOfferings,
   setFilteredProperties,
 }: Props) {
+  const searchParams = useSearchParams();
   const [showCalendar, setShowCalendar] = useState(false);
   const [dates, setDates] = useState<Dates | null>(null);
   const [guests, setGuests] = useState<number>();
@@ -44,43 +42,14 @@ export default function PropertyFilters({
   const [bedrooms, setBedrooms] = useState<number>();
   const [bathrooms, setBathrooms] = useState<number>();
 
+  const arrivalDate = searchParams.get('arrivalDate');
+  const departureDate = searchParams.get('departureDate');
+
   const step = 10;
   const { min, max } = prices;
   const isDateUnavailable = (date: Date) =>
     dateToMS(formatDate(date)) < dateToMS(formatDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
-
-  // Get max price
-  useEffect(() => {
-    const maximumPrice = Math.max(
-      ...properties.map((property) => +property.price)
-    );
-    const maximumPriceRounded = maximumPrice + step - (maximumPrice % step);
-    setPrices((prevState) => ({
-      ...prevState,
-      max: maximumPriceRounded,
-    }));
-    setMaxPrice(maximumPriceRounded);
-  }, [properties]);
-
-  // Apply dates filter
-  useEffect(() => {
-    if (arrivalDate && departureDate) {
-      const datesMap: string[] = [];
-      const currDate = new Date(formatDate(arrivalDate));
-      while (currDate < new Date(formatDate(departureDate))) {
-        datesMap.push(formatDate(currDate));
-        currDate.setDate(currDate.getDate() + 1);
-      }
-
-      setDates([arrivalDate, departureDate]);
-      setFilteredProperties(
-        properties.filter((property) =>
-          datesMap.every((date) => property.availableDates.includes(date))
-        )
-      );
-    }
-  }, [arrivalDate, departureDate]);
 
   // Handle slider range change
   function handlePriceSliderChange(e: ChangeEvent<HTMLInputElement>) {
@@ -161,6 +130,38 @@ export default function PropertyFilters({
     setShowFilters(false);
     setFilteredProperties(filteredProperties);
   }
+
+  // Get max price
+  useEffect(() => {
+    const maximumPrice = Math.max(
+      ...properties.map((property) => +property.price)
+    );
+    const maximumPriceRounded = maximumPrice + step - (maximumPrice % step);
+    setPrices((prevState) => ({
+      ...prevState,
+      max: maximumPriceRounded,
+    }));
+    setMaxPrice(maximumPriceRounded);
+  }, [properties]);
+
+  // Apply dates filter
+  useEffect(() => {
+    if (arrivalDate && departureDate) {
+      const datesMap: string[] = [];
+      const currDate = new Date(formatDate(arrivalDate));
+      while (currDate < new Date(formatDate(departureDate))) {
+        datesMap.push(formatDate(currDate));
+        currDate.setDate(currDate.getDate() + 1);
+      }
+
+      setDates([arrivalDate, departureDate]);
+      setFilteredProperties(
+        properties.filter((property) =>
+          datesMap.every((date) => property.availableDates.includes(date))
+        )
+      );
+    }
+  }, [arrivalDate, departureDate]);
 
   return (
     <form
