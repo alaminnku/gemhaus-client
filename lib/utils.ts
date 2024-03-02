@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
-import { Alert } from 'types';
 import { Manrope } from 'next/font/google';
 
 type FetchGemhausDataOptions = {
@@ -23,6 +21,7 @@ export async function fetchGemhausData(
 
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${path}`, {
     ...options,
+    cache: 'no-store',
     credentials: 'include',
   });
   const result = await response.json();
