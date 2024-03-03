@@ -8,10 +8,10 @@ import PortfolioPropertiesContent from './PortfolioPropertiesContent';
 
 export default async function PortfolioProperties() {
   const { data, error } = await fetchGemhausData('/properties', {
-    next: {
-      tags: ['properties'],
-      revalidate: revalidateIn,
-    },
+    // next: {
+    //   tags: ['properties'],
+    //   revalidate: revalidateIn,
+    // },
   });
 
   return (

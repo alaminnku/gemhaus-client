@@ -13,10 +13,10 @@ export default async function Properties() {
   const { data: offerings, error: offeringsError } = await fetchGemhausData(
     '/properties/offerings',
     {
-      next: {
-        tags: ['offerings'],
-        revalidate: revalidateIn,
-      },
+      // next: {
+      //   tags: ['offerings'],
+      //   revalidate: revalidateIn,
+      // },
     }
   );
 

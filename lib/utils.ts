@@ -1,4 +1,5 @@
 import { Manrope } from 'next/font/google';
+import { sign } from 'jsonwebtoken';
 
 type FetchGemhausDataOptions = {
   body?: FormData;
@@ -129,3 +130,6 @@ export const isValidEmail = (email: string) => {
 };
 
 export const getFirstName = (name: string) => name.split(' ')[0].trim();
+
+export const createAccessToken = (email: string) =>
+  sign({ email }, process.env.JWT_SECRET as string, { expiresIn: '30d' });

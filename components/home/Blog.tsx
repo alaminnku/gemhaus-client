@@ -6,10 +6,10 @@ import { Article } from 'types';
 
 export default async function Blog() {
   const { data, error } = await fetchGemhausData('/articles', {
-    next: {
-      tags: ['articles'],
-      revalidate: revalidateIn,
-    },
+    // next: {
+    //   tags: ['articles'],
+    //   revalidate: revalidateIn,
+    // },
   });
 
   return (

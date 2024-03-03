@@ -1,7 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import Google from 'next-auth/providers/google';
-import { fetchGemhausData } from './utils';
+import { createAccessToken, fetchGemhausData } from './utils';
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -42,8 +42,23 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.role = user.role || 'USER';
+        token.accessToken = user.accessToken;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.role = token.role;
+        session.user.accessToken = token.accessToken;
+      }
+      return session;
+    },
     async signIn({ user }) {
       const { name, email, image } = user;
+      user.accessToken = createAccessToken(email as string);
 
       const formData = new FormData();
       formData.append('name', name as string);

@@ -20,13 +20,13 @@ export default async function ArticlePage({ params }: Props) {
   );
 }
 
-// export async function generateStaticParams() {
-//   const { data, error } = await fetchGemhausData('/articles', {
-//     next: {
-//       tags: ['articles'],
-//       revalidate: revalidateIn,
-//     },
-//   });
-//   if (error) return [];
-//   return data.map((article: ArticleType) => ({ id: article._id }));
-// }
+export async function generateStaticParams() {
+  const { data, error } = await fetchGemhausData('/articles', {
+    // next: {
+    //   tags: ['articles'],
+    //   revalidate: revalidateIn,
+    // },
+  });
+  if (error) return [];
+  return data.map((article: ArticleType) => ({ id: article._id }));
+}

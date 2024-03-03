@@ -1,3 +1,28 @@
+import { DefaultSession, DefaultUser } from 'next-auth';
+import { DefaultJWT } from 'next-auth/jwt';
+
+type Role = 'ADMIN' | 'USER' | 'AGENT';
+
+declare module 'next-auth' {
+  interface Session {
+    user: {
+      role: Role;
+      accessToken: string;
+    } & DefaultSession;
+  }
+  interface User extends DefaultUser {
+    role: Role;
+    accessToken: string;
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT extends DefaultJWT {
+    role: Role;
+    accessToken: string;
+  }
+}
+
 export type Offering = { name: string; icon: string };
 
 export type Property = {

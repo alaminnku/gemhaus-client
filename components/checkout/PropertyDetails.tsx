@@ -18,10 +18,10 @@ export default async function PropertyDetails({
   const { data: property, error: propertyError } = await fetchGemhausData(
     `/properties/${propertyId}`,
     {
-      next: {
-        revalidate: revalidateIn,
-        tags: [`property-${propertyId}`],
-      },
+      // next: {
+      //   revalidate: revalidateIn,
+      //   tags: [`property-${propertyId}`],
+      // },
     }
   );
   const { data: calendar, error: calendarError } = await fetchHostawayData(
