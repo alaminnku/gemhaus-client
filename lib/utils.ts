@@ -1,11 +1,15 @@
 import { Manrope } from 'next/font/google';
 import { sign } from 'jsonwebtoken';
+import { JWT } from 'next-auth/jwt';
 
 type FetchGemhausDataOptions = {
   body?: FormData;
   cache?: 'no-store';
   method?: 'POST' | 'DELETE';
   next?: { tags?: string[]; revalidate: number };
+  headers?: {
+    Authorization: string;
+  };
 };
 
 export const revalidateIn = 300;
@@ -130,6 +134,3 @@ export const isValidEmail = (email: string) => {
 };
 
 export const getFirstName = (name: string) => name.split(' ')[0].trim();
-
-export const createAccessToken = (email: string) =>
-  sign({ email }, process.env.JWT_SECRET as string, { expiresIn: '30d' });
