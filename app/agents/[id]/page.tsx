@@ -20,10 +20,10 @@ export default function AgentPage({ params }: Props) {
   );
 }
 
-export async function generateStaticParams() {
-  const { data, error } = await fetchGemhausData('/users/agent', {
-    next: { tags: ['agents'], revalidate: revalidateIn },
-  });
-  if (error) return [];
-  return data.map((agent: AgentType) => ({ id: agent._id }));
-}
+// export async function generateStaticParams() {
+//   const { data, error } = await fetchGemhausData('/users/agent', {
+//     next: { tags: ['agents'], revalidate: revalidateIn },
+//   });
+//   if (error) return [];
+//   return data.map((agent: AgentType) => ({ id: agent._id }));
+// }
