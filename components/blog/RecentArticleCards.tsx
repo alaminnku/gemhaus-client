@@ -11,7 +11,7 @@ export default function RecentArticleCards({ articles }: Props) {
     <div className={styles.container}>
       <ArticleCard singleColumn={true} article={articles[0]} />
       <div className={styles.articles}>
-        {articles.slice(1).map((article) => (
+        {articles.slice(1, 3).map((article) => (
           <ArticleCard key={article._id} article={article} />
         ))}
       </div>
