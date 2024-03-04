@@ -22,9 +22,9 @@ type Props = {
 export default function PaymentForm({ children, booking }: Props) {
   const router = useRouter();
   const { setAlert } = useAlert();
-  let hostedFields: HostedFields | null = null;
   const { guests, propertyId, arrivalDate, departureDate } = booking;
   const [guestsCount, setGuestsCount] = useState(+guests);
+  const [hostedFields, setHostedFields] = useState<HostedFields | null>(null);
 
   const arrivalMonth = getMonthAbbr(new Date(arrivalDate));
   const departureMonth = getMonthAbbr(new Date(departureDate));
@@ -32,7 +32,7 @@ export default function PaymentForm({ children, booking }: Props) {
   useEffect(() => {
     async function initializeBraintree() {
       try {
-        const { data: clientToken, error } = await fetchGemhausData(
+        const { data: clientToken } = await fetchGemhausData(
           '/braintree/client-token',
           { cache: 'no-store' }
         );
@@ -41,7 +41,7 @@ export default function PaymentForm({ children, booking }: Props) {
           authorization: clientToken,
         });
 
-        hostedFields = await braintree.hostedFields.create({
+        const hostedFields = await braintree.hostedFields.create({
           fields: {
             number: {
               selector: '#card_number',
@@ -61,6 +61,7 @@ export default function PaymentForm({ children, booking }: Props) {
           },
           client: clientInstance,
         });
+        setHostedFields(hostedFields);
       } catch (err) {
         console.log(err);
       }
@@ -70,22 +71,30 @@ export default function PaymentForm({ children, booking }: Props) {
 
   const handleBookProperty = async (formData: FormData) => {
     if (!hostedFields) return;
-    const { nonce } = await hostedFields.tokenize();
+    try {
+      const { nonce } = await hostedFields.tokenize();
 
-    formData.append('nonce', nonce);
-    formData.append('arrivalDate', arrivalDate);
-    formData.append('departureDate', departureDate);
-    formData.append('numberOfGuests', guestsCount.toString());
+      formData.append('nonce', nonce);
+      formData.append('arrivalDate', arrivalDate);
+      formData.append('departureDate', departureDate);
+      formData.append('numberOfGuests', guestsCount.toString());
 
-    const { data, error } = await fetchGemhausData(
-      `/properties/${propertyId}/book`,
-      {
-        method: 'POST',
-        body: formData,
-      }
-    );
-    if (error) return setAlert({ message: error.message, type: 'failed' });
-    setAlert({ message: data.message, type: 'success' });
+      const { data, error } = await fetchGemhausData(
+        `/properties/${propertyId}/book`,
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+      if (error) return setAlert({ message: error.message, type: 'failed' });
+      setAlert({ message: data.message, type: 'success' });
+    } catch (err) {
+      console.log(err);
+      setAlert({
+        message: "Payment information can't be empty",
+        type: 'failed',
+      });
+    }
   };
 
   return (
