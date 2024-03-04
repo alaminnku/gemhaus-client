@@ -34,7 +34,11 @@
     gap: 50px 18px;
     padding: 0px 21px;
     margin-bottom: 69px;
-    grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+  }
+
+  .agent {
+    width: 335px;
   }
 
   .agent img {

@@ -11,7 +11,7 @@ import {
 } from 'react';
 import styles from './PropertyFilters.module.css';
 import { Dates, Offering, Property } from 'types';
-import { dateToMS, formatDate } from '@lib/utils';
+import { dateToMS, formatDate, getDatesInBetween } from '@lib/utils';
 import { useSearchParams } from 'next/navigation';
 
 type Props = {
@@ -85,15 +85,10 @@ export default function PropertyFilters({
     let filteredProperties = properties;
 
     if (dates) {
-      const datesMap: string[] = [];
-      const currDate = new Date(formatDate(dates[0]));
-      while (currDate < new Date(formatDate(dates[1]))) {
-        datesMap.push(formatDate(currDate));
-        currDate.setDate(currDate.getDate() + 1);
-      }
+      const datesInBetween = getDatesInBetween(dates[0], dates[1]);
 
       filteredProperties = filteredProperties.filter((property) =>
-        datesMap.every((date) => property.availableDates.includes(date))
+        datesInBetween.every((date) => property.availableDates.includes(date))
       );
     }
 
@@ -147,17 +142,12 @@ export default function PropertyFilters({
   // Apply dates filter
   useEffect(() => {
     if (arrivalDate && departureDate) {
-      const datesMap: string[] = [];
-      const currDate = new Date(formatDate(arrivalDate));
-      while (currDate < new Date(formatDate(departureDate))) {
-        datesMap.push(formatDate(currDate));
-        currDate.setDate(currDate.getDate() + 1);
-      }
+      const datesInBetween = getDatesInBetween(arrivalDate, departureDate);
 
       setDates([arrivalDate, departureDate]);
       setFilteredProperties(
         properties.filter((property) =>
-          datesMap.every((date) => property.availableDates.includes(date))
+          datesInBetween.every((date) => property.availableDates.includes(date))
         )
       );
     }

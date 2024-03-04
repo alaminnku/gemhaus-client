@@ -134,3 +134,16 @@ export const isValidEmail = (email: string) => {
 };
 
 export const getFirstName = (name: string) => name.split(' ')[0].trim();
+
+export function getDatesInBetween(
+  arrivalDate: string | Date,
+  departureDate: string | Date
+) {
+  const dates: string[] = [];
+  const currDate = new Date(formatDate(arrivalDate));
+  while (currDate < new Date(formatDate(departureDate))) {
+    dates.push(formatDate(currDate));
+    currDate.setDate(currDate.getDate() + 1);
+  }
+  return dates;
+}

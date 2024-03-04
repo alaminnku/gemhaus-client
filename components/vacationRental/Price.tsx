@@ -18,7 +18,6 @@ export default function Price({
   property,
   style,
 }: Props) {
-  // All dates between check in and checkout
   const datesMap: Record<string, boolean> = {};
   const currDate = new Date(formatDate(arrivalDate));
   while (currDate < new Date(formatDate(departureDate))) {

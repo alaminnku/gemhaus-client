@@ -2,7 +2,7 @@
 
 import styles from './Reservation.module.css';
 import { useEffect, useState } from 'react';
-import { dateToMS, formatDate } from '@lib/utils';
+import { dateToMS, formatDate, getDatesInBetween } from '@lib/utils';
 import { Dates, HostawayCalendar, Property } from 'types';
 import Price from '@components/vacationRental/Price';
 import Calendar from '@components/layout/Calendar';
@@ -17,24 +17,10 @@ export default function Reservation({ property, calendar }: Props) {
   const [guests, setGuests] = useState('');
   const [dates, setDates] = useState<Dates | null>(null);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [validMinStay, setValidMinStay] = useState(false);
   const [availableDatesMap, setAvailableDatesMap] = useState<
     Record<string, boolean>
   >({});
-
-  // Get available dates map
-  useEffect(() => {
-    const availableDatesMap: { [key: string]: boolean } = {};
-    calendar
-      .filter(
-        (el) =>
-          el.status === 'available' &&
-          dateToMS(el.date) >= dateToMS(formatDate(new Date()))
-      )
-      .forEach((el) => {
-        availableDatesMap[el.date] = true;
-      });
-    setAvailableDatesMap(availableDatesMap);
-  }, [calendar]);
 
   // Check if date is unavailable
   const isDateUnavailable = (date: Date | string) =>
@@ -55,6 +41,31 @@ export default function Reservation({ property, calendar }: Props) {
     }
     if (!unavailableDateSelected) setDates(dates);
   };
+
+  // Get available dates map
+  useEffect(() => {
+    const availableDatesMap: { [key: string]: boolean } = {};
+    calendar
+      .filter((el) => dateToMS(el.date) >= dateToMS(formatDate(new Date())))
+      .forEach((el, index, calendar) => {
+        let isPrevDateAvailable;
+        if (index > 0) {
+          isPrevDateAvailable = calendar[index - 1].status === 'available';
+        }
+        availableDatesMap[el.date] =
+          el.status === 'available' || isPrevDateAvailable ? true : false;
+      });
+    setAvailableDatesMap(availableDatesMap);
+  }, [calendar]);
+
+  // Check validity of min stay
+  useEffect(() => {
+    if (dates) {
+      setValidMinStay(
+        getDatesInBetween(dates[0], dates[1]).length >= calendar[0].minimumStay
+      );
+    }
+  }, [dates]);
 
   return (
     <div className={styles.container}>
@@ -111,7 +122,7 @@ export default function Reservation({ property, calendar }: Props) {
 
       <Link
         href={
-          dates && guests
+          dates && guests && validMinStay
             ? `/vacation-rental/${
                 property._id
               }/checkout?arrivalDate=${formatDate(
