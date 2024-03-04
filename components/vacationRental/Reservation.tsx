@@ -18,13 +18,11 @@ export default function Reservation({ property, calendar }: Props) {
   const [dates, setDates] = useState<Dates | null>(null);
   const [showCalendar, setShowCalendar] = useState(false);
   const [validMinStay, setValidMinStay] = useState(false);
-  const [availableDatesMap, setAvailableDatesMap] = useState<
-    Record<string, boolean>
-  >({});
+  const [datesMap, setDatesMap] = useState<Record<string, boolean>>({});
 
   // Check if date is unavailable
   const isDateUnavailable = (date: Date | string) =>
-    !availableDatesMap[formatDate(date)];
+    !datesMap[formatDate(date)];
 
   // Handle date change
   const handleDateChange = (dates: Dates) => {
@@ -44,7 +42,7 @@ export default function Reservation({ property, calendar }: Props) {
 
   // Get available dates map
   useEffect(() => {
-    const availableDatesMap: { [key: string]: boolean } = {};
+    const datesMap: { [key: string]: boolean } = {};
     calendar
       .filter((el) => dateToMS(el.date) >= dateToMS(formatDate(new Date())))
       .forEach((el, index, calendar) => {
@@ -52,10 +50,10 @@ export default function Reservation({ property, calendar }: Props) {
         if (index > 0) {
           isPrevDateAvailable = calendar[index - 1].status === 'available';
         }
-        availableDatesMap[el.date] =
+        datesMap[el.date] =
           el.status === 'available' || isPrevDateAvailable ? true : false;
       });
-    setAvailableDatesMap(availableDatesMap);
+    setDatesMap(datesMap);
   }, [calendar]);
 
   // Check validity of min stay
