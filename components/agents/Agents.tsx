@@ -34,60 +34,6 @@ export default async function Agents() {
               <p className={styles.phone}>{agent.phone}</p>
             </Link>
           ))}
-          {data.map((agent: Agent) => (
-            <Link
-              key={agent._id}
-              href={`/agents/${agent._id}`}
-              className={styles.agent}
-            >
-              <Image
-                src={agent.image}
-                width={400}
-                height={400}
-                alt={`${agent.name}'s image`}
-              />
-
-              <p className={styles.name}>{agent.name}</p>
-              <p className={styles.email}>{agent.email}</p>
-              <p className={styles.phone}>{agent.phone}</p>
-            </Link>
-          ))}
-          {data.map((agent: Agent) => (
-            <Link
-              key={agent._id}
-              href={`/agents/${agent._id}`}
-              className={styles.agent}
-            >
-              <Image
-                src={agent.image}
-                width={400}
-                height={400}
-                alt={`${agent.name}'s image`}
-              />
-
-              <p className={styles.name}>{agent.name}</p>
-              <p className={styles.email}>{agent.email}</p>
-              <p className={styles.phone}>{agent.phone}</p>
-            </Link>
-          ))}
-          {data.map((agent: Agent) => (
-            <Link
-              key={agent._id}
-              href={`/agents/${agent._id}`}
-              className={styles.agent}
-            >
-              <Image
-                src={agent.image}
-                width={400}
-                height={400}
-                alt={`${agent.name}'s image`}
-              />
-
-              <p className={styles.name}>{agent.name}</p>
-              <p className={styles.email}>{agent.email}</p>
-              <p className={styles.phone}>{agent.phone}</p>
-            </Link>
-          ))}
         </>
       )}
     </section>
