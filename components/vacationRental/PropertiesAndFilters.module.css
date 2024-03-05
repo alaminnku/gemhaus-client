@@ -6,6 +6,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .filters_and_properties {
+    padding: 0px 40px;
+  }
+}
+
 @media (min-width: 1440px) {
   .filters_and_properties {
     gap: 61px;
