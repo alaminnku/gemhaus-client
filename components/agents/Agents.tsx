@@ -6,7 +6,7 @@ import Error from '@components/layout/Error';
 import { Agent } from 'types';
 
 export default async function Agents() {
-  const { data, error } = await fetchGemhausData('/users/agent', {
+  const { data, error } = await fetchGemhausData('/users/agents', {
     // next: { tags: ['agents'], revalidate: revalidateIn },
   });
 
