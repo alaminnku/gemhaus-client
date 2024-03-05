@@ -45,6 +45,15 @@ export default function DesktopNav({
           Blog
         </Link>
 
+        <Link
+          href='/agents'
+          className={`${styles.nav_link} ${
+            pathname === '/agents' && styles.active
+          }`}
+        >
+          Agents
+        </Link>
+
         <div className={styles.management}>
           <p className={styles.management_title}>Management</p>
 
@@ -72,7 +81,9 @@ export default function DesktopNav({
             <div className={styles.others}>
               <Link href='/contact'>Send us a question</Link>
               <Link href='/agents'>Get in Touch with Agents</Link>
-              <Link href='/reviews'>What's the difference?</Link>
+              <Link href='/blog/65e3cc9fe1e5ce81f24cbb33'>
+                What's the difference?
+              </Link>
             </div>
           </div>
         </div>

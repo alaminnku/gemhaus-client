@@ -15,7 +15,7 @@ export default async function FeaturedProperties() {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h2>Featured Properties</h2>
+        <h2>Featured Getaways</h2>
         <p>We have curated the best gems for you.</p>
       </div>
       {error ? <Error error={error} /> : <PropertyCards properties={data} />}

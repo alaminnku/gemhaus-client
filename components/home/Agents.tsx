@@ -23,11 +23,11 @@ export default function Agents() {
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
-        <Link href='/designers' className={styles.agent}>
+        <Link href='/short-term-rental' className={styles.agent}>
           <div className={styles.image_and_name}>
             <img src='/home/designer.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Designers</p>
+              <p className={styles.agent_name}>Hospitality</p>
               <p className={styles.expertise}>Agent can help you buy a home</p>
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function Agents() {
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
-        <Link href='/managers' className={styles.agent}>
+        <Link href='/long-term-rental' className={styles.agent}>
           <div className={styles.image_and_name}>
             <img src='/home/manager.png' />
             <div className={styles.name_and_expertise}>
@@ -50,7 +50,7 @@ export default function Agents() {
       </div>
 
       <div className={styles.roles}>
-        <Link href='/managers' className={styles.role}>
+        <Link href='/long-term-rental' className={styles.role}>
           <img className={styles.agent_image} src='/home/manager.png' />
           <p>Managers</p>
           <img
@@ -58,9 +58,9 @@ export default function Agents() {
             src='/home/black-right-arrow-icon.png'
           />
         </Link>
-        <Link href='/designers' className={styles.role}>
+        <Link href='/short-term-rental' className={styles.role}>
           <img className={styles.agent_image} src='/home/designer.png' />
-          <p>Designers</p>
+          <p>Hospitality</p>
           <img
             className={styles.right_arrow}
             src='/home/black-right-arrow-icon.png'
