@@ -10,67 +10,67 @@ export default function Agents() {
         <AgentButton />
       </div>
 
-      <div className={styles.agents}>
-        <Link href='/agents' className={styles.agent}>
+      <div className={styles.mobile_roles}>
+        <Link href='/agents' className={styles.mobile_role}>
           <div className={styles.image_and_name}>
             <img src='/home/agent.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Agents</p>
-              <p className={styles.expertise}>Agent can help you buy a home</p>
+              <p className={styles.mobile_role_name}>Agents</p>
+              <p className={styles.expertise}>Can help you buy a home</p>
             </div>
           </div>
-          <div className={styles.arrow}>
+          <div className={styles.mobile_arrow}>
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
-        <Link href='/short-term-rental' className={styles.agent}>
+        <Link href='/short-term-rental' className={styles.mobile_role}>
           <div className={styles.image_and_name}>
             <img src='/home/designer.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Hospitality</p>
-              <p className={styles.expertise}>Agent can help you buy a home</p>
+              <p className={styles.mobile_role_name}>Hospitality</p>
+              <p className={styles.expertise}>Helps manage your Airbnbs</p>
             </div>
           </div>
-          <div className={styles.arrow}>
+          <div className={styles.mobile_arrow}>
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
-        <Link href='/long-term-rental' className={styles.agent}>
+        <Link href='/long-term-rental' className={styles.mobile_role}>
           <div className={styles.image_and_name}>
             <img src='/home/manager.png' />
             <div className={styles.name_and_expertise}>
-              <p className={styles.agent_name}>Managers</p>
-              <p className={styles.expertise}>Agent can help you buy a home</p>
+              <p className={styles.mobile_role_name}>Managers</p>
+              <p className={styles.expertise}>Helps manage your rentals</p>
             </div>
           </div>
-          <div className={styles.arrow}>
+          <div className={styles.mobile_arrow}>
             <img src='/home/black-right-arrow-icon.png' />
           </div>
         </Link>
       </div>
 
-      <div className={styles.roles}>
-        <Link href='/long-term-rental' className={styles.role}>
-          <img className={styles.agent_image} src='/home/manager.png' />
+      <div className={styles.desktop_roles}>
+        <Link href='/long-term-rental' className={styles.desktop_role}>
+          <img className={styles.desktop_role_image} src='/home/manager.png' />
           <p>Managers</p>
           <img
-            className={styles.right_arrow}
+            className={styles.desktop_arrow}
             src='/home/black-right-arrow-icon.png'
           />
         </Link>
-        <Link href='/short-term-rental' className={styles.role}>
-          <img className={styles.agent_image} src='/home/designer.png' />
+        <Link href='/short-term-rental' className={styles.desktop_role}>
+          <img className={styles.desktop_role_image} src='/home/designer.png' />
           <p>Hospitality</p>
           <img
-            className={styles.right_arrow}
+            className={styles.desktop_arrow}
             src='/home/black-right-arrow-icon.png'
           />
         </Link>
-        <Link href='/agents' className={styles.role}>
-          <img className={styles.agent_image} src='/home/agent.png' />
+        <Link href='/agents' className={styles.desktop_role}>
+          <img className={styles.desktop_role_image} src='/home/agent.png' />
           <p>Agents</p>
           <img
-            className={styles.right_arrow}
+            className={styles.desktop_arrow}
             src='/home/black-right-arrow-icon.png'
           />
         </Link>
