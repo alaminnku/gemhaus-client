@@ -15,7 +15,7 @@ export default function Newsletter({ hasBackground }: Props) {
   const { setAlert } = useAlert();
 
   async function handleSubscribe(formData: FormData) {
-    const { data, error } = await fetchGemhausData('/subscribers/add', {
+    const { data, error } = await fetchGemhausData('/subscribers', {
       method: 'POST',
       body: formData,
     });
