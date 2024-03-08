@@ -20,7 +20,7 @@ export default function Price({
 }: Props) {
   const datesMap: Record<string, boolean> = {};
   const currDate = new Date(createUsDate(arrivalDate));
-  while (currDate < new Date(departureDate)) {
+  while (currDate < new Date(createUsDate(departureDate))) {
     datesMap[createHostawayDate(currDate)] = true;
     currDate.setDate(currDate.getDate() + 1);
   }
