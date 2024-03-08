@@ -1,11 +1,11 @@
-import { createUSD, formatDate } from '@lib/utils';
+import { createUSD, createHostawayDate, createUsDate } from '@lib/utils';
 import { Property, HostawayCalendar } from 'types';
 import styles from './Price.module.css';
 import { CSSProperties } from 'react';
 
 type Props = {
-  arrivalDate: Date | string;
-  departureDate: Date | string;
+  arrivalDate: string;
+  departureDate: string;
   calendar: HostawayCalendar;
   property: Property;
   style: CSSProperties;
@@ -19,9 +19,9 @@ export default function Price({
   style,
 }: Props) {
   const datesMap: Record<string, boolean> = {};
-  const currDate = new Date(formatDate(arrivalDate));
-  while (currDate < new Date(formatDate(departureDate))) {
-    datesMap[formatDate(currDate)] = true;
+  const currDate = new Date(createUsDate(arrivalDate));
+  while (currDate < new Date(departureDate)) {
+    datesMap[createHostawayDate(currDate)] = true;
     currDate.setDate(currDate.getDate() + 1);
   }
 

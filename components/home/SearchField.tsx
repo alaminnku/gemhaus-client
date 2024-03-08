@@ -1,6 +1,6 @@
 'use client';
 
-import { dateToMS, formatDate } from '@lib/utils';
+import { dateToMS, createHostawayDate } from '@lib/utils';
 import styles from './SearchField.module.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -14,7 +14,8 @@ export default function SearchField() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const isDateUnavailable = (date: Date) =>
-    dateToMS(formatDate(date)) < dateToMS(formatDate(new Date()));
+    dateToMS(createHostawayDate(date)) <
+    dateToMS(createHostawayDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
 
   useEffect(() => {
@@ -43,7 +44,11 @@ export default function SearchField() {
             type='text'
             onClick={() => setShowCalendar((prevState) => !prevState)}
             value={
-              dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
+              dates
+                ? `${createHostawayDate(dates[0])} ~ ${createHostawayDate(
+                    dates[1]
+                  )}`
+                : ''
             }
             placeholder='Find your gem. Enter in your trip dates.'
           />
@@ -53,9 +58,9 @@ export default function SearchField() {
           className={styles.search_button}
           href={
             dates
-              ? `/vacation-rental/?arrivalDate=${formatDate(
+              ? `/vacation-rental/?arrivalDate=${createHostawayDate(
                   dates[0]
-                )}&departureDate=${formatDate(dates[1])}`
+                )}&departureDate=${createHostawayDate(dates[1])}`
               : ''
           }
         >

@@ -11,7 +11,7 @@ import {
 } from 'react';
 import styles from './PropertyFilters.module.css';
 import { Dates, Offering, Property } from 'types';
-import { dateToMS, formatDate, getDatesInBetween } from '@lib/utils';
+import { dateToMS, createHostawayDate, getDatesInBetween } from '@lib/utils';
 import { useSearchParams } from 'next/navigation';
 
 type Props = {
@@ -48,7 +48,8 @@ export default function PropertyFilters({
   const step = 10;
   const { min, max } = prices;
   const isDateUnavailable = (date: Date) =>
-    dateToMS(formatDate(date)) < dateToMS(formatDate(new Date()));
+    dateToMS(createHostawayDate(date)) <
+    dateToMS(createHostawayDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
 
   // Handle slider range change
@@ -167,7 +168,11 @@ export default function PropertyFilters({
             type='text'
             onClick={() => setShowCalendar((prevState) => !prevState)}
             value={
-              dates ? `${formatDate(dates[0])} ~ ${formatDate(dates[1])}` : ''
+              dates
+                ? `${createHostawayDate(dates[0])} ~ ${createHostawayDate(
+                    dates[1]
+                  )}`
+                : ''
             }
             placeholder='Check-in --> Check-out'
           />

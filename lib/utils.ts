@@ -100,8 +100,8 @@ export const dateToText = (input: Date | string | number) => {
 // Convert date to milliseconds
 export const dateToMS = (input: Date | string) => new Date(input).getTime();
 
-// Format date 2024-02-11
-export function formatDate(input: string | Date) {
+// Format any date to 2024-02-11
+export function createHostawayDate(input: string | Date) {
   const date = new Date(input);
 
   const year = date.getFullYear();
@@ -109,6 +109,28 @@ export function formatDate(input: string | Date) {
   const day = String(date.getDate()).padStart(2, '0');
 
   return `${year}-${month}-${day}`;
+}
+
+// From 2024-02-11 to
+// Wed Apr 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time)
+export function createUsDate(input: string) {
+  const dateParts = input.split('-');
+  const year = +dateParts[0];
+  const day = +dateParts[2];
+  const month = +dateParts[1] - 1;
+
+  const date = new Date(year, month, day);
+  const dateFormatter = new Intl.DateTimeFormat('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZoneName: 'short',
+  });
+  return dateFormatter.format(date);
 }
 
 // Format currency to USD
@@ -140,9 +162,9 @@ export function getDatesInBetween(
   departureDate: string | Date
 ) {
   const dates: string[] = [];
-  const currDate = new Date(formatDate(arrivalDate));
-  while (currDate < new Date(formatDate(departureDate))) {
-    dates.push(formatDate(currDate));
+  const currDate = new Date(createHostawayDate(arrivalDate));
+  while (currDate < new Date(createHostawayDate(departureDate))) {
+    dates.push(createHostawayDate(currDate));
     currDate.setDate(currDate.getDate() + 1);
   }
   return dates;

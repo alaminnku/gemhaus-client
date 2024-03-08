@@ -1,5 +1,5 @@
 import Error from '@components/layout/Error';
-import { fetchGemhausData, formatDate, revalidateIn } from '@lib/utils';
+import { fetchGemhausData, createHostawayDate, revalidateIn } from '@lib/utils';
 import styles from './Article.module.css';
 import Image from 'next/image';
 import { Article } from 'types';
@@ -53,7 +53,7 @@ export default async function Article({ id }: { id: string }) {
               <h1>{article.title}</h1>
 
               <p className={styles.author_and_date}>
-                Author <span>•</span> {formatDate(article.createdAt)}
+                Author <span>•</span> {createHostawayDate(article.createdAt)}
               </p>
             </div>
 
