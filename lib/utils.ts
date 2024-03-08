@@ -83,7 +83,6 @@ export async function fetchHostawayData(path: string) {
   return { data, error };
 }
 
-// Convert date to text
 export const dateToText = (input: Date | string | number) => {
   const date = new Date(input);
   const dateFormatter = new Intl.DateTimeFormat('en-US', {
@@ -126,7 +125,6 @@ export function dashedToFullDate(input: string) {
   return dateFormatter.format(date);
 }
 
-// Format currency to USD
 export const createUSD = (number: number) =>
   new Intl.NumberFormat('en-us', {
     style: 'currency',
