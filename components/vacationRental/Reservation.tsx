@@ -2,7 +2,7 @@
 
 import styles from './Reservation.module.css';
 import { useEffect, useState } from 'react';
-import { dateToMS, createHostawayDate, getDatesInBetween } from '@lib/utils';
+import { dateToMS, createDashedDate, getDatesInBetween } from '@lib/utils';
 import { Dates, HostawayCalendar, Property } from 'types';
 import Price from '@components/vacationRental/Price';
 import Calendar from '@components/layout/Calendar';
@@ -22,7 +22,7 @@ export default function Reservation({ property, calendar }: Props) {
 
   // Check if date is unavailable
   const isDateUnavailable = (date: Date | string) =>
-    !datesMap[createHostawayDate(date)];
+    !datesMap[createDashedDate(date)];
 
   // Handle date change
   const handleDateChange = (dates: Dates) => {
@@ -30,7 +30,7 @@ export default function Reservation({ property, calendar }: Props) {
     let unavailableDateSelected = false;
 
     while (currDate <= new Date(dates[1])) {
-      const date = createHostawayDate(currDate);
+      const date = createDashedDate(currDate);
       if (isDateUnavailable(date)) {
         unavailableDateSelected = true;
         break;
@@ -45,7 +45,7 @@ export default function Reservation({ property, calendar }: Props) {
     const datesMap: { [key: string]: boolean } = {};
     calendar
       .filter(
-        (el) => dateToMS(el.date) >= dateToMS(createHostawayDate(new Date()))
+        (el) => dateToMS(el.date) >= dateToMS(createDashedDate(new Date()))
       )
       .forEach((el, index, calendar) => {
         let isPrevDateAvailable;
@@ -82,7 +82,7 @@ export default function Reservation({ property, calendar }: Props) {
               readOnly
               type='text'
               onClick={() => setShowCalendar((prevState) => !prevState)}
-              value={dates ? `${createHostawayDate(dates[0])}` : ''}
+              value={dates ? `${createDashedDate(dates[0])}` : ''}
               placeholder='mm/dd/yy'
             />
           </div>
@@ -93,7 +93,7 @@ export default function Reservation({ property, calendar }: Props) {
               readOnly
               type='text'
               onClick={() => setShowCalendar((prevState) => !prevState)}
-              value={dates ? `${createHostawayDate(dates[1])}` : ''}
+              value={dates ? `${createDashedDate(dates[1])}` : ''}
               placeholder='mm/dd/yy'
             />
           </div>
@@ -125,9 +125,9 @@ export default function Reservation({ property, calendar }: Props) {
           dates && guests && validMinStay
             ? `/vacation-rental/${
                 property._id
-              }/checkout?arrivalDate=${createHostawayDate(
+              }/checkout?arrivalDate=${createDashedDate(
                 dates[0]
-              )}&departureDate=${createHostawayDate(dates[1])}&guests=${guests}`
+              )}&departureDate=${createDashedDate(dates[1])}&guests=${guests}`
             : '#'
         }
         style={{ width: '100%' }}
@@ -139,8 +139,8 @@ export default function Reservation({ property, calendar }: Props) {
         <Price
           property={property}
           calendar={calendar}
-          arrivalDate={createHostawayDate(dates[0])}
-          departureDate={createHostawayDate(dates[1])}
+          arrivalDate={createDashedDate(dates[0])}
+          departureDate={createDashedDate(dates[1])}
           style={{ paddingTop: '43px', paddingBottom: '29px' }}
         />
       )}

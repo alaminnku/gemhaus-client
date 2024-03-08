@@ -2,7 +2,7 @@ import { Article } from 'types';
 import styles from './ArticleCard.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { createHostawayDate } from '@lib/utils';
+import { createDashedDate } from '@lib/utils';
 
 type Props = {
   article: Article;
@@ -25,7 +25,7 @@ export default function ArticleCard({ article, singleColumn }: Props) {
 
       <div className={styles.content}>
         <p className={styles.author_and_date}>
-          Author . {createHostawayDate(article.createdAt)}
+          Author . {createDashedDate(article.createdAt)}
         </p>
         <h3>{article.title}</h3>
         <p className={styles.excerpt}>

@@ -1,6 +1,6 @@
 'use client';
 
-import { dateToMS, createHostawayDate } from '@lib/utils';
+import { dateToMS, createDashedDate } from '@lib/utils';
 import styles from './SearchField.module.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -14,8 +14,7 @@ export default function SearchField() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const isDateUnavailable = (date: Date) =>
-    dateToMS(createHostawayDate(date)) <
-    dateToMS(createHostawayDate(new Date()));
+    dateToMS(createDashedDate(date)) < dateToMS(createDashedDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
 
   useEffect(() => {
@@ -45,7 +44,7 @@ export default function SearchField() {
             onClick={() => setShowCalendar((prevState) => !prevState)}
             value={
               dates
-                ? `${createHostawayDate(dates[0])} ~ ${createHostawayDate(
+                ? `${createDashedDate(dates[0])} ~ ${createDashedDate(
                     dates[1]
                   )}`
                 : ''
@@ -58,9 +57,9 @@ export default function SearchField() {
           className={styles.search_button}
           href={
             dates
-              ? `/vacation-rental/?arrivalDate=${createHostawayDate(
+              ? `/vacation-rental/?arrivalDate=${createDashedDate(
                   dates[0]
-                )}&departureDate=${createHostawayDate(dates[1])}`
+                )}&departureDate=${createDashedDate(dates[1])}`
               : ''
           }
         >

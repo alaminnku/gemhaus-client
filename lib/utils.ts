@@ -1,6 +1,4 @@
 import { Manrope } from 'next/font/google';
-import { sign } from 'jsonwebtoken';
-import { JWT } from 'next-auth/jwt';
 
 type FetchGemhausDataOptions = {
   body?: FormData;
@@ -66,7 +64,6 @@ export async function fetchHostawayData(path: string) {
   let error;
 
   const accessToken = await getHostawayAccessToken();
-
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_HOSTAWAY_API_URL}${path}`,
     {
@@ -89,31 +86,27 @@ export async function fetchHostawayData(path: string) {
 // Convert date to text
 export const dateToText = (input: Date | string | number) => {
   const date = new Date(input);
-  const options: Intl.DateTimeFormatOptions = {
+  const dateFormatter = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  };
-  return date.toLocaleString('en-US', options);
+  });
+  return dateFormatter.format(date);
 };
 
-// Convert date to milliseconds
 export const dateToMS = (input: Date | string) => new Date(input).getTime();
 
-// Format any date to 2024-02-11
-export function createHostawayDate(input: string | Date) {
+export function createDashedDate(input: string | Date) {
   const date = new Date(input);
-
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
-
   return `${year}-${month}-${day}`;
 }
 
 // From 2024-02-11 to
 // Wed Apr 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time)
-export function createUsDate(input: string) {
+export function dashedToFullDate(input: string) {
   const dateParts = input.split('-');
   const year = +dateParts[0];
   const day = +dateParts[2];
@@ -162,9 +155,9 @@ export function getDatesInBetween(
   departureDate: string | Date
 ) {
   const dates: string[] = [];
-  const currDate = new Date(createHostawayDate(arrivalDate));
-  while (currDate < new Date(createHostawayDate(departureDate))) {
-    dates.push(createHostawayDate(currDate));
+  const currDate = new Date(createDashedDate(arrivalDate));
+  while (currDate < new Date(createDashedDate(departureDate))) {
+    dates.push(createDashedDate(currDate));
     currDate.setDate(currDate.getDate() + 1);
   }
   return dates;

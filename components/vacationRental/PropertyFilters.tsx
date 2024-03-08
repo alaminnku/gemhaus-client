@@ -11,7 +11,7 @@ import {
 } from 'react';
 import styles from './PropertyFilters.module.css';
 import { Dates, Offering, Property } from 'types';
-import { dateToMS, createHostawayDate, getDatesInBetween } from '@lib/utils';
+import { dateToMS, createDashedDate, getDatesInBetween } from '@lib/utils';
 import { useSearchParams } from 'next/navigation';
 
 type Props = {
@@ -48,8 +48,7 @@ export default function PropertyFilters({
   const step = 10;
   const { min, max } = prices;
   const isDateUnavailable = (date: Date) =>
-    dateToMS(createHostawayDate(date)) <
-    dateToMS(createHostawayDate(new Date()));
+    dateToMS(createDashedDate(date)) < dateToMS(createDashedDate(new Date()));
   const handleDateChange = (dates: Dates) => setDates(dates);
 
   // Handle slider range change
@@ -169,7 +168,7 @@ export default function PropertyFilters({
             onClick={() => setShowCalendar((prevState) => !prevState)}
             value={
               dates
-                ? `${createHostawayDate(dates[0])} ~ ${createHostawayDate(
+                ? `${createDashedDate(dates[0])} ~ ${createDashedDate(
                     dates[1]
                   )}`
                 : ''
