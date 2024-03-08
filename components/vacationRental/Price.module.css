@@ -10,8 +10,8 @@
   justify-content: space-between;
 }
 
-.container p:first-child {
-  margin-bottom: 13px;
+.container p {
+  margin-bottom: 8px;
 }
 
 .container p span {

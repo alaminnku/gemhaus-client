@@ -48,12 +48,19 @@ export default function Price({
           <span>{createUSD(price)}</span>
         </p>
         <p>
-          Services Charges{' '}
-          <span>
-            {createUSD(
-              cleaningFee + insuranceFee + serviceFee + lodgingTax + salesTax
-            )}
-          </span>
+          Cleaning fees <span>{createUSD(cleaningFee)}</span>
+        </p>
+        <p>
+          Insurance fees <span>{createUSD(insuranceFee)}</span>
+        </p>
+        <p>
+          Service fees <span>{createUSD(serviceFee)}</span>
+        </p>
+        <p>
+          Loading tax <span>{createUSD(lodgingTax)}</span>
+        </p>
+        <p>
+          Sales tax <span>{createUSD(salesTax)}</span>
         </p>
       </div>
 
