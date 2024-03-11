@@ -40,6 +40,7 @@ export default function PropertyImages({ images }: Props) {
           width={800}
           height={500}
           alt='Image'
+          quality={100}
           onClick={() => setIndex(0)}
         />
 
@@ -53,6 +54,7 @@ export default function PropertyImages({ images }: Props) {
             width={800}
             height={500}
             alt='Image'
+            quality={100}
             onClick={() => setIndex(index)}
           />
         ))}
@@ -63,9 +65,10 @@ export default function PropertyImages({ images }: Props) {
           <div className={styles.expanded_image}>
             <Image
               src={images[index]}
-              alt='Expanded Image'
               width={800}
               height={500}
+              quality={100}
+              alt='Expanded Image'
             />
             <IoIosCloseCircleOutline
               className={styles.close_button}
