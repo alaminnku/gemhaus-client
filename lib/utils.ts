@@ -103,28 +103,6 @@ export function createDashedDate(input: string | Date) {
   return `${year}-${month}-${day}`;
 }
 
-// From 2024-02-11 to
-// Wed Apr 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time)
-export function dashedToFullDate(input: string) {
-  const dateParts = input.split('-');
-  const year = +dateParts[0];
-  const day = +dateParts[2];
-  const month = +dateParts[1] - 1;
-
-  const date = new Date(year, month, day);
-  const dateFormatter = new Intl.DateTimeFormat('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    timeZoneName: 'short',
-  });
-  return dateFormatter.format(date);
-}
-
 export const createUSD = (number: number) =>
   new Intl.NumberFormat('en-us', {
     style: 'currency',

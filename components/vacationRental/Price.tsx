@@ -1,4 +1,4 @@
-import { createUSD, createDashedDate, dashedToFullDate } from '@lib/utils';
+import { createUSD } from '@lib/utils';
 import { Property, HostawayCalendar } from 'types';
 import styles from './Price.module.css';
 import { CSSProperties } from 'react';
@@ -19,9 +19,9 @@ export default function Price({
   style,
 }: Props) {
   const datesMap: Record<string, boolean> = {};
-  const currDate = new Date(dashedToFullDate(arrivalDate));
-  while (currDate < new Date(dashedToFullDate(departureDate))) {
-    datesMap[createDashedDate(currDate)] = true;
+  const currDate = new Date(arrivalDate);
+  while (currDate < new Date(departureDate)) {
+    datesMap[currDate.toISOString().split('T')[0]] = true;
     currDate.setDate(currDate.getDate() + 1);
   }
 
