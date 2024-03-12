@@ -28,11 +28,7 @@ export default function ArticleCard({ article, singleColumn }: Props) {
           Author . {createDashedDate(article.createdAt)}
         </p>
         <h3>{article.title}</h3>
-        <p className={styles.excerpt}>
-          Abbie Knowles brings strong local knowledge and unshakable
-          professional polish to The Agency’s Scottsdale office. An Arizona
-          native.
-        </p>
+        <p className={styles.excerpt}>{article.excerpt}</p>
         <p className={styles.tags}>
           <span>Arizona</span>
           <span>Real estate</span>

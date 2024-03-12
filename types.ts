@@ -56,6 +56,7 @@ export type Article = {
   title: string;
   image: string;
   content: string;
+  excerpt: string;
   createdAt: string;
 };
 

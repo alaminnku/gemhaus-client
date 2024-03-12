@@ -44,7 +44,7 @@
 
 .expanded_image {
   display: flex;
-  max-width: 85%;
+  max-width: 95%;
   position: relative;
   justify-content: center;
 }
@@ -53,8 +53,8 @@
 .prev_button,
 .next_button {
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
+  top: -2rem;
+  right: 0rem;
   font-size: 30px;
   cursor: pointer;
   color: var(--white);
