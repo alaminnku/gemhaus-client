@@ -23,6 +23,7 @@ export default function PropertyCard({ property }: Props) {
           src={images[0]}
           width={400}
           height={400}
+          quality={100}
           alt='Property image'
           className={styles.property_image}
         />

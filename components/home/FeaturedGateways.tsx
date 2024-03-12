@@ -1,10 +1,10 @@
-import styles from '@components/home/FeaturedProperties.module.css';
+import styles from '@components/home/FeaturedGateways.module.css';
 import PropertyCards from './PropertyCards';
 import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import Error from '@components/layout/Error';
 import ExploreProperties from '@components/layout/ExploreProperties';
 
-export default async function FeaturedProperties() {
+export default async function FeaturedGateways() {
   const { data, error } = await fetchGemhausData('/properties', {
     // next: {
     //   tags: ['properties'],

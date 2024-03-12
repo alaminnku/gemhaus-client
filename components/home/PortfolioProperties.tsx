@@ -32,6 +32,7 @@ export default async function PortfolioProperties() {
                 src={property.images[0]}
                 width={400}
                 height={400}
+                quality={100}
                 alt={`${property.name} image`}
               />
 

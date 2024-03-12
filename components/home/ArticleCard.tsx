@@ -15,6 +15,7 @@ export default function ArticleCard({ article }: Props) {
         src={article.image}
         width={400}
         height={400}
+        quality={100}
         alt={`${article.title} cover image`}
       />
 

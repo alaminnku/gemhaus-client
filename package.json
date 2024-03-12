@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/mongodb-adapter": "^2.5.0",
     "braintree-web": "^3.99.0",
     "jsonwebtoken": "^9.0.2",
     "leaflet": "^1.9.4",

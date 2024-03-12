@@ -1,4 +1,4 @@
-import FeaturedProperties from '@components/home/FeaturedProperties';
+import FeaturedGateways from '@components/home/FeaturedGateways';
 import Hero from '@components/home/Hero';
 import CallToAction from '@components/layout/CallToAction';
 import Blog from '@components/home/Blog';
@@ -15,7 +15,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <Agents />
-      <FeaturedProperties />
+      <FeaturedGateways />
       <CallToAction />
       <Services />
       <PortfolioProperties />
