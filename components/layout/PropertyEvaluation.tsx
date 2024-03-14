@@ -8,9 +8,13 @@ import { useAlert } from 'contexts/Alert';
 
 type Props = {
   children?: ReactNode;
+  description?: string;
 };
 
-export default function PropertyEvaluation({ children }: Props) {
+export default function PropertyEvaluation({
+  children,
+  description = 'Unlock the Power of Flexibility. We specialize in turning your property into a lucrative short-term rental, optimizing your returns without the long-term commitment. We specialize in delivering seamless and profitable short-term rental experiences for property owners and guests alike',
+}: Props) {
   const { setAlert } = useAlert();
 
   async function handleSubmit(formData: FormData) {
@@ -32,13 +36,7 @@ export default function PropertyEvaluation({ children }: Props) {
         <h2>
           Property <br /> Evaluation
         </h2>
-        <p>
-          Unlock the Power of Flexibility. We specialize in turning your
-          property into a lucrative short-term rental, optimizing your returns
-          without the long-term commitment. We specialize in delivering seamless
-          and profitable short-term rental experiences for property owners and
-          guests alike
-        </p>
+        <p>{description}</p>
       </div>
 
       <div className={styles.property_evaluation} id='evaluation'>

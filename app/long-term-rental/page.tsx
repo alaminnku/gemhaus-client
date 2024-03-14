@@ -22,6 +22,7 @@ export default function LongTermRentalPage() {
       />
       <PropertyEvaluation
         children={<EvaluationInputOptions showStrLtr={false} />}
+        description='Steady income, worry-free ownership. We specialize in turning your property into a lucrative long-term rental, optimizing your returns, while managing everything from tenant screening to maintenance requests.'
       />
       <Newsletter />
       <DarkFooter />
