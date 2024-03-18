@@ -15,6 +15,30 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'GemHaus - Find Your Gem',
+  icons: [
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      url: '/layout/favicon/apple-touch-icon.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: '/layout/favicon/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: '/layout/favicon/favicon-16x16.png',
+    },
+    {
+      rel: 'shortcut icon',
+      url: '/layout/favicon/favicon.ico',
+    },
+  ],
+  manifest: '/layout/favicon/site.webmanifest',
 };
 
 export default async function RootLayout({
