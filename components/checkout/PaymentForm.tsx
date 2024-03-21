@@ -87,7 +87,7 @@ export default function PaymentForm({ children, booking }: Props) {
         }
       );
       if (error) return setAlert({ message: error.message, type: 'failed' });
-      setAlert({ message: data.message, type: 'success' });
+      router.push(`/vacation-rental/${propertyId}/checkout/confirmation`);
     } catch (err) {
       console.log(err);
       setAlert({
