@@ -47,6 +47,8 @@ export default function Hero() {
           </div>
         </div>
         <Image
+          priority
+          quality={100}
           src='/home/hero-bg.jpg'
           width={400}
           height={400}

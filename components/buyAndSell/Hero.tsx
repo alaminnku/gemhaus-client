@@ -9,7 +9,11 @@ export default function GenericHero() {
       <Link href='/agents'>
         Take me to Agent page <img src='/layout/white-right-arrow.png' />
       </Link>
-      <img src='/buy-and-sell/hero-art.png' className={styles.art_image} />
+      <img
+        src='/buy-and-sell/hero-art.png'
+        className={styles.art_image}
+        alt='Money vector image'
+      />
     </section>
   );
 }

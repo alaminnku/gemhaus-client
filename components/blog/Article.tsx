@@ -58,11 +58,12 @@ export default async function Article({ id }: { id: string }) {
             </div>
 
             <Image
+              priority
               src={article.image}
-              alt={article.title}
               width={1600}
               height={1000}
               quality={100}
+              alt={article.title}
             />
           </header>
 
