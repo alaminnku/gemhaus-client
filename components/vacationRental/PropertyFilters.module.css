@@ -1,7 +1,8 @@
 .container {
+  height: fit-content;
   display: none;
   padding: 16px;
-  margin-top: 20px;
+  margin: 20px 13px 0px 13px;
   border-radius: 0.5rem;
   border: 1px solid var(--border_color);
 }
@@ -143,6 +144,7 @@
     width: 18rem;
     display: flex;
     flex-direction: column;
+    margin: 20px 0px 0px 0px;
   }
 
   .items {

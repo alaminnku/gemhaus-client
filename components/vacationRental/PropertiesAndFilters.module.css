@@ -3,11 +3,6 @@
     display: flex;
     gap: 40px;
     margin-top: 45px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .filters_and_properties {
     padding: 0px 40px;
   }
 }
