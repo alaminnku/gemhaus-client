@@ -7,7 +7,7 @@ import { Agent } from 'types';
 
 export default async function Agents() {
   const { data, error } = await fetchGemhausData('/users/agents', {
-    // next: { tags: ['agents'], revalidate: revalidateIn },
+    next: { tags: ['agents'], revalidate: revalidateIn },
   });
 
   return (

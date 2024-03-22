@@ -42,7 +42,6 @@ export default function SignUpForm() {
     });
     if (response?.error)
       return setAlert({ message: response.error, type: 'failed' });
-
     router.push('/');
   }
 

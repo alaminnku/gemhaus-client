@@ -6,10 +6,10 @@ import ExploreProperties from '@components/layout/ExploreProperties';
 
 export default async function FeaturedGateways() {
   const { data, error } = await fetchGemhausData('/properties', {
-    // next: {
-    //   tags: ['properties'],
-    //   revalidate: revalidateIn,
-    // },
+    next: {
+      tags: ['properties'],
+      revalidate: revalidateIn,
+    },
   });
 
   return (

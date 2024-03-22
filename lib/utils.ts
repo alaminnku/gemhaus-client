@@ -4,17 +4,16 @@ type FetchGemhausDataOptions = {
   body?: FormData;
   cache?: 'no-store';
   method?: 'POST' | 'DELETE';
-  next?: { tags?: string[]; revalidate: number };
   headers?: {
     Authorization: string;
   };
+  next?: { tags?: string[]; revalidate: number };
 };
 
 export const revalidateIn = 300;
 
 export const currentYear = new Date().getFullYear();
 
-// Fetch Gemhaus data
 export async function fetchGemhausData(
   path: string,
   options?: FetchGemhausDataOptions
@@ -24,7 +23,6 @@ export async function fetchGemhausData(
 
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${path}`, {
     ...options,
-    cache: 'no-store',
     credentials: 'include',
   });
   const result = await response.json();

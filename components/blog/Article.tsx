@@ -10,19 +10,19 @@ export default async function Article({ id }: { id: string }) {
   const { data: article, error: articleError } = await fetchGemhausData(
     `/articles/${id}`,
     {
-      // next: {
-      //   tags: [`article-${id}`],
-      //   revalidate: revalidateIn,
-      // },
+      next: {
+        tags: [`article-${id}`],
+        revalidate: revalidateIn,
+      },
     }
   );
   const { data: articles, error: articlesError } = await fetchGemhausData(
     '/articles',
     {
-      // next: {
-      //   tags: ['articles'],
-      //   revalidate: revalidateIn,
-      // },
+      next: {
+        tags: ['articles'],
+        revalidate: revalidateIn,
+      },
     }
   );
 

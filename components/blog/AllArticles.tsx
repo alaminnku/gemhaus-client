@@ -5,10 +5,10 @@ import Error from '@components/layout/Error';
 
 export default async function AllArticles() {
   const { data, error } = await fetchGemhausData('/articles', {
-    // next: {
-    //   tags: ['articles'],
-    //   revalidate: revalidateIn,
-    // },
+    next: {
+      tags: ['articles'],
+      revalidate: revalidateIn,
+    },
   });
 
   return (

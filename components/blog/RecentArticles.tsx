@@ -5,10 +5,10 @@ import RecentArticleCards from './RecentArticleCards';
 
 export default async function RecentArticles() {
   const { data, error } = await fetchGemhausData('/articles', {
-    // next: {
-    //   tags: ['articles'],
-    //   revalidate: revalidateIn,
-    // },
+    next: {
+      tags: ['articles'],
+      revalidate: revalidateIn,
+    },
   });
 
   return (

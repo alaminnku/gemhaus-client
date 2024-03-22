@@ -79,7 +79,7 @@ export default function PaymentForm({ children, booking }: Props) {
       formData.append('departureDate', departureDate);
       formData.append('numberOfGuests', guestsCount.toString());
 
-      const { data, error } = await fetchGemhausData(
+      const { error } = await fetchGemhausData(
         `/properties/${propertyId}/book`,
         {
           method: 'POST',
