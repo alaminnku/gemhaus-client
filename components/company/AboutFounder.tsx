@@ -16,7 +16,8 @@ export default function AboutFounder() {
           true entrepreneurial spirit and exploration. Born and raised in
           Massachusetts, she embarked on her real estate career in bustling Los
           Angeles in 2011, consistently ranking among top producers and
-          facilitating over $100 million in sales over a decade.
+          facilitating over $150 million in sales and over a decade of
+          experience.
         </p>
         <p>
           In 2022, amidst the pandemic, Leah founded a vacation rental company
