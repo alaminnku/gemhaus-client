@@ -7,7 +7,10 @@ export default async function Properties() {
   const { data: properties, error: propertiesError } = await fetchGemhausData(
     '/properties',
     {
-      cache: 'no-store',
+      next: {
+        tags: ['offerings'],
+        revalidate: revalidateIn,
+      },
     }
   );
   const { data: offerings, error: offeringsError } = await fetchGemhausData(
