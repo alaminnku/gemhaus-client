@@ -1,8 +1,18 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import styles from './SearchField.module.css';
 
 export default function SearchField() {
+  const router = useRouter();
+
+  function handleSearch(formData: FormData) {
+    const input = formData.get('input');
+    router.push(`/agents?query=${input}`);
+  }
+
   return (
-    <div className={styles.container}>
+    <form className={styles.container} action={handleSearch}>
       <div className={styles.search_input}>
         <img
           src='/agents/black-search-icon.png'
@@ -11,12 +21,14 @@ export default function SearchField() {
 
         <input
           type='text'
-          name='search'
+          name='input'
           placeholder='Enter a name, region, spoken language...'
         />
       </div>
 
-      <button className={styles.search_button}>Search</button>
-    </div>
+      <button type='submit' className={styles.search_button}>
+        Search
+      </button>
+    </form>
   );
 }
