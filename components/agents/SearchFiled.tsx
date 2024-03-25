@@ -22,7 +22,7 @@ export default function SearchField() {
         <input
           type='text'
           name='input'
-          placeholder='Enter a name, region, spoken language...'
+          placeholder='Enter a name or location...'
         />
       </div>
 

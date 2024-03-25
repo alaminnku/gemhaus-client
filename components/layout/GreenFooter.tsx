@@ -16,8 +16,8 @@ export default function GreenFooter() {
         <div className={styles.contact}>
           <p className={styles.contact_title}>contact us</p>
 
-          <a className={styles.email} href='mailto:info@gemhaus.com'>
-            info@gemhaus.com
+          <a className={styles.email} href='mailto:hello@gemhaus.com'>
+            hello@gemhaus.com
           </a>
           <p className={styles.email}>Social media - @gemhausgroup</p>
           <p className={styles.website}>GemHaus.com</p>
