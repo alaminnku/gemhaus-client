@@ -16,7 +16,7 @@ export default function HouseRules({ houseRulesContent }: Props) {
     .split('House Rules')[1]
     .trim()
     .split('\n')
-    .map((rule) => rule.replace(/^- /, ''));
+    .map((rule) => rule.replace(/^- |Pets: /, ''));
 
   return (
     <>
