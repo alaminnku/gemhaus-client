@@ -3,6 +3,7 @@ import styles from './PropertyDetails.module.css';
 import Image from 'next/image';
 import Price from '@components/vacationRental/Price';
 import Error from '@components/layout/Error';
+import HouseRules from './HouseRules';
 
 type Props = {
   propertyId: string;
@@ -27,22 +28,26 @@ export default async function PropertyDetails({
   const { data: calendar, error: calendarError } = await fetchHostawayData(
     `/listings/${property.hostawayId}/calendar`
   );
+  const { data: hostawayProperty, error: hostawayPropertyError } =
+    await fetchHostawayData(`/listings/${property.hostawayId}`);
 
   return (
     <>
-      {propertyError || calendarError ? (
-        <Error error={propertyError || calendarError} />
+      {propertyError || calendarError || hostawayPropertyError ? (
+        <Error
+          error={propertyError || calendarError || hostawayPropertyError}
+        />
       ) : (
-        <div className={styles.property_details}>
-          <div className={styles.property_header_and_price}>
-            <div className={styles.property_header}>
+        <div className={styles.container}>
+          <div className={styles.header_and_price}>
+            <div className={styles.header}>
               <Image
                 src={property.images[0]}
                 width={400}
                 height={300}
                 alt={`${property.name} image`}
               />
-              <div className={styles.property_name_and_bedrooms}>
+              <div className={styles.name_and_bedrooms}>
                 <p>{property.name}</p>
                 <p>{property.bedrooms} bedrooms</p>
               </div>
@@ -72,29 +77,7 @@ export default async function PropertyDetails({
             </p>
           </div>
 
-          <div className={styles.house_rules}>
-            <p className={styles.house_rules_title}>House Rules</p>
-            <div className={styles.house_rules_item}>
-              <img src='/checkout/clock-icon.png' />
-              <p>Check-in 4 pm</p>
-            </div>
-            <div className={styles.house_rules_item}>
-              <img src='/checkout/clock-icon.png' />
-              <p>Check-out 11 am</p>
-            </div>
-            <div className={styles.house_rules_item}>
-              <img src='/checkout/child-icon.png' />
-              <p>Children allowed</p>
-            </div>
-            <div className={styles.house_rules_item}>
-              <img src='/checkout/pet-icon.png' />
-              <p>Pets allowed</p>
-            </div>
-            <div className={styles.house_rules_item}>
-              <img src='/checkout/no-smoke-icon.png' />
-              <p>Smoke not allowed</p>
-            </div>
-          </div>
+          <HouseRules houseRulesContent={hostawayProperty.result.houseRules} />
         </div>
       )}
     </>

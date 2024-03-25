@@ -1,12 +1,14 @@
 .modal {
-  position: fixed;
   opacity: 0;
   top: 50%;
   left: 50%;
   z-index: 11;
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   padding: 1rem;
+  max-height: 95vh;
+  position: fixed;
+  overflow-x: auto;
   translate: -50% -50%;
   pointer-events: none;
   border-radius: 0.5rem;

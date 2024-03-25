@@ -1,14 +1,14 @@
-.container {
-  padding: var(--section_padding);
-  padding-top: 0px;
-}
-
 .title {
   display: none;
 }
 
+.reservation_guest_and_payment_details {
+  padding: 0px 17px;
+  margin-bottom: 44px;
+}
+
 .reservation_details {
-  padding-bottom: 32px;
+  padding: 33px 2px;
   border-bottom: 1px solid var(--border_color);
 }
 
@@ -55,13 +55,9 @@
   cursor: pointer;
 }
 
-.guest_and_payment_details {
-  margin-bottom: 44px;
-}
-
 .guest_details,
 .payment_details {
-  padding: 32px 0px;
+  padding: 33px 0px;
 }
 
 .guest_details {
@@ -112,8 +108,7 @@
 .agreement {
   display: flex;
   align-items: flex-start;
-  padding-top: 26px;
-  padding-bottom: 20px;
+  padding: 26px 3px 20px 3px;
 }
 
 .agreement input {
@@ -128,6 +123,8 @@
 
 @media (min-width: 1024px) {
   .container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     gap: 5rem;
     padding-top: 48px;
@@ -135,7 +132,7 @@
   }
 
   .booking_guest_and_payment {
-    width: 65%;
+    width: 55%;
   }
 
   .title {

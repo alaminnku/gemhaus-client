@@ -107,7 +107,7 @@ export default function PaymentForm({ children, booking }: Props) {
           Finalize your booking
         </p>
 
-        <div className={styles.guest_and_payment_details}>
+        <div className={styles.reservation_guest_and_payment_details}>
           <div className={styles.reservation_details}>
             <p className={styles.reservation_details_title}>
               Reservation Details
@@ -152,70 +152,67 @@ export default function PaymentForm({ children, booking }: Props) {
           <form action={handleBookProperty}>
             <div className={styles.guest_details}>
               <p className={styles.guest_details_title}>Guest details</p>
-
-              <div>
-                <div className={styles.item}>
-                  <label htmlFor='name'>Full name</label>
-                  <input type='text' id='name' name='name' placeholder='Name' />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='email'>Email Address</label>
-                  <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    placeholder='Email address'
-                  />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='phone'>Phone number</label>
-                  <input
-                    type='number'
-                    id='phone'
-                    name='phone'
-                    placeholder='Phone number'
-                  />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='address'>Billing address</label>
-                  <input
-                    type='text'
-                    id='address'
-                    name='address'
-                    placeholder='Billing address'
-                  />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='city'>City</label>
-                  <input type='text' id='city' name='city' placeholder='City' />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='state'>State</label>
-                  <input
-                    type='text'
-                    id='state'
-                    name='state'
-                    placeholder='State'
-                  />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='country'>Country</label>
-                  <input
-                    type='text'
-                    id='country'
-                    name='country'
-                    placeholder='Country'
-                  />
-                </div>
-                <div className={styles.item}>
-                  <label htmlFor='zipCode'>Zip code</label>
-                  <input
-                    type='text'
-                    id='zipCode'
-                    name='zipCode'
-                    placeholder='Zip code'
-                  />
-                </div>
+              <div className={styles.item}>
+                <label htmlFor='name'>Full name</label>
+                <input type='text' id='name' name='name' placeholder='Name' />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='email'>Email Address</label>
+                <input
+                  type='email'
+                  id='email'
+                  name='email'
+                  placeholder='Email address'
+                />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='phone'>Phone number</label>
+                <input
+                  type='number'
+                  id='phone'
+                  name='phone'
+                  placeholder='Phone number'
+                />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='address'>Billing address</label>
+                <input
+                  type='text'
+                  id='address'
+                  name='address'
+                  placeholder='Billing address'
+                />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='city'>City</label>
+                <input type='text' id='city' name='city' placeholder='City' />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='state'>State</label>
+                <input
+                  type='text'
+                  id='state'
+                  name='state'
+                  placeholder='State'
+                />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='country'>Country</label>
+                <input
+                  type='text'
+                  id='country'
+                  name='country'
+                  placeholder='Country'
+                />
+              </div>
+              <div className={styles.item}>
+                <label htmlFor='zipCode'>Zip code</label>
+                <input
+                  type='text'
+                  id='zipCode'
+                  name='zipCode'
+                  placeholder='Zip code'
+                />
               </div>
             </div>
 

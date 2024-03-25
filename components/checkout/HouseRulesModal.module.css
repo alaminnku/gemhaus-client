@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.close_icon {
+  width: 14.5px;
+  height: auto;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 28px;
+}
+
+.rules {
+  display: grid;
+  gap: 26px;
+}
+
+.rule {
+  display: flex;
+  align-items: flex-start;
+}
+
+.rule p {
+  line-height: 19px;
+}
+
+.rule img {
+  width: 24px;
+  margin-right: 12px;
+}
