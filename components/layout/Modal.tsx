@@ -1,6 +1,12 @@
 'use client';
 
-import { CSSProperties, ReactNode, Dispatch, SetStateAction } from 'react';
+import {
+  CSSProperties,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+} from 'react';
 import styles from './Modal.module.css';
 
 type Props = {
@@ -16,6 +22,13 @@ export default function Modal({
   showModal,
   setShowModal,
 }: Props) {
+  // Disable body scroll when modal is open
+  useEffect(() => {
+    const body = document.querySelector('body');
+    showModal
+      ? (body!.style.overflow = 'hidden')
+      : (body!.style.overflow = 'auto');
+  });
   return (
     <>
       <div
