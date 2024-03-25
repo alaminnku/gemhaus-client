@@ -131,7 +131,7 @@
     flex-direction: row-reverse;
   }
 
-  .booking_guest_and_payment {
+  .reservation_guest_and_payment {
     width: 55%;
   }
 
@@ -144,6 +144,7 @@
   }
 
   .title svg {
+    cursor: pointer;
     margin-right: 8px;
   }
 

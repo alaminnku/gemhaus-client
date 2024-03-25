@@ -32,7 +32,6 @@
   --green: #008858;
   --disabled_bg: #d1d1d1;
   --border_color: #e6e6e6;
-  --section_padding: 48px 32px;
   --max_viewport_width: 1440px;
   --inter: 'Inter', sans-serif;
   --pp_mori: 'PP Mori', sans-serif;
@@ -138,6 +137,5 @@ textarea {
 @media (min-width: 1024px) {
   :root {
     --h2_size: 63px;
-    --section_padding: 72px 48px;
   }
 }

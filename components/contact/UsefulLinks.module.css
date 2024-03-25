@@ -1,7 +1,7 @@
 .container {
-  padding: 32px;
   display: grid;
   gap: 24px;
+  padding: 32px;
   grid-template-columns: 1fr;
 }
 
@@ -38,6 +38,7 @@
 
 @media (min-width: 1024px) {
   .container {
+    padding: 32px 60px;
     display: grid;
     gap: 0;
     grid-template-columns: 1fr 1fr auto;

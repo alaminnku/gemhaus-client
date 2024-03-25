@@ -101,7 +101,7 @@ export default function PaymentForm({ children, booking }: Props) {
     <section className={styles.container}>
       {children}
 
-      <div className={styles.booking_guest_and_payment}>
+      <div className={styles.reservation_guest_and_payment}>
         <p className={styles.title}>
           <MdKeyboardArrowLeft onClick={() => router.back()} />
           Finalize your booking

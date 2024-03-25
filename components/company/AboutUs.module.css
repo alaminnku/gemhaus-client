@@ -1,8 +1,8 @@
 .container {
   display: flex;
   gap: 32px;
+  padding: 22px 20px;
   flex-direction: column;
-  padding: var(--section_padding);
 }
 
 .media h2 {
@@ -29,6 +29,7 @@
 @media (min-width: 1024px) {
   .container {
     gap: 48px;
+    padding: 46px 66px;
     flex-direction: row;
   }
 

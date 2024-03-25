@@ -1,8 +1,8 @@
 .container {
   display: flex;
   gap: 24px;
-  margin: 24px;
   flex-direction: column;
+  margin: 0px 12px 23px 12px;
 }
 
 .story {
@@ -58,6 +58,11 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    margin: 0px 19px;
+    margin-bottom: 47px;
+  }
+
   .story {
     min-height: 271px;
     position: relative;
