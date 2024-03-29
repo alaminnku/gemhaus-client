@@ -25,6 +25,10 @@ export default function PaymentForm({ children, booking }: Props) {
   const { guests, propertyId, arrivalDate, departureDate } = booking;
   const [guestsCount, setGuestsCount] = useState(+guests);
   const [hostedFields, setHostedFields] = useState<HostedFields | null>(null);
+  const [agreements, setAgreements] = useState({
+    privacyPolicy: false,
+    houseRules: false,
+  });
 
   const arrivalMonth = getMonthAbbr(new Date(arrivalDate));
   const departureMonth = getMonthAbbr(new Date(departureDate));
@@ -71,6 +75,17 @@ export default function PaymentForm({ children, booking }: Props) {
 
   const handleBookProperty = async (formData: FormData) => {
     if (!hostedFields) return;
+    if (!agreements.privacyPolicy)
+      return setAlert({
+        message: 'You must agree to the privacy policy',
+        type: 'failed',
+      });
+    if (!agreements.houseRules)
+      return setAlert({
+        message: 'You must agree to the house rules',
+        type: 'failed',
+      });
+
     try {
       const { nonce } = await hostedFields.tokenize();
 
@@ -244,11 +259,40 @@ export default function PaymentForm({ children, booking }: Props) {
                 </div>
               </div>
 
-              <div className={styles.agreement}>
-                <input type='checkbox' id='agreement' />
-                <label htmlFor='agreement'>
-                  I agree to the Privacy Policy and Terms of Service
-                </label>
+              <div className={styles.agreements}>
+                <div className={styles.agreement}>
+                  <input
+                    type='checkbox'
+                    id='privacyPolicy'
+                    checked={agreements.privacyPolicy}
+                    onChange={() =>
+                      setAgreements((prevState) => ({
+                        ...prevState,
+                        privacyPolicy: !prevState.privacyPolicy,
+                      }))
+                    }
+                  />
+                  <label htmlFor='privacyPolicy'>
+                    I agree to the <span>Privacy Policy</span> and{' '}
+                    <span>Terms of Service</span>
+                  </label>
+                </div>
+                <div className={styles.agreement}>
+                  <input
+                    type='checkbox'
+                    id='houseRules'
+                    checked={agreements.houseRules}
+                    onChange={() =>
+                      setAgreements((prevState) => ({
+                        ...prevState,
+                        houseRules: !prevState.houseRules,
+                      }))
+                    }
+                  />
+                  <label htmlFor='houseRules'>
+                    I agree to the <span>house rules</span>
+                  </label>
+                </div>
               </div>
             </div>
 

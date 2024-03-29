@@ -105,10 +105,26 @@
   height: 52px;
 }
 
+.agreements {
+  display: flex;
+  gap: 27px;
+  flex-direction: column;
+  margin-top: 26px;
+}
+
 .agreement {
   display: flex;
   align-items: flex-start;
-  padding: 26px 3px 20px 3px;
+  padding: 0px 3px;
+}
+
+.agreement label {
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.agreement label span {
+  font-weight: 500;
 }
 
 .agreement input {
