@@ -109,10 +109,6 @@ textarea {
   color: var(--black) !important;
 }
 
-.react-calendar__tile--now {
-  background: transparent !important;
-}
-
 .react-calendar__tile--active {
   color: var(--white) !important;
   background-color: var(--black) !important;

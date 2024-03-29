@@ -21,8 +21,7 @@ export default function Reservation({ property, calendar }: Props) {
   const [datesMap, setDatesMap] = useState<Record<string, boolean>>({});
 
   // Check if date is unavailable
-  const isDateUnavailable = (date: Date | string) =>
-    !datesMap[createDashedDate(date)];
+  const isDateUnavailable = (date: Date) => !datesMap[createDashedDate(date)];
 
   // Handle date change
   const handleDateChange = (dates: Dates) => {
@@ -30,8 +29,7 @@ export default function Reservation({ property, calendar }: Props) {
     let unavailableDateSelected = false;
 
     while (currDate <= new Date(dates[1])) {
-      const date = createDashedDate(currDate);
-      if (isDateUnavailable(date)) {
+      if (isDateUnavailable(currDate)) {
         unavailableDateSelected = true;
         break;
       }
