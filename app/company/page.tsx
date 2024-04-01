@@ -1,7 +1,7 @@
 import AboutFounder from '@components/company/AboutFounder';
 import AboutUs from '@components/company/AboutUs';
 import Stories from '@components/company/Stories';
-import DarkFooter from '@components/layout/DarkFooter';
+import Footer from '@components/layout/Footer';
 import Hero from '@components/company/Hero';
 import Newsletter from '@components/layout/Newsletter';
 
@@ -13,7 +13,7 @@ export default function CompanyPage() {
       <Stories />
       <AboutFounder />
       <Newsletter />
-      <DarkFooter isRounded={true} />
+      <Footer isRounded={true} />
     </main>
   );
 }

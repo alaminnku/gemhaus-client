@@ -1,7 +1,7 @@
 import Hero from '@components/agents/Hero';
 import Agents from '@components/agents/Agents';
 import Header from '@components/layout/Header';
-import GreenFooter from '@components/layout/GreenFooter';
+import Footer from '@components/layout/Footer';
 
 type Props = {
   searchParams: {
@@ -17,7 +17,7 @@ export default function AgentsPage({ searchParams }: Props) {
       <Header withDarkBackground={true} isYellowSignIn={true} />
       <Hero />
       <Agents query={query} />
-      <GreenFooter />
+      <Footer />
     </main>
   );
 }

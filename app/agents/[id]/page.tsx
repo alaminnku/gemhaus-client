@@ -1,5 +1,5 @@
 import Agent from '@components/agent/Agent';
-import GreenFooter from '@components/layout/GreenFooter';
+import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 import { fetchGemhausData, revalidateIn } from '@lib/utils';
 import { Agent as AgentType } from 'types';
@@ -15,7 +15,7 @@ export default function AgentPage({ params }: Props) {
     <main>
       <Header withDarkBackground={true} isYellowSignIn={true} />
       <Agent id={params.id} />
-      <GreenFooter />
+      <Footer />
     </main>
   );
 }

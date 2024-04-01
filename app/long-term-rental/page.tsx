@@ -5,7 +5,7 @@ import EvaluationInputOptions from '@components/layout/EvaluationInputOptions';
 import Services from '@components/layout/Services';
 import { longTermServices } from '@data/services';
 import Newsletter from '@components/layout/Newsletter';
-import DarkFooter from '@components/layout/DarkFooter';
+import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 
 export default function LongTermRentalPage() {
@@ -25,7 +25,7 @@ export default function LongTermRentalPage() {
         description='Steady income, worry-free ownership. We specialize in turning your property into a lucrative long-term rental, optimizing your returns, while managing everything from tenant screening to maintenance requests.'
       />
       <Newsletter />
-      <DarkFooter />
+      <Footer />
     </main>
   );
 }

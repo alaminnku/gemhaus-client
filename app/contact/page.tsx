@@ -1,6 +1,6 @@
 import Contact from '@components/contact/Contact';
 import UsefulLinks from '@components/contact/UsefulLinks';
-import DarkFooter from '@components/layout/DarkFooter';
+import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 
 export default function ContactPage() {
@@ -9,7 +9,7 @@ export default function ContactPage() {
       <Header isBlackSignIn={true} />
       <Contact />
       <UsefulLinks />
-      <DarkFooter isRounded={true} />
+      <Footer isRounded={true} />
     </main>
   );
 }
