@@ -15,14 +15,14 @@ export default function Footer({ isRounded = false }: Props) {
           <div className={styles.item}>
             <p>Join us</p>
             <div className={styles.links}>
-              <Link href='/agents'>Become an Agent</Link>
-              <Link href='/careers'>Careers</Link>
+              <Link href='/contact'>Become an Agent</Link>
+              <Link href='/contact'>Careers</Link>
             </div>
           </div>
           <div className={styles.item}>
             <p>About us</p>
             <div className={styles.links}>
-              <Link href='/agents'>Why GemHaus</Link>
+              <Link href='/company'>Why GemHaus</Link>
               <Link href='/blog'>Blog</Link>
               <Link href='/blog'>Real Estate News</Link>
             </div>
@@ -31,7 +31,7 @@ export default function Footer({ isRounded = false }: Props) {
             <p>Find us</p>
             <div className={styles.links}>
               <Link href='/contact'>Contact us</Link>
-              <Link href='/blog'>Support</Link>
+              <Link href='/contact'>Support</Link>
               <Socials />
             </div>
           </div>
