@@ -43,7 +43,6 @@ export default function PropertyImages({ images }: Props) {
           quality={100}
           onClick={() => setIndex(0)}
         />
-
         <p className={styles.image_count}>1/{images.length}</p>
       </div>
       <div className={styles.other_images}>

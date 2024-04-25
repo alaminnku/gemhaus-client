@@ -3,14 +3,6 @@
   margin-bottom: 18px;
 }
 
-.container img {
-  cursor: pointer;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
 .main_image {
   display: flex;
   position: relative;
@@ -30,6 +22,15 @@
   display: none;
 }
 
+.main_image img,
+.other_images img {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 .expanded_image_container {
   display: flex;
   position: fixed;
@@ -44,9 +45,14 @@
 
 .expanded_image {
   display: flex;
-  max-width: 95%;
+  width: 95%;
   position: relative;
   justify-content: center;
+}
+
+.expanded_image img {
+  width: 100%;
+  height: auto;
 }
 
 .close_button,
@@ -88,14 +94,18 @@
     width: 50%;
   }
 
+  .image_count {
+    display: none;
+  }
+
   .other_images {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .image_count {
-    display: none;
+  .expanded_image {
+    width: 900px;
   }
 
   .prev_button {
