@@ -5,6 +5,7 @@ import AlertProvider from '@contexts/Alert';
 import { AuthProvider } from '@contexts/Auth';
 import { authOptions } from '@lib/auth';
 import { getServerSession } from 'next-auth';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
@@ -50,6 +51,7 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
+      <GoogleTagManager gtmId='GTM-W2SWVDNN' />
       <body>
         <AuthProvider session={session}>
           <AlertProvider>{children}</AlertProvider>
