@@ -12,7 +12,7 @@ type Props = {
 export default function CallToAction({
   text = 'Become a Host',
   link = '/short-term-rental',
-  title = 'Your world is <br /> worth sharing',
+  title = 'Where every <br /> property shines',
   description = 'Turn your extra space into your next <br /> opportunity',
 }: Props) {
   return (
