@@ -2,7 +2,6 @@ import Error from '@components/layout/Error';
 import { fetchGemhausData, createDashedDate, revalidateIn } from '@lib/utils';
 import styles from './Article.module.css';
 import Image from 'next/image';
-import { Article } from 'types';
 import Link from 'next/link';
 import SocialShare from './SocialShare';
 
