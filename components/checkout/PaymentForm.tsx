@@ -8,6 +8,7 @@ import SubmitButton from '@components/layout/SubmitButton';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
 import { useAlert } from 'contexts/Alert';
+import Link from 'next/link';
 
 type Props = {
   children: ReactNode;
@@ -273,7 +274,8 @@ export default function PaymentForm({ children, booking }: Props) {
                     }
                   />
                   <label htmlFor='privacyPolicy'>
-                    I agree to the <span>Privacy Policy</span> and{' '}
+                    I agree to the{' '}
+                    <Link href='/privacy-policy'>Privacy Policy</Link> and{' '}
                     <span>Terms of Service</span>
                   </label>
                 </div>

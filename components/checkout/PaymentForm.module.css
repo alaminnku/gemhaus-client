@@ -123,8 +123,10 @@
   margin-bottom: 0px;
 }
 
+.agreement label a,
 .agreement label span {
   font-weight: 500;
+  color: var(--black);
 }
 
 .agreement input {

@@ -48,7 +48,7 @@ export default function Footer({ isRounded = false }: Props) {
           <p>Copyright: @2024 GemHaus. All rights reserved.</p>
           <p>
             Updated January 2024: By searching, you agree to the Terms of Use,
-            and Privacy Policy.
+            and <Link href='/privacy-policy'>Privacy Policy</Link>.
           </p>
           <p>
             GEMHAUS IS COMMITTED TO AND ABIDES BY THE FAIR HOUSING ACT AND EQUAL

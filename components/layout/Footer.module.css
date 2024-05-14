@@ -39,6 +39,10 @@
   margin-bottom: 126px;
 }
 
+.copyright p a {
+  color: var(--white);
+}
+
 .logos {
   display: flex;
   align-items: center;
@@ -53,11 +57,6 @@
 .house_logo p {
   display: none;
 }
-
-/* .is_rounded {
-  margin: 15px;
-  border-radius: 58px;
-} */
 
 @media (min-width: 1024px) {
   .container {
